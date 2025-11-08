@@ -18,7 +18,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <span className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Free<span className="text-blue-600 dark:text-blue-500">Toolz</span></span>
             </div>
             <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 max-w-md leading-relaxed">
-              Your ultimate collection of 80+ free online tools. No registration required, no API keys needed. Fast, simple, and always free.
+              Your ultimate collection of 120+ free online tools. No registration required, no API keys needed. Fast, simple, and always free.
             </p>
             <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
               <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">Created by Muhammad Atif Latif</p>

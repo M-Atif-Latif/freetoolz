@@ -1,7 +1,8 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "freetoolz",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
+  "description": "120+ free online tools for text processing, image editing, PDF manipulation, calculations, conversions, SEO, security testing and more. No signup required.",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,7 +16,8 @@
     "lucide-react": "^0.344.0",
     "pdf-lib": "^1.17.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

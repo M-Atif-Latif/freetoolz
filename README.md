@@ -1,13 +1,13 @@
-# FreeToolz - 54+ Free Online Tools
+# FreeToolz - 120+ Free Online Tools
 
-![FreeToolz](https://img.shields.io/badge/Tools-54+-blue?style=for-the-badge)
+![FreeToolz](https://img.shields.io/badge/Tools-120+-blue?style=for-the-badge)
 ![Privacy](https://img.shields.io/badge/Privacy-First-green?style=for-the-badge)
 ![Free](https://img.shields.io/badge/100%25-Free-orange?style=for-the-badge)
 ![No Registration](https://img.shields.io/badge/No-Registration-purple?style=for-the-badge)
 
 ## 🌟 Overview
 
-FreeToolz is a comprehensive collection of 54+ professional-grade online tools, completely free to use. All tools work directly in your browser, ensuring maximum privacy and speed. No registration, no downloads, no hidden costs.
+FreeToolz is a comprehensive collection of 120+ professional-grade online tools, completely free to use. All tools work directly in your browser, ensuring maximum privacy and speed. No registration, no downloads, no hidden costs.
 
 ### 🎯 Key Features
 

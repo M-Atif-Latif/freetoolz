@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import LoadingSpinner from './components/LoadingSpinner';
-import { updateMetaTags } from './utils/seo';
+import { useSEO, homeSEO, aboutSEO, blogSEO, contactSEO, generateToolSEO } from './utils/useSEO';
+import { tools } from './data/tools';
 
 // Eagerly load critical pages
 import Home from './pages/Home';
@@ -84,6 +85,63 @@ const FindAndReplace = lazy(() => import('./tools/FindAndReplace'));
 const ReadabilityScore = lazy(() => import('./tools/ReadabilityScore'));
 const SyllableCounter = lazy(() => import('./tools/SyllableCounter'));
 const LetterCounter = lazy(() => import('./tools/LetterCounter'));
+const NumberBaseConverter = lazy(() => import('./tools/NumberBaseConverter'));
+const ReverseWords = lazy(() => import('./tools/ReverseWords'));
+const InvisibleCharacter = lazy(() => import('./tools/InvisibleCharacter'));
+const FakeDataGenerator = lazy(() => import('./tools/FakeDataGenerator'));
+
+// New tools - Text Tools
+const SmartSentenceSplitter = lazy(() => import('./tools/SmartSentenceSplitter'));
+const ContractionExpander = lazy(() => import('./tools/ContractionExpander'));
+const ReadAloudCaptionGenerator = lazy(() => import('./tools/ReadAloudCaptionGenerator'));
+const TitleHeadlineAnalyzer = lazy(() => import('./tools/TitleHeadlineAnalyzer'));
+const TextRandomizer = lazy(() => import('./tools/TextRandomizer'));
+
+// New tools - Developer Tools
+const CSVColumnSplitter = lazy(() => import('./tools/CSVColumnSplitter'));
+const YAMLJSONConverter = lazy(() => import('./tools/YAMLJSONConverter'));
+const CSSTailwindClassifier = lazy(() => import('./tools/CSSTailwindClassifier'));
+const HTTPStatusTester = lazy(() => import('./tools/HTTPStatusTester'));
+const CORSHeaderChecker = lazy(() => import('./tools/CORSHeaderChecker'));
+
+// New tools - Calculators & Converters
+const PowerEnergyConverter = lazy(() => import('./tools/PowerEnergyConverter'));
+const FileEncodingDetector = lazy(() => import('./tools/FileEncodingDetector'));
+const ImageDPICalculator = lazy(() => import('./tools/ImageDPICalculator'));
+const HashIdentifier = lazy(() => import('./tools/HashIdentifier'));
+const PermutationCombinationCalculator = lazy(() => import('./tools/PermutationCombinationCalculator'));
+
+// New tools - Design & Time Tools
+const ColorBlindnessSimulator = lazy(() => import('./tools/ColorBlindnessSimulator'));
+const BusinessDaysCalculator = lazy(() => import('./tools/BusinessDaysCalculator'));
+const ASCIIArtGenerator = lazy(() => import('./tools/ASCIIArtGenerator'));
+const WorkingHoursTimezoneConverter = lazy(() => import('./tools/WorkingHoursTimezoneConverter'));
+
+// New tools - Utilities & Data Tools
+const CSVDuplicateFinder = lazy(() => import('./tools/CSVDuplicateFinder'));
+const RegexBulkReplace = lazy(() => import('./tools/RegexBulkReplace'));
+const BulkURLShortener = lazy(() => import('./tools/BulkURLShortener'));
+const ClipboardHistory = lazy(() => import('./tools/ClipboardHistory'));
+const DatasetSampler = lazy(() => import('./tools/DatasetSampler'));
+
+// New tools - File & Debug Tools
+const ZIPFileInspector = lazy(() => import('./tools/ZIPFileInspector'));
+const ConsoleLogFormatter = lazy(() => import('./tools/ConsoleLogFormatter'));
+
+// New tools - Image & Media Tools
+const SVGOptimizer = lazy(() => import('./tools/SVGOptimizer'));
+const FaviconGenerator = lazy(() => import('./tools/FaviconGenerator'));
+const ColorContrastChecker = lazy(() => import('./tools/ColorContrastChecker'));
+
+// New tools - Security & SEO Tools
+const PasswordStrengthAnalyzer = lazy(() => import('./tools/PasswordStrengthAnalyzer'));
+const CookieInspector = lazy(() => import('./tools/CookieInspector'));
+const MetaRobotsTester = lazy(() => import('./tools/MetaRobotsTester'));
+const StructuredDataValidator = lazy(() => import('./tools/StructuredDataValidator'));
+const SitemapURLExtractor = lazy(() => import('./tools/SitemapURLExtractor'));
+
+// New tools - PDF & Document Tools
+const PDFPageExtractor = lazy(() => import('./tools/PDFPageExtractor'));
 
 interface RouteConfig {
   path: string;
@@ -117,7 +175,7 @@ function App() {
   const routes: RouteConfig[] = [
     {
       path: '/',
-      component: <Home onNavigate={setCurrentPath} />,
+      component: <Home onNavigate={navigate} />,
       title: 'FreeToolz - 80+ Free Online Tools | No Sign Up Required',
       description: 'Access 80+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, code formatting and more. Completely free, secure, and privacy-focused. No registration required.',
       keywords: 'free online tools, text converter, PDF tools, image editor, calculator'
@@ -166,7 +224,7 @@ function App() {
     },
     {
       path: '/sitemap',
-      component: <Sitemap onNavigate={setCurrentPath} />,
+      component: <Sitemap onNavigate={navigate} />,
       title: 'Sitemap - All Pages | FreeToolz',
       description: 'Browse all pages and tools available on FreeToolz. Complete site navigation and tool directory.'
     },
@@ -561,24 +619,342 @@ function App() {
       title: 'Letter Counter - Letter Frequency Analyzer | FreeToolz',
       description: 'Count and analyze letter frequency in text with vowel and consonant statistics.'
     },
+    {
+      path: '/tools/number-base',
+      component: <NumberBaseConverter />,
+      title: 'Number Base Converter - Convert Between Bases (2-36) | FreeToolz',
+      description: 'Convert numbers between different bases including binary, octal, decimal, hexadecimal, and more.'
+    },
+    {
+      path: '/tools/reverse-words',
+      component: <ReverseWords />,
+      title: 'Reverse Words - Reverse Word Order | FreeToolz',
+      description: 'Reverse the order of words in sentences while keeping individual words intact.'
+    },
+    {
+      path: '/tools/invisible-character',
+      component: <InvisibleCharacter />,
+      title: 'Invisible Character Generator - Copy Blank Text | FreeToolz',
+      description: 'Generate and copy invisible Unicode characters for Discord, WhatsApp, and more.'
+    },
+    {
+      path: '/tools/fake-data-generator',
+      component: <FakeDataGenerator />,
+      title: 'Fake Data Generator - Generate Test Data | FreeToolz',
+      description: 'Generate realistic fake personal data for testing, development, and placeholder purposes.'
+    },
+    // New Tools - Text Tools
+    {
+      path: '/tools/smart-sentence-splitter',
+      component: <SmartSentenceSplitter />,
+      title: 'Smart Sentence Splitter - AI Text Analysis | FreeToolz',
+      description: 'Split text into sentences intelligently with AI-powered analysis. Handles abbreviations, quotes, and edge cases.',
+      keywords: 'sentence splitter, text analysis, NLP tool, text segmentation'
+    },
+    {
+      path: '/tools/contraction-expander',
+      component: <ContractionExpander />,
+      title: 'Contraction Expander - Expand Contractions | FreeToolz',
+      description: 'Expand contractions like "don\'t" to "do not" automatically. Perfect for formal writing and academic papers.',
+      keywords: 'contraction expander, text formatter, formal writing'
+    },
+    {
+      path: '/tools/read-aloud-caption-generator',
+      component: <ReadAloudCaptionGenerator />,
+      title: 'Read Aloud Caption Generator - Text to Captions | FreeToolz',
+      description: 'Generate captions and subtitles from text with customizable timing and formatting for videos.',
+      keywords: 'caption generator, subtitle maker, SRT generator'
+    },
+    {
+      path: '/tools/title-headline-analyzer',
+      component: <TitleHeadlineAnalyzer />,
+      title: 'Title & Headline Analyzer - SEO Score | FreeToolz',
+      description: 'Analyze headlines and titles for engagement, SEO score, emotional impact, and readability.',
+      keywords: 'headline analyzer, title optimizer, SEO analyzer'
+    },
+    {
+      path: '/tools/text-randomizer',
+      component: <TextRandomizer />,
+      title: 'Text Randomizer - Shuffle Words & Lines | FreeToolz',
+      description: 'Randomize text by shuffling words, lines, or characters. Perfect for testing and data anonymization.',
+      keywords: 'text randomizer, word shuffler, text shuffler'
+    },
+    // New Tools - Developer Tools
+    {
+      path: '/tools/csv-column-splitter',
+      component: <CSVColumnSplitter />,
+      title: 'CSV Column Splitter - Extract CSV Columns | FreeToolz',
+      description: 'Extract specific columns from CSV files and export them. Perfect for data manipulation and analysis.',
+      keywords: 'CSV splitter, column extractor, CSV parser'
+    },
+    {
+      path: '/tools/yaml-json-converter',
+      component: <YAMLJSONConverter />,
+      title: 'YAML to JSON Converter - Bidirectional | FreeToolz',
+      description: 'Convert between YAML and JSON formats instantly. Perfect for config files and data transformation.',
+      keywords: 'YAML converter, JSON converter, config converter'
+    },
+    {
+      path: '/tools/css-tailwind-classifier',
+      component: <CSSTailwindClassifier />,
+      title: 'CSS to Tailwind Classifier - Convert Styles | FreeToolz',
+      description: 'Convert CSS styles to Tailwind CSS classes automatically. Speed up your Tailwind development.',
+      keywords: 'CSS to Tailwind, Tailwind converter, utility classes'
+    },
+    {
+      path: '/tools/http-status-tester',
+      component: <HTTPStatusTester />,
+      title: 'HTTP Status Code Tester - Check Response Codes | FreeToolz',
+      description: 'Test HTTP status codes and check website response codes. Essential tool for developers and SEO.',
+      keywords: 'HTTP tester, status code checker, response tester'
+    },
+    {
+      path: '/tools/cors-header-checker',
+      component: <CORSHeaderChecker />,
+      title: 'CORS Header Checker - Test CORS Configuration | FreeToolz',
+      description: 'Check CORS headers and test cross-origin resource sharing configuration for APIs.',
+      keywords: 'CORS checker, CORS tester, API headers'
+    },
+    // New Tools - Calculators & Converters
+    {
+      path: '/tools/power-energy-converter',
+      component: <PowerEnergyConverter />,
+      title: 'Power & Energy Converter - Watts to kWh | FreeToolz',
+      description: 'Convert between power and energy units including watts, kilowatts, BTU, and joules.',
+      keywords: 'power converter, energy converter, watt calculator'
+    },
+    {
+      path: '/tools/file-encoding-detector',
+      component: <FileEncodingDetector />,
+      title: 'File Encoding Detector - Detect Text Encoding | FreeToolz',
+      description: 'Detect and identify file encoding formats including UTF-8, ASCII, ISO-8859, and more.',
+      keywords: 'encoding detector, charset detector, file encoding'
+    },
+    {
+      path: '/tools/image-dpi-calculator',
+      component: <ImageDPICalculator />,
+      title: 'Image DPI Calculator - Print Size Calculator | FreeToolz',
+      description: 'Calculate DPI, print size, and pixel dimensions for images. Essential for print design.',
+      keywords: 'DPI calculator, print size calculator, image resolution'
+    },
+    {
+      path: '/tools/hash-identifier',
+      component: <HashIdentifier />,
+      title: 'Hash Identifier - Identify Hash Types | FreeToolz',
+      description: 'Identify hash types including MD5, SHA-1, SHA-256, and more from hash strings.',
+      keywords: 'hash identifier, hash type detector, crypto hash'
+    },
+    {
+      path: '/tools/permutation-combination-calculator',
+      component: <PermutationCombinationCalculator />,
+      title: 'Permutation & Combination Calculator | FreeToolz',
+      description: 'Calculate permutations and combinations with detailed formulas and explanations.',
+      keywords: 'permutation calculator, combination calculator, probability'
+    },
+    // New Tools - Design & Time Tools
+    {
+      path: '/tools/color-blindness-simulator',
+      component: <ColorBlindnessSimulator />,
+      title: 'Color Blindness Simulator - Test Accessibility | FreeToolz',
+      description: 'Simulate different types of color blindness on colors and images for accessibility testing.',
+      keywords: 'color blindness simulator, accessibility checker, color vision'
+    },
+    {
+      path: '/tools/business-days-calculator',
+      component: <BusinessDaysCalculator />,
+      title: 'Business Days Calculator - Working Days | FreeToolz',
+      description: 'Calculate business days between dates excluding weekends and holidays.',
+      keywords: 'business days calculator, working days calculator, date calculator'
+    },
+    {
+      path: '/tools/ascii-art-generator',
+      component: <ASCIIArtGenerator />,
+      title: 'ASCII Art Generator - Text to ASCII Art | FreeToolz',
+      description: 'Convert text to ASCII art with multiple fonts and styles. Create banner text for terminals.',
+      keywords: 'ASCII art generator, text art, banner generator'
+    },
+    {
+      path: '/tools/working-hours-timezone-converter',
+      component: <WorkingHoursTimezoneConverter />,
+      title: 'Working Hours Timezone Converter - Global Time | FreeToolz',
+      description: 'Convert working hours across timezones. Perfect for global teams and remote collaboration.',
+      keywords: 'timezone converter, working hours, global time'
+    },
+    // New Tools - Utilities & Data Tools
+    {
+      path: '/tools/csv-duplicate-finder',
+      component: <CSVDuplicateFinder />,
+      title: 'CSV Duplicate Finder - Find Duplicate Rows | FreeToolz',
+      description: 'Find and remove duplicate rows in CSV files based on selected columns.',
+      keywords: 'CSV duplicate finder, duplicate remover, data cleaner'
+    },
+    {
+      path: '/tools/regex-bulk-replace',
+      component: <RegexBulkReplace />,
+      title: 'Regex Bulk Replace - Multiple Find & Replace | FreeToolz',
+      description: 'Perform multiple find and replace operations with regex support in bulk.',
+      keywords: 'regex replace, bulk replace, text editor'
+    },
+    {
+      path: '/tools/bulk-url-shortener',
+      component: <BulkURLShortener />,
+      title: 'Bulk URL Shortener - Shorten Multiple URLs | FreeToolz',
+      description: 'Shorten multiple URLs at once. Perfect for social media and marketing campaigns.',
+      keywords: 'URL shortener, bulk URL, link shortener'
+    },
+    {
+      path: '/tools/clipboard-history',
+      component: <ClipboardHistory />,
+      title: 'Clipboard History Manager - Track Copies | FreeToolz',
+      description: 'Track and manage your clipboard history with timestamps and search functionality.',
+      keywords: 'clipboard manager, clipboard history, copy tracker'
+    },
+    {
+      path: '/tools/dataset-sampler',
+      component: <DatasetSampler />,
+      title: 'Dataset Sampler - Random CSV Sampling | FreeToolz',
+      description: 'Extract random samples from large CSV datasets for testing and analysis.',
+      keywords: 'dataset sampler, CSV sampler, random sampling'
+    },
+    // New Tools - File & Debug Tools
+    {
+      path: '/tools/zip-file-inspector',
+      component: <ZIPFileInspector />,
+      title: 'ZIP File Inspector - View ZIP Contents | FreeToolz',
+      description: 'Inspect ZIP file contents without extracting. View file list, sizes, and compression ratios.',
+      keywords: 'ZIP inspector, archive viewer, file inspector'
+    },
+    {
+      path: '/tools/console-log-formatter',
+      component: <ConsoleLogFormatter />,
+      title: 'Console Log Formatter - Format Debug Logs | FreeToolz',
+      description: 'Format and beautify console logs for better readability. Supports JSON and custom formats.',
+      keywords: 'log formatter, console formatter, debug tool'
+    },
+    // New Tools - Image & Media Tools
+    {
+      path: '/tools/svg-optimizer',
+      component: <SVGOptimizer />,
+      title: 'SVG Optimizer - Compress SVG Files | FreeToolz',
+      description: 'Optimize and compress SVG files by removing unnecessary data. Reduce file size instantly.',
+      keywords: 'SVG optimizer, SVG compressor, SVG minifier'
+    },
+    {
+      path: '/tools/favicon-generator',
+      component: <FaviconGenerator />,
+      title: 'Favicon Generator - Create Favicons Online | FreeToolz',
+      description: 'Generate favicons from text or colors. Create 16x16, 32x32, and 64x64 favicon sizes.',
+      keywords: 'favicon generator, icon creator, website icon'
+    },
+    {
+      path: '/tools/color-contrast-checker',
+      component: <ColorContrastChecker />,
+      title: 'Color Contrast Checker - WCAG Accessibility | FreeToolz',
+      description: 'Check color contrast ratios for WCAG accessibility compliance. Test foreground and background colors.',
+      keywords: 'contrast checker, WCAG checker, accessibility tool'
+    },
+    // New Tools - Security & SEO Tools
+    {
+      path: '/tools/password-strength-analyzer',
+      component: <PasswordStrengthAnalyzer />,
+      title: 'Password Strength Analyzer - Security Checker | FreeToolz',
+      description: 'Analyze password strength with detailed security feedback and improvement suggestions.',
+      keywords: 'password analyzer, password checker, security tool'
+    },
+    {
+      path: '/tools/cookie-inspector',
+      component: <CookieInspector />,
+      title: 'Cookie Inspector - View Browser Cookies | FreeToolz',
+      description: 'Inspect, view, and manage browser cookies for the current domain. Privacy and debugging tool.',
+      keywords: 'cookie inspector, cookie viewer, browser cookies'
+    },
+    {
+      path: '/tools/meta-robots-tester',
+      component: <MetaRobotsTester />,
+      title: 'Meta Robots Tester - Validate Robots Tags | FreeToolz',
+      description: 'Test and validate meta robots tags including noindex, nofollow, and other directives.',
+      keywords: 'meta robots tester, SEO validator, robots tag checker'
+    },
+    {
+      path: '/tools/structured-data-validator',
+      component: <StructuredDataValidator />,
+      title: 'Structured Data Validator - Schema Markup | FreeToolz',
+      description: 'Validate JSON-LD, Microdata, and RDFa structured data for SEO and rich snippets.',
+      keywords: 'schema validator, structured data, JSON-LD validator'
+    },
+    {
+      path: '/tools/sitemap-url-extractor',
+      component: <SitemapURLExtractor />,
+      title: 'Sitemap URL Extractor - Extract URLs from XML | FreeToolz',
+      description: 'Extract all URLs from XML sitemaps. Export to TXT or CSV for analysis and SEO audits.',
+      keywords: 'sitemap extractor, URL extractor, XML parser'
+    },
+    // New Tools - PDF & Document Tools
+    {
+      path: '/tools/pdf-page-extractor',
+      component: <PDFPageExtractor />,
+      title: 'PDF Page Extractor - Extract PDF Pages | FreeToolz',
+      description: 'Extract specific pages from PDF documents. Select page ranges and create new PDFs.',
+      keywords: 'PDF extractor, PDF splitter, page extractor'
+    },
   ];
 
   const currentRoute = routes.find(route => route.path === currentPath) || routes[0];
 
-  // Update meta tags and SEO
-  useEffect(() => {
-    updateMetaTags({
-      title: currentRoute.title,
-      description: currentRoute.description,
-      keywords: currentRoute.keywords,
-      ogTitle: currentRoute.title,
-      ogDescription: currentRoute.description,
-      ogUrl: `https://freetoolz.com${currentRoute.path}`,
-      canonical: `https://freetoolz.com${currentRoute.path}`,
-    });
+  // Generate dynamic SEO config based on current route
+  let seoConfig = homeSEO;
+  
+  if (currentPath === '/about') {
+    seoConfig = aboutSEO;
+  } else if (currentPath === '/blog') {
+    seoConfig = blogSEO;
+  } else if (currentPath === '/contact') {
+    seoConfig = contactSEO;
+  } else if (currentPath.startsWith('/tools/')) {
+    // Find the tool in our tools data
+    const tool = tools.find(t => t.path === currentPath);
+    if (tool) {
+      seoConfig = generateToolSEO(
+        tool.name,
+        tool.description,
+        tool.category,
+        tool.path,
+        [tool.name.toLowerCase(), tool.category, 'online tool', 'free', 'no signup']
+      );
+    }
+  } else if (currentPath === '/privacy') {
+    seoConfig = {
+      title: 'Privacy Policy - FreeToolz Cloud',
+      description: 'Read our privacy policy to understand how we protect your data and respect your privacy. All tools run locally in your browser.',
+      canonical: 'https://freetoolz.cloud/privacy',
+      keywords: 'privacy policy, data protection, freetoolz privacy',
+      author: 'Muhammad Atif Latif'
+    };
+  } else if (currentPath === '/disclaimer') {
+    seoConfig = {
+      title: 'Disclaimer - FreeToolz Cloud',
+      description: 'Important legal disclaimers and terms of use for FreeToolz Cloud online tools.',
+      canonical: 'https://freetoolz.cloud/disclaimer',
+      keywords: 'disclaimer, terms, legal',
+      author: 'Muhammad Atif Latif'
+    };
+  } else if (currentPath === '/faq') {
+    seoConfig = {
+      title: 'FAQ - Frequently Asked Questions | FreeToolz Cloud',
+      description: 'Find answers to common questions about FreeToolz Cloud tools, features, privacy, and usage.',
+      canonical: 'https://freetoolz.cloud/faq',
+      keywords: 'faq, help, questions, support, freetoolz help',
+      author: 'Muhammad Atif Latif'
+    };
+  }
 
+  // Apply SEO using our custom hook
+  useSEO(seoConfig);
+
+  // Smooth scroll to top on route change
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentRoute]);
+  }, [currentPath]);
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">

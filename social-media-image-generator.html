@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeToolz - Social Media Image Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 30px;
+        }
+
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .preview-container {
+            display: grid;
+            gap: 30px;
+        }
+
+        .preview-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .preview-card h2 {
+            color: #1f2937;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .preview-card p {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Open Graph Image - 1200x630 */
+        .og-image {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transform: scale(0.5);
+            transform-origin: top left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .og-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        /* Twitter Image - 1200x600 */
+        .twitter-image {
+            width: 1200px;
+            height: 600px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transform: scale(0.5);
+            transform-origin: top left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .twitter-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .social-image-content {
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-circle {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 
+                        inset 0 -2px 10px rgba(0,0,0,0.1);
+            border: 4px solid rgba(255,255,255,0.3);
+        }
+
+        .logo-text {
+            font-size: 80px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -2px;
+        }
+
+        .brand-name {
+            font-size: 82px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 38px;
+            opacity: 0.95;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 26px;
+            opacity: 0.9;
+            font-weight: 400;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .download-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #1e40af;
+        }
+
+        .screenshot-info {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .screenshot-info strong {
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 FreeToolz - Social Media Image Generator</h1>
+
+        <div class="instructions">
+            <h2>📋 Instructions</h2>
+            <ol style="padding-left: 20px; line-height: 1.8;">
+                <li>Review the preview images below</li>
+                <li>Right-click on each image and select "Save image as..."</li>
+                <li>Save as <strong>og-image.jpg</strong> and <strong>twitter-image.jpg</strong></li>
+                <li>Place both files in your <code>public</code> folder</li>
+                <li>Or use screenshot tool to capture at exact dimensions</li>
+                <li>Alternatively, customize in Canva/Figma and export</li>
+            </ol>
+        </div>
+
+        <div class="preview-container">
+            <!-- Facebook/Open Graph Image -->
+            <div class="preview-card">
+                <h2>📘 Facebook / Open Graph Image</h2>
+                <p><strong>Size:</strong> 1200x630 pixels | <strong>Filename:</strong> og-image.jpg</p>
+                <p>This image appears when your website is shared on Facebook, LinkedIn, WhatsApp, and other platforms.</p>
+                
+                <div style="overflow: hidden; width: 600px; height: 315px;">
+                    <div class="og-image" id="ogImage">
+                        <div class="social-image-content">
+                            <div class="logo-circle">
+                                <div class="logo-text">FT</div>
+                            </div>
+                            <div class="brand-name">FreeToolz</div>
+                            <div class="tagline">80+ Free Online Tools</div>
+                            <div class="subtitle">No Signup Required • 100% Free Forever</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshot-info">
+                    <strong>📸 To capture:</strong> Use Windows Snipping Tool or press Windows + Shift + S, 
+                    then select the exact area of the blue gradient box (not the white preview card). 
+                    Save as JPG with quality 90%.
+                </div>
+            </div>
+
+            <!-- Twitter Image -->
+            <div class="preview-card">
+                <h2>🐦 Twitter Card Image</h2>
+                <p><strong>Size:</strong> 1200x600 pixels | <strong>Filename:</strong> twitter-image.jpg</p>
+                <p>This image appears when your website is shared on Twitter/X.</p>
+                
+                <div style="overflow: hidden; width: 600px; height: 300px;">
+                    <div class="twitter-image" id="twitterImage">
+                        <div class="social-image-content">
+                            <div class="logo-circle">
+                                <div class="logo-text">FT</div>
+                            </div>
+                            <div class="brand-name">FreeToolz</div>
+                            <div class="tagline">80+ Free Online Tools</div>
+                            <div class="subtitle">Text, PDF, Image & Calculator Tools</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshot-info">
+                    <strong>📸 To capture:</strong> Use Windows Snipping Tool or press Windows + Shift + S, 
+                    then select the exact area of the blue gradient box. Save as JPG with quality 90%.
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions" style="margin-top: 30px; background: #dbeafe; border-left: 4px solid #2563eb;">
+            <h2>💡 Alternative: Use Design Tools</h2>
+            <p style="margin-bottom: 10px;">For a more professional result, recreate these in:</p>
+            <ul style="padding-left: 20px; line-height: 1.8;">
+                <li><strong>Canva:</strong> Search for "Facebook Post" (1200x630) and "Twitter Post" (1200x600) templates</li>
+                <li><strong>Figma:</strong> Create artboards with exact dimensions and export as JPG</li>
+                <li><strong>Photoshop:</strong> Create new documents with the specified sizes</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Color Code:</strong> #2563eb (Primary Blue)</p>
+        </div>
+
+        <div class="instructions" style="margin-top: 20px; background: #d1fae5; border-left: 4px solid #10b981;">
+            <h2>✅ After Creating Images</h2>
+            <ol style="padding-left: 20px; line-height: 1.8;">
+                <li>Place <strong>og-image.jpg</strong> in your <code>public</code> folder</li>
+                <li>Place <strong>twitter-image.jpg</strong> in your <code>public</code> folder</li>
+                <li>Deploy your website</li>
+                <li>Test with <a href="https://developers.facebook.com/tools/debug/" target="_blank">Facebook Debugger</a></li>
+                <li>Test with <a href="https://cards-dev.twitter.com/validator" target="_blank">Twitter Card Validator</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add download functionality
+        console.log('Social media image generator loaded');
+        console.log('Use Windows Snipping Tool (Win + Shift + S) to capture the images at full resolution');
+    </script>
+</body>
+</html>

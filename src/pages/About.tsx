@@ -34,7 +34,7 @@ export default function About() {
         </p>
         
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-          <strong className="text-blue-600 dark:text-blue-400">FreeToolz changes that.</strong> We provide a comprehensive suite of 80+ professional-grade tools that are 
+          <strong className="text-blue-600 dark:text-blue-400">FreeToolz changes that.</strong> We provide a comprehensive suite of 120+ professional-grade tools that are 
           completely free, require no registration, and respect your privacy. All processing happens directly in your browser, 
           ensuring your data never leaves your device.
         </p>

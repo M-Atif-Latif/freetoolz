@@ -35,12 +35,12 @@ export default function Home({ onNavigate }: HomeProps) {
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight px-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 animate-gradient">
-              80+ Free Online Tools
+              120+ Free Online Tools
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4 sm:px-6">
             Professional-grade utilities for text processing, PDF manipulation, image editing, calculations, 
-            conversions, code formatting, and more. All tools work directly in your browser—no installation, no registration, 
+            conversions, code formatting, data analysis, security testing, and more. All tools work directly in your browser—no installation, no registration, 
             completely free.
           </p>
           <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300 px-4">
