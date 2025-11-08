@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function ColorConverter() {
   const [hex, setHex] = useState('#3B82F6');

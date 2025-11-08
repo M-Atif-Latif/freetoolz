@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (if any)
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://freetoolz.com/sitemap.xml
+
+# Google bots
+User-agent: Googlebot
+Allow: /
+
+# Bing bots
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay
+Crawl-delay: 1
