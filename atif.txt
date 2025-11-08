@@ -1,0 +1,260 @@
+# ==========================================
+# COMPLETE NGINX CONFIGURATION FOR FREETOOLZ.CLOUD
+# Combined from all previous configurations
+# Optimized for: Security (A+), Performance (95+), SSL (A+)
+# ==========================================
+
+# Redirect HTTP to HTTPS
+server {
+    listen 80;
+    listen [::]:80;
+    server_name freetoolz.cloud www.freetoolz.cloud;
+    
+    # Redirect all HTTP requests to HTTPS
+    return 301 https://$server_name$request_uri;
+}
+
+# Main HTTPS Server Block
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name freetoolz.cloud www.freetoolz.cloud;
+
+    # Document Root
+    root /var/www/freetoolz;
+    index index.html;
+
+    # ==========================================
+    # SSL CERTIFICATE CONFIGURATION
+    # ==========================================
+    ssl_certificate /etc/letsencrypt/live/freetoolz.cloud/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/freetoolz.cloud/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/freetoolz.cloud/chain.pem;
+
+    # ==========================================
+    # SSL PROTOCOL & CIPHER (A+ Rating)
+    # ==========================================
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256';
+    ssl_prefer_server_ciphers on;
+    ssl_ecdh_curve X25519:secp384r1:secp256k1;
+
+    # SSL Session Configuration
+    ssl_session_cache shared:SSL:50m;
+    ssl_session_timeout 1d;
+    ssl_session_tickets off;
+
+    # ==========================================
+    # OCSP STAPLING (Required for A+)
+    # ==========================================
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4 valid=300s;
+    resolver_timeout 5s;
+
+    # Optional: Uncomment after generating DH params
+    # openssl dhparam -out /etc/nginx/dhparam.pem 4096
+    # ssl_dhparam /etc/nginx/dhparam.pem;
+
+    # ==========================================
+    # HIDE SERVER INFORMATION
+    # ==========================================
+    server_tokens off;
+    more_clear_headers 'Server';
+    more_clear_headers 'X-Powered-By';
+
+    # ==========================================
+    # ALL SECURITY HEADERS (A+ Grade)
+    # ==========================================
+    
+    # HTTP Strict Transport Security (HSTS)
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+    
+    # Clickjacking Protection
+    add_header X-Frame-Options "DENY" always;
+    
+    # MIME-Type Sniffing Prevention
+    add_header X-Content-Type-Options "nosniff" always;
+    
+    # XSS Protection (Legacy browsers)
+    add_header X-XSS-Protection "1; mode=block" always;
+    
+    # Referrer Policy
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    
+    # Permissions Policy
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), display-capture=(), fullscreen=(self)" always;
+    
+    # Content Security Policy with Trusted Types
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; require-trusted-types-for 'script';" always;
+    
+    # Cross-Origin Isolation Headers
+    add_header Cross-Origin-Embedder-Policy "require-corp" always;
+    add_header Cross-Origin-Opener-Policy "same-origin" always;
+    add_header Cross-Origin-Resource-Policy "same-origin" always;
+    
+    # Additional Security
+    add_header X-Permitted-Cross-Domain-Policies "none" always;
+
+    # ==========================================
+    # COMPRESSION (Performance)
+    # ==========================================
+    gzip on;
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_comp_level 6;
+    gzip_types text/plain text/css text/xml text/javascript application/json application/javascript application/xml+rss application/rss+xml font/truetype font/opentype application/vnd.ms-fontobject image/svg+xml;
+    gzip_disable "msie6";
+
+    # Brotli (uncomment if nginx-module-brotli is installed)
+    # brotli on;
+    # brotli_comp_level 6;
+    # brotli_types text/plain text/css text/xml text/javascript application/json application/javascript application/xml+rss application/rss+xml font/truetype font/opentype application/vnd.ms-fontobject image/svg+xml;
+
+    # ==========================================
+    # CACHE CONTROL (Performance - 801 KiB savings)
+    # ==========================================
+    
+    # HTML files - No cache (always fresh)
+    location ~* \.html$ {
+        add_header Cache-Control "public, max-age=0, must-revalidate" always;
+        
+        # Re-apply security headers
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+        add_header X-Frame-Options "DENY" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header X-XSS-Protection "1; mode=block" always;
+        add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+        add_header Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), display-capture=(), fullscreen=(self)" always;
+        add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; require-trusted-types-for 'script';" always;
+        add_header Cross-Origin-Embedder-Policy "require-corp" always;
+        add_header Cross-Origin-Opener-Policy "same-origin" always;
+        add_header Cross-Origin-Resource-Policy "same-origin" always;
+    }
+    
+    # JavaScript files - 1 year cache, immutable
+    location ~* \.js$ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header Cross-Origin-Resource-Policy "same-origin" always;
+    }
+    
+    # CSS files - 1 year cache, immutable
+    location ~* \.css$ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header Cross-Origin-Resource-Policy "same-origin" always;
+    }
+    
+    # Images - 1 year cache, immutable
+    location ~* \.(png|jpg|jpeg|gif|ico|svg|webp|avif)$ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header Cross-Origin-Resource-Policy "same-origin" always;
+    }
+    
+    # Fonts - 1 year cache, immutable + CORS
+    location ~* \.(woff|woff2|ttf|otf|eot)$ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        add_header Access-Control-Allow-Origin "*";
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+        add_header X-Content-Type-Options "nosniff" always;
+    }
+    
+    # JSON/Manifests - 1 year cache
+    location ~* \.(json|webmanifest)$ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header Cross-Origin-Resource-Policy "same-origin" always;
+    }
+
+    # ==========================================
+    # SPA ROUTING (React/Vue/Angular)
+    # ==========================================
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Assets folder - direct file serving
+    location /assets/ {
+        try_files $uri =404;
+    }
+
+    # ==========================================
+    # SECURITY - BLOCK ACCESS
+    # ==========================================
+    
+    # Hidden files
+    location ~ /\. {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    # Sensitive file types
+    location ~* \.(sql|log|conf|ini|bak|old|swp|tmp|gz|tar|zip)$ {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    # ==========================================
+    # LIMITS & TIMEOUTS (Security)
+    # ==========================================
+    client_max_body_size 10M;
+    client_body_buffer_size 128k;
+    client_body_timeout 12;
+    client_header_timeout 12;
+    keepalive_timeout 15;
+    send_timeout 10;
+    client_header_buffer_size 1k;
+    large_client_header_buffers 2 1k;
+
+    # ==========================================
+    # LOGGING
+    # ==========================================
+    access_log /var/log/nginx/freetoolz-access.log;
+    error_log /var/log/nginx/freetoolz-error.log warn;
+}
+
+# ==========================================
+# WWW to non-WWW Redirect (Optional)
+# ==========================================
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.freetoolz.cloud;
+
+    ssl_certificate /etc/letsencrypt/live/freetoolz.cloud/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/freetoolz.cloud/privkey.pem;
+
+    return 301 https://freetoolz.cloud$request_uri;
+}
+
+
+
+
+
+
+
+# how to use installed
+
+# 1. Copy this file to your server
+scp nginx-final-complete.conf root@72.61.113.236:/tmp/
+
+# 2. SSH to server and install nginx-extras
+ssh root@72.61.113.236
+sudo apt-get install -y nginx-extras
+
+# 3. Backup current config
+sudo cp /etc/nginx/sites-available/freetoolz /etc/nginx/sites-available/freetoolz.backup
+
+# 4. Apply new config
+sudo cp /tmp/nginx-final-complete.conf /etc/nginx/sites-available/freetoolz
+
+# 5. Test and reload
+sudo nginx -t && sudo systemctl reload nginx

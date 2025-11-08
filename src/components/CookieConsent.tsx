@@ -50,8 +50,9 @@ export default function CookieConsent() {
                     e.preventDefault();
                     window.location.href = '/privacy';
                   }}
+                  aria-label="Read our privacy policy"
                 >
-                  Learn more
+                  Learn more about our privacy policy
                 </a>
               </p>
             </div>

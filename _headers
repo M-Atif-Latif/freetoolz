@@ -1,16 +1,27 @@
 /*
-  # Security Headers
+  # Core Security Headers
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
+  
+  # Privacy & Policy Headers
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), display-capture=(), fullscreen=(self)
   
-  # Content Security Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';
+  # Content Security Policy with Trusted Types
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; require-trusted-types-for 'script';
   
-  # Cache Control for static assets
-  Cache-Control: public, max-age=31536000, immutable
+  # Cross-Origin Isolation Headers (Enhanced Security)
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  
+  # Additional Security Headers
+  X-Permitted-Cross-Domain-Policies: none
+  
+  # Cache Control for HTML (no cache)
+  Cache-Control: public, max-age=0, must-revalidate
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
@@ -18,6 +29,7 @@
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
   
+# Static assets - Long cache with immutable
 /*.js
   Cache-Control: public, max-age=31536000, immutable
   
@@ -40,4 +52,13 @@
   Cache-Control: public, max-age=31536000, immutable
   
 /*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.json
   Cache-Control: public, max-age=31536000, immutable
