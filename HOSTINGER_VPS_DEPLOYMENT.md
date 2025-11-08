@@ -211,62 +211,43 @@ sudo nano /etc/nginx/sites-available/freetoolz
 
 **Copy and paste this configuration:**
 
-```nginx
-server {
+```server {
     listen 80;
     listen [::]:80;
-    
-    # Replace with your actual domain
-    server_name yourdomain.com www.yourdomain.com;
-    
-    # Document root
+    server_name freetoolz.cloud www.freetoolz.cloud;
+
     root /var/www/freetoolz;
     index index.html;
 
-    # Gzip compression for better performance
-    gzip on;
-    gzip_vary on;
-    gzip_min_length 1024;
-    gzip_proxied any;
-    gzip_comp_level 6;
-    gzip_types text/plain text/css text/xml text/javascript application/x-javascript application/xml+rss application/json application/javascript;
-
-    # Security Headers
-    add_header X-Frame-Options "DENY" always;
-    add_header X-Content-Type-Options "nosniff" always;
-    add_header X-XSS-Protection "1; mode=block" always;
-    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
-    add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
-    
-    # Content Security Policy
-    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:;" always;
-
-    # Cache static assets for 1 year
-    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-        access_log off;
-    }
-
-    # Main location - React Router support
     location / {
         try_files $uri $uri/ /index.html;
     }
 
-    # Deny access to hidden files (.htaccess, .env, etc.)
-    location ~ /\. {
-        deny all;
-        access_log off;
-        log_not_found off;
+    # Redirect HTTP to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name freetoolz.cloud www.freetoolz.cloud;
+
+    root /var/www/freetoolz;
+    index index.html;
+
+    ssl_certificate /etc/letsencrypt/live/freetoolz.cloud/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/freetoolz.cloud/privkey.pem;
+
+    location / {
+        try_files $uri $uri/ /index.html;
     }
 
-    # Deny access to backup and temp files
-    location ~ ~$ {
-        deny all;
-        access_log off;
-        log_not_found off;
-    }
+    # Security Headers
+    add_header X-Frame-Options "DENY";
+    add_header X-Content-Type-Options "nosniff";
+    add_header X-XSS-Protection "1; mode=block";
 }
+
 ```
 
 **Save and exit:**
