@@ -1,0 +1,62 @@
+server {
+    listen 80;
+    server_name freetoolz.com www.freetoolz.com;
+    root /var/www/freetoolz;
+    index index.html;
+
+    # Enable Gzip compression
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 256;
+    gzip_proxied any;
+    gzip_comp_level 6;
+    gzip_types
+        text/plain
+        text/css
+        text/xml
+        text/javascript
+        application/javascript
+        application/x-javascript
+        application/xml
+        application/xml+rss
+        application/json
+        application/ld+json
+        image/svg+xml;
+
+    # Brotli compression (if installed)
+    # brotli on;
+    # brotli_comp_level 6;
+    # brotli_types text/plain text/css application/javascript application/json image/svg+xml;
+
+    # Security headers
+    add_header X-Frame-Options "DENY" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+
+    # Cache static assets aggressively
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|webp)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        access_log off;
+    }
+
+    # Cache HTML with shorter expiry
+    location ~* \.html$ {
+        expires 1h;
+        add_header Cache-Control "public, must-revalidate";
+    }
+
+    # Main location block - SPA routing support
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Deny access to hidden files
+    location ~ /\. {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+}
