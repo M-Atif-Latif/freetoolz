@@ -1,7 +1,7 @@
 {
   "name": "FreeToolz - Free Online Tools",
   "short_name": "FreeToolz",
-  "description": "Access 80+ free online tools for text processing, PDF manipulation, image editing, and more",
+  "description": "Access 120+ free online tools for text processing, PDF manipulation, image editing, SEO testing, security analysis and more",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -9,23 +9,13 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-192x192.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
