@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Instagram, Mail, ExternalLink, Sparkles } from 'lucide-react';
+import { Github, Linkedin, Facebook, MessageCircle, Mail, ExternalLink, Sparkles } from 'lucide-react';
 
 export default function About() {
   return (
@@ -104,18 +104,7 @@ export default function About() {
               <h3 className="text-2xl font-bold text-center mb-6">🌐 Connect & Collaborate</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <a 
-                  href="https://github.com/m-Atif-Latif" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 bg-white/15 hover:bg-white/25 backdrop-blur-md px-5 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  <Github className="h-5 w-5" />
-                  <span className="font-semibold">GitHub</span>
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-                
-                <a 
-                  href="https://www.linkedin.com/in/muhammad-atif-latif-13a171318" 
+                  href="https://www.linkedin.com/company/freetoolz/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-white/15 hover:bg-white/25 backdrop-blur-md px-5 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
@@ -126,37 +115,46 @@ export default function About() {
                 </a>
                 
                 <a 
-                  href="https://www.kaggle.com/matiflatif" 
+                  href="https://www.facebook.com/NextGenIntelligence" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-white/15 hover:bg-white/25 backdrop-blur-md px-5 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/>
-                  </svg>
-                  <span className="font-semibold">Kaggle</span>
+                  <Facebook className="h-5 w-5" />
+                  <span className="font-semibold">Facebook</span>
                   <ExternalLink className="h-4 w-4" />
                 </a>
                 
                 <a 
-                  href="https://x.com/mianatif5867" 
+                  href="https://discord.gg/R2WnXtm9A" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-white/15 hover:bg-white/25 backdrop-blur-md px-5 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  <Twitter className="h-5 w-5" />
-                  <span className="font-semibold">Twitter/X</span>
+                  <MessageCircle className="h-5 w-5" />
+                  <span className="font-semibold">Discord</span>
                   <ExternalLink className="h-4 w-4" />
                 </a>
                 
                 <a 
-                  href="https://www.instagram.com/its_atif_ai/" 
+                  href="https://whatsapp.com/channel/0029VbBw4mg11ulYLNdJuk0v" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-white/15 hover:bg-white/25 backdrop-blur-md px-5 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  <Instagram className="h-5 w-5" />
-                  <span className="font-semibold">Instagram</span>
+                  <MessageCircle className="h-5 w-5" />
+                  <span className="font-semibold">WhatsApp</span>
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+                
+                <a 
+                  href="https://github.com/m-Atif-Latif" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2 bg-white/15 hover:bg-white/25 backdrop-blur-md px-5 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <Github className="h-5 w-5" />
+                  <span className="font-semibold">GitHub</span>
                   <ExternalLink className="h-4 w-4" />
                 </a>
                 

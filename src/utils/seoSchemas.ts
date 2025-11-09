@@ -77,9 +77,10 @@ export const generateOrganizationSchema = (): SchemaOrganization => {
     description: '120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration required.',
     sameAs: [
       'https://github.com/M-Atif-Latif',
-      'https://www.linkedin.com/in/muhammad-atif-latif-13a171318',
-      'https://x.com/mianatif5867',
-      'https://www.instagram.com/its_atif_ai/'
+      'https://www.linkedin.com/company/freetoolz/',
+      'https://www.facebook.com/NextGenIntelligence',
+      'https://discord.gg/R2WnXtm9A',
+      'https://whatsapp.com/channel/0029VbBw4mg11ulYLNdJuk0v'
     ],
     contactPoint: {
       '@type': 'ContactPoint',

@@ -1,4 +1,4 @@
-import { Wrench, Github, Linkedin, Twitter, Instagram, Mail } from 'lucide-react';
+import { Wrench, Github, Linkedin, Facebook, MessageCircle, Mail } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -21,20 +21,11 @@ export default function Footer({ onNavigate }: FooterProps) {
               Your ultimate collection of 120+ free online tools. No registration required, no API keys needed. Fast, simple, and always free.
             </p>
             <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
-              <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">Created by Muhammad Atif Latif</p>
-              <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Data Scientist & ML Engineer</p>
+              <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">FreeToolz Cloud</p>
+              <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Connect with us on social media</p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 <a 
-                  href="https://github.com/m-Atif-Latif" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-gray-700 hover:to-black dark:hover:from-gray-700 dark:hover:to-black transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="GitHub"
-                >
-                  <Github className="h-4 w-4 sm:h-5 sm:w-5" />
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/muhammad-atif-latif-13a171318" 
+                  href="https://www.linkedin.com/company/freetoolz/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-800 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
@@ -43,22 +34,40 @@ export default function Footer({ onNavigate }: FooterProps) {
                   <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
                 <a 
-                  href="https://x.com/mianatif5867" 
+                  href="https://www.facebook.com/NextGenIntelligence" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-blue-400 hover:to-blue-600 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="Twitter/X"
+                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
+                  aria-label="Facebook"
                 >
-                  <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
                 <a 
-                  href="https://www.instagram.com/its_atif_ai/" 
+                  href="https://discord.gg/R2WnXtm9A" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-pink-500 hover:to-purple-600 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="Instagram"
+                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-indigo-500 hover:to-indigo-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
+                  aria-label="Discord"
                 >
-                  <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                </a>
+                <a 
+                  href="https://whatsapp.com/channel/0029VbBw4mg11ulYLNdJuk0v" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-green-500 hover:to-green-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
+                  aria-label="WhatsApp"
+                >
+                  <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                </a>
+                <a 
+                  href="https://github.com/m-Atif-Latif" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-gray-700 hover:to-black dark:hover:from-gray-700 dark:hover:to-black transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
                 <a 
                   href="mailto:muhammadatiflatif67@gmail.com" 
