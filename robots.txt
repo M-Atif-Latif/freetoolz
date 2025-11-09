@@ -1,12 +1,8 @@
 User-agent: *
 Allow: /
 
-# Disallow admin or private paths (if any)
-Disallow: /api/
-Disallow: /admin/
-
-# Sitemap location
-Sitemap: https://freetoolz.com/sitemap.xml
+# Sitemap location (FIXED: .cloud not .com)
+Sitemap: https://freetoolz.cloud/sitemap.xml
 
 # Google bots
 User-agent: Googlebot
