@@ -11,10 +11,16 @@
 
   html {
     scroll-behavior: smooth;
+    /* Optimize font rendering for better performance */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     overflow-x: hidden;
+    /* Ensure system fonts load instantly */
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
 }
 

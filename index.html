@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -51,15 +52,15 @@
     <meta property="twitter:creator" content="@FreeToolz" />
     
     <!-- Favicon - Multiple sizes for all platforms -->
-    <link rel="icon" type="image/x-icon" href="/assets/favicon-8aJl35Wm.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16-BQEAKZPt.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32-3VgUyW2Z.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48-5F2bTlPz.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-BpZhjUtG.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192-BWWUTun4.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512-Coes-9iO.png" />
-    <link rel="manifest" href="/assets/manifest-Bs7vUGT0.json" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2563eb" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <!-- Removed safari-pinned-tab.svg as it doesn't exist -->
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#2563eb" />
@@ -68,19 +69,24 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://freetoolz.cloud/" />
     
-    <!-- Preload Critical CSS for Performance -->
-    <link rel="preload" as="style" href="/assets/index-B2NS_niJ.css" />
-    
-    <!-- Preload Critical JavaScript -->
-    <link rel="preload" as="script" crossorigin href="/assets/index-BbsmTzaG.js" />
-    <link rel="preload" as="script" crossorigin href="/assets/react-vendor-Bec8DVIe.js" />
-    
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Critical Resource Hints for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- DNS Prefetch for Performance -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <!-- Preload Critical CSS with highest priority -->
+    <link rel="preload" as="style" href="/assets/index-B2NS_niJ.css" fetchpriority="high" />
+    
+    <!-- Preload Critical Fonts (if using custom fonts) -->
+    <!-- <link rel="preload" as="font" href="/fonts/font.woff2" type="font/woff2" crossorigin fetchpriority="high" /> -->
+    
+    <!-- Preload Critical JavaScript with high priority -->
+    <link rel="modulepreload" href="/assets/index-BbsmTzaG.js" fetchpriority="high" />
+    <link rel="modulepreload" href="/assets/react-vendor-Bec8DVIe.js" fetchpriority="high" />
+    
+    <!-- Prefetch for next likely navigation (lower priority) -->
+    <link rel="prefetch" href="/assets/icons-vendor.js" as="script" />
     
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
@@ -114,9 +120,8 @@
     }
     </script>
     
-    <!-- Load CSS (non-blocking for better performance) -->
-    <link rel="stylesheet" href="/assets/index-B2NS_niJ.css" media="print" onload="this.media='all'; this.onload=null;" />
-    <noscript><link rel="stylesheet" href="/assets/index-B2NS_niJ.css" /></noscript>
+    <!-- Load CSS (render-blocking removed for critical path) -->
+    <link rel="stylesheet" href="/assets/index-B2NS_niJ.css" />
     
     <!-- Preload and defer JavaScript for better performance -->
     <link rel="modulepreload" href="/assets/vendor-CoS1tOzM.js" />

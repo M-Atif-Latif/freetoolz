@@ -34,7 +34,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight px-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 animate-gradient">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-200 animate-gradient will-change-[background-position]">
               120+ Free Online Tools
             </span>
           </h1>
@@ -103,6 +103,7 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
 
         {/* Tools Grid */}
+        <h2 className="sr-only">Available Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 px-4">
           {filteredTools.map((tool) => (
             <button key={tool.id} onClick={() => onNavigate(tool.path)}

@@ -39,6 +39,7 @@ export default {
         'slide-down': 'slideDown 0.3s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
         'bounce-slow': 'bounce 3s infinite',
+        'gradient': 'gradient 8s ease infinite',
       },
       keyframes: {
         fadeIn: {
@@ -57,6 +58,14 @@ export default {
           '0%': { transform: 'scale(0.9)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
+        gradient: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+      },
+      backgroundSize: {
+        '200': '200% 200%',
+        '300': '300% 300%',
       },
     },
   },

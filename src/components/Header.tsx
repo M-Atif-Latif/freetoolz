@@ -73,7 +73,12 @@ export default function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
               </div>
             </button>
             
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 sm:p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 btn-touch">
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+              className="md:hidden p-2 sm:p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 btn-touch"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+            >
               {mobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900 dark:text-white" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900 dark:text-white" />}
             </button>
           </div>
