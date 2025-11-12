@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, startTransition } from 'react';
 import { Search, ArrowRight } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import { tools, categories } from '../data/tools';
@@ -11,16 +11,34 @@ export default function Home({ onNavigate }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const filteredTools = tools.filter(tool => {
-    const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         tool.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  // Memoize filtered tools to prevent unnecessary recalculations
+  const filteredTools = useMemo(() => {
+    return tools.filter(tool => {
+      const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           tool.description.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchQuery, selectedCategory]);
 
   const getIcon = (iconName: string) => {
     const IconComponent = Icons[iconName as keyof typeof Icons] as React.ElementType;
     return IconComponent ? <IconComponent className="h-6 w-6" /> : <Icons.Wrench className="h-6 w-6" />;
+  };
+
+  // Handle search with transition for better UX
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    startTransition(() => {
+      setSearchQuery(value);
+    });
+  };
+
+  // Handle category change with transition
+  const handleCategoryChange = (category: string) => {
+    startTransition(() => {
+      setSelectedCategory(category);
+    });
   };
 
   return (
@@ -73,7 +91,7 @@ export default function Home({ onNavigate }: HomeProps) {
               type="text"
               placeholder="Search tools..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={handleSearchChange}
               className="w-full pl-12 sm:pl-14 pr-4 sm:pr-6 py-4 sm:py-5 rounded-xl sm:rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all outline-none text-base sm:text-lg shadow-lg hover:shadow-xl placeholder:text-gray-400"
             />
           </div>
@@ -82,7 +100,7 @@ export default function Home({ onNavigate }: HomeProps) {
         {/* Category Filter */}
         <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-12 sm:mb-16 md:mb-20 px-4 overflow-x-auto scrollbar-hide pb-2">
           <button
-            onClick={() => setSelectedCategory('all')}
+            onClick={() => handleCategoryChange('all')}
             className={`px-4 sm:px-6 md:px-7 py-2 sm:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg whitespace-nowrap ${
               selectedCategory === 'all' 
                 ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-blue-200 dark:shadow-blue-900/50' 
@@ -91,7 +109,7 @@ export default function Home({ onNavigate }: HomeProps) {
             All Tools
           </button>
           {categories.map((cat) => (
-            <button key={cat.id} onClick={() => setSelectedCategory(cat.id)}
+            <button key={cat.id} onClick={() => handleCategoryChange(cat.id)}
               className={`px-4 sm:px-6 md:px-7 py-2 sm:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold transition-all transform hover:scale-105 shadow-md hover:shadow-lg whitespace-nowrap ${
                 selectedCategory === cat.id 
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-blue-200 dark:shadow-blue-900/50' 

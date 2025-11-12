@@ -69,14 +69,57 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://freetoolz.cloud/" />
     
-    <!-- Critical Resource Hints for Performance -->
+    <!-- PERFORMANCE: DNS prefetch for third-party domains -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    
+    <!-- PERFORMANCE: Preconnect to critical origins with high priority -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
     <!-- Preload Critical CSS with highest priority -->
     <link rel="preload" as="style" href="/assets/index-B2NS_niJ.css" fetchpriority="high" />
+    
+    <!-- CRITICAL CSS - Inlined for instant above-the-fold rendering to improve FCP -->
+    <style>
+      /* Critical base styles for instant First Contentful Paint */
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.5}
+      body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:#fff;color:#111;overflow-x:hidden}
+      @media(prefers-color-scheme:dark){body{background:#000;color:#fff}}
+      
+      /* Critical layout for above-the-fold hero section */
+      .min-h-screen{min-height:100vh}
+      .container-responsive{max-width:80rem;margin:0 auto;padding:0 1rem}
+      @media(min-width:640px){.container-responsive{padding:0 1.5rem}}
+      @media(min-width:1024px){.container-responsive{padding:0 2rem}}
+      
+      /* Critical gradient background for hero */
+      .bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--tw-gradient-stops))}
+      .from-blue-50{--tw-gradient-from:#eff6ff;--tw-gradient-to:rgb(239 246 255 / 0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}
+      .via-white{--tw-gradient-to:rgb(255 255 255 / 0);--tw-gradient-stops:var(--tw-gradient-from),#fff,var(--tw-gradient-to)}
+      .to-purple-50{--tw-gradient-to:#faf5ff}
+      
+      /* Critical text styles for hero */
+      .text-center{text-align:center}
+      .font-extrabold{font-weight:800}
+      .bg-clip-text{-webkit-background-clip:text;background-clip:text}
+      .text-transparent{color:transparent}
+      .bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}
+      .from-blue-600{--tw-gradient-from:#2563eb;--tw-gradient-to:rgb(37 99 235 / 0);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}
+      .via-purple-600{--tw-gradient-to:rgb(147 51 234 / 0);--tw-gradient-stops:var(--tw-gradient-from),#9333ea,var(--tw-gradient-to)}
+      .to-pink-600{--tw-gradient-to:#db2777}
+      
+      /* Critical animation for gradient text - GPU accelerated */
+      .animate-gradient{animation:gradient 8s ease infinite;will-change:background-position}
+      .bg-200{background-size:200% 200%}
+      @keyframes gradient{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+      
+      /* Prevent FOUC with loading state */
+      #root:empty{min-height:100vh;background:linear-gradient(to bottom right,#eff6ff,#fff,#faf5ff);display:flex;align-items:center;justify-content:center}
+      #root:empty::after{content:"";width:50px;height:50px;border:5px solid #e5e7eb;border-radius:50%;border-top-color:#2563eb;animation:spin 1s linear infinite}
+      @keyframes spin{to{transform:rotate(360deg)}}
+    </style>
     
     <!-- Preload Critical Fonts (if using custom fonts) -->
     <!-- <link rel="preload" as="font" href="/fonts/font.woff2" type="font/woff2" crossorigin fetchpriority="high" /> -->
@@ -126,7 +169,6 @@
     <!-- Preload and defer JavaScript for better performance -->
     <link rel="modulepreload" href="/assets/vendor-CoS1tOzM.js" />
     <link rel="modulepreload" href="/assets/react-vendor-Bec8DVIe.js" />
-    <script type="module" src="/assets/index-BbsmTzaG.js" defer></script>
   </head>
   <body>
     <noscript>
@@ -136,5 +178,12 @@
       </div>
     </noscript>
     <div id="root"></div>
+    
+    <!-- Load full CSS asynchronously after critical CSS to prevent render blocking -->
+    <link rel="stylesheet" href="/assets/index-B2NS_niJ.css" media="print" onload="this.media='all';this.onload=null" />
+    <noscript><link rel="stylesheet" href="/assets/index-B2NS_niJ.css" /></noscript>
+    
+    <!-- Main App Script with defer for non-blocking parallel download -->
+    <script type="module" src="/assets/index-BbsmTzaG.js"></script>
   </body>
 </html>

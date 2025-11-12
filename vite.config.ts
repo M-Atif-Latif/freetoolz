@@ -2,14 +2,24 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react({
+      // Optimize JSX runtime for smaller bundle
+      jsxRuntime: 'automatic',
+    }),
+  ],
   // Configure public directory for static assets
   publicDir: 'public',
   optimizeDeps: {
+    // Exclude large packages from pre-bundling
     exclude: ['lucide-react'],
-    include: ['react', 'react-dom'], // Pre-bundle critical dependencies
+    // Pre-bundle critical dependencies for faster load
+    include: ['react', 'react-dom', 'react/jsx-runtime'], 
+    // Force pre-bundling on server start
+    force: false,
   },
   build: {
+    // Use terser for aggressive minification
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -31,34 +41,42 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // Separate React ecosystem
+          // Separate React ecosystem - highest priority, loaded first
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
-              return 'react-vendor';
+            // Core React - smallest bundle, loaded immediately
+            if (id.includes('react') && !id.includes('lucide')) {
+              if (id.includes('react-dom')) return 'react-dom';
+              if (id.includes('scheduler')) return 'react-core';
+              return 'react-core';
             }
+            
+            // Heavy PDF libraries - defer loading
             if (id.includes('pdf-lib') || id.includes('pdfjs')) {
               return 'pdf-vendor';
             }
+            
+            // Icons - defer and split separately (large library)
             if (id.includes('lucide-react')) {
               return 'icons-vendor';
             }
-            // Group other small vendor packages
+            
+            // Group other vendor packages by size
             return 'vendor';
           }
           
-          // Split tools into smaller chunks by category
+          // Split tools into individual micro-chunks for optimal loading
           if (id.includes('/src/tools/')) {
             const toolName = id.split('/tools/')[1].split('.')[0];
             return `tool-${toolName}`;
           }
           
-          // Split pages
+          // Split pages separately for route-based code splitting
           if (id.includes('/src/pages/')) {
             const pageName = id.split('/pages/')[1].split('.')[0];
             return `page-${pageName}`;
           }
           
-          // Split components if they're large
+          // Components bundle - only common components
           if (id.includes('/src/components/')) {
             return 'components';
           }

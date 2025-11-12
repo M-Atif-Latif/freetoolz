@@ -28,13 +28,17 @@
 
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
-  # Early Hints (103) for critical resources - supported by Cloudflare, Netlify, etc.
-  Link: </assets/index-B2NS_niJ.css>; rel=preload; as=style; fetchpriority=high
-  Link: </assets/index-BbsmTzaG.js>; rel=modulepreload; fetchpriority=high
-  Link: </assets/react-vendor-Bec8DVIe.js>; rel=modulepreload; fetchpriority=high
+  # Early Hints (103) for INSTANT resource loading - Cloudflare, Netlify, Fastly support
+  Link: </assets/index-B2NS_niJ.css>; rel=preload; as=style; fetchpriority=high; crossorigin
+  Link: </assets/index-BbsmTzaG.js>; rel=modulepreload; fetchpriority=high; crossorigin
+  Link: </assets/react-core.js>; rel=modulepreload; fetchpriority=high; crossorigin
+  Link: </assets/react-dom.js>; rel=modulepreload; fetchpriority=high; crossorigin
   # DNS prefetch for external resources
   Link: <https://fonts.googleapis.com>; rel=dns-prefetch
   Link: <https://fonts.gstatic.com>; rel=dns-prefetch
+  # Preconnect to critical origins
+  Link: <https://fonts.googleapis.com>; rel=preconnect; crossorigin
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
   
 # Static assets - Aggressive caching with immutable
 /*.js
