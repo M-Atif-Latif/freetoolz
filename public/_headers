@@ -9,13 +9,13 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), display-capture=(), fullscreen=(self)
   
-  # Content Security Policy (Relaxed for inline styles/scripts from build)
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;
+  # Content Security Policy (Updated for Analytics: GTM, GA4, Clarity)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://www.googletagmanager.com; img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://www.clarity.ms; font-src 'self' data:; connect-src 'self' https: https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms wss://*.clarity.ms; frame-src https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;
   
-  # Cross-Origin Isolation Headers
-  Cross-Origin-Embedder-Policy: require-corp
-  Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Resource-Policy: same-origin
+  # Cross-Origin Isolation Headers (Relaxed for Analytics)
+  Cross-Origin-Embedder-Policy: unsafe-none
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Cross-Origin-Resource-Policy: cross-origin
   
   # Additional Security Headers
   X-Permitted-Cross-Domain-Policies: none
