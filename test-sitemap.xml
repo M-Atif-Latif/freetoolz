@@ -1,725 +1,722 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://freetoolz.cloud/</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/about</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/blog</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/contact</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/privacy</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/disclaimer</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/faq</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/word-counter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/case-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/text-reverser</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/remove-spaces</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/lorem-ipsum</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/age-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/bmi-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/percentage-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/password-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/qr-code-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/uuid-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/random-number</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/base64-encoder</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/url-encoder</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/color-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/json-formatter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/html-encoder</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/character-counter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/text-to-slug</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/markdown-to-html</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/duplicate-line-remover</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/line-sorter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/find-and-replace</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/word-frequency</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/letter-counter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/discount-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/loan-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/tip-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/date-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/time-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/unit-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/temperature-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/currency-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/length-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/weight-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/area-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/volume-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/speed-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/css-minifier</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/js-minifier</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/sql-formatter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/regex-tester</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/code-beautifier</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/diff-checker</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/string-utilities</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/binary-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/hex-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/morse-code</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/pdf-merge</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/pdf-split</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/pdf-compress</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/pdf-to-image</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/image-to-pdf</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/password-strength</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/hash-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/encryption-tool</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/image-compressor</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/image-resizer</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/image-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/image-crop</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/color-picker</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/gradient-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/invoice-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/stopwatch</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/timer</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/clock</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/barcode-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/dice-roller</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/coin-flip</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/fuel-cost-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/gpa-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/compound-interest-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/binary-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/hex-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/grayscale-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/image-base64</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/compress-pdf</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/merge-pdf</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/smart-sentence-splitter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/contraction-expander</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/read-aloud-caption-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/title-headline-analyzer</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/text-randomizer</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/csv-column-splitter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/yaml-json-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/css-tailwind-classifier</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/http-status-tester</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/cors-header-checker</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/power-energy-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/file-encoding-detector</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/image-dpi-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/hash-identifier</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/permutation-combination-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/color-blindness-simulator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/business-days-calculator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/ascii-art-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/working-hours-timezone-converter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/csv-duplicate-finder</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/regex-bulk-replace</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/bulk-url-shortener</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/clipboard-history</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/dataset-sampler</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/zip-file-inspector</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/console-log-formatter</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/svg-optimizer</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/favicon-generator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/color-contrast-checker</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/password-strength-analyzer</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/cookie-inspector</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/meta-robots-tester</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/structured-data-validator</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/sitemap-url-extractor</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freetoolz.cloud/tools/pdf-page-extractor</loc>
-    <lastmod>2025-11-12T18:00:42.704Z</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

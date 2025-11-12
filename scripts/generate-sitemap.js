@@ -134,11 +134,14 @@ const staticPages = [
 ];
 
 const baseUrl = 'https://freetoolz.cloud';
-const today = new Date().toISOString().split('T')[0];
+const today = new Date().toISOString(); // Full ISO 8601 format with timezone
 
-// Generate XML
+// Generate XML with proper schema declaration
 let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+xml += '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n';
+xml += '        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9\n';
+xml += '        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">\n';
 
 // Add static pages
 staticPages.forEach(page => {
