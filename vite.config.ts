@@ -15,8 +15,11 @@ export default defineConfig({
     exclude: ['lucide-react'],
     // Pre-bundle critical dependencies for faster load
     include: ['react', 'react-dom', 'react/jsx-runtime'], 
-    // Force pre-bundling on server start
-    force: false,
+    // Enable deeper dependency optimization
+    esbuildOptions: {
+      treeShaking: true,
+      target: 'es2020',
+    },
   },
   build: {
     // Use terser for aggressive minification
@@ -25,17 +28,26 @@ export default defineConfig({
       compress: {
         drop_console: true,
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug'],
-        passes: 2,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace'],
+        passes: 3, // Increased from 2 for more aggressive compression
         ecma: 2020,
         unsafe_arrows: true,
         unsafe_methods: true,
+        unsafe_comps: true,
+        unsafe_math: true,
+        unsafe_proto: true,
+        dead_code: true,
+        unused: true,
+        toplevel: true,
+        side_effects: true,
       },
       mangle: {
         safari10: true,
+        toplevel: true,
       },
       format: {
         comments: false, // Remove all comments
+        ecma: 2020,
       },
     },
     rollupOptions: {

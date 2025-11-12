@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (FIXED: .cloud not .com)
+Sitemap: https://freetoolz.cloud/sitemap.xml
+
+# Google bots
+User-agent: Googlebot
+Allow: /
+
+# Bing bots
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay
+Crawl-delay: 1
