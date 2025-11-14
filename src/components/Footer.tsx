@@ -1,4 +1,4 @@
-import { Wrench, Github, Linkedin, Facebook, MessageCircle, Mail } from 'lucide-react';
+import { Wrench, Linkedin, Facebook, MessageCircle } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -22,7 +22,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </p>
             <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
               <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">FreeToolz Cloud</p>
-              <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Connect with us on social media</p>
+              <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Connect with FreeToolz on social media</p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 <a 
                   href="https://www.linkedin.com/company/freetoolz/" 
@@ -34,7 +34,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                   <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
                 <a 
-                  href="https://www.facebook.com/NextGenIntelligence" 
+                  href="https://www.facebook.com/share/14PseuM8Yb9/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
@@ -61,20 +61,13 @@ export default function Footer({ onNavigate }: FooterProps) {
                   <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
                 <a 
-                  href="https://github.com/m-Atif-Latif" 
+                  href="https://x.com/MuhammadAtif67?t=A6SSAB3Ii2nZEqV2zJbQpw&s=09" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-gray-700 hover:to-black dark:hover:from-gray-700 dark:hover:to-black transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="GitHub"
+                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-gray-900 hover:to-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
+                  aria-label="X (Twitter)"
                 >
-                  <Github className="h-4 w-4 sm:h-5 sm:w-5" />
-                </a>
-                <a 
-                  href="mailto:muhammadatiflatif67@gmail.com" 
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-red-500 hover:to-red-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="Email"
-                >
-                  <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-xs sm:text-sm font-semibold">X</span>
                 </a>
               </div>
             </div>
