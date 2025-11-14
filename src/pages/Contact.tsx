@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Github, Linkedin, Facebook, MessageCircle, ExternalLink } from 'lucide-react';
+import { Mail, Github, Linkedin, Facebook, MessageCircle, ExternalLink, X } from 'lucide-react';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -50,7 +50,7 @@ export default function Contact() {
               <ExternalLink className="h-3 w-3" />
             </a>
             <a 
-              href="https://www.facebook.com/NextGenIntelligence" 
+              href="https://www.facebook.com/share/14PseuM8Yb9/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg transition-all"
@@ -77,6 +77,16 @@ export default function Contact() {
             >
               <MessageCircle className="h-4 w-4" />
               <span className="text-sm font-medium">WhatsApp</span>
+              <ExternalLink className="h-3 w-3" />
+            </a>
+            <a 
+              href="https://x.com/MuhammadAtif67?t=A6SSAB3Ii2nZEqV2zJbQpw&s=09" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg transition-all"
+            >
+              <X className="h-4 w-4" />
+              <span className="text-sm font-medium">X (Twitter)</span>
               <ExternalLink className="h-3 w-3" />
             </a>
             <a 

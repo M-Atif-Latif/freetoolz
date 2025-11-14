@@ -1,4 +1,4 @@
-import { Github, Linkedin, Facebook, MessageCircle, Mail, ExternalLink, Sparkles } from 'lucide-react';
+import { Github, Linkedin, Facebook, MessageCircle, Mail, ExternalLink, Sparkles, X } from 'lucide-react';
 
 export default function About() {
   return (
@@ -115,7 +115,7 @@ export default function About() {
                 </a>
                 
                 <a 
-                  href="https://www.facebook.com/NextGenIntelligence" 
+                  href="https://www.facebook.com/share/14PseuM8Yb9/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-white/15 hover:bg-white/25 backdrop-blur-md px-5 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
@@ -144,6 +144,17 @@ export default function About() {
                 >
                   <MessageCircle className="h-5 w-5" />
                   <span className="font-semibold">WhatsApp</span>
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+                
+                <a 
+                  href="https://x.com/MuhammadAtif67?t=A6SSAB3Ii2nZEqV2zJbQpw&s=09" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2 bg-white/15 hover:bg-white/25 backdrop-blur-md px-5 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <X className="h-5 w-5" />
+                  <span className="font-semibold">X (Twitter)</span>
                   <ExternalLink className="h-4 w-4" />
                 </a>
                 

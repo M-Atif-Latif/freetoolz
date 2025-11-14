@@ -78,9 +78,10 @@ export const generateOrganizationSchema = (): SchemaOrganization => {
     sameAs: [
       'https://github.com/M-Atif-Latif',
       'https://www.linkedin.com/company/freetoolz/',
-      'https://www.facebook.com/NextGenIntelligence',
+      'https://www.facebook.com/share/14PseuM8Yb9/',
       'https://discord.gg/R2WnXtm9A',
-      'https://whatsapp.com/channel/0029VbBw4mg11ulYLNdJuk0v'
+      'https://whatsapp.com/channel/0029VbBw4mg11ulYLNdJuk0v',
+      'https://x.com/MuhammadAtif67?t=A6SSAB3Ii2nZEqV2zJbQpw&s=09'
     ],
     contactPoint: {
       '@type': 'ContactPoint',
