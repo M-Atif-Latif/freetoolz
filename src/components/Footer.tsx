@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Wrench, Linkedin, Facebook, MessageCircle, X } from 'lucide-react';
+=======
+import { Wrench, Linkedin, Facebook, MessageCircle } from 'lucide-react';
+>>>>>>> aa3e61f57bc0e6bb8913839d355d975968937e99
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -67,7 +71,11 @@ export default function Footer({ onNavigate }: FooterProps) {
                   className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-gray-900 hover:to-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
                   aria-label="X (Twitter)"
                 >
+<<<<<<< HEAD
                   <X className="h-4 w-4 sm:h-5 sm:w-5" />
+=======
+                  <span className="text-xs sm:text-sm font-semibold">X</span>
+>>>>>>> aa3e61f57bc0e6bb8913839d355d975968937e99
                 </a>
               </div>
             </div>
