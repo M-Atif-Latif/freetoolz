@@ -29,7 +29,7 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace'],
-        passes: 3, // Increased from 2 for more aggressive compression
+        passes: 3,
         ecma: 2020,
         unsafe_arrows: true,
         unsafe_methods: true,
@@ -46,71 +46,53 @@ export default defineConfig({
         toplevel: true,
       },
       format: {
-        comments: false, // Remove all comments
+        comments: false,
         ecma: 2020,
       },
     },
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // Separate React ecosystem - highest priority, loaded first
+          // Critical path optimization - split by priority
           if (id.includes('node_modules')) {
-            // Core React - smallest bundle, loaded immediately
+            // Core React - highest priority (preloaded)
             if (id.includes('react') && !id.includes('lucide')) {
-              if (id.includes('react-dom')) return 'react-dom';
-              if (id.includes('scheduler')) return 'react-core';
-              return 'react-core';
+              return 'react-vendor';
             }
             
-            // Heavy PDF libraries - defer loading
+            // PDF libraries - lazy loaded
             if (id.includes('pdf-lib') || id.includes('pdfjs')) {
               return 'pdf-vendor';
             }
             
-            // Icons - defer and split separately (large library)
+            // Icons - defer loading
             if (id.includes('lucide-react')) {
               return 'icons-vendor';
             }
             
-            // Group other vendor packages by size
+            // Other vendors
             return 'vendor';
           }
           
-          // Split tools into individual micro-chunks for optimal loading
+          // Micro-chunks for tools (route-based splitting)
           if (id.includes('/src/tools/')) {
             const toolName = id.split('/tools/')[1].split('.')[0];
             return `tool-${toolName}`;
           }
-          
-          // Split pages separately for route-based code splitting
-          if (id.includes('/src/pages/')) {
-            const pageName = id.split('/pages/')[1].split('.')[0];
-            return `page-${pageName}`;
-          }
-          
-          // Components bundle - only common components
-          if (id.includes('/src/components/')) {
-            return 'components';
-          }
         },
-        // Optimize chunk file names
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
-    sourcemap: 'hidden', // Generate source maps but don't reference them in bundle
+    sourcemap: false, // Disable sourcemaps for production
     chunkSizeWarningLimit: 500,
     cssCodeSplit: true,
-    // Enable module preloading
     modulePreload: {
       polyfill: true,
     },
-    // Optimize asset inlining
-    assetsInlineLimit: 4096, // 4kb
-    // Report compressed size for better bundle analysis
+    assetsInlineLimit: 4096,
     reportCompressedSize: true,
-    // Target modern browsers for better optimizations
     target: 'es2020',
   },
   server: {

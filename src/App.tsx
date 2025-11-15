@@ -64,6 +64,7 @@ const ImageCompressor = lazy(() => import('./tools/ImageCompressor'));
 const ImageResizer = lazy(() => import('./tools/ImageResizer'));
 const ImageFormatConverter = lazy(() => import('./tools/ImageFormatConverter'));
 const GrayscaleConverter = lazy(() => import('./tools/GrayscaleConverter'));
+const ImageBackgroundRemover = lazy(() => import('./tools/ImageBackgroundRemover'));
 const RandomPicker = lazy(() => import('./tools/RandomPicker'));
 const CoinFlip = lazy(() => import('./tools/CoinFlip'));
 const TemperatureConverter = lazy(() => import('./tools/TemperatureConverter'));
@@ -492,6 +493,12 @@ function App() {
       component: <GrayscaleConverter />,
       title: 'Grayscale Image Converter | FreeToolz',
       description: 'Convert color images to grayscale.'
+    },
+    {
+      path: '/tools/background-remover',
+      component: <ImageBackgroundRemover />,
+      title: 'Image Background Remover | FreeToolz',
+      description: 'Remove background from images easily.'
     },
     {
       path: '/tools/random-picker',

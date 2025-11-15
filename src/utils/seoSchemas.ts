@@ -76,11 +76,10 @@ export const generateOrganizationSchema = (): SchemaOrganization => {
     logo: 'https://freetoolz.cloud/logo.png',
     description: '120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration required.',
     sameAs: [
-      'https://github.com/M-Atif-Latif',
-      'https://www.linkedin.com/company/freetoolz/',
-      'https://www.facebook.com/share/14PseuM8Yb9/',
       'https://discord.gg/R2WnXtm9A',
       'https://whatsapp.com/channel/0029VbBw4mg11ulYLNdJuk0v',
+      'https://www.linkedin.com/company/freetoolz/',
+      'https://www.facebook.com/share/14PseuM8Yb9/',
       'https://x.com/MuhammadAtif67?t=A6SSAB3Ii2nZEqV2zJbQpw&s=09'
     ],
     contactPoint: {

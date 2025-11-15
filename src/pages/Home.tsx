@@ -42,10 +42,10 @@ export default function Home({ onNavigate }: HomeProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
       <div className="container-responsive py-8 sm:py-12 md:py-16">
-        {/* Hero Section */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-in fade-in duration-700">
+        {/* Hero Section - Optimized for LCP */}
+        <div className="hero-section text-center mb-12 sm:mb-16 md:mb-20 animate-in fade-in duration-700">
           <div className="inline-block mb-4 sm:mb-6 relative">
             <span className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/40 dark:to-purple-900/40 text-blue-700 dark:text-blue-300 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold shadow-sm border border-blue-200 dark:border-blue-800">
               ✨ 100% Free • No Registration • Privacy First
@@ -61,24 +61,24 @@ export default function Home({ onNavigate }: HomeProps) {
             conversions, code formatting, data analysis, security testing, and more. All tools work directly in your browser—no installation, no registration, 
             completely free.
           </p>
-          <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm text-gray-600 dark:text-gray-300 px-4">
+          <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm text-gray-700 dark:text-gray-200 px-4">
             <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 px-3 sm:px-4 py-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 min-w-0">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
               </svg>
-              <span className="font-semibold truncate">Always Free</span>
+              <span className="font-semibold truncate text-gray-900 dark:text-gray-100">Always Free</span>
             </div>
             <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 px-3 sm:px-4 py-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 min-w-0">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
               </svg>
-              <span className="font-semibold truncate">No Registration</span>
+              <span className="font-semibold truncate text-gray-900 dark:text-gray-100">No Registration</span>
             </div>
             <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 px-3 sm:px-4 py-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 min-w-0">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 dark:text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
               </svg>
-              <span className="font-semibold truncate">Privacy Protected</span>
+              <span className="font-semibold truncate text-gray-900 dark:text-gray-100">Privacy Protected</span>
             </div>
           </div>
         </div>
@@ -134,9 +134,9 @@ export default function Home({ onNavigate }: HomeProps) {
                   </div>
                   <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:translate-x-2 transition-all duration-300" />
                 </div>
-                <h2 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-1">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-1">
                   {tool.name}
-                </h2>
+                </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-2">{tool.description}</p>
               </div>
             </button>
@@ -154,6 +154,6 @@ export default function Home({ onNavigate }: HomeProps) {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 }

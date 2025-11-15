@@ -2,33 +2,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) - GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B72QYM0QKJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-B72QYM0QKJ');
-    </script>
-    <!-- End Google Analytics 4 -->
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5DDW8MB2');</script>
-    <!-- End Google Tag Manager -->
-    
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
-    </script>
-    <!-- End Microsoft Clarity -->
     
     <meta charset="UTF-8" />
     
@@ -60,22 +33,24 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://freetoolz.com/" />
+    <meta property="og:url" content="https://freetoolz.cloud/" />
     <meta property="og:title" content="FreeToolz - 120+ Free Online Tools | No Signup Required" />
     <meta property="og:description" content="Access 120+ free online tools for text processing, PDF manipulation, image editing, data analysis, SEO testing and more. Completely free, secure, and no registration required." />
-    <meta property="og:image" content="https://freetoolz.com/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="https://freetoolz.cloud/logo.png" />
+    <meta property="og:image:secure_url" content="https://freetoolz.cloud/logo.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
     <meta property="og:image:alt" content="FreeToolz - Free Online Tools" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:site_name" content="FreeToolz" />
     <meta property="og:locale" content="en_US" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://freetoolz.com/" />
+    <meta property="twitter:url" content="https://freetoolz.cloud/" />
     <meta property="twitter:title" content="FreeToolz - 120+ Free Online Tools" />
     <meta property="twitter:description" content="Free online tools for text, images, PDFs, calculations, SEO, security and more. No signup required!" />
-    <meta property="twitter:image" content="https://freetoolz.com/twitter-image.jpg" />
+    <meta property="twitter:image" content="https://freetoolz.cloud/logo.png" />
     <meta property="twitter:image:alt" content="FreeToolz - Free Online Tools" />
     <meta property="twitter:creator" content="@FreeToolz" />
     
@@ -86,8 +61,11 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/logo.png" />
     <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Logo for Google Search -->
+    <link rel="image_src" href="https://freetoolz.cloud/logo.png" />
     <!-- Removed safari-pinned-tab.svg as it doesn't exist -->
     
     <!-- Theme Color -->
@@ -97,20 +75,21 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://freetoolz.cloud/" />
     
-    <!-- PERFORMANCE: DNS prefetch for third-party domains -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    
-    <!-- PERFORMANCE: Preconnect to critical origins with high priority -->
+    <!-- PERFORMANCE: Preconnect to critical origins FIRST for LCP -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- PERFORMANCE: DNS prefetch for analytics (non-critical) -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.clarity.ms" />
     
     <!-- CRITICAL CSS - EXPANDED - Inlined for ZERO render blocking -->
     <style>
       /* Critical base - Reset & Typography */
       *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-      html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;line-height:1.5}
-      body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:#fff;color:#111;overflow-x:hidden}
+      html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeSpeed;line-height:1.5}
+      body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:#fff;color:#111;overflow-x:hidden;font-display:swap}
       @media(prefers-color-scheme:dark){body{background:#000;color:#fff}}
       
       /* Critical Layout - Container & Spacing */
@@ -196,20 +175,23 @@
       @media(prefers-color-scheme:dark){.dark\\:shadow-blue-900\\/50{--tw-shadow-color:rgb(30 58 138 / 0.5)}}
       .truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.min-w-0{min-width:0}
       
-      /* Prevent FOUC */
+      /* Prevent FOUC & Optimize Rendering */
       #root:empty{min-height:100vh;background:linear-gradient(to bottom right,#eff6ff,#fff,#faf5ff);display:flex;align-items:center;justify-content:center}
       #root:empty::after{content:"";width:50px;height:50px;border:5px solid #e5e7eb;border-radius:50%;border-top-color:#2563eb;animation:spin 1s linear infinite}
       @keyframes spin{to{transform:rotate(360deg)}}
+      /* Improve LCP with content-visibility */
+      .hero-section{content-visibility:auto;contain-intrinsic-size:auto 600px}
     </style>
     
-    <!-- Preload Critical Fonts (if using custom fonts) -->
-    <!-- <link rel="preload" as="font" href="/fonts/font.woff2" type="font/woff2" crossorigin fetchpriority="high" /> -->
-    
-    <!-- Preload Critical JavaScript with high priority -->
+    <!-- Preload Critical Resources for LCP Optimization -->
+    <!-- Critical JavaScript - Load immediately -->
     <link rel="modulepreload" href="/assets/index-BbsmTzaG.js" fetchpriority="high" />
     <link rel="modulepreload" href="/assets/react-vendor-Bec8DVIe.js" fetchpriority="high" />
     
-    <!-- Prefetch for next likely navigation (lower priority) -->
+    <!-- Preload hero section image if any (uncomment and update if you have hero image) -->
+    <!-- <link rel="preload" as="image" href="/hero-image.webp" fetchpriority="high" /> -->
+    
+    <!-- Defer non-critical resources -->
     <link rel="prefetch" href="/assets/icons-vendor.js" as="script" />
     
     <!-- Structured Data - Organization -->
@@ -272,5 +254,36 @@
     
     <!-- Main App Script -->
     <script type="module" src="/assets/index-BbsmTzaG.js"></script>
+    
+    <!-- Load Analytics After Page Load (Non-blocking) -->
+    <script>
+      window.addEventListener('load', function() {
+        // Google Analytics 4
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-B72QYM0QKJ';
+        document.head.appendChild(ga);
+        ga.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-B72QYM0QKJ');
+        };
+        
+        // Google Tag Manager
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5DDW8MB2');
+        
+        // Microsoft Clarity
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
+      });
+    </script>
   </body>
 </html>
