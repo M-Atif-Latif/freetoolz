@@ -183,16 +183,8 @@
       .hero-section{content-visibility:auto;contain-intrinsic-size:auto 600px}
     </style>
     
-    <!-- Preload Critical Resources for LCP Optimization -->
-    <!-- Critical JavaScript - Load immediately -->
-    <link rel="modulepreload" href="/assets/index-BbsmTzaG.js" fetchpriority="high" />
-    <link rel="modulepreload" href="/assets/react-vendor-Bec8DVIe.js" fetchpriority="high" />
-    
     <!-- Preload hero section image if any (uncomment and update if you have hero image) -->
     <!-- <link rel="preload" as="image" href="/hero-image.webp" fetchpriority="high" /> -->
-    
-    <!-- Defer non-critical resources -->
-    <link rel="prefetch" href="/assets/icons-vendor.js" as="script" />
     
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
@@ -242,18 +234,11 @@
         <h1>JavaScript Required</h1>
         <p>This application requires JavaScript to be enabled. Please enable JavaScript in your browser settings to use FreeToolz.</p>
       </div>
-      <!-- Fallback CSS for no-JS users -->
-      <link rel="stylesheet" href="/assets/index-B2NS_niJ.css" />
     </noscript>
     <div id="root"></div>
     
-    <!-- Load full CSS asynchronously with JavaScript for zero blocking -->
-    <script>
-      (function(){var l=document.createElement('link');l.rel='stylesheet';l.href='/assets/index-B2NS_niJ.css';document.head.appendChild(l);})();
-    </script>
-    
     <!-- Main App Script -->
-    <script type="module" src="/assets/index-BbsmTzaG.js"></script>
+    <script type="module" src="/src/main.tsx"></script>
     
     <!-- Load Analytics After Page Load (Non-blocking) -->
     <script>

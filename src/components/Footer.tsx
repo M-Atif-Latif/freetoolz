@@ -1,5 +1,47 @@
-<<<<<<< HEAD
 import { Wrench, Linkedin, Facebook, MessageCircle, X } from 'lucide-react';
+
+const socialLinks = [
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/freetoolz/',
+    icon: Linkedin,
+    description: 'Career announcements & feature drops',
+    gradient: 'from-blue-600 via-blue-500 to-sky-400',
+    accent: 'text-blue-100',
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/share/14PseuM8Yb9/',
+    icon: Facebook,
+    description: 'Community group & launch news',
+    gradient: 'from-blue-700 via-indigo-600 to-purple-500',
+    accent: 'text-indigo-100',
+  },
+  {
+    name: 'Discord',
+    href: 'https://discord.gg/R2WnXtm9A',
+    icon: MessageCircle,
+    description: 'Live support & roadmap votes',
+    gradient: 'from-indigo-600 via-purple-500 to-pink-500',
+    accent: 'text-purple-100',
+  },
+  {
+    name: 'WhatsApp Channel',
+    href: 'https://whatsapp.com/channel/0029VbBw4mg11ulYLNdJuk0v',
+    icon: MessageCircle,
+    description: 'Instant tips & tool-of-the-day',
+    gradient: 'from-emerald-600 via-emerald-500 to-lime-400',
+    accent: 'text-emerald-50',
+  },
+  {
+    name: 'X (Twitter)',
+    href: 'https://x.com/MuhammadAtif67?t=A6SSAB3Ii2nZEqV2zJbQpw&s=09',
+    icon: X,
+    description: 'Quick updates & micro tutorials',
+    gradient: 'from-slate-900 via-gray-800 to-gray-600',
+    accent: 'text-gray-200',
+  },
+];
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -24,52 +66,26 @@ export default function Footer({ onNavigate }: FooterProps) {
             <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
               <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">FreeToolz Cloud</p>
               <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Connect with FreeToolz on social media</p>
-              <div className="flex flex-wrap gap-2 sm:gap-3">
-                <a 
-                  href="https://www.linkedin.com/company/freetoolz/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-800 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
-                </a>
-                <a 
-                  href="https://www.facebook.com/share/14PseuM8Yb9/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
-                </a>
-                <a 
-                  href="https://discord.gg/R2WnXtm9A" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-indigo-500 hover:to-indigo-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="Discord"
-                >
-                  <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
-                </a>
-                <a 
-                  href="https://whatsapp.com/channel/0029VbBw4mg11ulYLNdJuk0v" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-green-500 hover:to-green-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="WhatsApp"
-                >
-                  <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
-                </a>
-                <a 
-                  href="https://x.com/MuhammadAtif67?t=A6SSAB3Ii2nZEqV2zJbQpw&s=09" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-2 sm:p-2.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-gray-900 hover:to-gray-700 transition-all duration-300 hover:scale-110 hover:shadow-lg btn-touch"
-                  aria-label="X (Twitter)"
-                >
-                  <X className="h-4 w-4 sm:h-5 sm:w-5" />
-                </a>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group relative flex items-center gap-3 rounded-2xl border border-white/20 bg-gradient-to-r ${link.gradient} p-3 text-white shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80`}
+                    aria-label={link.name}
+                  >
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-md">
+                      <link.icon className={`h-5 w-5 ${link.accent}`} />
+                    </span>
+                    <div className="flex flex-col">
+                      <span className="text-sm font-semibold leading-tight">{link.name}</span>
+                      <span className="text-[11px] text-white/80">{link.description}</span>
+                    </div>
+                    <div className="absolute inset-0 rounded-2xl border border-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true"></div>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -100,7 +116,12 @@ export default function Footer({ onNavigate }: FooterProps) {
             </p>
             <p className="text-center md:text-right text-gray-600 dark:text-gray-400 text-2xs sm:text-xs md:text-sm">
               Crafted with <span className="text-red-500 animate-pulse inline-block">♥</span> by{' '}
-              <a href="https://github.com/muhammadatiflatif" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-500 hover:underline font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200">
+              <a
+                href="https://www.linkedin.com/in/muhammad-atif-latif-13a171318"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-500 hover:underline font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200"
+              >
                 Muhammad Atif Latif
               </a>
             </p>

@@ -1,5 +1,11 @@
 import { useEffect } from 'react';
-import { generateToolSchema, generateBreadcrumbSchema, getToolFAQSchema, generateOrganizationSchema } from './seoSchemas';
+import { FAQEntry } from '../types';
+import {
+  generateToolSchema,
+  generateBreadcrumbSchema,
+  generateOrganizationSchema,
+  generateFAQSchema
+} from './seoSchemas';
 
 interface SEOConfig {
   title: string;
@@ -18,6 +24,7 @@ interface SEOConfig {
   toolName?: string;
   toolCategory?: string;
   toolUrl?: string;
+  faqs?: FAQEntry[];
 }
 
 export const useSEO = (config: SEOConfig) => {
@@ -117,11 +124,11 @@ export const useSEO = (config: SEOConfig) => {
       addSchema(breadcrumbSchema);
 
       // Add FAQ Schema if available
-      const toolId = config.toolUrl.split('/').pop() || '';
-      const faqSchema = getToolFAQSchema(toolId);
-      if (faqSchema) {
-        addSchema(faqSchema);
+      if (config.faqs?.length) {
+        addSchema(generateFAQSchema(config.faqs));
       }
+    } else if (config.faqs?.length) {
+      addSchema(generateFAQSchema(config.faqs));
     }
 
     // Cleanup function
@@ -138,28 +145,37 @@ export const generateToolSEO = (
   toolDescription: string,
   toolCategory: string,
   toolPath: string,
-  keywords: string[]
+  keywords: string[],
+  options?: {
+    title?: string;
+    description?: string;
+    ogImage?: string;
+    twitterImage?: string;
+    faqs?: FAQEntry[];
+  }
 ): SEOConfig => {
   const baseUrl = 'https://freetoolz.cloud';
   const fullUrl = `${baseUrl}${toolPath}`;
   
   return {
-    title: `${toolName} | Free Online Tool - FreeToolz Cloud`,
-    description: `${toolDescription} Free, secure, and no registration required. ${toolName} tool by FreeToolz Cloud.`,
+    title: options?.title || `${toolName} | Free Online Tool - FreeToolz Cloud`,
+    description:
+      options?.description || `${toolDescription} Free, secure, and no registration required. ${toolName} tool by FreeToolz Cloud.`,
     keywords: [...keywords, 'free online tool', 'no signup', 'browser based', 'freetoolz cloud'].join(', '),
     canonical: fullUrl,
-    ogTitle: `${toolName} - Free & Secure Online Tool`,
-    ogDescription: `${toolDescription} Works directly in your browser. 100% free, no ads, no registration.`,
+    ogTitle: options?.title || `${toolName} - Free & Secure Online Tool`,
+    ogDescription: options?.description || `${toolDescription} Works directly in your browser. 100% free, no ads, no registration.`,
     ogUrl: fullUrl,
-    ogImage: `${baseUrl}/og-image-tool.jpg`,
-    twitterTitle: `${toolName} | FreeToolz Cloud`,
-    twitterDescription: toolDescription,
-    twitterImage: `${baseUrl}/twitter-card-tool.jpg`,
+    ogImage: options?.ogImage || `${baseUrl}/og-image-tool.jpg`,
+    twitterTitle: options?.title || `${toolName} | FreeToolz Cloud`,
+    twitterDescription: options?.description || toolDescription,
+    twitterImage: options?.twitterImage || options?.ogImage || `${baseUrl}/twitter-card-tool.jpg`,
     author: 'Muhammad Atif Latif',
     robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     toolName,
     toolCategory,
-    toolUrl: fullUrl
+    toolUrl: fullUrl,
+    faqs: options?.faqs
   };
 };
 

@@ -84,14 +84,14 @@ export default function ImageBackgroundRemover() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-3">Background Remover</h1>
-      <p className="text-gray-600 text-lg mb-6">Remove backgrounds from images (works best with white/light backgrounds)</p>
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Background Remover</h1>
+      <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">Remove backgrounds from images (works best with white/light backgrounds)</p>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         {/* Info Banner */}
-        <div className="mb-6 flex items-start space-x-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-          <div className="text-sm text-blue-800">
+        <div className="mb-6 flex items-start space-x-3 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+          <AlertCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+          <div className="text-sm text-blue-800 dark:text-blue-200">
             <p className="font-semibold mb-1">Note:</p>
             <p>This tool works best for images with white or light-colored backgrounds. For complex backgrounds, consider using professional tools like remove.bg</p>
           </div>
@@ -119,12 +119,12 @@ export default function ImageBackgroundRemover() {
           <>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <h3 className="text-sm font-medium text-gray-700 mb-2">Original</h3>
-                <img src={preview} alt="Original" className="w-full rounded-lg border border-gray-200" />
+                <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Original</h3>
+                <img src={preview} alt="Original" className="w-full rounded-lg border border-gray-200 dark:border-gray-700" />
               </div>
               {processed && (
                 <div>
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">Background Removed</h3>
+                  <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Background Removed</h3>
                   <div className="relative">
                     {/* Checkerboard background to show transparency */}
                     <div 
@@ -165,9 +165,9 @@ export default function ImageBackgroundRemover() {
       </div>
 
       {/* How it works section */}
-      <div className="mt-8 bg-white rounded-xl shadow-lg border border-gray-200 p-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">How It Works</h2>
-        <div className="space-y-4 text-gray-600">
+      <div className="mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">How It Works</h2>
+        <div className="space-y-4 text-gray-600 dark:text-gray-400">
           <p>
             <strong>1. Upload Image:</strong> Select an image with a white or light-colored background.
           </p>

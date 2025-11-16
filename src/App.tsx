@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import LoadingSpinner from './components/LoadingSpinner';
 import { useSEO, homeSEO, aboutSEO, blogSEO, contactSEO, generateToolSEO } from './utils/useSEO';
 import { tools } from './data/tools';
+import { getToolSeoEntry } from './data/seo/toolSeoConfig';
 
 // Eagerly load critical pages
 import Home from './pages/Home';
@@ -921,12 +922,26 @@ function App() {
     // Find the tool in our tools data
     const tool = tools.find(t => t.path === currentPath);
     if (tool) {
+      const seoEntry = getToolSeoEntry(tool.id);
+      const keywordCluster = seoEntry
+        ? [
+            seoEntry.primaryKeyword,
+            ...seoEntry.secondaryKeywords,
+            ...seoEntry.longTailKeywords
+          ]
+        : [tool.name.toLowerCase(), tool.category, 'online tool', 'free', 'no signup'];
+
       seoConfig = generateToolSEO(
         tool.name,
-        tool.description,
+        seoEntry?.heroDescription || tool.description,
         tool.category,
         tool.path,
-        [tool.name.toLowerCase(), tool.category, 'online tool', 'free', 'no signup']
+        keywordCluster,
+        {
+          title: seoEntry?.title,
+          description: seoEntry?.metaDescription,
+          faqs: seoEntry?.faqs
+        }
       );
     }
   } else if (currentPath === '/privacy') {
@@ -958,9 +973,10 @@ function App() {
   // Apply SEO using our custom hook
   useSEO(seoConfig);
 
-  // Smooth scroll to top on route change
+  // Scroll to top on every route change, but avoid smooth animation for tall tool pages
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const behavior: ScrollBehavior = currentPath.startsWith('/tools/') ? 'auto' : 'smooth';
+    window.scrollTo({ top: 0, behavior });
   }, [currentPath]);
 
   return (

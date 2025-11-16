@@ -1,4 +1,8 @@
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import type { Components } from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface BlogPost {
   id: string;
@@ -853,7 +857,110 @@ const blogPosts: BlogPost[] = [
   }
 ];
 
+const categories = ['All', ...Array.from(new Set(blogPosts.map((post) => post.category)))];
+
+const markdownComponents: Components = {
+  h2: ({ ...props }) => (
+    <h2
+      {...props}
+      className="text-2xl md:text-3xl font-bold text-gray-900 mt-10 mb-4"
+    />
+  ),
+  h3: ({ ...props }) => (
+    <h3
+      {...props}
+      className="text-xl md:text-2xl font-semibold text-gray-900 mt-8 mb-3"
+    />
+  ),
+  p: ({ ...props }) => (
+    <p {...props} className="text-gray-700 leading-relaxed mb-4" />
+  ),
+  ul: ({ ...props }) => (
+    <ul
+      {...props}
+      className="list-disc pl-6 mb-4 space-y-2 text-gray-700"
+    />
+  ),
+  ol: ({ ...props }) => (
+    <ol
+      {...props}
+      className="list-decimal pl-6 mb-4 space-y-2 text-gray-700"
+    />
+  ),
+  li: ({ ...props }) => <li {...props} className="leading-relaxed" />,
+  strong: ({ ...props }) => (
+    <strong {...props} className="text-gray-900 font-semibold" />
+  ),
+  blockquote: ({ ...props }) => (
+    <blockquote
+      {...props}
+      className="border-l-4 border-blue-200 pl-4 italic text-gray-600 bg-blue-50/40 rounded-r-lg py-2 mb-6"
+    />
+  ),
+  a: ({ ...props }) => (
+    <a
+      {...props}
+      className="text-blue-600 font-semibold hover:text-blue-700 underline"
+    />
+  )
+};
+
+const normalizeMarkdownContent = (content: string) => {
+  const normalized = content.replace(/\r\n/g, '\n');
+  const lines = normalized.split('\n');
+  const nonEmpty = lines.filter((line) => line.trim().length > 0);
+  const indentLengths = nonEmpty
+    .map((line) => line.match(/^(\s+)/)?.[0].length ?? 0)
+    .filter((len) => len > 0);
+  const minIndent = indentLengths.length ? Math.min(...indentLengths) : 0;
+
+  return lines
+    .map((line) => {
+      if (!line.trim().length) {
+        return '';
+      }
+      const indentMatch = line.match(/^(\s+)/);
+      const indentLength = indentMatch ? indentMatch[1].length : 0;
+      const remove = Math.min(indentLength, minIndent);
+      return line.slice(remove);
+    })
+    .join('\n')
+    .trim();
+};
+
 export default function Blog() {
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [selectedPost, setSelectedPost] = useState<BlogPost>(blogPosts[0]);
+  const articleRef = useRef<HTMLDivElement | null>(null);
+  const normalizedContent = useMemo(
+    () => normalizeMarkdownContent(selectedPost.content),
+    [selectedPost.content]
+  );
+
+  const filteredPosts = useMemo(
+    () =>
+      activeCategory === 'All'
+        ? blogPosts
+        : blogPosts.filter((post) => post.category === activeCategory),
+    [activeCategory]
+  );
+
+  const featuredPost = filteredPosts[0] ?? blogPosts[0];
+  const remainingPosts = filteredPosts.slice(1);
+
+  useEffect(() => {
+    if (!filteredPosts.find((post) => post.id === selectedPost.id)) {
+      setSelectedPost(featuredPost);
+    }
+  }, [filteredPosts, featuredPost, selectedPost.id]);
+
+  const handleReadPost = (post: BlogPost) => {
+    setSelectedPost(post);
+    window.requestAnimationFrame(() => {
+      articleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -863,7 +970,7 @@ export default function Blog() {
             FreeToolz <span className="text-blue-600">Blog</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Insights, tips, and guides on maximizing productivity with online tools, 
+            Insights, tips, and guides on maximizing productivity with online tools,
             protecting your privacy, and staying ahead in the digital world.
           </p>
         </div>
@@ -874,80 +981,131 @@ export default function Blog() {
             <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-semibold mb-4">
               ⭐ Featured Post
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{blogPosts[0].title}</h2>
-            <p className="text-blue-50 text-lg mb-6 leading-relaxed">{blogPosts[0].excerpt}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{featuredPost.title}</h2>
+            <p className="text-blue-50 text-lg mb-6 leading-relaxed">{featuredPost.excerpt}</p>
             <div className="flex flex-wrap items-center gap-4 text-sm text-blue-100 mb-6">
               <div className="flex items-center space-x-2">
                 <Calendar className="h-4 w-4" />
-                <span>{blogPosts[0].date}</span>
+                <span>{featuredPost.date}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <User className="h-4 w-4" />
-                <span>{blogPosts[0].author}</span>
+                <span>{featuredPost.author}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Tag className="h-4 w-4" />
-                <span>{blogPosts[0].category}</span>
+                <span>{featuredPost.category}</span>
               </div>
             </div>
-            <button className="inline-flex items-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all">
+            <button
+              onClick={() => handleReadPost(featuredPost)}
+              className="inline-flex items-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all"
+            >
               <span>Read Full Article</span>
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
         </div>
 
-        {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.slice(1).map((post) => (
-            <article key={post.id} className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group">
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">
-                    {post.category}
-                  </span>
-                  <span className="text-xs text-gray-500">{post.readTime}</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {post.excerpt}
-                </p>
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <div className="flex items-center space-x-2 text-xs text-gray-500">
-                    <Calendar className="h-3 w-3" />
-                    <span>{post.date}</span>
-                  </div>
-                  <button className="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
-                    <span>Read More</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-            </article>
-          ))}
+        {/* Category Filters */}
+        <div className="mb-12 bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Browse by Category</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((category) => {
+              const isActive = activeCategory === category;
+              return (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-semibold border transition-all ${
+                    isActive
+                      ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-200'
+                      : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-blue-200 hover:text-blue-600'
+                  }`}
+                >
+                  {category}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Categories Section */}
-        <div className="mt-16 bg-white rounded-xl shadow-lg border border-gray-200 p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Browse by Category</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            <button className="px-6 py-3 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-colors border border-blue-200">
-              Productivity
-            </button>
-            <button className="px-6 py-3 bg-green-50 text-green-700 rounded-lg font-semibold hover:bg-green-100 transition-colors border border-green-200">
-              Privacy & Security
-            </button>
-            <button className="px-6 py-3 bg-purple-50 text-purple-700 rounded-lg font-semibold hover:bg-purple-100 transition-colors border border-purple-200">
-              Technology
-            </button>
-            <button className="px-6 py-3 bg-orange-50 text-orange-700 rounded-lg font-semibold hover:bg-orange-100 transition-colors border border-orange-200">
-              Education
-            </button>
-            <button className="px-6 py-3 bg-pink-50 text-pink-700 rounded-lg font-semibold hover:bg-pink-100 transition-colors border border-pink-200">
-              AI & Innovation
-            </button>
+        {/* Blog Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {remainingPosts.map((post) => {
+            const isActive = selectedPost.id === post.id;
+            return (
+              <article
+                key={post.id}
+                className={`bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border group ${
+                  isActive ? 'border-blue-300 ring-2 ring-blue-100' : 'border-gray-100'
+                }`}
+              >
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">
+                      {post.category}
+                    </span>
+                    <span className="text-xs text-gray-500">{post.readTime}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div className="flex items-center space-x-2 text-xs text-gray-500">
+                      <Calendar className="h-3 w-3" />
+                      <span>{post.date}</span>
+                    </div>
+                    <button
+                      onClick={() => handleReadPost(post)}
+                      className="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center space-x-1 group-hover:translate-x-1 transition-transform"
+                    >
+                      <span>{isActive ? 'Currently Reading' : 'Read More'}</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        {/* Selected Article */}
+        <div ref={articleRef} className="mt-16 bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4">
+            <div className="flex items-center space-x-2">
+              <Calendar className="h-4 w-4 text-blue-600" />
+              <span>{selectedPost.date}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <User className="h-4 w-4 text-blue-600" />
+              <span>{selectedPost.author}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Tag className="h-4 w-4 text-blue-600" />
+              <span>{selectedPost.category}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <ArrowRight className="h-4 w-4 text-blue-600" />
+              <span>{selectedPost.readTime}</span>
+            </div>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            {selectedPost.title}
+          </h2>
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            {selectedPost.excerpt}
+          </p>
+          <div className="space-y-4 text-base leading-relaxed">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={markdownComponents}
+            >
+              {normalizedContent}
+            </ReactMarkdown>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 // SEO Schema Markup Generator for FreeToolz Cloud
+import { FAQEntry } from '../types';
 
 interface SchemaOrganization {
   '@context': string;
@@ -125,7 +126,7 @@ export const generateToolSchema = (
   };
 };
 
-export const generateFAQSchema = (faqs: Array<{ question: string; answer: string }>): SchemaFAQ => {
+export const generateFAQSchema = (faqs: FAQEntry[]): SchemaFAQ => {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -153,70 +154,6 @@ export const generateBreadcrumbSchema = (
       item: item.url
     }))
   };
-};
-
-// Tool-specific FAQ data
-export const toolFAQs: Record<string, Array<{ question: string; answer: string }>> = {
-  'word-counter': [
-    {
-      question: 'Is the Word Counter tool free to use?',
-      answer: 'Yes, FreeToolz Cloud offers a completely free Word Counter without registration, ads, or limitations.'
-    },
-    {
-      question: 'Does the Word Counter save my text?',
-      answer: 'No, all processing happens in your browser. Your text never leaves your device, ensuring complete privacy.'
-    },
-    {
-      question: 'What does the Word Counter measure?',
-      answer: 'It counts words, characters, sentences, paragraphs, and reading time. Perfect for writers, students, and content creators.'
-    }
-  ],
-  'password-generator': [
-    {
-      question: 'Is the Password Generator secure?',
-      answer: 'Yes, all passwords are generated locally in your browser using cryptographically secure random number generation. Nothing is sent to any server.'
-    },
-    {
-      question: 'Can I customize password requirements?',
-      answer: 'Absolutely! You can set length, include/exclude uppercase, lowercase, numbers, and special characters to meet any password policy.'
-    }
-  ],
-  'pdf-merger': [
-    {
-      question: 'Is there a file size limit for PDF merging?',
-      answer: 'Processing happens in your browser, so limits depend on your device memory. Most modern devices can handle PDFs up to 50-100MB total.'
-    },
-    {
-      question: 'Are my PDFs uploaded to a server?',
-      answer: 'No, all PDF processing happens locally in your browser. Your files never leave your device, ensuring complete privacy and security.'
-    }
-  ],
-  'image-compressor': [
-    {
-      question: 'What image formats are supported?',
-      answer: 'The Image Compressor supports JPEG, PNG, WebP, and GIF formats. You can compress multiple images at once.'
-    },
-    {
-      question: 'Will compression reduce image quality?',
-      answer: 'You control the compression level. Our tool optimizes file size while maintaining visual quality, with adjustable quality settings from 1-100%.'
-    }
-  ],
-  'json-formatter': [
-    {
-      question: 'Does the JSON Formatter validate syntax?',
-      answer: 'Yes! It automatically detects and highlights JSON syntax errors, helping you quickly fix formatting issues in your data.'
-    },
-    {
-      question: 'Can I minify JSON as well?',
-      answer: 'Absolutely. You can both beautify (format with indentation) and minify (compress) JSON with a single click.'
-    }
-  ]
-};
-
-// Generate schema for common tools
-export const getToolFAQSchema = (toolId: string): SchemaFAQ | null => {
-  const faqs = toolFAQs[toolId];
-  return faqs ? generateFAQSchema(faqs) : null;
 };
 
 // SEO-optimized descriptions for each tool category

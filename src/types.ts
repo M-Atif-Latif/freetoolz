@@ -13,3 +13,21 @@ export interface Category {
   icon: string;
   count: number;
 }
+
+export interface FAQEntry {
+  question: string;
+  answer: string;
+}
+
+export interface ToolSEOEntry {
+  id: string;
+  title: string;
+  metaDescription: string;
+  heroDescription: string;
+  primaryKeyword: string;
+  secondaryKeywords: string[];
+  longTailKeywords: string[];
+  cta: string;
+  benefits: string[];
+  faqs: FAQEntry[];
+}

@@ -25,9 +25,9 @@ export default function SitemapURLExtractor() {
     for (let i = 0; i < urlElements.length; i++) {
       const url = urlElements[i];
       const loc = url.getElementsByTagName('loc')[0]?.textContent || '';
-      const lastmod = url.getElementsByTagName('lastmod')[0]?.textContent;
-      const changefreq = url.getElementsByTagName('changefreq')[0]?.textContent;
-      const priority = url.getElementsByTagName('priority')[0]?.textContent;
+      const lastmod = url.getElementsByTagName('lastmod')[0]?.textContent ?? undefined;
+      const changefreq = url.getElementsByTagName('changefreq')[0]?.textContent ?? undefined;
+      const priority = url.getElementsByTagName('priority')[0]?.textContent ?? undefined;
 
       if (loc) {
         extracted.push({
