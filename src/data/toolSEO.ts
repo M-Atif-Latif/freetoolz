@@ -1,3 +1,7 @@
+import { MarketKeywordPackage, SearchIntent } from '../types';
+import { tools } from './tools';
+import { marketTargets } from './seo/marketTargets';
+
 /**
  * Professional SEO Metadata for Each Tool
  * Optimized for ranking individual tool pages on Google
@@ -31,7 +35,63 @@ export interface ToolSEO {
   canonicalUrl: string;
   priority: number; // Sitemap priority (0.0 to 1.0)
   changefreq: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly';
+  marketPackages?: MarketKeywordPackage[];
 }
+
+const categoryIntentMap: Record<string, SearchIntent> = {
+  pdf: 'transactional',
+  converter: 'informational',
+  calculator: 'informational',
+  generator: 'commercial',
+  developer: 'commercial',
+  text: 'informational',
+  image: 'commercial',
+  utility: 'informational',
+  security: 'commercial'
+};
+
+const toolLookup = tools.reduce<Record<string, typeof tools[number]>>((acc, tool) => {
+  acc[tool.id] = tool;
+  return acc;
+}, {});
+
+const baseKeywordSet = (toolName: string): string[] => {
+  const normalized = toolName.toLowerCase();
+  return [
+    `${normalized} online`,
+    `free ${normalized}`,
+    `${normalized} tool`,
+    `${normalized} for students`
+  ];
+};
+
+const buildMarketPackages = (toolId: string, keywords: string[]): MarketKeywordPackage[] => {
+  const tool = toolLookup[toolId];
+  const toolName = tool?.name || toolId.replace(/-/g, ' ');
+  const categoryIntent = categoryIntentMap[tool?.category || 'utility'] || 'informational';
+  const baseKeywords = [...new Set([...baseKeywordSet(toolName), ...keywords])];
+
+  return marketTargets.map(target => {
+    const localizedPrimary = [
+      baseKeywords[0],
+      `${toolName} ${target.regionName.toLowerCase()}`
+    ];
+    const localizedSecondary = [
+      baseKeywords[1],
+      baseKeywords[2],
+      `${toolName} ${target.currency} pricing`,
+      `${toolName} for ${target.positioning.split(' ')[0].toLowerCase()} teams`
+    ];
+
+    return {
+      marketId: target.id,
+      marketName: target.regionName,
+      searchIntent: categoryIntent,
+      primaryKeywords: localizedPrimary,
+      secondaryKeywords: localizedSecondary
+    };
+  });
+};
 
 export const toolSEOData: Record<string, ToolSEO> = {
   'word-counter': {
@@ -795,6 +855,10 @@ export const toolSEOData: Record<string, ToolSEO> = {
   // Add more tool SEO data...
   // Continue for all 80+ tools with same professional structure
 };
+
+Object.values(toolSEOData).forEach(entry => {
+  entry.marketPackages = buildMarketPackages(entry.id, entry.keywords);
+});
 
 // Helper function to get SEO data for a tool
 export const getToolSEO = (toolId: string): ToolSEO | null => {

@@ -1,5 +1,5 @@
 // SEO Schema Markup Generator for FreeToolz Cloud
-import { FAQEntry } from '../types';
+import { FAQEntry, MarketTarget } from '../types';
 
 interface SchemaOrganization {
   '@context': string;
@@ -25,11 +25,23 @@ interface SchemaWebApplication {
   description: string;
   applicationCategory: string;
   operatingSystem: string;
-  offers: {
-    '@type': string;
-    price: string;
-    priceCurrency: string;
-  };
+  offers:
+    | {
+        '@type': string;
+        price: string;
+        priceCurrency: string;
+        isAccessibleForFree: string;
+      }
+    | Array<{
+        '@type': string;
+        price: string;
+        priceCurrency: string;
+        isAccessibleForFree: string;
+        areaServed: {
+          '@type': string;
+          name: string;
+        };
+      }>;
   aggregateRating?: {
     '@type': string;
     ratingValue: string;
@@ -96,8 +108,27 @@ export const generateToolSchema = (
   toolName: string,
   toolUrl: string,
   description: string,
-  category: string
+  category: string,
+  targets: MarketTarget[]
 ): SchemaWebApplication => {
+  const offers = targets.length
+    ? targets.map(target => ({
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: target.currency,
+        isAccessibleForFree: 'True',
+        areaServed: {
+          '@type': 'Country',
+          name: target.regionName
+        }
+      }))
+    : {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+        isAccessibleForFree: 'True'
+      };
+
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -105,12 +136,8 @@ export const generateToolSchema = (
     url: toolUrl,
     description: description,
     applicationCategory: category,
-    operatingSystem: 'All',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD'
-    },
+    operatingSystem: 'Any (Web-based)',
+    offers,
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',

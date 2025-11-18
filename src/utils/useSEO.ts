@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
-import { FAQEntry } from '../types';
+import { FAQEntry, MarketTarget } from '../types';
+import { marketTargets as defaultMarketTargets } from '../data/seo/marketTargets';
 import {
   generateToolSchema,
   generateBreadcrumbSchema,
   generateOrganizationSchema,
   generateFAQSchema
 } from './seoSchemas';
+import { applyMarketTargetMeta } from './marketSEO';
 
 interface SEOConfig {
   title: string;
@@ -25,10 +27,14 @@ interface SEOConfig {
   toolCategory?: string;
   toolUrl?: string;
   faqs?: FAQEntry[];
+  marketTargets?: MarketTarget[];
 }
 
 export const useSEO = (config: SEOConfig) => {
   useEffect(() => {
+    const targets = config.marketTargets?.length ? config.marketTargets : defaultMarketTargets;
+    const canonicalHref = config.canonical || window.location.href;
+
     // Update title
     document.title = config.title;
 
@@ -60,15 +66,15 @@ export const useSEO = (config: SEOConfig) => {
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = config.canonical || window.location.href;
+    canonical.href = canonicalHref;
 
     // Open Graph tags
     updateMetaTag('og:type', 'website', 'property');
     updateMetaTag('og:title', config.ogTitle || config.title, 'property');
     updateMetaTag('og:description', config.ogDescription || config.description, 'property');
-    updateMetaTag('og:url', config.ogUrl || window.location.href, 'property');
-    updateMetaTag('og:site_name', 'FreeToolz Cloud', 'property');
-    updateMetaTag('og:locale', 'en_US', 'property');
+    updateMetaTag('og:url', config.ogUrl || canonicalHref, 'property');
+    updateMetaTag('og:site_name', 'FreeToolz', 'property');
+    updateMetaTag('og:locale', targets[0]?.ogLocale || 'en_US', 'property');
     
     if (config.ogImage) {
       updateMetaTag('og:image', config.ogImage, 'property');
@@ -81,11 +87,13 @@ export const useSEO = (config: SEOConfig) => {
     updateMetaTag('twitter:card', 'summary_large_image', 'property');
     updateMetaTag('twitter:title', config.twitterTitle || config.ogTitle || config.title, 'property');
     updateMetaTag('twitter:description', config.twitterDescription || config.ogDescription || config.description, 'property');
-    updateMetaTag('twitter:url', window.location.href, 'property');
+    updateMetaTag('twitter:url', canonicalHref, 'property');
     
     if (config.twitterImage || config.ogImage) {
       updateMetaTag('twitter:image', config.twitterImage || config.ogImage || '', 'property');
     }
+
+    applyMarketTargetMeta(targets, canonicalHref);
 
     // Structured Data (JSON-LD)
     const removeOldSchemas = () => {
@@ -106,20 +114,22 @@ export const useSEO = (config: SEOConfig) => {
     addSchema(generateOrganizationSchema());
 
     // Add Tool-specific Schema
-    if (config.toolName && config.toolUrl && config.toolCategory) {
+    if (config.toolName && config.toolCategory) {
+      const resolvedToolUrl = config.toolUrl || canonicalHref;
       const toolSchema = generateToolSchema(
         config.toolName,
-        config.toolUrl,
+        resolvedToolUrl,
         config.description,
-        config.toolCategory
+        config.toolCategory,
+        targets
       );
       addSchema(toolSchema);
 
       // Add Breadcrumb Schema
       const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: 'Home', url: 'https://freetoolz.cloud' },
-        { name: 'Tools', url: 'https://freetoolz.cloud/#tools' },
-        { name: config.toolName, url: config.toolUrl }
+        { name: 'Home', url: 'https://freetoolz.com' },
+        { name: 'Tools', url: 'https://freetoolz.com/#tools' },
+        { name: config.toolName, url: resolvedToolUrl }
       ]);
       addSchema(breadcrumbSchema);
 
@@ -152,70 +162,84 @@ export const generateToolSEO = (
     ogImage?: string;
     twitterImage?: string;
     faqs?: FAQEntry[];
+    marketTargets?: MarketTarget[];
   }
 ): SEOConfig => {
-  const baseUrl = 'https://freetoolz.cloud';
+  const targets = options?.marketTargets?.length ? options.marketTargets : defaultMarketTargets;
+  const baseUrl = 'https://freetoolz.com';
   const fullUrl = `${baseUrl}${toolPath}`;
+  const keywordSet = new Set<string>([...keywords, 'free online tool', 'no signup', 'browser based', 'freetoolz']);
+  targets.forEach(target => {
+    keywordSet.add(`${toolName} ${target.regionName}`);
+    keywordSet.add(`${toolName} ${target.currency}`);
+  });
   
   return {
-    title: options?.title || `${toolName} | Free Online Tool - FreeToolz Cloud`,
+    title: options?.title || `${toolName} | Free Online Tool - FreeToolz`,
     description:
-      options?.description || `${toolDescription} Free, secure, and no registration required. ${toolName} tool by FreeToolz Cloud.`,
-    keywords: [...keywords, 'free online tool', 'no signup', 'browser based', 'freetoolz cloud'].join(', '),
+      options?.description || `${toolDescription} Free, secure, and no registration required. ${toolName} by FreeToolz for the US & India.`,
+    keywords: Array.from(keywordSet).join(', '),
     canonical: fullUrl,
     ogTitle: options?.title || `${toolName} - Free & Secure Online Tool`,
     ogDescription: options?.description || `${toolDescription} Works directly in your browser. 100% free, no ads, no registration.`,
     ogUrl: fullUrl,
-    ogImage: options?.ogImage || `${baseUrl}/og-image-tool.jpg`,
-    twitterTitle: options?.title || `${toolName} | FreeToolz Cloud`,
+    ogImage: options?.ogImage || `${baseUrl}/og-images/${toolName.toLowerCase().replace(/\s+/g, '-')}.jpg`,
+    twitterTitle: options?.title || `${toolName} | FreeToolz`,
     twitterDescription: options?.description || toolDescription,
-    twitterImage: options?.twitterImage || options?.ogImage || `${baseUrl}/twitter-card-tool.jpg`,
+    twitterImage: options?.twitterImage || options?.ogImage || `${baseUrl}/og-images/${toolName.toLowerCase().replace(/\s+/g, '-')}.jpg`,
     author: 'Muhammad Atif Latif',
     robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     toolName,
     toolCategory,
     toolUrl: fullUrl,
-    faqs: options?.faqs
+    faqs: options?.faqs,
+    marketTargets: targets
   };
 };
 
 // Home page SEO
 export const homeSEO: SEOConfig = {
-  title: 'FreeToolz Cloud - 120+ Free Online Tools | No Signup Required',
-  description: 'Access 120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration, no ads, completely free forever.',
-  keywords: 'free online tools, word counter, password generator, pdf merger, image compressor, json formatter, qr code generator, bmi calculator, currency converter, text tools, developer tools, no signup, free forever',
-  canonical: 'https://freetoolz.cloud',
-  ogTitle: 'FreeToolz Cloud - 120+ Free Professional Online Tools',
-  ogDescription: 'Complete suite of 120+ free online utilities. Text, PDF, image, calculator, converter, and developer tools. All free, secure, and privacy-focused.',
-  ogUrl: 'https://freetoolz.cloud',
-  ogImage: 'https://freetoolz.cloud/og-image.jpg',
+  title: 'Free Online Tools - 120+ Best Free Tools for PDF, Text & Images',
+  description: 'Best free online tools for PDF conversion, word counting, image compression, password generation & more. 120+ utilities with no download or signup required.',
+  keywords: 'free online tools, pdf converter, word counter, image compressor, password generator, qr code generator, json formatter, free tools, online converter, free pdf tools, text tools, image tools, calculator online, free utilities, no signup tools',
+  canonical: 'https://freetoolz.com',
+  ogTitle: 'Free Online Tools - 120+ Best Free Tools',
+  ogDescription: '120+ best free online tools - PDF converter, word counter, image compressor, password generator, QR code maker & more. No download or signup required.',
+  ogUrl: 'https://freetoolz.com',
+  ogImage: 'https://freetoolz.com/og-image.jpg',
   author: 'Muhammad Atif Latif',
-  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+  marketTargets: defaultMarketTargets,
+  twitterTitle: 'Free Online Tools - 120+ Best Free Tools',
+  twitterDescription: 'Best free online PDF, text & image tools. Word counter, image compressor, password generator & 120+ utilities. No signup needed.',
 };
 
 // About page SEO
 export const aboutSEO: SEOConfig = {
-  title: 'About FreeToolz Cloud - Our Mission & Story',
-  description: 'Learn about FreeToolz Cloud and our mission to provide 120+ free professional-grade online tools accessible to everyone. Built by Muhammad Atif Latif, Data Scientist & ML Engineer.',
-  canonical: 'https://freetoolz.cloud/about',
-  keywords: 'about freetoolz, free tools mission, muhammad atif latif, online tools platform',
-  author: 'Muhammad Atif Latif'
+  title: 'About FreeToolz - Our Mission & Story',
+  description: 'Learn how FreeToolz builds privacy-first browser utilities for US revenue teams and India growth teams. Built by Muhammad Atif Latif.',
+  canonical: 'https://freetoolz.com/about',
+  keywords: 'about freetoolz, free tools mission, muhammad atif latif, online tools platform, usa india tools',
+  author: 'Muhammad Atif Latif',
+  marketTargets: defaultMarketTargets
 };
 
 // Blog page SEO
 export const blogSEO: SEOConfig = {
-  title: 'FreeToolz Cloud Blog - Tips, Guides & Tool Tutorials',
-  description: 'Discover tips, guides, and tutorials on using free online tools effectively. Learn productivity hacks, best practices, and expert advice from FreeToolz Cloud.',
-  canonical: 'https://freetoolz.cloud/blog',
-  keywords: 'online tools blog, productivity tips, tool tutorials, free software guides',
-  author: 'Muhammad Atif Latif'
+  title: 'FreeToolz Blog - Tips, Guides & Tool Tutorials',
+  description: 'Guides that show US and Indian teams how to automate work with free PDF, image, and developer utilities from FreeToolz.',
+  canonical: 'https://freetoolz.com/blog',
+  keywords: 'online tools blog, productivity tips, tool tutorials, free software guides, usa seo tips, india automation tips',
+  author: 'Muhammad Atif Latif',
+  marketTargets: defaultMarketTargets
 };
 
 // Contact page SEO
 export const contactSEO: SEOConfig = {
-  title: 'Contact Us - FreeToolz Cloud Support',
-  description: 'Get in touch with the FreeToolz Cloud team. We value your feedback, questions, and suggestions for improving our 120+ free online tools.',
-  canonical: 'https://freetoolz.cloud/contact',
-  keywords: 'contact freetoolz, support, feedback, tool requests',
-  author: 'Muhammad Atif Latif'
+  title: 'Contact Us - FreeToolz Support',
+  description: 'Reach the FreeToolz team for support, partnerships, or feedback from anywhere in the US or India.',
+  canonical: 'https://freetoolz.com/contact',
+  keywords: 'contact freetoolz, support, feedback, tool requests, usa support, india support',
+  author: 'Muhammad Atif Latif',
+  marketTargets: defaultMarketTargets
 };

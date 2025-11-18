@@ -1,6 +1,7 @@
 /**
  * SEO Utilities and Meta Tag Management
  */
+import { MarketTarget } from '../types';
 
 export interface MetaTags {
   title: string;
@@ -12,6 +13,7 @@ export interface MetaTags {
   ogUrl?: string;
   twitterCard?: 'summary' | 'summary_large_image';
   canonical?: string;
+  marketTargets?: MarketTarget[];
 }
 
 /**
@@ -20,6 +22,8 @@ export interface MetaTags {
 export const updateMetaTags = (tags: MetaTags): void => {
   // Update title
   document.title = tags.title;
+  const canonicalHref = tags.canonical || window.location.href;
+  const targets = tags.marketTargets || [];
 
   // Helper function to set or update meta tag
   const setMetaTag = (selector: string, content: string, property?: boolean) => {
@@ -44,13 +48,23 @@ export const updateMetaTags = (tags: MetaTags): void => {
   // Open Graph tags
   setMetaTag('og:title', tags.ogTitle || tags.title, true);
   setMetaTag('og:description', tags.ogDescription || tags.description, true);
-  if (tags.ogUrl) {
-    setMetaTag('og:url', tags.ogUrl, true);
-  }
+  setMetaTag('og:url', tags.ogUrl || canonicalHref, true);
   if (tags.ogImage) {
     setMetaTag('og:image', tags.ogImage, true);
   }
   setMetaTag('og:type', 'website', true);
+  if (targets.length) {
+    setMetaTag('og:locale', targets[0].ogLocale, true);
+    document
+      .querySelectorAll('meta[property="og:locale:alternate"]')
+      .forEach(node => node.remove());
+    targets.slice(1).forEach(target => {
+      const meta = document.createElement('meta');
+      meta.setAttribute('property', 'og:locale:alternate');
+      meta.setAttribute('content', target.ogLocale);
+      document.head.appendChild(meta);
+    });
+  }
 
   // Twitter tags
   setMetaTag('twitter:card', tags.twitterCard || 'summary_large_image');
@@ -116,6 +130,7 @@ export const generateToolStructuredData = (toolData: {
     name: string;
     url: string;
   };
+  marketTargets?: MarketTarget[];
 }): void => {
   const scriptId = 'tool-structured-data';
   let script = document.getElementById(scriptId) as HTMLScriptElement;
@@ -127,6 +142,42 @@ export const generateToolStructuredData = (toolData: {
     document.head.appendChild(script);
   }
 
+  const offerNode = toolData.marketTargets?.length
+    ? toolData.marketTargets.map(target => ({
+        '@type': 'Offer',
+        price: toolData.offers?.price || '0',
+        priceCurrency: target.currency,
+        isAccessibleForFree: 'True',
+        availability: 'https://schema.org/InStock',
+        areaServed: {
+          '@type': 'Country',
+          name: target.regionName,
+          alternateName: target.countryCode,
+        },
+      }))
+    : {
+        '@type': 'Offer',
+        price: toolData.offers?.price || '0',
+        priceCurrency: toolData.offers?.priceCurrency || 'USD',
+        isAccessibleForFree: 'True',
+      };
+
+  const areaServedNode = toolData.marketTargets?.map(target => ({
+    '@type': 'Country',
+    name: target.regionName,
+    alternateName: target.countryCode,
+  }));
+
+  const publisherNode = {
+    '@type': 'Organization',
+    name: 'FreeToolz',
+    url: 'https://freetoolz.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://freetoolz.com/android-chrome-192x192.png',
+    },
+  };
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -136,16 +187,12 @@ export const generateToolStructuredData = (toolData: {
     applicationCategory: toolData.applicationCategory,
     operatingSystem: toolData.operatingSystem || 'Any',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
-    offers: toolData.offers || {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    author: toolData.author || {
-      '@type': 'Organization',
-      name: 'FreeToolz',
-      url: 'https://freetoolz.com',
-    },
+    offers: offerNode,
+    author: toolData.author || publisherNode,
+    publisher: publisherNode,
+    provider: publisherNode,
+    ...(areaServedNode?.length ? { areaServed: areaServedNode } : {}),
+    availableLanguage: toolData.marketTargets?.map(target => target.locale) || ['en-US'],
     ...(toolData.aggregateRating && {
       aggregateRating: {
         '@type': 'AggregateRating',

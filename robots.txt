@@ -1,27 +1,18 @@
-# FreeToolz - Robots.txt
-# Allow all search engines to crawl everything
-
+# FreeToolz robots configuration
 User-agent: *
 Allow: /
-Allow: /sitemap.xml
-Allow: /robots.txt
-
-# Sitemap location
-Sitemap: https://freetoolz.cloud/sitemap.xml
-
-# Google bots - explicit allow
-User-agent: Googlebot
-Allow: /
-Allow: /sitemap.xml
-
-# Google Image bot
-User-agent: Googlebot-Image
-Allow: /
-
-# Bing bots
-User-agent: Bingbot
-Allow: /
-Allow: /sitemap.xml
-
-# Crawl-delay for polite crawling
 Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+Sitemap: https://freetoolz.com/sitemap.xml
