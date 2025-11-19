@@ -28,7 +28,7 @@ SERVER="root@72.61.113.236"
 REMOTE_PATH="/var/www/freetoolz"
 
 # Upload dist files
-scp -r dist/* $SERVER:$REMOTE_PATH/
+scp -r dist $SERVER:$REMOTE_PATH/
 if [ $? -ne 0 ]; then
     echo -e "${RED}❌ File upload failed!${NC}"
     exit 1

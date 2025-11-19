@@ -21,3 +21,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Backups and duplicates
+freetoolz/
+backup_freetoolz_nested/
+backup_freetoolz_sibling/

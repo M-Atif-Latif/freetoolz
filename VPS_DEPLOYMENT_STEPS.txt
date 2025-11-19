@@ -12,6 +12,10 @@ STEP 2: Navigate and pull latest code
 cd /var/www/freetoolz
 git pull origin main
 
+# Install dependencies and build
+npm install
+npm run build
+
 
 STEP 3: Configure Nginx for compression & caching
 ─────────────────────────────────────────────────────────────────
@@ -42,8 +46,8 @@ Test at: https://pagespeed.web.dev/
 ║  EXPECTED RESULTS                                               ║
 ╠════════════════════════════════════════════════════════════════╣
 ║  ⚡ First Load:      < 2 seconds (was 5-7s)                    ║
-║  ��� Main Bundle:     ~30KB gzipped (was ~200KB)                ║
-║  ��� Lighthouse:      90+ score (was 40-60)                     ║
-║  ��� Subsequent:      < 100ms (cached)                          ║
+║  ��� Main Bundle:     ~30KB gzipped (was ~200KB)                ║
+║  ��� Lighthouse:      90+ score (was 40-60)                     ║
+║  ��� Subsequent:      < 100ms (cached)                          ║
 ╚════════════════════════════════════════════════════════════════╝
 
