@@ -19,7 +19,8 @@ server {
     listen [::]:443 ssl http2;
     server_name freetoolz.cloud www.freetoolz.cloud;
 
-    root /var/www/freetoolz/dist;
+    # Root directory for the built application
+    root /var/www/freetoolz;
     index index.html;
 
     # SSL certificates (Let's Encrypt)
@@ -27,6 +28,7 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/freetoolz.cloud/privkey.pem;
     ssl_trusted_certificate /etc/letsencrypt/live/freetoolz.cloud/chain.pem;
 
+    # SSL Security
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256';
     ssl_prefer_server_ciphers on;
@@ -39,9 +41,6 @@ server {
     ssl_stapling_verify on;
     resolver 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4 valid=300s;
     resolver_timeout 5s;
-
-    # Uncomment after generating dhparams
-    # ssl_dhparam /etc/nginx/dhparam.pem;
 
     server_tokens off;
 

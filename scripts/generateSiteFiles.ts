@@ -4,10 +4,15 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { tools } from '../src/data/tools.ts';
 
-const baseUrl = 'https://freetoolz.com';
+const baseUrl = 'https://freetoolz.cloud';
 const today = new Date().toISOString().split('T')[0];
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const projectRoot = path.resolve(__dirname, '..');
+const publicDir = path.join(projectRoot, 'public');
+const distDir = path.join(projectRoot, 'dist');
+
+fs.mkdirSync(publicDir, { recursive: true });
 
 const staticPages = [
   { loc: `${baseUrl}/`, changefreq: 'daily', priority: 1.0 },
@@ -36,11 +41,17 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://w
 
 const robots = `# FreeToolz robots configuration\nUser-agent: *\nAllow: /\nCrawl-delay: 1\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Claude-Web\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`;
 
-const sitemapPath = path.resolve(__dirname, '../sitemap.xml');
-const robotsPath = path.resolve(__dirname, '../robots.txt');
+const sitemapPublicPath = path.join(publicDir, 'sitemap.xml');
+const robotsPublicPath = path.join(publicDir, 'robots.txt');
 
-fs.writeFileSync(sitemapPath, sitemap, 'utf8');
-fs.writeFileSync(robotsPath, robots, 'utf8');
+fs.writeFileSync(sitemapPublicPath, sitemap, 'utf8');
+fs.writeFileSync(robotsPublicPath, robots, 'utf8');
+
+if (fs.existsSync(distDir)) {
+  fs.mkdirSync(distDir, { recursive: true });
+  fs.copyFileSync(sitemapPublicPath, path.join(distDir, 'sitemap.xml'));
+  fs.copyFileSync(robotsPublicPath, path.join(distDir, 'robots.txt'));
+}
 
 console.log(`Updated sitemap.xml (${urlEntries.split('</url>').length - 1} URLs).`);
 console.log('Updated robots.txt with AI crawler allowances.');

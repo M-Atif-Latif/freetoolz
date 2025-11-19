@@ -1,7 +1,13 @@
-# Copy Favicon Files to Public Directory
-# Run this before building
+# Public asset sanity check before building
+# Ensures every required static file exists inside /public
 
-Write-Host "Copying favicon files to public directory..." -ForegroundColor Cyan
+Write-Host "Validating public assets..." -ForegroundColor Cyan
+
+$publicDir = "public"
+if (-not (Test-Path $publicDir)) {
+    New-Item -ItemType Directory -Path $publicDir | Out-Null
+    Write-Host "  Created missing public directory" -ForegroundColor Yellow
+}
 
 $files = @(
     "favicon.ico",
@@ -11,19 +17,33 @@ $files = @(
     "apple-touch-icon.png",
     "android-chrome-192x192.png",
     "android-chrome-512x512.png",
+    "logo.png",
     "manifest.json",
     "robots.txt",
     "sitemap.xml",
-    "_headers"
+    "_headers",
+    "BingSiteAuth.xml",
+    "browserconfig.xml",
+    "google-verification.html",
+    "google62c9704afeeaac9f.html"
 )
 
+$missing = @()
 foreach ($file in $files) {
-    if (Test-Path $file) {
-        Copy-Item $file "public\" -Force
-        Write-Host "  ✓ Copied $file" -ForegroundColor Green
+    $path = Join-Path $publicDir $file
+    if (Test-Path $path) {
+        Write-Host "  ✓ $file" -ForegroundColor Green
+    } elseif (Test-Path $file) {
+        Copy-Item $file $publicDir -Force
+        Write-Host "  ↺ Moved legacy $file into /public" -ForegroundColor Yellow
     } else {
-        Write-Host "  ⚠ Missing $file" -ForegroundColor Yellow
+        $missing += $file
+        Write-Host "  ⚠ Missing $file" -ForegroundColor Red
     }
 }
 
-Write-Host "`nDone! All files copied to public directory." -ForegroundColor Green
+if ($missing.Count -eq 0) {
+    Write-Host "`nAll required assets are ready." -ForegroundColor Green
+} else {
+    Write-Host "`nPlease add the missing files listed above before building." -ForegroundColor Red
+}

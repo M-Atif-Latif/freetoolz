@@ -1,0 +1,102 @@
+/*
+  # Core Security Headers
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  
+  # Privacy & Policy Headers
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), display-capture=(), fullscreen=(self)
+  
+  # Content Security Policy (Updated for Analytics: GTM, GA4, Clarity)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://www.googletagmanager.com; img-src 'self' data: https: https://www.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://www.clarity.ms; font-src 'self' data:; connect-src 'self' https: https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.clarity.ms wss://*.clarity.ms; frame-src https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;
+  
+  # Cross-Origin Isolation Headers (Relaxed for Analytics)
+  Cross-Origin-Embedder-Policy: unsafe-none
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Cross-Origin-Resource-Policy: cross-origin
+  
+  # Additional Security Headers
+  X-Permitted-Cross-Domain-Policies: none
+  
+  # Cache Control for HTML (no cache for dynamic content)
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  # Early Hints (103) for INSTANT resource loading - Cloudflare, Netlify, Fastly support
+  Link: </assets/index-B2NS_niJ.css>; rel=preload; as=style; fetchpriority=high; crossorigin
+  Link: </assets/index-BbsmTzaG.js>; rel=modulepreload; fetchpriority=high; crossorigin
+  Link: </assets/react-core.js>; rel=modulepreload; fetchpriority=high; crossorigin
+  Link: </assets/react-dom.js>; rel=modulepreload; fetchpriority=high; crossorigin
+  # DNS prefetch for external resources
+  Link: <https://fonts.googleapis.com>; rel=dns-prefetch
+  Link: <https://fonts.gstatic.com>; rel=dns-prefetch
+  # Preconnect to critical origins
+  Link: <https://fonts.googleapis.com>; rel=preconnect; crossorigin
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+  
+# Static assets - Aggressive caching with immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.avif
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# JSON files - moderate caching
+/*.json
+  Cache-Control: public, max-age=3600, must-revalidate
+  
+# XML files (sitemap, etc.)
+/*.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+  
+# Text files
+/*.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+  
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.json
+  Cache-Control: public, max-age=31536000, immutable

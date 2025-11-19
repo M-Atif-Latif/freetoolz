@@ -9,6 +9,7 @@ echo ""
 # Colors for output
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
@@ -26,10 +27,24 @@ echo ""
 echo -e "${BLUE}Step 2: Uploading files to server...${NC}"
 SERVER="root@72.61.113.236"
 REMOTE_PATH="/var/www/freetoolz"
+DIST_DIR="dist"
 
-# Upload dist files
-scp -r dist $SERVER:$REMOTE_PATH/
-if [ $? -ne 0 ]; then
+if [ ! -d "$DIST_DIR" ]; then
+    echo -e "${RED}❌ Missing dist directory. Run npm run build first.${NC}"
+    exit 1
+fi
+
+if command -v rsync >/dev/null 2>&1; then
+    rsync -az --delete --exclude='.well-known/' "$DIST_DIR/" "$SERVER:$REMOTE_PATH/"
+    RSYNC_STATUS=$?
+else
+    echo -e "${YELLOW}⚠ rsync not found. Falling back to scp (no delete).${NC}"
+    ssh $SERVER "find $REMOTE_PATH -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +"
+    scp -r "$DIST_DIR/." "$SERVER:$REMOTE_PATH/"
+    RSYNC_STATUS=$?
+fi
+
+if [ $RSYNC_STATUS -ne 0 ]; then
     echo -e "${RED}❌ File upload failed!${NC}"
     exit 1
 fi
@@ -54,6 +69,11 @@ ssh $SERVER << 'ENDSSH'
     
     # Apply new config
     sudo cp /tmp/nginx-config.txt /etc/nginx/sites-available/freetoolz
+    
+    # Fix permissions (Critical for 403 errors)
+    echo "Fixing permissions..."
+    sudo chown -R www-data:www-data /var/www/freetoolz
+    sudo chmod -R 755 /var/www/freetoolz
     
     # Test config
     sudo nginx -t
@@ -80,7 +100,7 @@ echo -e "${BLUE}Step 5: Verifying deployment...${NC}"
 echo ""
 
 echo "Testing cache headers..."
-curl -I https://freetoolz.cloud/assets/index-BbsmTzaG.js 2>/dev/null | grep -i "cache-control"
+curl -I https://freetoolz.cloud/logo.png 2>/dev/null | grep -i "cache-control"
 
 echo ""
 echo "Testing HSTS header..."
