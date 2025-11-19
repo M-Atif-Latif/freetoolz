@@ -1,0 +1,98 @@
+# ================================================================
+# Nginx configuration for freetoolz.cloud (HTTPS + security hardening)
+# This file is used by deploy scripts (deploy-fixes.sh, etc.).
+# Copy to /etc/nginx/sites-available/freetoolz on the server and reload nginx.
+# ================================================================
+
+# Redirect HTTP to HTTPS
+server {
+    listen 80;
+    listen [::]:80;
+    server_name freetoolz.cloud www.freetoolz.cloud;
+
+    return 301 https://$server_name$request_uri;
+}
+
+# Main HTTPS server block
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name freetoolz.cloud www.freetoolz.cloud;
+
+    root /var/www/freetoolz;
+    index index.html;
+
+    # SSL certificates (Let's Encrypt)
+    ssl_certificate /etc/letsencrypt/live/freetoolz.cloud/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/freetoolz.cloud/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/freetoolz.cloud/chain.pem;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256';
+    ssl_prefer_server_ciphers on;
+    ssl_ecdh_curve X25519:secp384r1:secp256k1;
+    ssl_session_cache shared:SSL:50m;
+    ssl_session_timeout 1d;
+    ssl_session_tickets off;
+
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4 valid=300s;
+    resolver_timeout 5s;
+
+    # Uncomment after generating dhparams
+    # ssl_dhparam /etc/nginx/dhparam.pem;
+
+    server_tokens off;
+
+    # Security headers
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), display-capture=(), fullscreen=(self)" always;
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; require-trusted-types-for 'script';" always;
+    add_header Cross-Origin-Embedder-Policy "require-corp" always;
+    add_header Cross-Origin-Opener-Policy "same-origin" always;
+    add_header Cross-Origin-Resource-Policy "same-origin" always;
+    add_header X-Permitted-Cross-Domain-Policies "none" always;
+
+    # Compression
+    gzip on;
+    gzip_vary on;
+    gzip_comp_level 6;
+    gzip_types text/plain text/css text/xml text/javascript application/json application/javascript application/xml+rss application/rss+xml font/truetype font/opentype application/vnd.ms-fontobject image/svg+xml;
+    gzip_disable "msie6";
+
+    # Static caching rules
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location ~* \.html$ {
+        add_header Cache-Control "public, max-age=0, must-revalidate" always;
+    }
+
+    location ~* \.js$ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+    }
+
+    location ~* \.css$ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+    }
+
+    location ~* \.(png|jpg|jpeg|gif|ico|svg|webp|avif)$ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+    }
+
+    location ~* \.(woff|woff2|ttf|otf|eot)$ {
+        add_header Cache-Control "public, max-age=31536000, immutable" always;
+        add_header Access-Control-Allow-Origin "*" always;
+    }
+
+    # Deny access to hidden files
+    location ~ /\.|/\.well-known/(?!acme-challenge/) {
+        deny all;
+    }
+}
