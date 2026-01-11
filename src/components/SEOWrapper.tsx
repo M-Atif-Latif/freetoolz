@@ -29,7 +29,7 @@ export function SEOWrapper({ toolId, children }: SEOWrapperProps) {
       ogTitle: seoData.title,
       ogDescription: seoData.description,
       ogUrl: seoData.canonicalUrl,
-      ogImage: `https://freetoolz.com/og-images/${toolId}.png`,
+      ogImage: `https://freetoolz.cloud/og-images/${toolId}.png`,
       canonical: seoData.canonicalUrl,
       twitterCard: 'summary_large_image',
     });
@@ -47,7 +47,7 @@ export function SEOWrapper({ toolId, children }: SEOWrapperProps) {
       },
       author: {
         name: 'FreeToolz',
-        url: 'https://freetoolz.com',
+        url: 'https://freetoolz.cloud',
       },
     });
 
@@ -70,9 +70,9 @@ export function SEOWrapper({ toolId, children }: SEOWrapperProps) {
     // Generate breadcrumbs
     const category = getCategoryFromToolId(toolId);
     generateBreadcrumbs([
-      { name: 'Home', url: 'https://freetoolz.com/' },
-      { name: 'Tools', url: 'https://freetoolz.com/#tools' },
-      ...(category ? [{ name: category, url: `https://freetoolz.com/#${category}` }] : []),
+      { name: 'Home', url: 'https://freetoolz.cloud/' },
+      { name: 'Tools', url: 'https://freetoolz.cloud/#tools' },
+      ...(category ? [{ name: category, url: `https://freetoolz.cloud/#${category}` }] : []),
       { name: seoData.h1, url: seoData.canonicalUrl },
     ]);
 

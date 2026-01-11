@@ -18,6 +18,7 @@ const Disclaimer = lazy(() => import('./pages/Disclaimer'));
 const Blog = lazy(() => import('./pages/Blog'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Lazy load tools
 const WordCounter = lazy(() => import('./tools/WordCounter'));
@@ -906,12 +907,21 @@ function App() {
     },
   ];
 
-  const currentRoute = routes.find(route => route.path === currentPath) || routes[0];
+  const currentRoute = routes.find(route => route.path === currentPath);
+  const isNotFound = !currentRoute;
 
   // Generate dynamic SEO config based on current route
   let seoConfig = homeSEO;
   
-  if (currentPath === '/about') {
+  if (isNotFound) {
+    seoConfig = {
+      title: '404 - Page Not Found | FreeToolz Cloud',
+      description: 'The page you are looking for does not exist. Browse our 120+ free online tools.',
+      canonical: 'https://freetoolz.cloud/404',
+      keywords: '404, not found, freetoolz',
+      author: 'Muhammad Atif Latif'
+    };
+  } else if (currentPath === '/about') {
     seoConfig = aboutSEO;
   } else if (currentPath === '/blog') {
     seoConfig = blogSEO;
@@ -968,7 +978,7 @@ function App() {
       <Header currentPath={currentPath} onNavigate={navigate} />
       <main className="flex-grow">
         <Suspense fallback={<LoadingSpinner />}>
-          {currentRoute.component}
+          {isNotFound ? <NotFound onNavigate={navigate} /> : currentRoute.component}
         </Suspense>
       </main>
       <Footer onNavigate={navigate} />

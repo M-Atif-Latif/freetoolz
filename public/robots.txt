@@ -1,8 +1,39 @@
-# FreeToolz robots configuration
+# FreeToolz Cloud Robots Configuration
+# Website: https://freetoolz.cloud
+# Generated: 2026-01-11
+
+# Allow all crawlers full access
 User-agent: *
 Allow: /
-Crawl-delay: 1
 
+# Specifically allow Google crawlers (helps with indexing)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+# Allow Bing
+User-agent: Bingbot
+Allow: /
+
+# Allow other major search engines
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Allow AI crawlers for visibility
 User-agent: GPTBot
 Allow: /
 
@@ -15,4 +46,21 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap location (critical for discovery)
 Sitemap: https://freetoolz.cloud/sitemap.xml
+
+# Host directive for preferred domain
+Host: https://freetoolz.cloud

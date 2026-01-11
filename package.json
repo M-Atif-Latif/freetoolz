@@ -7,11 +7,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "npm run generate:site-files",
+    "postbuild": "npm run generate:site-files && npm run prerender",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
-    "generate:site-files": "tsx scripts/generateSiteFiles.ts"
+    "generate:site-files": "tsx scripts/generateSiteFiles.ts",
+    "prerender": "tsx scripts/prerender.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

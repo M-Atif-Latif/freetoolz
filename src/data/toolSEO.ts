@@ -122,7 +122,7 @@ export const toolSEOData: Record<string, ToolSEO> = {
       }
     },
     relatedTools: ['character-counter', 'letter-counter', 'syllable-counter', 'readability-score', 'word-frequency'],
-    canonicalUrl: 'https://freetoolz.com/tools/word-counter',
+    canonicalUrl: 'https://freetoolz.cloud/tools/word-counter',
     priority: 1.0,
     changefreq: 'weekly'
   },
@@ -216,7 +216,7 @@ export const toolSEOData: Record<string, ToolSEO> = {
       }
     },
     relatedTools: ['password-strength', 'hash-generator', 'uuid-generator', 'random-number'],
-    canonicalUrl: 'https://freetoolz.com/tools/password-generator',
+    canonicalUrl: 'https://freetoolz.cloud/tools/password-generator',
     priority: 1.0,
     changefreq: 'weekly'
   },
@@ -312,7 +312,7 @@ export const toolSEOData: Record<string, ToolSEO> = {
       }
     },
     relatedTools: ['uuid-generator', 'url-encoder', 'base64-encoder'],
-    canonicalUrl: 'https://freetoolz.com/tools/qr-code-generator',
+    canonicalUrl: 'https://freetoolz.cloud/tools/qr-code-generator',
     priority: 1.0,
     changefreq: 'weekly'
   },
@@ -406,7 +406,7 @@ export const toolSEOData: Record<string, ToolSEO> = {
       }
     },
     relatedTools: ['image-resizer', 'image-format-converter', 'grayscale-converter'],
-    canonicalUrl: 'https://freetoolz.com/tools/image-compressor',
+    canonicalUrl: 'https://freetoolz.cloud/tools/image-compressor',
     priority: 1.0,
     changefreq: 'weekly'
   },
@@ -502,7 +502,7 @@ export const toolSEOData: Record<string, ToolSEO> = {
       }
     },
     relatedTools: ['css-minifier', 'js-minifier', 'html-encoder', 'base64-encoder'],
-    canonicalUrl: 'https://freetoolz.com/tools/json-formatter',
+    canonicalUrl: 'https://freetoolz.cloud/tools/json-formatter',
     priority: 0.9,
     changefreq: 'weekly'
   },
@@ -596,7 +596,7 @@ export const toolSEOData: Record<string, ToolSEO> = {
       }
     },
     relatedTools: ['age-calculator', 'percentage-calculator', 'unit-converter'],
-    canonicalUrl: 'https://freetoolz.com/tools/bmi-calculator',
+    canonicalUrl: 'https://freetoolz.cloud/tools/bmi-calculator',
     priority: 0.9,
     changefreq: 'weekly'
   },
@@ -692,7 +692,7 @@ export const toolSEOData: Record<string, ToolSEO> = {
       }
     },
     relatedTools: ['word-counter', 'text-reverser', 'remove-spaces', 'text-to-slug'],
-    canonicalUrl: 'https://freetoolz.com/tools/case-converter',
+    canonicalUrl: 'https://freetoolz.cloud/tools/case-converter',
     priority: 0.8,
     changefreq: 'weekly'
   },
@@ -787,7 +787,7 @@ export const toolSEOData: Record<string, ToolSEO> = {
       }
     },
     relatedTools: ['url-encoder', 'hash-generator', 'image-base64', 'html-encoder'],
-    canonicalUrl: 'https://freetoolz.com/tools/base64-encoder',
+    canonicalUrl: 'https://freetoolz.cloud/tools/base64-encoder',
     priority: 0.9,
     changefreq: 'weekly'
   },

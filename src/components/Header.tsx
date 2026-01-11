@@ -1,5 +1,5 @@
-import { Wrench, Menu, X, ArrowLeft, Home as HomeIcon, Moon, Sun } from 'lucide-react';
-import { useState } from 'react';
+import { Wrench, Menu, X, ArrowLeft, Home as HomeIcon, Moon, Sun, Monitor } from 'lucide-react';
+import { useState, useCallback, memo } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 interface HeaderProps {
@@ -7,14 +7,41 @@ interface HeaderProps {
   currentPath?: string;
 }
 
-export default function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
+// Memoized navigation button for better performance
+const NavButton = memo(({ onClick, children, className, ariaLabel }: { 
+  onClick: () => void; 
+  children: React.ReactNode; 
+  className: string;
+  ariaLabel?: string;
+}) => (
+  <button onClick={onClick} className={className} aria-label={ariaLabel}>
+    {children}
+  </button>
+));
+
+NavButton.displayName = 'NavButton';
+
+function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const isToolPage = currentPath.startsWith('/tools/');
 
-  const goBack = () => {
+  const goBack = useCallback(() => {
     onNavigate('/');
-  };
+  }, [onNavigate]);
+
+  const closeMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
+
+  const handleNavigate = useCallback((path: string) => {
+    onNavigate(path);
+    closeMobileMenu();
+  }, [onNavigate, closeMobileMenu]);
+
+  // Get theme icon based on current setting
+  const ThemeIcon = theme === 'dark' ? Moon : theme === 'light' ? Sun : Monitor;
+  const themeLabel = theme === 'dark' ? 'Dark mode' : theme === 'light' ? 'Light mode' : 'System theme';
 
   return (
     <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm sticky top-0 z-40 transition-all duration-300 border-b border-gray-100 dark:border-gray-800 safe-top">
@@ -62,14 +89,11 @@ export default function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
             <button
               onClick={toggleTheme}
               className="p-2 sm:p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 group relative btn-touch"
-              aria-label="Toggle dark mode"
+              aria-label={`Current: ${themeLabel}. Click to change.`}
+              title={themeLabel}
             >
               <div className="relative">
-                {theme === 'light' ? (
-                  <Moon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-700 dark:text-gray-300 group-hover:rotate-12 transition-transform duration-300" />
-                ) : (
-                  <Sun className="h-4 w-4 sm:h-5 sm:w-5 text-gray-700 dark:text-gray-300 group-hover:rotate-90 transition-transform duration-300" />
-                )}
+                <ThemeIcon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-700 dark:text-gray-300 group-hover:rotate-12 transition-transform duration-300" />
               </div>
             </button>
             
@@ -100,10 +124,10 @@ export default function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
                 </>
               )}
               <button onClick={() => { onNavigate('/'); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Home</button>
-              <button onClick={() => { onNavigate('/blog'); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Blog</button>
-              <button onClick={() => { onNavigate('/faq'); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">FAQ</button>
-              <button onClick={() => { onNavigate('/about'); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">About</button>
-              <button onClick={() => { onNavigate('/contact'); setMobileMenuOpen(false); }} className="text-white bg-blue-600 hover:bg-blue-700 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg shadow-sm">Contact</button>
+<button onClick={() => handleNavigate('/blog')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Blog</button>
+              <button onClick={() => handleNavigate('/faq')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">FAQ</button>
+              <button onClick={() => handleNavigate('/about')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">About</button>
+              <button onClick={() => handleNavigate('/contact')} className="text-white bg-blue-600 hover:bg-blue-700 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg shadow-sm">Contact</button>
             </nav>
           </div>
         )}
@@ -111,3 +135,5 @@ export default function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
     </header>
   );
 }
+
+export default memo(Header);
