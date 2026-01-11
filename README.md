@@ -211,7 +211,7 @@ Contributions are welcome! If you have suggestions for new tools or improvements
 **Connect**:
 
 - [GitHub](https://github.com/M-Atif-Latif)
-- [LinkedIn](https://www.linkedin.com/in/muhammad-atif-latif-13a171318)
+- [LinkedIn](https://www.linkedin.com/in/muhammadatiflatif/)
 - [Kaggle](https://www.kaggle.com/matiflatif)
 - [Twitter/X](https://x.com/mianatif5867)
 - [Instagram](https://www.instagram.com/its_atif_ai/)

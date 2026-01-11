@@ -117,7 +117,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             <p className="text-center md:text-right text-gray-600 dark:text-gray-400 text-2xs sm:text-xs md:text-sm">
               Crafted with <span className="text-red-500 animate-pulse inline-block">♥</span> by{' '}
               <a
-                href="https://www.linkedin.com/in/muhammad-atif-latif-13a171318"
+                href="https://www.linkedin.com/in/muhammadatiflatif/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 dark:text-blue-500 hover:underline font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200"
