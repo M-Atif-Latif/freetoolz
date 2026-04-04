@@ -1,10 +1,10 @@
-import { lazy, Suspense } from 'react';
-import { useState, useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
+import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import LoadingSpinner from './components/LoadingSpinner';
 import { useSEO, homeSEO, aboutSEO, blogSEO, contactSEO, generateToolSEO } from './utils/useSEO';
-import { tools } from './data/tools';
+import { tools, toolMasterList } from './data/tools';
 
 // Eagerly load critical pages
 import Home from './pages/Home';
@@ -19,6 +19,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const ToolPage = lazy(() => import('./pages/ToolPage'));
 
 // Lazy load tools
 const WordCounter = lazy(() => import('./tools/WordCounter'));
@@ -155,30 +156,20 @@ interface RouteConfig {
 }
 
 function App() {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const currentPath = location.pathname;
 
-  // Handle browser back/forward buttons
-  useEffect(() => {
-    const handlePopState = () => {
-      setCurrentPath(window.location.pathname);
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  // Update browser history when path changes
-  const navigate = (path: string) => {
+  const navigateTo = (path: string) => {
     if (path !== currentPath) {
-      window.history.pushState({}, '', path);
-      setCurrentPath(path);
+      navigate(path);
     }
   };
 
   const routes: RouteConfig[] = [
     {
       path: '/',
-      component: <Home onNavigate={navigate} />,
+      component: <Home onNavigate={navigateTo} />,
       title: 'Free Tools - 120+ Free Online Tools | No Sign Up Required',
       description: 'Access 120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, code formatting and more. Completely free, secure, and privacy-focused. No registration required.',
       keywords: 'free online tools, text converter, PDF tools, image editor, calculator'
@@ -227,7 +218,7 @@ function App() {
     },
     {
       path: '/sitemap',
-      component: <Sitemap onNavigate={navigate} />,
+      component: <Sitemap onNavigate={navigateTo} />,
       title: 'Sitemap - All Pages | Free Tools',
       description: 'Browse all pages and tools available on Free Tools. Complete site navigation and tool directory.'
     },
@@ -992,13 +983,28 @@ function App() {
     },
   ];
 
-  const currentRoute = routes.find(route => route.path === currentPath);
-  const isNotFound = !currentRoute;
+  const routeComponentByPath = new Map(routes.map((route) => [route.path, route.component]));
+  const canonicalSlugById = new Map(toolMasterList.map((tool) => [tool.id, tool.slug ?? tool.id]));
+  const legacySlugRedirects = toolMasterList
+    .filter((tool) => (tool.slug ?? tool.id) !== tool.id)
+    .map((tool) => ({ from: `/${tool.id}`, to: `/${tool.slug}` }));
+
+  const slugTool = toolMasterList.find((tool) => `/${tool.slug}` === currentPath);
+  const routeExists = routes.some((route) => route.path === currentPath) || Boolean(slugTool);
+  const isNotFound = !routeExists;
 
   // Generate dynamic SEO config based on current route
   let seoConfig = homeSEO;
   
-  if (isNotFound) {
+  if (slugTool) {
+    seoConfig = {
+      title: slugTool.metaTitle ?? `${slugTool.name} | Free Toolz`,
+      description: slugTool.metaDescription ?? slugTool.description,
+      canonical: `https://freetoolz.cloud/${slugTool.slug}`,
+      keywords: slugTool.keyword ?? `${slugTool.name.toLowerCase()} online free`,
+      author: 'Muhammad Atif Latif'
+    };
+  } else if (isNotFound) {
     seoConfig = {
       title: '404 - Page Not Found | Free Tools',
       description: 'The page you are looking for does not exist. Browse our 120+ free online tools.',
@@ -1064,13 +1070,40 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">
-      <Header currentPath={currentPath} onNavigate={navigate} />
+      <Header currentPath={currentPath} onNavigate={navigateTo} />
       <main className="flex-grow">
         <Suspense fallback={<LoadingSpinner />}>
-          {isNotFound ? <NotFound onNavigate={navigate} /> : currentRoute.component}
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={
+                  route.path.startsWith('/tools/')
+                    ? <Navigate to={`/${canonicalSlugById.get(route.path.replace('/tools/', '')) ?? route.path.replace('/tools/', '')}`} replace />
+                    : route.component
+                }
+              />
+            ))}
+            {toolMasterList.map((tool) => (
+              <Route
+                key={`slug-${tool.id}`}
+                path={`/${tool.slug}`}
+                element={<ToolPage tool={tool}>{routeComponentByPath.get(tool.path)}</ToolPage>}
+              />
+            ))}
+            {legacySlugRedirects.map((redirect) => (
+              <Route
+                key={`legacy-${redirect.from}`}
+                path={redirect.from}
+                element={<Navigate to={redirect.to} replace />}
+              />
+            ))}
+            <Route path="*" element={<NotFound onNavigate={navigateTo} />} />
+          </Routes>
         </Suspense>
       </main>
-      <Footer onNavigate={navigate} />
+      <Footer onNavigate={navigateTo} />
     </div>
   );
 }

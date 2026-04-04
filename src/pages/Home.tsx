@@ -1,7 +1,7 @@
 import { useState, useMemo, startTransition } from 'react';
 import { Search, ArrowRight } from 'lucide-react';
 import * as Icons from 'lucide-react';
-import { tools, categories } from '../data/tools';
+import { toolMasterList, categories } from '../data/tools';
 
 interface HomeProps {
   onNavigate: (path: string) => void;
@@ -13,7 +13,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
   // Memoize filtered tools to prevent unnecessary recalculations
   const filteredTools = useMemo(() => {
-    return tools.filter(tool => {
+    return toolMasterList.filter(tool => {
       const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            tool.description.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
@@ -124,7 +124,7 @@ export default function Home({ onNavigate }: HomeProps) {
         <h2 className="sr-only">Available Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 px-4">
           {filteredTools.map((tool) => (
-            <button key={tool.id} onClick={() => onNavigate(tool.path)}
+            <button key={tool.id} onClick={() => onNavigate(`/${tool.slug ?? tool.id}`)}
               className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 group text-left transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative z-10">

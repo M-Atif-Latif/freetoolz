@@ -6,7 +6,7 @@
  * proactively notifying search engines about your pages
  */
 
-import { tools } from '../src/data/tools.ts';
+import { toolMasterList } from '../src/data/tools.ts';
 
 const BASE_URL = 'https://freetoolz.cloud';
 
@@ -30,7 +30,9 @@ const staticPages = [
   '/sitemap',
 ];
 
-const toolPaths = tools.map(tool => tool.path);
+const toolPaths = toolMasterList
+  .filter(tool => tool.indexable !== false)
+  .map(tool => `/${tool.slug ?? tool.id}`);
 const allUrls = [...staticPages, ...toolPaths].map(path => `${BASE_URL}${path}`);
 
 /**
@@ -113,10 +115,10 @@ console.log(`
 ║  4. Paste each problem URL and click "Request Indexing"           ║
 ║                                                                   ║
 ║  Priority URLs to submit:                                         ║
-║  - https://freetoolz.cloud/tools/time-calculator                  ║
-║  - https://freetoolz.cloud/tools/dice-roller                      ║
-║  - https://freetoolz.cloud/tools/yaml-json-converter              ║
-║  - https://freetoolz.cloud/tools/weight-converter                 ║
+║  - https://freetoolz.cloud/json-formatter                         ║
+║  - https://freetoolz.cloud/password-generator                     ║
+║  - https://freetoolz.cloud/bmi-calculator                         ║
+║  - https://freetoolz.cloud/word-counter                           ║
 ║                                                                   ║
 ║  BING WEBMASTER TOOLS:                                            ║
 ║  1. Go to https://www.bing.com/webmasters                         ║

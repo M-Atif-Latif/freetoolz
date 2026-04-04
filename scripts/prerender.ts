@@ -7,7 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { tools } from '../src/data/tools.ts';
+import { toolMasterList } from '../src/data/tools.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -29,12 +29,14 @@ const staticPages = [
   { path: '/sitemap', title: 'Sitemap - All Pages | Free Tools', description: 'Browse all pages and tools available on Free Tools. Complete site navigation and tool directory.' },
 ];
 
-// Generate tool pages from tools data
-const toolPages = tools.map(tool => ({
-  path: tool.path,
+const toolCanonicalPaths = new Set(toolMasterList.map(tool => `/${tool.slug ?? tool.id}`));
+
+// Generate tool pages from canonical slug routes
+const toolPages = toolMasterList.map(tool => ({
+  path: `/${tool.slug ?? tool.id}`,
   title: `${tool.name} - Free Online Tool | Free Tools`,
   description: `${tool.description} Free, secure, no signup required. Use ${tool.name} online instantly.`,
-  keywords: [tool.name.toLowerCase(), 'free online tool', 'no signup', tool.category],
+  keywords: [tool.keyword ?? tool.name.toLowerCase(), 'free online tool', 'no signup', tool.category],
   category: tool.category,
   indexable: tool.indexable !== false,
 }));
@@ -51,8 +53,8 @@ type ToolPageConfig = {
 };
 
 function getRelatedTools(pagePath: string, category?: string, limit = 8) {
-  return tools
-    .filter(tool => tool.path !== pagePath && tool.indexable !== false && (!category || tool.category === category))
+  return toolMasterList
+    .filter(tool => `/${tool.slug ?? tool.id}` !== pagePath && tool.indexable !== false && (!category || tool.category === category))
     .slice(0, limit);
 }
 
@@ -134,11 +136,11 @@ function generateHTML(page: ToolPageConfig): string {
     ? 'noindex, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
     : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
   const pageName = page.title.split(' - ')[0];
-  const isToolPage = page.path.startsWith('/tools/');
+  const isToolPage = toolCanonicalPaths.has(page.path);
   const categoryIntent = getCategoryIntent(page.category);
   const relatedTools = isToolPage ? getRelatedTools(page.path, page.category) : [];
   const relatedFallback = isToolPage && relatedTools.length === 0
-    ? tools.filter(tool => tool.path !== page.path && tool.indexable !== false).slice(0, 8)
+    ? toolMasterList.filter(tool => `/${tool.slug ?? tool.id}` !== page.path && tool.indexable !== false).slice(0, 8)
     : relatedTools;
 
   const faqItems = isToolPage
@@ -227,7 +229,7 @@ function generateHTML(page: ToolPageConfig): string {
         "@type": "ListItem",
         "position": ${index + 1},
         "name": "${escapeJsonString(tool.name)}",
-        "url": "${BASE_URL}${tool.path}"
+        "url": "${BASE_URL}/${tool.slug ?? tool.id}"
       }`
         )
         .join(',\n      ')}

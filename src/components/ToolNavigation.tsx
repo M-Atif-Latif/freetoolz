@@ -1,25 +1,27 @@
 import { Home, ArrowLeft, ArrowRight, List } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface ToolNavigationProps {
   onNavigate?: (path: string) => void;
 }
 
 export default function ToolNavigation({ onNavigate }: ToolNavigationProps) {
+  const navigate = useNavigate();
+
   const handleNavigate = (path: string) => {
     if (onNavigate) {
       onNavigate(path);
     } else {
-      window.history.pushState({}, '', path);
-      window.location.pathname = path;
+      navigate(path);
     }
   };
 
   const handleBack = () => {
-    window.history.back();
+    navigate(-1);
   };
 
   const handleForward = () => {
-    window.history.forward();
+    navigate(1);
   };
 
   return (

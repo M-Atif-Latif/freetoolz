@@ -54,10 +54,10 @@ export default function NotFound({ onNavigate }: NotFoundProps) {
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {[
-              { name: 'Word Counter', path: '/tools/word-counter' },
-              { name: 'Password Generator', path: '/tools/password-generator' },
-              { name: 'QR Code Generator', path: '/tools/qr-code-generator' },
-              { name: 'JSON Formatter', path: '/tools/json-formatter' },
+              { name: 'Word Counter', path: '/word-counter' },
+              { name: 'Password Generator', path: '/password-generator' },
+              { name: 'QR Code Generator', path: '/qr-code-generator' },
+              { name: 'JSON Formatter', path: '/json-formatter' },
             ].map((tool) => (
               <button
                 key={tool.path}

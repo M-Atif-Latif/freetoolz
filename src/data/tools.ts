@@ -1,5 +1,7 @@
 import { Tool, Category } from '../types';
 
+export type { Tool } from '../types';
+
 const categoryDefinitions: Omit<Category, 'count'>[] = [
   { id: 'text', name: 'Text Tools', icon: 'FileText' },
   { id: 'calculator', name: 'Calculators', icon: 'Calculator' },
@@ -999,6 +1001,57 @@ export const tools: Tool[] = [
     path: '/tools/pdf-page-extractor',
   },
 ];
+
+const categoryLabelById: Record<string, string> = Object.fromEntries(
+  categoryDefinitions.map((category) => [category.id, category.name])
+);
+
+const slugOverrides: Record<string, string> = {
+  'remove-spaces': 'remove-extra-spaces',
+  'lorem-ipsum': 'lorem-ipsum-generator',
+  'word-frequency': 'word-frequency-counter',
+  'find-replace': 'find-and-replace',
+  'compound-interest': 'compound-interest-calculator',
+  'fuel-cost': 'fuel-cost-calculator',
+  'hex-calculator': 'hexadecimal-calculator',
+  'random-number': 'random-number-generator',
+  'credit-card-generator': 'test-credit-card-generator',
+  'gradient-generator': 'css-gradient-generator',
+  'timezone-converter': 'time-zone-converter',
+  'base64-encoder': 'base64-encoder-decoder',
+  'url-encoder': 'url-encoder-decoder',
+  'html-encoder': 'html-entity-encoder',
+  'roman-numeral': 'roman-numeral-converter',
+  'number-base': 'number-base-converter',
+  'morse-code': 'morse-code-translator',
+  'image-base64': 'image-to-base64',
+  'yaml-json-converter': 'yaml-to-json',
+  'unix-timestamp': 'unix-timestamp-converter',
+  'js-minifier': 'javascript-minifier',
+  'text-diff': 'text-diff-checker',
+  'css-tailwind-classifier': 'css-to-tailwind',
+  'http-status-tester': 'http-status-code-tester',
+  'password-strength': 'password-strength-checker',
+  'clipboard-history': 'clipboard-history-manager',
+};
+
+const getCanonicalSlug = (toolId: string): string => slugOverrides[toolId] ?? toolId;
+
+const toDefaultKeyword = (name: string): string =>
+  `${name.toLowerCase()} online free`;
+
+export const toolMasterList: Tool[] = tools.map((tool) => {
+  const categoryLabel = categoryLabelById[tool.category] ?? 'Online Tools';
+  const slug = getCanonicalSlug(tool.id);
+
+  return {
+    ...tool,
+    slug,
+    metaTitle: `${tool.name} - ${categoryLabel} | Free Toolz`,
+    metaDescription: tool.description,
+    keyword: toDefaultKeyword(tool.name),
+  };
+});
 
 export const categories: Category[] = categoryDefinitions.map((category) => ({
   ...category,

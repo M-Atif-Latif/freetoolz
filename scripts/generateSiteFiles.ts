@@ -11,7 +11,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { tools } from '../src/data/tools.ts';
+import { toolMasterList } from '../src/data/tools.ts';
 
 const baseUrl = 'https://freetoolz.cloud';
 const today = new Date().toISOString().split('T')[0];
@@ -38,11 +38,10 @@ const staticPages = [
   { loc: `${baseUrl}/sitemap`, changefreq: 'weekly', priority: 0.5 }
 ];
 
-// Sort tools by category priority and create entries
-const toolEntries = tools
+const toolEntries = toolMasterList
   .filter(tool => tool.indexable !== false)
   .map(tool => ({
-    loc: `${baseUrl}${tool.path}`,
+    loc: `${baseUrl}/${tool.slug ?? tool.id}`,
     changefreq: 'weekly' as const,
     // High priority tools get better sitemap priority
     priority: highPriorityCategories.includes(tool.category) ? 0.9 : 0.8,
