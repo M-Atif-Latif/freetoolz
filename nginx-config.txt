@@ -66,7 +66,7 @@ server {
 
     # Static caching rules
     location / {
-        try_files $uri $uri/ /index.html;
+        try_files $uri $uri/ $uri/index.html /index.html;
     }
 
     location ~* \.html$ {

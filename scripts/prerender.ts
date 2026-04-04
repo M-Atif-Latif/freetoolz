@@ -429,7 +429,7 @@ function generateHTML(page: ToolPageConfig): string {
       
       <h2>All Available Tools</h2>
       <ul class="tool-list">
-        ${tools.map(t => `<li><a href="${t.path}">${t.name}</a></li>`).join('\n        ')}
+        ${toolMasterList.map(tool => `<li><a href="/${tool.slug ?? tool.id}">${tool.name}</a></li>`).join('\n        ')}
       </ul>
     </section>
     ` : ''}
@@ -472,7 +472,7 @@ function generateHTML(page: ToolPageConfig): string {
 
       <h2>Related Tools</h2>
       <ul class="tool-list">
-        ${relatedFallback.map(tool => `<li><a href="${tool.path}">${tool.name}</a></li>`).join('\n        ')}
+        ${relatedFallback.map(tool => `<li><a href="/${tool.slug ?? tool.id}">${tool.name}</a></li>`).join('\n        ')}
       </ul>
 
       <h2>FAQ</h2>
@@ -560,4 +560,7 @@ async function prerender() {
   console.log('   - Meta tags are properly set for each page');
 }
 
-prerender().catch(console.error);
+prerender().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
