@@ -138,7 +138,7 @@ const closingCTAs = [
   'Launch it now and keep momentum high.',
   'Open the tool to power your next delivery.',
   'Drop it into your daily toolkit today.',
-  'Ship confidently with FreeToolz at your side.'
+  'Ship confidently with Free Tools at your side.'
 ];
 
 function pascalToTitle(name) {
@@ -216,7 +216,7 @@ function buildParagraphs(readableName, category, intent, seed, audienceList) {
 
   paragraphs.push(intro);
 
-  const p2 = `${pick(paragraphIntros, seed)} FreeToolz pairs thoughtful UI states with realtime guidance so ${intent.persona} can ${intent.hook}. ${pick(paragraphConnectors, seed)} while autosaving context for later.`;
+  const p2 = `${pick(paragraphIntros, seed)} Free Tools pairs thoughtful UI states with realtime guidance so ${intent.persona} can ${intent.hook}. ${pick(paragraphConnectors, seed)} while autosaving context for later.`;
   paragraphs.push(p2);
 
   const p3 = `Across distributed teams, ${readableName} provides structured inputs, contextual helper text, and semantic color cues so teammates can ${intent.outcome}. It supports keyboard-first control, WCAG AA color contrast, and responsive layouts for tablet-friendly reviews.`;
@@ -225,7 +225,7 @@ function buildParagraphs(readableName, category, intent, seed, audienceList) {
   const p4 = `Need governance? Granular tooltips explain why results matter, plus inline docs link to ${categoryProfiles[category].blog} for deeper dives. Pair it with the ${baseUrl}/categories/${categoryProfiles[category].slug} hub to discover adjacent utilities and extend your stack.`;
   paragraphs.push(p4);
 
-  const p5 = `Because FreeToolz ships updates weekly, ${readableName} inherits the latest performance wins, localization improvements, and structured data markup for featured snippets. ${pick(closingCTAs, seed)} `;
+  const p5 = `Because Free Tools ships updates weekly, ${readableName} inherits the latest performance wins, localization improvements, and structured data markup for featured snippets. ${pick(closingCTAs, seed)} `;
   paragraphs.push(p5.trim());
 
   return paragraphs;
@@ -252,7 +252,7 @@ function buildFAQ(readableName, intent) {
   return [
     {
       question: `What makes ${readableName} reliable?`,
-      answer: `${readableName} runs entirely client-side on FreeToolz so nothing sensitive leaves your device, while smart defaults and validation guardrails ${intent.hook}.`
+      answer: `${readableName} runs entirely client-side on Free Tools so nothing sensitive leaves your device, while smart defaults and validation guardrails ${intent.hook}.`
     },
     {
       question: `Can teams collaborate with ${readableName}?`,
@@ -260,7 +260,7 @@ function buildFAQ(readableName, intent) {
     },
     {
       question: `Is ${readableName} free forever?`,
-      answer: `Every FreeToolz utility, including ${readableName}, stays 100% free with no accounts while we finance development through premium partnerships and enterprise support.`
+      answer: `Every Free Tools utility, including ${readableName}, stays 100% free with no accounts while we finance development through premium partnerships and enterprise support.`
     },
     {
       question: `Does ${readableName} work on mobile?`,
@@ -279,7 +279,7 @@ function buildFAQ(readableName, intent) {
 
 function buildSteps(readableName, intent) {
   return [
-    `Launch ${readableName} at FreeToolz and skim the preset guidance banner.`,
+    `Launch ${readableName} at Free Tools and skim the preset guidance banner.`,
     `Paste, upload, or key in the data you want to ${intent.verb}.`,
     `Toggle expert options to fine-tune accuracy, localization, or formatting.`,
     `Review instant results, copy them, or download structured exports for your stakeholders.`
@@ -319,7 +319,7 @@ function buildSchema(entry, faqEntities) {
       },
       publisher: {
         '@type': 'Organization',
-        name: 'FreeToolz',
+        name: 'Free Tools',
         url: baseUrl,
         logo: `${baseUrl}/assets/free-toolz-logo.png`
       },
@@ -386,7 +386,7 @@ const entries = toolFiles.map((file) => {
     slug,
     category,
     url,
-    titleTag: `${readableName} | Free ${category.slice(0, -1)} Tool by FreeToolz`,
+    titleTag: `${readableName} | Free ${category.slice(0, -1)} Tool by Free Tools`,
     metaDescription: `${readableName} helps ${categoryProfile.audience[0]} ${intent.verb} in seconds. Free, private, and tuned for ${intent.persona}.`,
     h1: readableName,
     h2: [
@@ -404,11 +404,11 @@ const entries = toolFiles.map((file) => {
     paa,
     faq,
     cta: `Launch ${readableName} now`,
-    directAnswer: `${readableName} lets you ${intent.verb} inside FreeToolz with ${intent.outcome} and zero installs.`,
+    directAnswer: `${readableName} lets you ${intent.verb} inside Free Tools with ${intent.outcome} and zero installs.`,
     snippetAnswer: `Open ${readableName}, add your data, adjust presets, and export ${intent.outcome} in under a minute.`,
-    conversationalAnswer: `${readableName} lives inside FreeToolz, so I can walk you through the ${intent.verb} steps, highlight key settings, and share reusable presets.`,
-    voiceAnswer: `Open FreeToolz ${readableName}, add your info, choose the preset, and your ${intent.verb} result is ready for sharing.`,
-    imageAlt: `Screenshot of the ${readableName} interface on FreeToolz`,
+    conversationalAnswer: `${readableName} lives inside Free Tools, so I can walk you through the ${intent.verb} steps, highlight key settings, and share reusable presets.`,
+    voiceAnswer: `Open Free Tools ${readableName}, add your info, choose the preset, and your ${intent.verb} result is ready for sharing.`,
+    imageAlt: `Screenshot of the ${readableName} interface on Free Tools`,
     rating
   };
 

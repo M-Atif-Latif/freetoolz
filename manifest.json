@@ -1,6 +1,6 @@
 {
-  "name": "FreeToolz - Free Online Tools",
-  "short_name": "FreeToolz",
+  "name": "Free Tools - Free Online Tools",
+  "short_name": "Free Tools",
   "description": "Access 120+ free online tools for text processing, PDF manipulation, image editing, SEO testing, security analysis and more",
   "start_url": "/",
   "display": "standalone",

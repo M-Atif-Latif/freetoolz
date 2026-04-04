@@ -46,7 +46,7 @@ export function SEOWrapper({ toolId, children }: SEOWrapperProps) {
         priceCurrency: seoData.schema.offers.priceCurrency,
       },
       author: {
-        name: 'FreeToolz',
+        name: 'Free Tools',
         url: 'https://freetoolz.cloud',
       },
     });

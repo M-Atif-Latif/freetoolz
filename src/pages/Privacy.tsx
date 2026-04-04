@@ -7,12 +7,12 @@ export default function Privacy() {
         
         <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded">
           <p className="text-blue-900 font-semibold">Your Privacy is Our Priority</p>
-          <p className="text-blue-800 text-sm mt-1">FreeToolz is committed to protecting your privacy and ensuring your data security.</p>
+          <p className="text-blue-800 text-sm mt-1">Free Tools is committed to protecting your privacy and ensuring your data security.</p>
         </div>
 
         <h2 className="text-2xl font-bold mb-3 text-gray-800">🔒 Your Privacy Matters</h2>
         <p className="mb-4 text-gray-700 leading-relaxed">
-          At FreeToolz, we take your privacy seriously. All our tools are designed with privacy-first principles. 
+          At Free Tools, we take your privacy seriously. All our tools are designed with privacy-first principles. 
           Your data is processed entirely in your browser and never leaves your device. We do not have servers 
           that store, collect, or transmit your personal information.
         </p>
@@ -81,7 +81,7 @@ export default function Privacy() {
 
         <div className="bg-gray-50 border border-gray-200 p-4 mt-8 rounded-lg">
           <p className="text-sm text-gray-600 text-center">
-            By using FreeToolz, you acknowledge that you have read and understood this Privacy Policy.
+            By using Free Tools, you acknowledge that you have read and understood this Privacy Policy.
           </p>
         </div>
       </div>

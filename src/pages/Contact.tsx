@@ -13,7 +13,7 @@ export default function Contact() {
     <div className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold text-gray-900 mb-4 text-center">Get in Touch</h1>
       <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-        Have questions, suggestions, or feedback about FreeToolz? Want to collaborate on a project? 
+        Have questions, suggestions, or feedback about Free Tools? Want to collaborate on a project? 
         I'd love to hear from you! Feel free to reach out through any of the channels below.
       </p>
       

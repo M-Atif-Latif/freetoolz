@@ -13,7 +13,7 @@ const sitemapLinks: { category: string; links: SitemapLink[] }[] = [
       { title: 'Home', path: '/', description: 'Browse all 80+ free online tools' },
       { title: 'Blog', path: '/blog', description: 'Articles and guides on productivity and online tools' },
       { title: 'FAQ', path: '/faq', description: 'Frequently asked questions' },
-      { title: 'About Us', path: '/about', description: 'Learn about FreeToolz and the developer' },
+      { title: 'About Us', path: '/about', description: 'Learn about Free Tools and the developer' },
       { title: 'Contact', path: '/contact', description: 'Get in touch with us' },
     ],
   },
@@ -105,7 +105,7 @@ export default function Sitemap({ onNavigate }: SitemapProps) {
             Sitemap
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Browse all pages and tools available on FreeToolz
+            Browse all pages and tools available on Free Tools
           </p>
         </div>
 

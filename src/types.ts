@@ -5,6 +5,7 @@ export interface Tool {
   category: string;
   icon: string;
   path: string;
+  indexable?: boolean;
 }
 
 export interface Category {

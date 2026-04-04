@@ -18,34 +18,223 @@ const BASE_URL = 'https://freetoolz.cloud';
 
 // Static pages configuration
 const staticPages = [
-  { path: '/', title: 'FreeToolz - 120+ Free Online Tools | No Sign Up Required', description: 'Access 120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, and more. Completely free, secure, and privacy-focused.' },
-  { path: '/about', title: 'About Us - FreeToolz Cloud', description: 'Learn about FreeToolz mission to provide free, professional-grade online tools for everyone. Our story and commitment to free tools.' },
-  { path: '/contact', title: 'Contact Us - FreeToolz Cloud', description: 'Get in touch with FreeToolz. We value your feedback, questions, and suggestions.' },
-  { path: '/privacy', title: 'Privacy Policy - FreeToolz Cloud', description: 'Read our privacy policy. We are committed to protecting your data and respecting your privacy.' },
-  { path: '/terms', title: 'Terms of Service - FreeToolz Cloud', description: 'Review the terms and conditions for using FreeToolz services.' },
-  { path: '/disclaimer', title: 'Disclaimer - FreeToolz Cloud', description: 'Important information and disclaimers about using FreeToolz services.' },
-  { path: '/blog', title: 'Blog - FreeToolz Cloud', description: 'Read our latest articles, guides, and insights on productivity, privacy, and online tools.' },
-  { path: '/faq', title: 'FAQ - FreeToolz Cloud', description: 'Find answers to common questions about FreeToolz, our tools, privacy, security, and more.' },
-  { path: '/sitemap', title: 'Sitemap - All Pages | FreeToolz Cloud', description: 'Browse all pages and tools available on FreeToolz. Complete site navigation and tool directory.' },
+  { path: '/', title: 'Free Tools - 120+ Free Online Tools | No Sign Up Required', description: 'Access 120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, and more. Completely free, secure, and privacy-focused.' },
+  { path: '/about', title: 'About Us - Free Tools', description: 'Learn about Free Tools mission to provide free, professional-grade online tools for everyone. Our story and commitment to free tools.' },
+  { path: '/contact', title: 'Contact Us - Free Tools', description: 'Get in touch with Free Tools. We value your feedback, questions, and suggestions.' },
+  { path: '/privacy', title: 'Privacy Policy - Free Tools', description: 'Read our privacy policy. We are committed to protecting your data and respecting your privacy.' },
+  { path: '/terms', title: 'Terms of Service - Free Tools', description: 'Review the terms and conditions for using Free Tools services.' },
+  { path: '/disclaimer', title: 'Disclaimer - Free Tools', description: 'Important information and disclaimers about using Free Tools services.' },
+  { path: '/blog', title: 'Blog - Free Tools', description: 'Read our latest articles, guides, and insights on productivity, privacy, and online tools.' },
+  { path: '/faq', title: 'FAQ - Free Tools', description: 'Find answers to common questions about Free Tools, our tools, privacy, security, and more.' },
+  { path: '/sitemap', title: 'Sitemap - All Pages | Free Tools', description: 'Browse all pages and tools available on Free Tools. Complete site navigation and tool directory.' },
 ];
 
 // Generate tool pages from tools data
 const toolPages = tools.map(tool => ({
   path: tool.path,
-  title: `${tool.name} - Free Online Tool | FreeToolz Cloud`,
+  title: `${tool.name} - Free Online Tool | Free Tools`,
   description: `${tool.description} Free, secure, no signup required. Use ${tool.name} online instantly.`,
   keywords: [tool.name.toLowerCase(), 'free online tool', 'no signup', tool.category],
   category: tool.category,
+  indexable: tool.indexable !== false,
 }));
 
 const allPages = [...staticPages, ...toolPages];
 
+type ToolPageConfig = {
+  path: string;
+  title: string;
+  description: string;
+  keywords?: string[];
+  category?: string;
+  indexable?: boolean;
+};
+
+function getRelatedTools(pagePath: string, category?: string, limit = 8) {
+  return tools
+    .filter(tool => tool.path !== pagePath && tool.indexable !== false && (!category || tool.category === category))
+    .slice(0, limit);
+}
+
+function getCategoryIntent(category?: string) {
+  const intents: Record<string, { intro: string; useCases: string[] }> = {
+    text: {
+      intro: 'Process, clean, and transform text in seconds for writing, editing, and publishing workflows.',
+      useCases: ['Content editing and proofreading', 'SEO text cleanup and formatting', 'Document preparation and automation'],
+    },
+    calculator: {
+      intro: 'Run fast and accurate calculations for personal, academic, and business tasks.',
+      useCases: ['Financial planning and budgeting', 'Health and lifestyle calculations', 'Academic and productivity math'],
+    },
+    generator: {
+      intro: 'Generate secure, reusable, and structured outputs instantly in your browser.',
+      useCases: ['Security and identity generation', 'Design and development placeholders', 'Quick content and code utilities'],
+    },
+    converter: {
+      intro: 'Convert data, formats, units, and values quickly without installing software.',
+      useCases: ['File and data format conversion', 'Unit and value conversion', 'Developer and workflow compatibility'],
+    },
+    developer: {
+      intro: 'Debug, validate, and optimize code and data with practical developer-focused utilities.',
+      useCases: ['Data validation and formatting', 'Code optimization and debugging', 'API and web development checks'],
+    },
+    pdf: {
+      intro: 'Manage PDF files online with fast browser-based processing for common document tasks.',
+      useCases: ['Document merging and splitting', 'Compression and optimization', 'Quick file preparation and sharing'],
+    },
+    image: {
+      intro: 'Edit and optimize images for web, social, and productivity workflows in one place.',
+      useCases: ['Image size and format optimization', 'Visual asset preparation', 'Accessibility and visual quality checks'],
+    },
+    utility: {
+      intro: 'Handle practical day-to-day digital tasks with simple and fast browser utilities.',
+      useCases: ['Quick workflow automation', 'Productivity and organization tasks', 'General-purpose online utilities'],
+    },
+    security: {
+      intro: 'Test, verify, and strengthen privacy, SEO, and security signals with focused utility tools.',
+      useCases: ['SEO validation and audits', 'Security checks and analysis', 'Browser and metadata inspection'],
+    },
+  };
+
+  return intents[category || 'utility'] || intents.utility;
+}
+
+function escapeJsonString(value: string) {
+  return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+}
+
+function getBuildAssetTags() {
+  const indexPath = path.join(distDir, 'index.html');
+
+  if (!fs.existsSync(indexPath)) {
+    return { styles: '', scripts: '' };
+  }
+
+  const indexHtml = fs.readFileSync(indexPath, 'utf8');
+  const styleLinks = Array.from(indexHtml.matchAll(/<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"[^>]*>/g))
+    .map(match => `<link rel="stylesheet" href="${match[1]}">`)
+    .join('\n  ');
+
+  const scriptTags = Array.from(indexHtml.matchAll(/<script[^>]+type="module"[^>]+src="([^"]+)"[^>]*><\/script>/g))
+    .map(match => `<script type="module" src="${match[1]}"></script>`)
+    .join('\n  ');
+
+  return { styles: styleLinks, scripts: scriptTags };
+}
+
+const buildAssets = getBuildAssetTags();
+
 /**
  * Generate HTML template with proper meta tags for SEO
  */
-function generateHTML(page: { path: string; title: string; description: string; keywords?: string[]; category?: string }): string {
+function generateHTML(page: ToolPageConfig): string {
   const canonicalUrl = `${BASE_URL}${page.path === '/' ? '' : page.path}`;
   const keywords = page.keywords ? page.keywords.join(', ') : 'free online tools, no signup, browser tools';
+  const robotsContent = page.indexable === false
+    ? 'noindex, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+    : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+  const pageName = page.title.split(' - ')[0];
+  const isToolPage = page.path.startsWith('/tools/');
+  const categoryIntent = getCategoryIntent(page.category);
+  const relatedTools = isToolPage ? getRelatedTools(page.path, page.category) : [];
+  const relatedFallback = isToolPage && relatedTools.length === 0
+    ? tools.filter(tool => tool.path !== page.path && tool.indexable !== false).slice(0, 8)
+    : relatedTools;
+
+  const faqItems = isToolPage
+    ? [
+        {
+          question: `Is ${pageName} free to use?`,
+          answer: `Yes. ${pageName} is available free on Free Tools with no signup required.`,
+        },
+        {
+          question: `Does ${pageName} upload my data to a server?`,
+          answer: `${pageName} is designed for privacy-focused browser usage, and core processing is performed on-device whenever possible.`,
+        },
+        {
+          question: `How do I use ${pageName}?`,
+          answer: `Open the tool page, provide your input, and get instant output directly in your browser.`,
+        },
+      ]
+    : [];
+
+  const faqSchema = isToolPage
+    ? `
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      ${faqItems
+        .map(
+          item => `{
+        "@type": "Question",
+        "name": "${escapeJsonString(item.question)}",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "${escapeJsonString(item.answer)}"
+        }
+      }`
+        )
+        .join(',\n      ')}
+    ]
+  }
+  </script>
+
+  <!-- HowTo Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to use ${escapeJsonString(pageName)}",
+    "description": "${escapeJsonString(page.description)}",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Open tool",
+        "text": "Open ${escapeJsonString(pageName)} on Free Tools."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Add input",
+        "text": "Enter or paste the required input in the tool interface."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Configure options",
+        "text": "Choose any relevant settings based on your use case."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Get result",
+        "text": "Run the tool and copy or export the result instantly."
+      }
+    ]
+  }
+  </script>
+
+  <!-- ItemList Schema: Related Tools -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Related tools for ${escapeJsonString(pageName)}",
+    "itemListElement": [
+      ${relatedFallback
+        .map(
+          (tool, index) => `{
+        "@type": "ListItem",
+        "position": ${index + 1},
+        "name": "${escapeJsonString(tool.name)}",
+        "url": "${BASE_URL}${tool.path}"
+      }`
+        )
+        .join(',\n      ')}
+    ]
+  }
+  </script>`
+    : '';
   
   return `<!DOCTYPE html>
 <html lang="en">
@@ -58,9 +247,9 @@ function generateHTML(page: { path: string; title: string; description: string; 
   <meta name="title" content="${page.title}">
   <meta name="description" content="${page.description}">
   <meta name="keywords" content="${keywords}">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="bingbot" content="index, follow">
+  <meta name="robots" content="${robotsContent}">
+  <meta name="googlebot" content="${robotsContent}">
+  <meta name="bingbot" content="${robotsContent}">
   
   <!-- Canonical URL - CRITICAL FOR SEO -->
   <link rel="canonical" href="${canonicalUrl}">
@@ -71,7 +260,7 @@ function generateHTML(page: { path: string; title: string; description: string; 
   <meta property="og:title" content="${page.title}">
   <meta property="og:description" content="${page.description}">
   <meta property="og:image" content="${BASE_URL}/logo.png">
-  <meta property="og:site_name" content="FreeToolz Cloud">
+  <meta property="og:site_name" content="Free Tools">
   <meta property="og:locale" content="en_US">
   
   <!-- Twitter -->
@@ -89,6 +278,7 @@ function generateHTML(page: { path: string; title: string; description: string; 
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
+  ${buildAssets.styles}
   
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,11 +288,11 @@ function generateHTML(page: { path: string; title: string; description: string; 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "${page.path.startsWith('/tools/') ? 'WebApplication' : 'WebPage'}",
-    "name": "${page.title.split(' - ')[0]}",
+    "@type": "${isToolPage ? 'WebApplication' : 'WebPage'}",
+    "name": "${pageName}",
     "description": "${page.description}",
     "url": "${canonicalUrl}",
-    ${page.path.startsWith('/tools/') ? `
+    ${isToolPage ? `
     "applicationCategory": "UtilityApplication",
     "operatingSystem": "Any",
     "browserRequirements": "Requires JavaScript. Requires HTML5.",
@@ -113,12 +303,12 @@ function generateHTML(page: { path: string; title: string; description: string; 
     },` : ''}
     "author": {
       "@type": "Organization",
-      "name": "FreeToolz Cloud",
+      "name": "Free Tools",
       "url": "${BASE_URL}"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "FreeToolz Cloud",
+      "name": "Free Tools",
       "logo": {
         "@type": "ImageObject",
         "url": "${BASE_URL}/logo.png"
@@ -142,18 +332,19 @@ function generateHTML(page: { path: string; title: string; description: string; 
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "${page.path.startsWith('/tools/') ? 'Tools' : page.title.split(' - ')[0]}",
-        "item": "${page.path.startsWith('/tools/') ? BASE_URL + '/#tools' : canonicalUrl}"
-      }` : ''}${page.path.startsWith('/tools/') ? `,
+        "name": "${isToolPage ? 'Tools' : pageName}",
+        "item": "${isToolPage ? BASE_URL + '/#tools' : canonicalUrl}"
+      }` : ''}${isToolPage ? `,
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "${page.title.split(' - ')[0]}",
+        "name": "${pageName}",
         "item": "${canonicalUrl}"
       }` : ''}
     ]
   }
   </script>
+  ${faqSchema}
   
   <!-- Critical CSS -->
   <style>
@@ -191,7 +382,7 @@ function generateHTML(page: { path: string; title: string; description: string; 
 </head>
 <body>
   <nav>
-    <a href="/">🛠️ FreeToolz</a>
+    <a href="/">🛠️ Free Tools</a>
     <a href="/#tools">Tools</a>
     <a href="/about">About</a>
     <a href="/blog">Blog</a>
@@ -199,13 +390,13 @@ function generateHTML(page: { path: string; title: string; description: string; 
   </nav>
   
   <main class="seo-content">
-    <h1>${page.title.split(' - ')[0]}</h1>
+    <h1>${pageName}</h1>
     <p>${page.description}</p>
     
     ${page.path === '/' ? `
     <section>
       <h2>120+ Free Online Tools - No Signup Required</h2>
-      <p>FreeToolz Cloud offers a comprehensive suite of free online utilities designed for everyday tasks. From text processing and PDF manipulation to image editing and calculations - all tools work directly in your browser with zero downloads required.</p>
+      <p>Free Tools offers a comprehensive suite of free online utilities designed for everyday tasks. From text processing and PDF manipulation to image editing and calculations - all tools work directly in your browser with zero downloads required.</p>
       
       <div class="features">
         <div class="feature">
@@ -241,10 +432,26 @@ function generateHTML(page: { path: string; title: string; description: string; 
     </section>
     ` : ''}
     
-    ${page.path.startsWith('/tools/') ? `
+    ${isToolPage ? `
     <section>
-      <h2>How to Use This Tool</h2>
-      <p>This tool is completely free and works directly in your browser. No signup, no downloads, no data uploaded to servers.</p>
+      <h2>What This Tool Helps You Do</h2>
+      <p>${categoryIntent.intro}</p>
+      <p>${pageName} is optimized for quick results, clean output, and everyday productivity without account creation.</p>
+
+      <h2>Common Use Cases</h2>
+      <ul>
+        ${categoryIntent.useCases.map(useCase => `<li>${useCase}</li>`).join('\n        ')}
+      </ul>
+
+      <h2>How to Use ${pageName}</h2>
+      <ol>
+        <li>Open the tool and add your input.</li>
+        <li>Adjust available options based on your goal.</li>
+        <li>Generate output and copy or export your result.</li>
+      </ol>
+
+      <h2>Why Use Free Tools</h2>
+      <p>Our tools are built for speed and privacy with a browser-first workflow. You can complete tasks instantly without installs or signups.</p>
       
       <div class="features">
         <div class="feature">
@@ -253,13 +460,26 @@ function generateHTML(page: { path: string; title: string; description: string; 
         </div>
         <div class="feature">
           <h3>🔒 Privacy First</h3>
-          <p>All processing happens in your browser. Your data never leaves your device.</p>
+          <p>Core processing is designed for local browser execution whenever possible.</p>
         </div>
         <div class="feature">
           <h3>⚡ Instant Results</h3>
           <p>Get results immediately with real-time processing.</p>
         </div>
       </div>
+
+      <h2>Related Tools</h2>
+      <ul class="tool-list">
+        ${relatedFallback.map(tool => `<li><a href="${tool.path}">${tool.name}</a></li>`).join('\n        ')}
+      </ul>
+
+      <h2>FAQ</h2>
+      ${faqItems
+        .map(
+          item => `<h3>${item.question}</h3>
+      <p>${item.answer}</p>`
+        )
+        .join('\n      ')}
       
       <a href="/" class="cta">← Back to All Tools</a>
     </section>
@@ -272,7 +492,7 @@ function generateHTML(page: { path: string; title: string; description: string; 
   </main>
   
   <footer>
-    <p>&copy; ${new Date().getFullYear()} FreeToolz Cloud. All rights reserved.</p>
+    <p>&copy; ${new Date().getFullYear()} Free Tools. All rights reserved.</p>
     <p>
       <a href="/privacy">Privacy Policy</a> • 
       <a href="/terms">Terms of Service</a> • 
@@ -281,7 +501,7 @@ function generateHTML(page: { path: string; title: string; description: string; 
   </footer>
   
   <div id="root"></div>
-  <script type="module" src="/assets/index.js"></script>
+  ${buildAssets.scripts}
 </body>
 </html>`;
 }
@@ -309,7 +529,8 @@ async function prerender() {
       filePath = path.join(distDir, 'index.html');
     } else {
       // Create directory structure for clean URLs
-      const dirPath = path.join(distDir, page.path);
+      const cleanPath = page.path.replace(/^\/+/, '');
+      const dirPath = path.join(distDir, cleanPath);
       fs.mkdirSync(dirPath, { recursive: true });
       filePath = path.join(dirPath, 'index.html');
     }

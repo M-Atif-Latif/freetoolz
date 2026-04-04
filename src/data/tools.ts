@@ -1,15 +1,15 @@
 import { Tool, Category } from '../types';
 
-export const categories: Category[] = [
-  { id: 'text', name: 'Text Tools', icon: 'FileText', count: 23 },
-  { id: 'calculator', name: 'Calculators', icon: 'Calculator', count: 17 },
-  { id: 'generator', name: 'Generators', icon: 'Sparkles', count: 9 },
-  { id: 'converter', name: 'Converters', icon: 'RefreshCw', count: 18 },
-  { id: 'developer', name: 'Developer Tools', icon: 'Code', count: 17 },
-  { id: 'pdf', name: 'PDF Tools', icon: 'FileText', count: 7 },
-  { id: 'image', name: 'Image Tools', icon: 'Image', count: 10 },
-  { id: 'utility', name: 'Utility Tools', icon: 'Wrench', count: 14 },
-  { id: 'security', name: 'Security & SEO', icon: 'Shield', count: 5 },
+const categoryDefinitions: Omit<Category, 'count'>[] = [
+  { id: 'text', name: 'Text Tools', icon: 'FileText' },
+  { id: 'calculator', name: 'Calculators', icon: 'Calculator' },
+  { id: 'generator', name: 'Generators', icon: 'Sparkles' },
+  { id: 'converter', name: 'Converters', icon: 'RefreshCw' },
+  { id: 'developer', name: 'Developer Tools', icon: 'Code' },
+  { id: 'pdf', name: 'PDF Tools', icon: 'FileText' },
+  { id: 'image', name: 'Image Tools', icon: 'Image' },
+  { id: 'utility', name: 'Utility Tools', icon: 'Wrench' },
+  { id: 'security', name: 'Security & SEO', icon: 'Shield' },
 ];
 
 export const tools: Tool[] = [
@@ -446,6 +446,7 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Timer',
     path: '/tools/time-calculator',
+    indexable: false,
   },
   {
     id: 'calories-calculator',
@@ -454,6 +455,7 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Apple',
     path: '/tools/calories-calculator',
+    indexable: false,
   },
   // Additional Generators
   {
@@ -463,6 +465,7 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'ScanBarcode',
     path: '/tools/barcode-generator',
+    indexable: false,
   },
   {
     id: 'credit-card-generator',
@@ -471,6 +474,7 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'CreditCard',
     path: '/tools/credit-card-generator',
+    indexable: false,
   },
   {
     id: 'fake-data-generator',
@@ -487,6 +491,7 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'Droplet',
     path: '/tools/gradient-generator',
+    indexable: false,
   },
   // Additional Developer Tools
   {
@@ -496,6 +501,7 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'ShieldCheck',
     path: '/tools/jwt-decoder',
+    indexable: false,
   },
   {
     id: 'xml-formatter',
@@ -504,6 +510,7 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'FileCode',
     path: '/tools/xml-formatter',
+    indexable: false,
   },
   {
     id: 'sql-formatter',
@@ -512,6 +519,7 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Database',
     path: '/tools/sql-formatter',
+    indexable: false,
   },
   {
     id: 'htaccess-generator',
@@ -520,6 +528,7 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'FileCode2',
     path: '/tools/htaccess-generator',
+    indexable: false,
   },
   // Additional PDF Tools
   {
@@ -529,6 +538,7 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/pdf-to-text',
+    indexable: false,
   },
   {
     id: 'pdf-watermark',
@@ -537,6 +547,7 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Droplets',
     path: '/tools/pdf-watermark',
+    indexable: false,
   },
   // Additional Image Tools
   {
@@ -546,6 +557,7 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Crop',
     path: '/tools/image-cropper',
+    indexable: false,
   },
   {
     id: 'image-rotator',
@@ -554,6 +566,7 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'RotateCw',
     path: '/tools/image-rotator',
+    indexable: false,
   },
   {
     id: 'background-remover',
@@ -595,6 +608,7 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Dices',
     path: '/tools/dice-roller',
+    indexable: false,
   },
   {
     id: 'random-picker',
@@ -985,3 +999,8 @@ export const tools: Tool[] = [
     path: '/tools/pdf-page-extractor',
   },
 ];
+
+export const categories: Category[] = categoryDefinitions.map((category) => ({
+  ...category,
+  count: tools.filter((tool) => tool.category === category.id).length,
+}));

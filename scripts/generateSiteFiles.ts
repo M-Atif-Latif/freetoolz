@@ -24,7 +24,7 @@ const distDir = path.join(projectRoot, 'dist');
 fs.mkdirSync(publicDir, { recursive: true });
 
 // Priority tools that should be indexed first (most valuable)
-const highPriorityCategories = ['text', 'calculator', 'generator', 'pdf'];
+const highPriorityCategories = ['text', 'calculator', 'generator', 'pdf', 'developer', 'security'];
 
 const staticPages = [
   { loc: `${baseUrl}/`, changefreq: 'daily', priority: 1.0 },
@@ -40,6 +40,7 @@ const staticPages = [
 
 // Sort tools by category priority and create entries
 const toolEntries = tools
+  .filter(tool => tool.indexable !== false)
   .map(tool => ({
     loc: `${baseUrl}${tool.path}`,
     changefreq: 'weekly' as const,
@@ -55,6 +56,8 @@ const urlEntries = [...staticPages, ...toolEntries]
     // Enhanced sitemap entry with more metadata
     return `  <url>
     <loc>${entry.loc}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="${entry.loc}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${entry.loc}" />
     <lastmod>${today}</lastmod>
     <changefreq>${entry.changefreq}</changefreq>
     <priority>${entry.priority.toFixed(2)}</priority>
@@ -65,10 +68,11 @@ const urlEntries = [...staticPages, ...toolEntries]
 // Enhanced sitemap with XML namespaces for better SEO
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- FreeToolz Cloud Sitemap - Generated ${today} -->
+<!-- Free Tools Sitemap - Generated ${today} -->
 <!-- ${staticPages.length} static pages + ${toolEntries.length} tool pages = ${staticPages.length + toolEntries.length} total URLs -->
 ${urlEntries}
 </urlset>
@@ -76,7 +80,7 @@ ${urlEntries}
 
 // Optimized robots.txt for better crawling
 // REMOVED Crawl-delay as it can significantly slow down indexing
-const robots = `# FreeToolz Cloud Robots Configuration
+const robots = `# Free Tools Robots Configuration
 # Website: ${baseUrl}
 # Generated: ${today}
 

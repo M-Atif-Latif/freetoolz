@@ -11,11 +11,11 @@ export default function About() {
           </span>
         </div>
         <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6">
-          About <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400">FreeToolz</span>
+          About <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400">Free Tools</span>
         </h1>
       </div>
       
-      {/* About FreeToolz Section */}
+      {/* About Free Tools Section */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-10 space-y-8 mb-16 transition-all hover:shadow-2xl">
         <div className="border-l-4 border-blue-600 dark:border-blue-500 pl-6">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-3">
@@ -23,7 +23,7 @@ export default function About() {
             Our Vision
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-xl leading-relaxed">
-            FreeToolz is built on a simple yet powerful belief: <strong className="text-blue-600 dark:text-blue-400">essential digital utilities should be accessible to everyone, everywhere, at any time.</strong>
+            Free Tools is built on a simple yet powerful belief: <strong className="text-blue-600 dark:text-blue-400">essential digital utilities should be accessible to everyone, everywhere, at any time.</strong>
           </p>
         </div>
         
@@ -34,7 +34,7 @@ export default function About() {
         </p>
         
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-          <strong className="text-blue-600 dark:text-blue-400">FreeToolz changes that.</strong> We provide a comprehensive suite of 120+ professional-grade tools that are 
+          <strong className="text-blue-600 dark:text-blue-400">Free Tools changes that.</strong> We provide a comprehensive suite of 120+ professional-grade tools that are 
           completely free, require no registration, and respect your privacy. All processing happens directly in your browser, 
           ensuring your data never leaves your device.
         </p>
@@ -84,7 +84,7 @@ export default function About() {
             </p>
 
             <p className="text-center text-blue-50 leading-relaxed mb-10 text-lg">
-              FreeToolz represents my commitment to democratizing technology and making powerful digital tools accessible 
+              Free Tools represents my commitment to democratizing technology and making powerful digital tools accessible 
               to everyone. Whether you're a student, professional, developer, or just someone who needs a quick utility, 
               these tools are designed to make your life easier.
             </p>

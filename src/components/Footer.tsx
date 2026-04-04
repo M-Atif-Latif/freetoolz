@@ -58,14 +58,14 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <Wrench className="h-7 w-7 sm:h-8 sm:w-8 text-blue-600 dark:text-blue-500" />
                 <div className="absolute inset-0 bg-blue-600 dark:bg-blue-500 rounded-full blur-md opacity-30"></div>
               </div>
-              <span className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Free<span className="text-blue-600 dark:text-blue-500">Toolz</span></span>
+              <span className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Free<span className="text-blue-600 dark:text-blue-500"> Tools</span></span>
             </div>
             <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 max-w-md leading-relaxed">
               Your ultimate collection of 120+ free online tools. No registration required, no API keys needed. Fast, simple, and always free.
             </p>
             <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
-              <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">FreeToolz Cloud</p>
-              <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Connect with FreeToolz on social media</p>
+              <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">Free Tools</p>
+              <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Connect with Free Tools on social media</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {socialLinks.map((link) => (
                   <a
@@ -112,7 +112,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="border-t border-gray-200 dark:border-gray-800 pt-6 sm:pt-8 mt-6 sm:mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 sm:space-y-4 md:space-y-0 gap-2">
             <p className="text-center md:text-left text-gray-600 dark:text-gray-400 text-2xs sm:text-xs md:text-sm">
-              &copy; {new Date().getFullYear()} FreeToolz. All rights reserved.
+              &copy; {new Date().getFullYear()} Free Tools. All rights reserved.
             </p>
             <p className="text-center md:text-right text-gray-600 dark:text-gray-400 text-2xs sm:text-xs md:text-sm">
               Crafted with <span className="text-red-500 animate-pulse inline-block">♥</span> by{' '}

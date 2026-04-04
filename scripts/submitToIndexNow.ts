@@ -101,7 +101,7 @@ async function submitToIndexNow() {
 // Google Search Console URL Inspection API setup guide
 console.log(`
 ╔═══════════════════════════════════════════════════════════════════╗
-║           FreeToolz URL Indexing Helper                           ║
+║           Free Tools URL Indexing Helper                           ║
 ╠═══════════════════════════════════════════════════════════════════╣
 ║                                                                   ║
 ║  This script helps submit URLs to search engines.                 ║

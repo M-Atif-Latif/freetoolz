@@ -1,6 +1,6 @@
-# FreeToolz Cloud Robots Configuration
+# Free Tools Robots Configuration
 # Website: https://freetoolz.cloud
-# Generated: 2026-01-11
+# Generated: 2026-04-03
 
 # Allow all crawlers full access
 User-agent: *

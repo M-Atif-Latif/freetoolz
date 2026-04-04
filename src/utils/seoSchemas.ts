@@ -1,4 +1,4 @@
-// SEO Schema Markup Generator for FreeToolz Cloud
+// SEO Schema Markup Generator for Free Tools
 
 interface SchemaOrganization {
   '@context': string;
@@ -71,7 +71,7 @@ export const generateOrganizationSchema = (): SchemaOrganization => {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'FreeToolz Cloud',
+    name: 'Free Tools',
     url: 'https://freetoolz.cloud',
     logo: 'https://freetoolz.cloud/logo.png',
     description: '120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration required.',
@@ -161,7 +161,7 @@ export const toolFAQs: Record<string, Array<{ question: string; answer: string }
   'word-counter': [
     {
       question: 'Is the Word Counter tool free to use?',
-      answer: 'Yes, FreeToolz Cloud offers a completely free Word Counter without registration, ads, or limitations.'
+      answer: 'Yes, Free Tools offers a completely free Word Counter without registration, ads, or limitations.'
     },
     {
       question: 'Does the Word Counter save my text?',

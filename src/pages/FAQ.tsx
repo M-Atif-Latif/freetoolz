@@ -10,13 +10,13 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     category: 'General',
-    question: 'What is FreeToolz?',
-    answer: 'FreeToolz is a comprehensive collection of 54+ free online tools designed to help with text processing, PDF manipulation, image editing, calculations, conversions, and more. All tools work directly in your browser without requiring any downloads, installations, or registrations.'
+    question: 'What is Free Tools?',
+    answer: 'Free Tools is a comprehensive collection of 54+ free online tools designed to help with text processing, PDF manipulation, image editing, calculations, conversions, and more. All tools work directly in your browser without requiring any downloads, installations, or registrations.'
   },
   {
     category: 'General',
-    question: 'Is FreeToolz really free?',
-    answer: 'Yes! All tools on FreeToolz are completely free to use with no hidden costs, subscriptions, or premium features. We believe essential digital utilities should be accessible to everyone.'
+    question: 'Is Free Tools really free?',
+    answer: 'Yes! All tools on Free Tools are completely free to use with no hidden costs, subscriptions, or premium features. We believe essential digital utilities should be accessible to everyone.'
   },
   {
     category: 'General',
@@ -25,7 +25,7 @@ const faqs: FAQItem[] = [
   },
   {
     category: 'Privacy & Security',
-    question: 'Is my data safe when using FreeToolz?',
+    question: 'Is my data safe when using Free Tools?',
     answer: 'Absolutely! All processing happens directly in your browser using client-side JavaScript. Your files and data never leave your device, are not uploaded to any server, and are not stored or transmitted anywhere. This ensures maximum privacy and security.'
   },
   {
@@ -41,7 +41,7 @@ const faqs: FAQItem[] = [
   {
     category: 'Technical',
     question: 'What browsers are supported?',
-    answer: 'FreeToolz works on all modern browsers including Chrome, Firefox, Safari, Edge, and Opera. For the best experience, we recommend using the latest version of your preferred browser.'
+    answer: 'Free Tools works on all modern browsers including Chrome, Firefox, Safari, Edge, and Opera. For the best experience, we recommend using the latest version of your preferred browser.'
   },
   {
     category: 'Technical',
@@ -101,7 +101,7 @@ const faqs: FAQItem[] = [
   {
     category: 'Usage',
     question: 'Are the tools mobile-friendly?',
-    answer: 'Yes! All our tools are fully responsive and work seamlessly on smartphones and tablets. You can access FreeToolz from any device with a web browser.'
+    answer: 'Yes! All our tools are fully responsive and work seamlessly on smartphones and tablets. You can access Free Tools from any device with a web browser.'
   }
 ];
 
@@ -127,7 +127,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Find answers to common questions about FreeToolz, our tools, privacy, and more.
+            Find answers to common questions about Free Tools, our tools, privacy, and more.
           </p>
         </div>
 

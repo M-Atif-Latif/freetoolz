@@ -68,7 +68,7 @@ const blogPosts: BlogPost[] = [
     
     **Conclusion**
     
-    The right set of online tools transforms how you work. They eliminate repetitive tasks, reduce errors, and free up your time for creative and strategic thinking. By integrating these essential tools into your daily workflow, you'll find yourself working more efficiently and delivering higher quality results. The best part? Many of these tools, like those offered by FreeToolz, are completely free and require no registration, making professional-grade utilities accessible to everyone.`,
+    The right set of online tools transforms how you work. They eliminate repetitive tasks, reduce errors, and free up your time for creative and strategic thinking. By integrating these essential tools into your daily workflow, you'll find yourself working more efficiently and delivering higher quality results. The best part? Many of these tools, like those offered by Free Tools, are completely free and require no registration, making professional-grade utilities accessible to everyone.`,
     date: 'November 5, 2025',
     author: 'Muhammad Atif Latif',
     category: 'Productivity',
@@ -967,7 +967,7 @@ export default function Blog() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            FreeToolz <span className="text-blue-600">Blog</span>
+            Free Tools <span className="text-blue-600">Blog</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Insights, tips, and guides on maximizing productivity with online tools,
