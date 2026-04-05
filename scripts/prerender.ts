@@ -383,8 +383,9 @@ function generateHTML(page: ToolPageConfig): string {
   </style>
 </head>
 <body>
-  <nav>
-    <a href="/">🛠️ Free Tools</a>
+  <div id="root">
+    <nav>
+      <a href="/">🛠️ Free Tools</a>
     <a href="/#tools">Tools</a>
     <a href="/about">About</a>
     <a href="/blog">Blog</a>
@@ -501,8 +502,8 @@ function generateHTML(page: ToolPageConfig): string {
       <a href="/sitemap">Sitemap</a>
     </p>
   </footer>
+  </div>
   
-  <div id="root"></div>
   ${buildAssets.scripts}
 </body>
 </html>`;
