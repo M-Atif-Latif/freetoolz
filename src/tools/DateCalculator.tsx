@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { CalendarDays } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function DateCalculator() {
+  const howItWorks = [
+    { title: 'Select Start Date', description: 'Pick your first date from the calendar' },
+    { title: 'Select End Date', description: 'Choose your second date to calculate the difference' },
+    { title: 'View Duration', description: 'See days, weeks, months, or years between dates' },
+    { title: 'Copy Result', description: 'Use the copy button to save your date calculation' }
+  ];
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [result, setResult] = useState<{

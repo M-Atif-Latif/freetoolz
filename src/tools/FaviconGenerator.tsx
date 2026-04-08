@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Image as ImageIcon, Sparkles } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function FaviconGenerator() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select an image to use as favicon' },
+    { title: 'Preview', description: 'See how it will look as a favicon' },
+    { title: 'Generate', description: 'Create favicon in all required sizes' },
+    { title: 'Download Files', description: 'Get favicon files for your website' }
+  ];
   const [text, setText] = useState('F');
   const [bgColor, setBgColor] = useState('#4F46E5');
   const [textColor, setTextColor] = useState('#FFFFFF');

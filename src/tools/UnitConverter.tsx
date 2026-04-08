@@ -1,6 +1,14 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function UnitConverter() {
+  const howItWorks = [
+    { title: 'Select Unit Type', description: 'Choose what you\'re converting (length, weight, volume, etc.)' },
+    { title: 'Enter Amount', description: 'Type the value in your source unit' },
+    { title: 'Select Units', description: 'Pick your source and target units' },
+    { title: 'View Result', description: 'See instant conversion with precise calculations' }
+  ];
   const [value, setValue] = useState('');
   const [from, setFrom] = useState('meters');
   const [to, setTo] = useState('feet');
@@ -27,6 +35,9 @@ export default function UnitConverter() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Unit Converter</h1>
       <p className="text-gray-600 text-lg mb-6">Convert between different units of measurement</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="grid md:grid-cols-3 gap-6 mb-6">
           <div>
@@ -62,3 +73,4 @@ export default function UnitConverter() {
     </div>
   );
 }
+

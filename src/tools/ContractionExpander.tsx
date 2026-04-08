@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Expand, Shrink, ArrowLeftRight } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ContractionExpander() {
+  const howItWorks = [
+    { title: 'Enter Text', description: 'Type or paste text with contractions' },
+    { title: 'Choose Mode', description: 'Expand contractions OR collapse expanded forms' },
+    { title: 'Process', description: 'Convert your text' },
+    { title: 'Copy Result', description: 'Save your processed text' }
+  ];
   const [text, setText] = useState('');
   const [mode, setMode] = useState<'expand' | 'compress'>('expand');
 

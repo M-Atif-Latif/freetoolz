@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Shuffle, Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TextRandomizer() {
+  const howItWorks = [
+    { title: 'Enter Text', description: 'Paste text or choose from options' },
+    { title: 'Choose Randomize Type', description: 'Shuffle words, characters, or lines' },
+    { title: 'Randomize', description: 'Instantly randomize your text' },
+    { title: 'Copy Result', description: 'Save your randomized text' }
+  ];
   const [text, setText] = useState('');
   const [mode, setMode] = useState<'words' | 'characters' | 'lines'>('words');
   const [copied, setCopied] = useState(false);

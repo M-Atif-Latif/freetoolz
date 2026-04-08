@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Shield, Check, X } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function PasswordStrengthChecker() {
+  const howItWorks = [
+    { title: 'Enter Your Password', description: 'Type or paste the password you want to test' },
+    { title: 'Live Analysis', description: 'See realtime strength checks as you type' },
+    { title: 'Review Requirements', description: 'Check which security requirements are met' },
+    { title: 'Get Strength Rating', description: 'See overall password strength: Weak, Medium, or Strong' }
+  ];
   const [password, setPassword] = useState('');
 
   const checks = {
@@ -20,17 +28,18 @@ export default function PasswordStrengthChecker() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
         <Shield className="h-16 w-16 mx-auto text-blue-500 mb-4" />
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">Password Strength Checker</h1>
-        <p className="text-gray-600 text-lg">Check how strong your password is</p>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Password Strength Checker</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">Check how strong your password is</p>
+        <HowItWorks steps={howItWorks} />
       </div>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <input
           type="text"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Enter password to test..."
-          className="w-full px-4 py-4 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none text-lg mb-6 font-mono"
+          className="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none text-lg mb-6 font-mono"
         />
 
         {password && (

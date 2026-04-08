@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { GraduationCap, Plus, Trash2 } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface Course {
   id: number;

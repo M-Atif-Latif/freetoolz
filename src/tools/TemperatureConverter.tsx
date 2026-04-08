@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Thermometer } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TemperatureConverter() {
+  const howItWorks = [
+    { title: 'Enter Temperature', description: 'Type the temperature value in your source unit' },
+    { title: 'Select Source Unit', description: 'Choose from Celsius, Fahrenheit, or Kelvin' },
+    { title: 'Select Target Unit', description: 'Pick the unit you want to convert to' },
+    { title: 'View Result', description: 'See instant conversion with precise calculations' }
+  ];
   const [celsius, setCelsius] = useState('');
   const [fahrenheit, setFahrenheit] = useState('');
   const [kelvin, setKelvin] = useState('');

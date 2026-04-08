@@ -1,7 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { currencies, formatCurrency, getDefaultCurrency } from '../data/currencies';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function LoanCalculator() {
+  const howItWorks = [
+    { title: 'Enter Loan Amount', description: 'Input the principal amount you want to borrow' },
+    { title: 'Set Interest Rate', description: 'Enter the annual interest rate in percentage' },
+    { title: 'Choose Loan Term', description: 'Select how many years or months to repay' },
+    { title: 'View Payment Plan', description: 'See monthly payment, total interest, and total cost' }
+  ];
   const [amount, setAmount] = useState('');
   const [rate, setRate] = useState('');
   const [years, setYears] = useState('');
@@ -22,6 +30,9 @@ export default function LoanCalculator() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Loan Calculator</h1>
       <p className="text-gray-600 text-lg mb-6">Calculate monthly loan payments in any currency</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">Currency</label>
@@ -86,3 +97,4 @@ export default function LoanCalculator() {
     </div>
   );
 }
+

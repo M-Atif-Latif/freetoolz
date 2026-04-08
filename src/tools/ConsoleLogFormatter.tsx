@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Terminal, Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ConsoleLogFormatter() {
+  const howItWorks = [
+    { title: 'Enter Console Output', description: 'Paste raw console log output' },
+    { title: 'Click Format', description: 'Parse and format the console logs' },
+    { title: 'View Formatted', description: 'See organized, readable console output' },
+    { title: 'Copy Result', description: 'Save your formatted logs' }
+  ];
   const [input, setInput] = useState('');
   const [formatted, setFormatted] = useState('');
   const [copied, setCopied] = useState(false);

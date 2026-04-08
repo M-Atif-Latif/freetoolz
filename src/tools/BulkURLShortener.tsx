@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link2, Loader2 } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface URLResult {
   original: string;
@@ -8,6 +10,12 @@ interface URLResult {
 }
 
 export default function BulkURLShortener() {
+  const howItWorks = [
+    { title: 'Paste URLs', description: 'Enter multiple URLs (one per line)' },
+    { title: 'Generate Short Links', description: 'Create shortened versions of each URL' },
+    { title: 'View Results', description: 'See all your shortened URLs in a table' },
+    { title: 'Copy Links', description: 'Copy shortened URLs individually or all at once' }
+  ];
   const [urls, setUrls] = useState('');
   const [results, setResults] = useState<URLResult[]>([]);
   const [loading, setLoading] = useState(false);
@@ -54,6 +62,8 @@ export default function BulkURLShortener() {
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Shorten multiple URLs at once for campaigns and tracking
           </p>
+          
+          <HowItWorks steps={howItWorks} />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6">

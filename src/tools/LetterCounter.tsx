@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { AlignLeft } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function LetterCounter() {
+  const howItWorks = [
+    { title: 'Enter Your Text', description: 'Type or paste the text you want to analyze' },
+    { title: 'View Letter Frequency', description: 'See which letters appear most in your text' },
+    { title: 'Check Statistics', description: 'Find total letters, unique letters, vowels, and consonants' },
+    { title: 'Copy Results', description: 'Use the copy button to save your analysis' }
+  ];
   const [text, setText] = useState('');
 
   const analyzeLetters = () => {

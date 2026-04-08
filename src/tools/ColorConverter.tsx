@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ColorConverter() {
+  const howItWorks = [
+    { title: 'Enter Color', description: 'Input color in HEX, RGB, HSL, or named format' },
+    { title: 'Convert', description: 'Instantly convert to other color formats' },
+    { title: 'View Results', description: 'See your color in HEX, RGB, HSL, and other formats' },
+    { title: 'Copy Code', description: 'Use copy buttons to save any color format' }
+  ];
   const [hex, setHex] = useState('#3B82F6');
   const [rgb, setRgb] = useState({ r: 59, g: 130, b: 246 });
   const [hsl, setHsl] = useState({ h: 217, s: 91, l: 60 });
@@ -64,6 +72,8 @@ export default function ColorConverter() {
         <p className="text-gray-600 text-lg">
           Convert colors between HEX, RGB, and HSL formats
         </p>
+        
+        <HowItWorks steps={howItWorks} />
       </div>
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">

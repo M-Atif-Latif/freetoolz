@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Code, CheckCircle, XCircle, AlertCircle, Copy, Info } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface ValidationResult {
   type: 'JSON-LD' | 'Microdata' | 'RDFa';

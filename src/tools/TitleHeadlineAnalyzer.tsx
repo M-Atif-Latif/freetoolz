@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Trophy, AlertCircle } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TitleHeadlineAnalyzer() {
+  const howItWorks = [
+    { title: 'Enter Headline', description: 'Type or paste your title or headline' },
+    { title: 'Analyze', description: 'Tool checks readability, word count, and SEO quality' },
+    { title: 'View Suggestions', description: 'Get recommendations to improve your headline' },
+    { title: 'Copy Result', description: 'Save improved headline versions' }
+  ];
   const [title, setTitle] = useState('');
 
   const analyzeTitle = () => {

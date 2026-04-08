@@ -1,7 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Coins, Dices } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function CoinFlip() {
+  const howItWorks = [
+    { title: 'Click Flip Coin', description: 'Press the button to flip a virtual coin' },
+    { title: 'Wait for Result', description: 'See the coin animation' },
+    { title: 'View Result', description: 'See if you got Heads or Tails' },
+    { title: 'Flip Again', description: 'Click to flip again or keep track of results' }
+  ];
   const [coinResult, setCoinResult] = useState('');
   const [diceResult, setDiceResult] = useState(0);
   const [flipping, setFlipping] = useState(false);
@@ -30,6 +38,10 @@ export default function CoinFlip() {
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Coin Flip & Dice Roll</h1>
       <p className="text-gray-600 text-lg mb-6">Flip a coin or roll a dice</p>
 
+
+      <HowItWorks steps={howItWorks} />
+
+
       <div className="grid md:grid-cols-2 gap-6">
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
           <div className="text-center mb-6">
@@ -42,6 +54,9 @@ export default function CoinFlip() {
               coinResult === 'Heads' ? 'bg-gradient-to-br from-yellow-100 to-orange-100' : 'bg-gradient-to-br from-gray-100 to-gray-200'
             }`}>
               <p className="text-5xl font-bold text-gray-900">{coinResult}</p>
+
+            <HowItWorks steps={howItWorks} />
+
             </div>
           )}
 
@@ -63,6 +78,9 @@ export default function CoinFlip() {
           {diceResult > 0 && (
             <div className="p-6 bg-gradient-to-br from-red-100 to-pink-100 rounded-xl mb-6 text-center">
               <p className="text-6xl font-bold text-gray-900">{diceResult}</p>
+
+            <HowItWorks steps={howItWorks} />
+
             </div>
           )}
 
@@ -78,3 +96,4 @@ export default function CoinFlip() {
     </div>
   );
 }
+

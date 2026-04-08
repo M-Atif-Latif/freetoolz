@@ -1,20 +1,34 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { PDFDocument } from 'pdf-lib';
 import { Upload, Download } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function MergePDF() {
+  const howItWorks = [
+    { title: 'Upload PDF Files', description: 'Select multiple PDF files to combine' },
+    { title: 'Arrange Order', description: 'Reorder the PDFs if needed' },
+    { title: 'Merge', description: 'Combine all PDFs into a single file' },
+    { title: 'Download', description: 'Save your merged PDF to your device' }
+  ];
   const [files, setFiles] = useState<File[]>([]);
   const [merging, setMerging] = useState(false);
+  const [error, setError] = useState('');
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setFiles(Array.from(e.target.files));
+      setError('');
     }
   };
 
   const mergePDFs = async () => {
-    if (files.length < 2) return;
+    if (files.length < 2) {
+      setError('Please select at least 2 PDF files');
+      return;
+    }
     setMerging(true);
+    setError('');
 
     try {
       const mergedPdf = await PDFDocument.create();
@@ -33,8 +47,9 @@ export default function MergePDF() {
       a.href = url;
       a.download = 'merged.pdf';
       a.click();
+      setFiles([]);
     } catch (error) {
-      alert('Error merging PDFs: ' + error);
+      setError('Error merging PDFs: ' + error);
     } finally {
       setMerging(false);
     }
@@ -43,9 +58,11 @@ export default function MergePDF() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Merge PDF Files</h1>
-      <p className="text-gray-600 text-lg mb-6">Combine multiple PDF files into one document</p>
+      <p className="text-gray-600 text-lg mb-8">Combine multiple PDF files into one document</p>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <HowItWorks steps={howItWorks} />
+
+      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
         <div className="mb-6">
           <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -96,6 +113,13 @@ export default function MergePDF() {
           <strong>Privacy:</strong> All processing happens in your browser. Files are never uploaded to any server.
         </p>
       </div>
+
+      {error && (
+        <div className="mt-6 p-4 bg-red-50 rounded-lg border border-red-200">
+          <p className="text-sm text-red-700">{error}</p>
+        </div>
+      )}
     </div>
   );
 }
+

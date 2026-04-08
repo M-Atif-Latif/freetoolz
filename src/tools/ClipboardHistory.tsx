@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Clipboard, Clock, Copy } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface ClipboardItem {
   id: number;
@@ -8,6 +10,13 @@ interface ClipboardItem {
 }
 
 export default function ClipboardHistory() {
+  const howItWorks = [
+    { title: 'Add to History', description: 'Type or paste content to track it' },
+    { title: 'View History', description: 'See all your saved clipboard items with timestamps' },
+    { title: 'Copy Items', description: 'Click any item to copy it back to clipboard' },
+    { title: 'Manage List', description: 'Delete individual items or clear all history' }
+  ];
+
   const [history, setHistory] = useState<ClipboardItem[]>([]);
   const [input, setInput] = useState('');
   const [copied, setCopied] = useState<number | null>(null);
@@ -62,6 +71,8 @@ export default function ClipboardHistory() {
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Track and manage your clipboard history with timestamps
           </p>
+          
+          <HowItWorks steps={howItWorks} />
         </div>
 
         {/* Add Item */}

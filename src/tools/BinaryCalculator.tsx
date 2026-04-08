@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Binary } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function BinaryCalculator() {
+  const howItWorks = [
+    { title: 'Enter Binary Numbers', description: 'Type two binary numbers (only 0s and 1s are allowed)' },
+    { title: 'Select Operation', description: 'Choose from addition, subtraction, multiplication, or division' },
+    { title: 'Click Calculate', description: 'Press the calculate button to get your binary result' },
+    { title: 'Copy Result', description: 'Use the copy button to save your binary calculation' }
+  ];
   const [binary1, setBinary1] = useState('');
   const [binary2, setBinary2] = useState('');
   const [result, setResult] = useState('');
@@ -30,11 +38,12 @@ export default function BinaryCalculator() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
         <Binary className="h-16 w-16 mx-auto text-green-500 mb-4" />
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">Binary Calculator</h1>
-        <p className="text-gray-600 text-lg">Perform binary arithmetic operations</p>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Binary Calculator</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">Perform binary arithmetic operations</p>
+        <HowItWorks steps={howItWorks} />
       </div>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <div className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Binary Number 1</label>

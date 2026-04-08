@@ -1,7 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { EyeOff, Copy, Check, Info } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function InvisibleCharacter() {
+  const howItWorks = [
+    { title: 'Generate Character', description: 'Create an invisible/zero-width character' },
+    { title: 'Copy to Clipboard', description: 'Get the invisible character ready to paste' },
+    { title: 'Paste Elsewhere', description: 'Use it in documents or messages' },
+    { title: 'Detect', description: 'Paste text to detect invisible characters' }
+  ];
   const [copied, setCopied] = useState('');
   const [count, setCount] = useState(1);
 
@@ -71,6 +79,9 @@ export default function InvisibleCharacter() {
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Generate and copy invisible Unicode characters for various purposes. Perfect for Discord, WhatsApp, or any text field.
           </p>
+
+        <HowItWorks steps={howItWorks} />
+
         </div>
 
         {/* Count Selector */}
@@ -103,13 +114,22 @@ export default function InvisibleCharacter() {
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-4">
                 <h3 className="text-lg font-bold text-white">{char.name}</h3>
                 <p className="text-sm text-blue-100 font-mono">{char.unicode}</p>
+
+              <HowItWorks steps={howItWorks} />
+
               </div>
               <div className="p-5">
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                   {char.description}
                 </p>
+
+                <HowItWorks steps={howItWorks} />
+
                 <div className="mb-4">
                   <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1">HTML Entity:</p>
+
+                  <HowItWorks steps={howItWorks} />
+
                   <code className="text-sm text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-900 px-2 py-1 rounded">
                     {char.hex}
                   </code>
@@ -150,12 +170,12 @@ export default function InvisibleCharacter() {
               </h3>
             </div>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
-              <li>• <strong>Discord:</strong> Create invisible nicknames or empty messages</li>
-              <li>• <strong>WhatsApp:</strong> Send blank messages or create space</li>
-              <li>• <strong>Social Media:</strong> Create line breaks in bios</li>
-              <li>• <strong>Gaming:</strong> Create invisible or special names</li>
-              <li>• <strong>Forms:</strong> Fill required fields invisibly</li>
-              <li>• <strong>Testing:</strong> Test form validation and character limits</li>
+              <li>â€¢ <strong>Discord:</strong> Create invisible nicknames or empty messages</li>
+              <li>â€¢ <strong>WhatsApp:</strong> Send blank messages or create space</li>
+              <li>â€¢ <strong>Social Media:</strong> Create line breaks in bios</li>
+              <li>â€¢ <strong>Gaming:</strong> Create invisible or special names</li>
+              <li>â€¢ <strong>Forms:</strong> Fill required fields invisibly</li>
+              <li>â€¢ <strong>Testing:</strong> Test form validation and character limits</li>
             </ul>
           </div>
 
@@ -177,6 +197,9 @@ export default function InvisibleCharacter() {
               <p className="text-xs text-yellow-800 dark:text-yellow-200">
                 <strong>Note:</strong> Some platforms may filter or remove certain invisible characters for security reasons.
               </p>
+
+            <HowItWorks steps={howItWorks} />
+
             </div>
           </div>
         </div>
@@ -184,17 +207,18 @@ export default function InvisibleCharacter() {
         {/* Warning */}
         <div className="mt-6 bg-orange-50 dark:bg-orange-900/20 rounded-xl p-6 border border-orange-200 dark:border-orange-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center space-x-2">
-            <span>⚠️</span>
+            <span>âš ï¸</span>
             <span>Important Notes</span>
           </h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
-            <li>• Invisible characters may cause issues in some systems or databases</li>
-            <li>• Use responsibly - don't abuse on platforms where it's against ToS</li>
-            <li>• Some text editors may show these characters with special symbols</li>
-            <li>• Character support varies by font and platform</li>
+            <li>â€¢ Invisible characters may cause issues in some systems or databases</li>
+            <li>â€¢ Use responsibly - don't abuse on platforms where it's against ToS</li>
+            <li>â€¢ Some text editors may show these characters with special symbols</li>
+            <li>â€¢ Character support varies by font and platform</li>
           </ul>
         </div>
       </div>
     </div>
   );
 }
+

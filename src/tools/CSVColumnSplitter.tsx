@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Table, Plus, Minus } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function CSVColumnSplitter() {
+  const howItWorks = [
+    { title: 'Paste CSV Data', description: 'Enter your CSV data in the input area' },
+    { title: 'Choose Separator', description: 'Select your column separator (comma, semicolon, tab, etc.)' },
+    { title: 'Split Columns', description: 'Separate the columns into individual data' },
+    { title: 'Copy Result', description: 'Save your split column data' }
+  ];
   const [csvText, setCsvText] = useState('');
   const [delimiter, setDelimiter] = useState(',');
   const [mode, setMode] = useState<'split' | 'join'>('split');

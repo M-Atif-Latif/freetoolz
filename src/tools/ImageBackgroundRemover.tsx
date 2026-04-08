@@ -1,7 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Upload, Download, AlertCircle } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ImageBackgroundRemover() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select an image to remove the background from' },
+    { title: 'Processing', description: 'AI automatically detects and removes the background' },
+    { title: 'Preview Result', description: 'See your image with transparent background' },
+    { title: 'Download', description: 'Save your result as PNG with transparency' }
+  ];
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState('');
   const [processed, setProcessed] = useState('');
@@ -87,13 +95,23 @@ export default function ImageBackgroundRemover() {
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Background Remover</h1>
       <p className="text-gray-600 text-lg mb-6">Remove backgrounds from images (works best with white/light backgrounds)</p>
 
+
+      <HowItWorks steps={howItWorks} />
+
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         {/* Info Banner */}
         <div className="mb-6 flex items-start space-x-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
           <div className="text-sm text-blue-800">
             <p className="font-semibold mb-1">Note:</p>
+
+            <HowItWorks steps={howItWorks} />
+
             <p>This tool works best for images with white or light-colored backgrounds. For complex backgrounds, consider using professional tools like remove.bg</p>
+
+          <HowItWorks steps={howItWorks} />
+
           </div>
         </div>
 
@@ -104,7 +122,13 @@ export default function ImageBackgroundRemover() {
               <p className="mb-2 text-sm text-gray-500">
                 <span className="font-semibold">Click to upload</span> or drag and drop
               </p>
+
+              <HowItWorks steps={howItWorks} />
+
               <p className="text-xs text-gray-500">PNG, JPG, WEBP</p>
+
+            <HowItWorks steps={howItWorks} />
+
             </div>
             <input
               type="file"
@@ -171,17 +195,30 @@ export default function ImageBackgroundRemover() {
           <p>
             <strong>1. Upload Image:</strong> Select an image with a white or light-colored background.
           </p>
+
+          <HowItWorks steps={howItWorks} />
+
           <p>
             <strong>2. Remove Background:</strong> Click the button to process the image and remove the background.
           </p>
+
+          <HowItWorks steps={howItWorks} />
+
           <p>
             <strong>3. Download:</strong> Save the image with transparent background as PNG.
           </p>
+
+          <HowItWorks steps={howItWorks} />
+
           <p className="text-sm text-gray-500 mt-4">
             <strong>Note:</strong> This is a basic client-side tool. For professional background removal with AI, we recommend using dedicated services like remove.bg, Photoshop, or GIMP.
           </p>
+
+        <HowItWorks steps={howItWorks} />
+
         </div>
       </div>
     </div>
   );
 }
+

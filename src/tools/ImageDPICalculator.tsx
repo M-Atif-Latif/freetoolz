@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Image as ImageIcon, Ruler } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
 
 export default function ImageDPICalculator() {
+  const howItWorks = [
+    { title: 'Enter Image Specs', description: 'Input dimensions in pixels and print size' },
+    { title: 'Calculate DPI', description: 'Get precise DPI and megapixel information' },
+    { title: 'Review Results', description: 'See image resolution and quality metrics' },
+    { title: 'Use Values', description: 'Apply specs to your image projects' }
+  ];
+
   const [widthPx, setWidthPx] = useState('');
   const [heightPx, setHeightPx] = useState('');
   const [widthInch, setWidthInch] = useState('');
@@ -52,6 +60,8 @@ export default function ImageDPICalculator() {
             Calculate DPI (Dots Per Inch) and PPI (Pixels Per Inch) for images
           </p>
         </div>
+
+        <HowItWorks steps={howItWorks} />
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-6">
           <div className="bg-gradient-to-r from-pink-500 to-rose-600 px-6 py-4">

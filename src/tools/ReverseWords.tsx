@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { ArrowLeftRight, Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ReverseWords() {
+  const howItWorks = [
+    { title: 'Enter Text', description: 'Type or paste text with multiple words' },
+    { title: 'Reverse Order', description: 'Words are rearranged in reverse order' },
+    { title: 'View Result', description: 'See your text with words reversed' },
+    { title: 'Copy Result', description: 'Save your reversed text' }
+  ];
   const [text, setText] = useState('');
   const [copied, setCopied] = useState(false);
 

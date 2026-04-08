@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Calculator, Shuffle } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function PermutationCombinationCalculator() {
+  const howItWorks = [
+    { title: 'Enter Values', description: 'Input n (total items) and r (items to select)' },
+    { title: 'Choose Type', description: 'Select Permutation (order matters) or Combination (order doesn\'t matter)' },
+    { title: 'Calculate', description: 'Get the result instantly' },
+    { title: 'Copy Result', description: 'Save your calculation' }
+  ];
   const [n, setN] = useState('');
   const [r, setR] = useState('');
   const [permutation, setPermutation] = useState('');

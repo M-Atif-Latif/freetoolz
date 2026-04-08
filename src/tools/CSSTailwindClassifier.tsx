@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Wand2, Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function CSSTailwindClassifier() {
+  const howItWorks = [
+    { title: 'Enter CSS', description: 'Paste your CSS code or class names' },
+    { title: 'Classify', description: 'Convert CSS to Tailwind class equivalents' },
+    { title: 'View Tailwind', description: 'See the Tailwind class suggestions' },
+    { title: 'Copy Classes', description: 'Save Tailwind classes for your project' }
+  ];
   const [cssInput, setCssInput] = useState('');
   const [tailwindOutput, setTailwindOutput] = useState('');
   const [copied, setCopied] = useState(false);

@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Database, Shuffle } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function DatasetSampler() {
+  const howItWorks = [
+    { title: 'Upload Dataset', description: 'Select your CSV or data file' },
+    { title: 'Set Sample Size', description: 'Enter number or percentage of rows to sample' },
+    { title: 'Sample Data', description: 'Randomly extract a sample from your dataset' },
+    { title: 'Download Sample', description: 'Save your data sample' }
+  ];
   const [csvInput, setCsvInput] = useState('');
   const [sampleSize, setSampleSize] = useState('10');
   const [sampledData, setSampledData] = useState('');

@@ -1,8 +1,16 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { PDFDocument } from 'pdf-lib';
 import { Upload, Download } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function SplitPDF() {
+  const howItWorks = [
+    { title: 'Upload PDF', description: 'Select the PDF file you want to split' },
+    { title: 'Choose Pages', description: 'Select which pages to extract or how to split' },
+    { title: 'Split', description: 'Separate your PDF into multiple files' },
+    { title: 'Download', description: 'Save your split PDF files' }
+  ];
   const [file, setFile] = useState<File | null>(null);
   const [pageCount, setPageCount] = useState(0);
   const [processing, setProcessing] = useState(false);
@@ -49,9 +57,11 @@ export default function SplitPDF() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Split PDF File</h1>
-      <p className="text-gray-600 text-lg mb-6">Split a PDF into separate page files</p>
+      <p className="text-gray-600 text-lg mb-8">Split a PDF into separate page files</p>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <HowItWorks steps={howItWorks} />
+
+      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
         <div className="mb-6">
           <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -100,3 +110,4 @@ export default function SplitPDF() {
     </div>
   );
 }
+

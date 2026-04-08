@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function PercentageCalculator() {
+  const howItWorks = [
+    { title: 'Enter Values', description: 'Input the original value and percentage you want to calculate' },
+    { title: 'Choose Calculation', description: 'Select from percentage of value, increase, or decrease' },
+    { title: 'View Result', description: 'See instant calculation result displayed below' },
+    { title: 'Copy Result', description: 'Use the copy button to save your calculation' }
+  ];
   const [value, setValue] = useState('');
   const [percentage, setPercentage] = useState('');
   const [increase, setIncrease] = useState('');

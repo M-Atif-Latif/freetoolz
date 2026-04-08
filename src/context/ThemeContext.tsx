@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 
-type Theme = 'light' | 'dark' | 'system';
+type Theme = 'light' | 'dark';
 type ResolvedTheme = 'light' | 'dark';
 
 interface ThemeContextType {
@@ -24,11 +24,11 @@ const getSystemTheme = (): ResolvedTheme => {
 const getInitialTheme = (): Theme => {
   if (typeof window !== 'undefined') {
     const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme && ['light', 'dark', 'system'].includes(savedTheme)) {
+    if (savedTheme === 'light' || savedTheme === 'dark') {
       return savedTheme;
     }
   }
-  return 'system'; // Default to system preference
+  return 'light'; // Always default to light
 };
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
@@ -79,11 +79,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const toggleTheme = useCallback(() => {
-    setThemeState(prev => {
-      if (prev === 'light') return 'dark';
-      if (prev === 'dark') return 'system';
-      return 'light';
-    });
+    setThemeState(prev => (prev === 'light' ? 'dark' : 'light'));
   }, []);
 
   return (

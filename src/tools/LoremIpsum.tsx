@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function LoremIpsum() {
+  const howItWorks = [
+    { title: 'Choose Content Type', description: 'Select words, sentences, or paragraphs' },
+    { title: 'Set Quantity', description: 'Enter how many words, sentences, or paragraphs you need' },
+    { title: 'Generate Text', description: 'Click generate to create realistic Lorem Ipsum text' },
+    { title: 'Copy Text', description: 'Use the copy button to save your generated content' }
+  ];
   const [paragraphs, setParagraphs] = useState(3);
   const [output, setOutput] = useState('');
   const [copied, setCopied] = useState(false);
@@ -38,6 +46,8 @@ export default function LoremIpsum() {
         <p className="text-gray-600 text-lg">
           Generate placeholder text for your designs and mockups
         </p>
+        
+        <HowItWorks steps={howItWorks} />
       </div>
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">

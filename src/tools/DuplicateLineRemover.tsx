@@ -1,6 +1,14 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function DuplicateLineRemover() {
+  const howItWorks = [
+    { title: 'Paste Your Text', description: 'Enter text with multiple lines' },
+    { title: 'Remove Duplicates', description: 'Click to eliminate duplicate lines' },
+    { title: 'View Result', description: 'See your unique lines only' },
+    { title: 'Copy Text', description: 'Save your deduplicated text' }
+  ];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
 
@@ -14,6 +22,9 @@ export default function DuplicateLineRemover() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Duplicate Line Remover</h1>
       <p className="text-gray-600 text-lg mb-6">Remove duplicate lines from your text</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
         <textarea
           value={input}
@@ -37,3 +48,4 @@ export default function DuplicateLineRemover() {
     </div>
   );
 }
+

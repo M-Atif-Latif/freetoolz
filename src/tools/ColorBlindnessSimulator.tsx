@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { Eye } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 type ColorBlindnessType = 'normal' | 'protanopia' | 'deuteranopia' | 'tritanopia' | 'achromatopsia';
 
 export default function ColorBlindnessSimulator() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select an image to simulate color blindness on' },
+    { title: 'Choose Type', description: 'Select the type: Red-blind, Green-blind, or Blue-blind' },
+    { title: 'View Simulation', description: 'See how your image appears to colorblind individuals' },
+    { title: 'Download Result', description: 'Save the simulated image' }
+  ];
   const [color, setColor] = useState('#3B82F6');
   const [activeView, setActiveView] = useState<ColorBlindnessType>('normal');
 

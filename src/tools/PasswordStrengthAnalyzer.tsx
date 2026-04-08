@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Shield, Eye, EyeOff, Copy } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function PasswordStrengthAnalyzer() {
+  const howItWorks = [
+    { title: 'Enter Password', description: 'Type or paste your password to analyze' },
+    { title: 'Analyze Strength', description: 'Evaluate complexity, length, and character types' },
+    { title: 'View Feedback', description: 'Get suggestions to improve your password' },
+    { title: 'Copy Strong Password', description: 'Generate and copy a strong password' }
+  ];
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -113,6 +121,8 @@ export default function PasswordStrengthAnalyzer() {
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Check password strength with detailed security analysis
           </p>
+          
+          <HowItWorks steps={howItWorks} />
         </div>
 
         {/* Input */}

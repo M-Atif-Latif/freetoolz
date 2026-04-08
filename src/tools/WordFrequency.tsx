@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { BarChart3, Copy, Download } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function WordFrequency() {
+  const howItWorks = [
+    { title: 'Enter Your Text', description: 'Paste any document or text' },
+    { title: 'Analyze Frequency', description: 'Tool counts how often each word appears' },
+    { title: 'View Statistics', description: 'See word frequency ranked from most to least common' },
+    { title: 'Export Results', description: 'Download or copy the word frequency analysis' }
+  ];
   const [text, setText] = useState('');
   const [minFrequency, setMinFrequency] = useState(2);
   const [results, setResults] = useState<{ word: string; count: number; percentage: number }[]>([]);

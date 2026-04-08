@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { BookOpen } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ReadabilityScore() {
+  const howItWorks = [
+    { title: 'Enter Your Text', description: 'Paste any article or document text' },
+    { title: 'Analyze Readability', description: 'Tool calculates reading difficulty using Flesch formula' },
+    { title: 'View Metrics', description: 'See readability score and grade level' },
+    { title: 'Copy Results', description: 'Save the readability analysis' }
+  ];
   const [text, setText] = useState('');
 
   const countSyllables = (word: string): number => {
@@ -104,13 +111,17 @@ export default function ReadabilityScore() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
-        <ToolNavigation />
-        
         <div className="flex items-center space-x-3 mb-6">
           <div className="p-3 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl">
             <BookOpen className="h-8 w-8 text-white" />
           </div>
           <div>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Readability Score</h1>
+            <p className="text-gray-600 dark:text-gray-400">Analyze text readability and grade level</p>
+          </div>
+        </div>
+
+        <HowItWorks steps={howItWorks} />
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Readability Score</h1>
             <p className="text-gray-600 dark:text-gray-400">Analyze text readability with Flesch scores</p>
           </div>

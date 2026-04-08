@@ -1,7 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { Play, Pause, RotateCcw, Bell } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function Timer() {
+  const howItWorks = [
+    { title: 'Set Duration', description: 'Enter minutes and seconds for your countdown timer' },
+    { title: 'Click Start', description: 'Press the start button to begin the countdown' },
+    { title: 'Watch Countdown', description: 'See the time remaining decrease in real-time' },
+    { title: 'Get Notification', description: 'Receive an alert and visual signal when time reaches zero' }
+  ];
   const [minutes, setMinutes] = useState(5);
   const [seconds, setSeconds] = useState(0);
   const [timeLeft, setTimeLeft] = useState(300);
@@ -51,6 +59,8 @@ export default function Timer() {
     <div className="max-w-2xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3 text-center">Timer</h1>
       <p className="text-gray-600 text-lg mb-8 text-center">Countdown timer</p>
+      
+      <HowItWorks steps={howItWorks} />
 
       <div className={`rounded-2xl shadow-2xl p-12 transition-all ${
         isFinished ? 'bg-gradient-to-br from-red-500 to-red-700 animate-pulse' : 'bg-gradient-to-br from-purple-500 to-purple-700'

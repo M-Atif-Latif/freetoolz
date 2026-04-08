@@ -1,7 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { Play, Pause, RotateCcw } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function Stopwatch() {
+  const howItWorks = [
+    { title: 'Click Start', description: 'Press the start button to begin measuring time' },
+    { title: 'Watch Time Accumulate', description: 'See hours, minutes, seconds, and milliseconds increase' },
+    { title: 'Pause Anytime', description: 'Click pause to freeze the timer without resetting' },
+    { title: 'Reset to Zero', description: 'Use the reset button to start your measurement over' }
+  ];
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef<number | null>(null);
@@ -36,6 +44,10 @@ export default function Stopwatch() {
       <h1 className="text-4xl font-bold text-gray-900 mb-3 text-center">Stopwatch</h1>
       <p className="text-gray-600 text-lg mb-8 text-center">Accurate time measurement</p>
 
+
+      <HowItWorks steps={howItWorks} />
+
+
       <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl shadow-2xl p-12">
         <div className="text-center mb-8">
           <div className="text-7xl md:text-8xl font-mono font-bold text-white mb-2">{formatTime(time)}</div>
@@ -67,3 +79,4 @@ export default function Stopwatch() {
     </div>
   );
 }
+

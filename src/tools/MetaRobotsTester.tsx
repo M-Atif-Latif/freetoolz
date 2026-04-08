@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { FileSearch, CheckCircle, XCircle, AlertCircle, Info } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface RobotsMeta {
   tag: string;
@@ -9,6 +11,12 @@ interface RobotsMeta {
 }
 
 export default function MetaRobotsTester() {
+  const howItWorks = [
+    { title: 'Enter URL', description: 'Type the website URL to analyze' },
+    { title: 'Check Meta Robots', description: 'Fetch and analyze the meta robots tag' },
+    { title: 'View Directives', description: 'See index, follow, noindex, nofollow settings' },
+    { title: 'Copy Info', description: 'Save the meta robots information' }
+  ];
   const [htmlInput, setHtmlInput] = useState('');
   const [results, setResults] = useState<RobotsMeta[]>([]);
   const [analyzed, setAnalyzed] = useState(false);
@@ -155,6 +163,8 @@ export default function MetaRobotsTester() {
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Validate and analyze meta robots tags in your HTML
           </p>
+          
+          <HowItWorks steps={howItWorks} />
         </div>
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8">

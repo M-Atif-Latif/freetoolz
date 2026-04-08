@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Palette, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ColorContrastChecker() {
+  const howItWorks = [
+    { title: 'Pick Colors', description: 'Select foreground and background colors' },
+    { title: 'Check Contrast', description: 'Automatically compute contrast ratio' },
+    { title: 'View Results', description: 'See if colors meet accessibility standards (WCAG)' },
+    { title: 'Copy Values', description: 'Save color codes and contrast ratio' }
+  ];
   const [foreground, setForeground] = useState('#000000');
   const [background, setBackground] = useState('#FFFFFF');
 

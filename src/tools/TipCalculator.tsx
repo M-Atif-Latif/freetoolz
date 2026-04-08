@@ -1,7 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { currencies, formatCurrency, getDefaultCurrency } from '../data/currencies';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TipCalculator() {
+  const howItWorks = [
+    { title: 'Enter Bill Amount', description: 'Type the total bill amount before tip' },
+    { title: 'Select Tip %', description: 'Choose tip percentage or enter a custom percentage' },
+    { title: 'Split Check', description: 'Optionally divide the bill among multiple people' },
+    { title: 'View Total Cost', description: 'See per-person amount and total with tip included' }
+  ];
   const [bill, setBill] = useState('');
   const [tipPercent, setTipPercent] = useState(15);
   const [people, setPeople] = useState(1);
@@ -15,6 +23,9 @@ export default function TipCalculator() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Tip Calculator</h1>
       <p className="text-gray-600 text-lg mb-6">Calculate tips and split bills with multi-currency support</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div>
@@ -92,3 +103,4 @@ export default function TipCalculator() {
     </div>
   );
 }
+

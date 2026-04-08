@@ -1,6 +1,14 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TimeZoneConverter() {
+  const howItWorks = [
+    { title: 'Enter Your Time', description: 'Type your time and date' },
+    { title: 'Select Source Timezone', description: 'Choose the timezone of your current time' },
+    { title: 'Select Target Timezone', description: 'Pick the timezone you want to convert to' },
+    { title: 'View Result', description: 'See the equivalent time in your target timezone' }
+  ];
   const [time, setTime] = useState('12:00');
   const [fromZone, setFromZone] = useState('UTC');
   const [toZone, setToZone] = useState('America/New_York');
@@ -30,6 +38,9 @@ export default function TimeZoneConverter() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Time Zone Converter</h1>
       <p className="text-gray-600 text-lg mb-6">Convert times between time zones</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           <div>
@@ -70,3 +81,4 @@ export default function TimeZoneConverter() {
     </div>
   );
 }
+

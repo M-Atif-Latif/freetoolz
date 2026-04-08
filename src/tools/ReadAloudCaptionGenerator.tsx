@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { MessageSquare, Volume2 } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ReadAloudCaptionGenerator() {
+  const howItWorks = [
+    { title: 'Enter Your Text', description: 'Paste or type the text you want to convert' },
+    { title: 'Add Caption', description: 'Tool will process your text for audio' },
+    { title: 'Listen & Review', description: 'Hear how your text sounds when read aloud' },
+    { title: 'Copy Caption', description: 'Save the caption for your audio project' }
+  ];
   const [text, setText] = useState('');
   const [wordsPerMinute, setWordsPerMinute] = useState(150);
 

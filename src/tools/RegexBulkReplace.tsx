@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Search, AlertCircle } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function RegexBulkReplace() {
+  const howItWorks = [
+    { title: 'Enter Text', description: 'Paste your text in the input field' },
+    { title: 'Enter Regex Pattern', description: 'Type your regular expression pattern' },
+    { title: 'Enter Replacement', description: 'Specify what to replace matches with' },
+    { title: 'Copy Result', description: 'Save your processed text' }
+  ];
   const [text, setText] = useState('');
   const [pattern, setPattern] = useState('');
   const [replacement, setReplacement] = useState('');

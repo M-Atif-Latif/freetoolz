@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Image, Download } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function SVGOptimizer() {
+  const howItWorks = [
+    { title: 'Paste SVG', description: 'Enter your SVG code' },
+    { title: 'Optimize', description: 'Remove unnecessary attributes, clean up code' },
+    { title: 'View Size Savings', description: 'See how much smaller your SVG is now' },
+    { title: 'Copy Optimized', description: 'Save your optimized SVG' }
+  ];
   const [svgInput, setSvgInput] = useState('');
   const [optimized, setOptimized] = useState('');
   const [stats, setStats] = useState({ original: 0, optimized: 0, saved: 0 });

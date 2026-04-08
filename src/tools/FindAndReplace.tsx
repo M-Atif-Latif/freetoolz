@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { Search, Replace } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function FindAndReplace() {
+  const howItWorks = [
+    { title: 'Enter Text', description: 'Paste your original text' },
+    { title: 'Find & Replace', description: 'Enter search terms and replacement text' },
+    { title: 'Replace', description: 'Click to replace all occurrences' },
+    { title: 'Copy Result', description: 'Save your updated text' }
+  ];
   const [text, setText] = useState('');
   const [findText, setFindText] = useState('');
   const [replaceText, setReplaceText] = useState('');

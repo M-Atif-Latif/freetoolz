@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { currencies, formatCurrency } from '../data/currencies';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function CurrencyConverter() {
+  const howItWorks = [
+    { title: 'Enter Amount', description: 'Type the amount of money you want to convert' },
+    { title: 'Select Source Currency', description: 'Choose the currency you\'re converting from' },
+    { title: 'Select Target Currency', description: 'Pick the currency you want to convert to' },
+    { title: 'View Result', description: 'See instant conversion with real-time rates' }
+  ];
   const [amount, setAmount] = useState('');
   const [from, setFrom] = useState('USD');
   const [to, setTo] = useState('EUR');
@@ -64,9 +72,12 @@ export default function CurrencyConverter() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-3">Currency Converter</h1>
-      <p className="text-gray-600 text-lg mb-6">Convert between 45+ world currencies with real-time rates</p>
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Currency Converter</h1>
+      <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">Convert between 45+ world currencies with real-time rates</p>
+      <div className="mb-6">
+        <HowItWorks steps={howItWorks} />
+      </div>
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <div className="grid md:grid-cols-3 gap-6 mb-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Amount</label>

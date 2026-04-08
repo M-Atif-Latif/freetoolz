@@ -1,7 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Upload, Download } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ImageCompressor() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select an image file from your computer' },
+    { title: 'Set Quality', description: 'Choose compression level and quality' },
+    { title: 'Compress', description: 'Reduce image file size while maintaining quality' },
+    { title: 'Download', description: 'Save your compressed image' }
+  ];
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState('');
   const [quality, setQuality] = useState(80);
@@ -59,6 +67,10 @@ export default function ImageCompressor() {
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Image Compressor</h1>
       <p className="text-gray-600 text-lg mb-6">Reduce image file size while maintaining quality</p>
 
+
+      <HowItWorks steps={howItWorks} />
+
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="mb-6">
           <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
@@ -67,7 +79,13 @@ export default function ImageCompressor() {
               <p className="mb-2 text-sm text-gray-500">
                 <span className="font-semibold">Click to upload</span> or drag and drop
               </p>
+
+              <HowItWorks steps={howItWorks} />
+
               <p className="text-xs text-gray-500">PNG, JPG, WEBP</p>
+
+            <HowItWorks steps={howItWorks} />
+
             </div>
             <input
               type="file"
@@ -110,11 +128,23 @@ export default function ImageCompressor() {
                 <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
                   <div>
                     <p className="text-sm text-gray-600">Original</p>
+
+                    <HowItWorks steps={howItWorks} />
+
                     <p className="text-lg font-bold text-gray-900">{(originalSize / 1024).toFixed(2)} KB</p>
+
+                  <HowItWorks steps={howItWorks} />
+
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Compressed</p>
+
+                    <HowItWorks steps={howItWorks} />
+
                     <p className="text-lg font-bold text-green-600">{(compressedSize / 1024).toFixed(2)} KB</p>
+
+                  <HowItWorks steps={howItWorks} />
+
                   </div>
                 </div>
                 <button
@@ -132,3 +162,4 @@ export default function ImageCompressor() {
     </div>
   );
 }
+

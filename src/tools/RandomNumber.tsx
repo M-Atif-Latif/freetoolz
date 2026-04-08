@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function RandomNumber() {
+  const howItWorks = [
+    { title: 'Set Min and Max', description: 'Enter the minimum and maximum values for your range' },
+    { title: 'Choose Quantity', description: 'Pick how many random numbers you want to generate' },
+    { title: 'Click Generate', description: 'Press the generate button to create random numbers' },
+    { title: 'Copy Results', description: 'Use the copy button to save your generated numbers' }
+  ];
   const [min, setMin] = useState('1');
   const [max, setMax] = useState('100');
   const [count, setCount] = useState(1);
@@ -25,13 +33,14 @@ export default function RandomNumber() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">Random Number Generator</h1>
-        <p className="text-gray-600 text-lg">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Random Number Generator</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">
           Generate random numbers within a specified range
         </p>
+        <HowItWorks steps={howItWorks} />
       </div>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 mb-6">
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">

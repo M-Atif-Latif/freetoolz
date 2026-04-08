@@ -1,6 +1,14 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function LineSorter() {
+  const howItWorks = [
+    { title: 'Paste Your Text', description: 'Enter text with multiple lines to sort' },
+    { title: 'Choose Sort Order', description: 'Select ascending, descending, or randomize' },
+    { title: 'View Sorted Output', description: 'See your lines reorganized in the chosen order' },
+    { title: 'Copy Results', description: 'Use the copy button to save your sorted text' }
+  ];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
 
@@ -14,6 +22,9 @@ export default function LineSorter() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Line Sorter</h1>
       <p className="text-gray-600 text-lg mb-6">Sort lines alphabetically</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
         <textarea
           value={input}
@@ -45,3 +56,4 @@ export default function LineSorter() {
     </div>
   );
 }
+

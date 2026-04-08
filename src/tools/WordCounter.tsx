@@ -1,8 +1,16 @@
 import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
 import SEOWrapper, { SEOContent } from '../components/SEOWrapper';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 function WordCounterTool() {
+  const howItWorks = [
+    { title: 'Paste or Type Text', description: 'Enter your text in the input area to analyze' },
+    { title: 'View Statistics', description: 'Instantly see word count, character count, sentences, and more' },
+    { title: 'Copy Results', description: 'Use the copy button to save your text or statistics' },
+    { title: 'Check Metrics', description: 'Review reading time, speaking time, and average word length' }
+  ];
   const [text, setText] = useState('');
   const [copied, setCopied] = useState(false);
 
@@ -31,6 +39,8 @@ function WordCounterTool() {
         <p className="text-gray-600 dark:text-gray-400 text-lg mb-8">
           Count words, characters, sentences, and paragraphs instantly. Perfect for essays, articles, and SEO content. 100% free with no signup required.
         </p>
+        
+        <HowItWorks steps={howItWorks} />
         
         {/* Statistics Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">

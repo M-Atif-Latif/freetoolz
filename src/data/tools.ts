@@ -18,7 +18,7 @@ export const tools: Tool[] = [
   {
     id: 'word-counter',
     name: 'Word Counter',
-    description: 'Count words, characters, sentences, and paragraphs in your text',
+    description: 'Use Case: Count words, characters, sentences, and paragraphs in your text',
     category: 'text',
     icon: 'FileText',
     path: '/tools/word-counter',
@@ -26,7 +26,7 @@ export const tools: Tool[] = [
   {
     id: 'case-converter',
     name: 'Case Converter',
-    description: 'Convert text to uppercase, lowercase, title case, and more',
+    description: 'Use Case: Convert text to uppercase, lowercase, title case, and more',
     category: 'text',
     icon: 'Type',
     path: '/tools/case-converter',
@@ -34,7 +34,7 @@ export const tools: Tool[] = [
   {
     id: 'text-reverser',
     name: 'Text Reverser',
-    description: 'Reverse your text or flip it upside down',
+    description: 'Use Case: Reverse your text or flip it upside down',
     category: 'text',
     icon: 'Repeat',
     path: '/tools/text-reverser',
@@ -42,7 +42,7 @@ export const tools: Tool[] = [
   {
     id: 'remove-spaces',
     name: 'Remove Extra Spaces',
-    description: 'Clean up extra whitespace from your text',
+    description: 'Use Case: Clean up extra whitespace from your text',
     category: 'text',
     icon: 'AlignLeft',
     path: '/tools/remove-spaces',
@@ -50,7 +50,7 @@ export const tools: Tool[] = [
   {
     id: 'lorem-ipsum',
     name: 'Lorem Ipsum Generator',
-    description: 'Generate placeholder text for your designs',
+    description: 'Use Case: Generate placeholder text for your designs',
     category: 'text',
     icon: 'FileType',
     path: '/tools/lorem-ipsum',
@@ -58,7 +58,7 @@ export const tools: Tool[] = [
   {
     id: 'age-calculator',
     name: 'Age Calculator',
-    description: 'Calculate your exact age in years, months, and days',
+    description: 'Use Case: Calculate your exact age in years, months, and days',
     category: 'calculator',
     icon: 'Calendar',
     path: '/tools/age-calculator',
@@ -66,7 +66,7 @@ export const tools: Tool[] = [
   {
     id: 'bmi-calculator',
     name: 'BMI Calculator',
-    description: 'Calculate your Body Mass Index and health status',
+    description: 'Use Case: Calculate your Body Mass Index and health status',
     category: 'calculator',
     icon: 'Activity',
     path: '/tools/bmi-calculator',
@@ -74,7 +74,7 @@ export const tools: Tool[] = [
   {
     id: 'percentage-calculator',
     name: 'Percentage Calculator',
-    description: 'Calculate percentages, increases, and decreases',
+    description: 'Use Case: Calculate percentages, increases, and decreases',
     category: 'calculator',
     icon: 'Percent',
     path: '/tools/percentage-calculator',
@@ -82,7 +82,7 @@ export const tools: Tool[] = [
   {
     id: 'password-generator',
     name: 'Password Generator',
-    description: 'Generate strong, random passwords for security',
+    description: 'Use Case: Generate strong, random passwords for security',
     category: 'generator',
     icon: 'Lock',
     path: '/tools/password-generator',
@@ -90,7 +90,7 @@ export const tools: Tool[] = [
   {
     id: 'qr-code-generator',
     name: 'QR Code Generator',
-    description: 'Create QR codes for URLs, text, and more',
+    description: 'Use Case: Create QR codes for URLs, text, and more',
     category: 'generator',
     icon: 'QrCode',
     path: '/tools/qr-code-generator',
@@ -98,7 +98,7 @@ export const tools: Tool[] = [
   {
     id: 'uuid-generator',
     name: 'UUID Generator',
-    description: 'Generate unique identifiers (UUID/GUID)',
+    description: 'Use Case: Generate unique identifiers (UUID/GUID)',
     category: 'generator',
     icon: 'Hash',
     path: '/tools/uuid-generator',
@@ -106,7 +106,7 @@ export const tools: Tool[] = [
   {
     id: 'random-number',
     name: 'Random Number Generator',
-    description: 'Generate random numbers within a range',
+    description: 'Use Case: Generate random numbers within a range',
     category: 'generator',
     icon: 'Dices',
     path: '/tools/random-number',
@@ -114,7 +114,7 @@ export const tools: Tool[] = [
   {
     id: 'base64-encoder',
     name: 'Base64 Encoder/Decoder',
-    description: 'Encode or decode Base64 strings',
+    description: 'Use Case: Encode or decode Base64 strings',
     category: 'converter',
     icon: 'Binary',
     path: '/tools/base64-encoder',
@@ -122,7 +122,7 @@ export const tools: Tool[] = [
   {
     id: 'url-encoder',
     name: 'URL Encoder/Decoder',
-    description: 'Encode or decode URL strings',
+    description: 'Use Case: Encode or decode URL strings',
     category: 'converter',
     icon: 'Link',
     path: '/tools/url-encoder',
@@ -130,7 +130,7 @@ export const tools: Tool[] = [
   {
     id: 'color-converter',
     name: 'Color Converter',
-    description: 'Convert colors between HEX, RGB, and HSL',
+    description: 'Use Case: Convert colors between HEX, RGB, and HSL',
     category: 'converter',
     icon: 'Palette',
     path: '/tools/color-converter',
@@ -138,7 +138,7 @@ export const tools: Tool[] = [
   {
     id: 'json-formatter',
     name: 'JSON Formatter',
-    description: 'Format and validate JSON data',
+    description: 'Use Case: Format and validate JSON data',
     category: 'developer',
     icon: 'Braces',
     path: '/tools/json-formatter',
@@ -146,7 +146,7 @@ export const tools: Tool[] = [
   {
     id: 'html-encoder',
     name: 'HTML Entity Encoder',
-    description: 'Encode and decode HTML entities',
+    description: 'Use Case: Encode and decode HTML entities',
     category: 'developer',
     icon: 'Code2',
     path: '/tools/html-encoder',
@@ -154,7 +154,7 @@ export const tools: Tool[] = [
   {
     id: 'character-counter',
     name: 'Character Counter',
-    description: 'Count characters with and without spaces',
+    description: 'Use Case: Count characters with and without spaces',
     category: 'text',
     icon: 'Hash',
     path: '/tools/character-counter',
@@ -162,7 +162,7 @@ export const tools: Tool[] = [
   {
     id: 'text-to-slug',
     name: 'Text to Slug',
-    description: 'Convert text to URL-friendly slugs',
+    description: 'Use Case: Convert text to URL-friendly slugs',
     category: 'text',
     icon: 'Link2',
     path: '/tools/text-to-slug',
@@ -170,7 +170,7 @@ export const tools: Tool[] = [
   {
     id: 'markdown-to-html',
     name: 'Markdown to HTML',
-    description: 'Convert Markdown to HTML',
+    description: 'Use Case: Convert Markdown to HTML',
     category: 'text',
     icon: 'FileCode',
     path: '/tools/markdown-to-html',
@@ -178,7 +178,7 @@ export const tools: Tool[] = [
   {
     id: 'duplicate-line-remover',
     name: 'Duplicate Line Remover',
-    description: 'Remove duplicate lines from text',
+    description: 'Use Case: Remove duplicate lines from text',
     category: 'text',
     icon: 'GitCompare',
     path: '/tools/duplicate-line-remover',
@@ -186,7 +186,7 @@ export const tools: Tool[] = [
   {
     id: 'line-sorter',
     name: 'Line Sorter',
-    description: 'Sort lines alphabetically',
+    description: 'Use Case: Sort lines alphabetically',
     category: 'text',
     icon: 'ArrowUpDown',
     path: '/tools/line-sorter',
@@ -194,7 +194,7 @@ export const tools: Tool[] = [
   {
     id: 'compound-interest',
     name: 'Compound Interest Calculator',
-    description: 'Calculate compound interest on investments',
+    description: 'Use Case: Calculate compound interest on investments',
     category: 'calculator',
     icon: 'TrendingUp',
     path: '/tools/compound-interest',
@@ -202,7 +202,7 @@ export const tools: Tool[] = [
   {
     id: 'loan-calculator',
     name: 'Loan Calculator',
-    description: 'Calculate monthly loan payments',
+    description: 'Use Case: Calculate monthly loan payments',
     category: 'calculator',
     icon: 'DollarSign',
     path: '/tools/loan-calculator',
@@ -210,7 +210,7 @@ export const tools: Tool[] = [
   {
     id: 'tip-calculator',
     name: 'Tip Calculator',
-    description: 'Calculate tips and split bills',
+    description: 'Use Case: Calculate tips and split bills',
     category: 'calculator',
     icon: 'Receipt',
     path: '/tools/tip-calculator',
@@ -218,7 +218,7 @@ export const tools: Tool[] = [
   {
     id: 'discount-calculator',
     name: 'Discount Calculator',
-    description: 'Calculate discounted prices',
+    description: 'Use Case: Calculate discounted prices',
     category: 'calculator',
     icon: 'Tag',
     path: '/tools/discount-calculator',
@@ -226,7 +226,7 @@ export const tools: Tool[] = [
   {
     id: 'unit-converter',
     name: 'Unit Converter',
-    description: 'Convert between units of measurement',
+    description: 'Use Case: Convert between units of measurement',
     category: 'converter',
     icon: 'Ruler',
     path: '/tools/unit-converter',
@@ -234,7 +234,7 @@ export const tools: Tool[] = [
   {
     id: 'currency-converter',
     name: 'Currency Converter',
-    description: 'Convert between currencies',
+    description: 'Use Case: Convert between currencies',
     category: 'converter',
     icon: 'Banknote',
     path: '/tools/currency-converter',
@@ -242,7 +242,7 @@ export const tools: Tool[] = [
   {
     id: 'timezone-converter',
     name: 'Time Zone Converter',
-    description: 'Convert times between time zones',
+    description: 'Use Case: Convert times between time zones',
     category: 'converter',
     icon: 'Globe',
     path: '/tools/timezone-converter',
@@ -250,7 +250,7 @@ export const tools: Tool[] = [
   {
     id: 'css-minifier',
     name: 'CSS Minifier',
-    description: 'Minify CSS code',
+    description: 'Use Case: Minify CSS code',
     category: 'developer',
     icon: 'FileCode2',
     path: '/tools/css-minifier',
@@ -258,7 +258,7 @@ export const tools: Tool[] = [
   {
     id: 'js-minifier',
     name: 'JavaScript Minifier',
-    description: 'Minify JavaScript code',
+    description: 'Use Case: Minify JavaScript code',
     category: 'developer',
     icon: 'Braces',
     path: '/tools/js-minifier',
@@ -266,7 +266,7 @@ export const tools: Tool[] = [
   {
     id: 'regex-tester',
     name: 'Regex Tester',
-    description: 'Test regular expressions',
+    description: 'Use Case: Test regular expressions',
     category: 'developer',
     icon: 'Search',
     path: '/tools/regex-tester',
@@ -274,7 +274,7 @@ export const tools: Tool[] = [
   {
     id: 'unix-timestamp',
     name: 'Unix Timestamp Converter',
-    description: 'Convert Unix timestamps and dates',
+    description: 'Use Case: Convert Unix timestamps and dates',
     category: 'developer',
     icon: 'Clock',
     path: '/tools/unix-timestamp',
@@ -282,7 +282,7 @@ export const tools: Tool[] = [
   {
     id: 'image-base64',
     name: 'Image to Base64',
-    description: 'Convert images to Base64',
+    description: 'Use Case: Convert images to Base64',
     category: 'converter',
     icon: 'Image',
     path: '/tools/image-base64',
@@ -290,7 +290,7 @@ export const tools: Tool[] = [
   {
     id: 'hash-generator',
     name: 'Hash Generator',
-    description: 'Generate SHA-1 and SHA-256 hashes',
+    description: 'Use Case: Generate SHA-1 and SHA-256 hashes',
     category: 'developer',
     icon: 'Key',
     path: '/tools/hash-generator',
@@ -298,7 +298,7 @@ export const tools: Tool[] = [
   {
     id: 'text-diff',
     name: 'Text Diff Checker',
-    description: 'Compare two texts and see differences',
+    description: 'Use Case: Compare two texts and see differences',
     category: 'text',
     icon: 'GitCompare',
     path: '/tools/text-diff',
@@ -306,7 +306,7 @@ export const tools: Tool[] = [
   {
     id: 'merge-pdf',
     name: 'Merge PDF Files',
-    description: 'Combine multiple PDFs into one',
+    description: 'Use Case: Combine multiple PDFs into one',
     category: 'pdf',
     icon: 'FilePlus',
     path: '/tools/merge-pdf',
@@ -314,7 +314,7 @@ export const tools: Tool[] = [
   {
     id: 'split-pdf',
     name: 'Split PDF',
-    description: 'Split PDF into separate pages',
+    description: 'Use Case: Split PDF into separate pages',
     category: 'pdf',
     icon: 'FileStack',
     path: '/tools/split-pdf',
@@ -322,7 +322,7 @@ export const tools: Tool[] = [
   {
     id: 'compress-pdf',
     name: 'Compress PDF',
-    description: 'Reduce PDF file size',
+    description: 'Use Case: Reduce PDF file size',
     category: 'pdf',
     icon: 'Minimize2',
     path: '/tools/compress-pdf',
@@ -330,15 +330,39 @@ export const tools: Tool[] = [
   {
     id: 'rotate-pdf',
     name: 'Rotate PDF',
-    description: 'Rotate pages in PDF',
+    description: 'Use Case: Rotate pages in PDF',
     category: 'pdf',
     icon: 'RotateCw',
     path: '/tools/rotate-pdf',
   },
   {
+    id: 'pdf-unlock',
+    name: 'PDF Unlock',
+    description: 'Use Case: Remove password protection from PDF files',
+    category: 'pdf',
+    icon: 'Unlock',
+    path: '/tools/pdf-unlock',
+  },
+  {
+    id: 'extract-images-from-pdf',
+    name: 'Extract Images from PDF',
+    description: 'Use Case: Extract all images from PDF documents',
+    category: 'pdf',
+    icon: 'ImageExtract',
+    path: '/tools/extract-images-from-pdf',
+  },
+  {
+    id: 'extract-pdf-pages',
+    name: 'Extract PDF Pages',
+    description: 'Use Case: Extract specific page ranges from PDF files',
+    category: 'pdf',
+    icon: 'FileStack',
+    path: '/tools/extract-pdf-pages',
+  },
+  {
     id: 'image-compressor',
     name: 'Image Compressor',
-    description: 'Reduce image file size',
+    description: 'Use Case: Reduce image file size',
     category: 'image',
     icon: 'Minimize',
     path: '/tools/image-compressor',
@@ -346,7 +370,7 @@ export const tools: Tool[] = [
   {
     id: 'image-resizer',
     name: 'Image Resizer',
-    description: 'Resize images to custom dimensions',
+    description: 'Use Case: Resize images to custom dimensions',
     category: 'image',
     icon: 'Maximize',
     path: '/tools/image-resizer',
@@ -354,7 +378,7 @@ export const tools: Tool[] = [
   {
     id: 'image-format-converter',
     name: 'Image Format Converter',
-    description: 'Convert image formats (PNG/JPG/WEBP)',
+    description: 'Use Case: Convert image formats (PNG/JPG/WEBP)',
     category: 'image',
     icon: 'RefreshCcw',
     path: '/tools/image-format-converter',
@@ -362,7 +386,7 @@ export const tools: Tool[] = [
   {
     id: 'grayscale-converter',
     name: 'Grayscale Converter',
-    description: 'Convert images to grayscale',
+    description: 'Use Case: Convert images to grayscale',
     category: 'image',
     icon: 'Filter',
     path: '/tools/grayscale-converter',
@@ -371,7 +395,7 @@ export const tools: Tool[] = [
   {
     id: 'text-to-binary',
     name: 'Text to Binary Converter',
-    description: 'Convert text to binary and vice versa',
+    description: 'Use Case: Convert text to binary and vice versa',
     category: 'converter',
     icon: 'Binary',
     path: '/tools/text-to-binary',
@@ -379,7 +403,7 @@ export const tools: Tool[] = [
   {
     id: 'morse-code',
     name: 'Morse Code Translator',
-    description: 'Translate text to Morse code and back',
+    description: 'Use Case: Translate text to Morse code and back',
     category: 'converter',
     icon: 'Radio',
     path: '/tools/morse-code',
@@ -387,7 +411,7 @@ export const tools: Tool[] = [
   {
     id: 'word-frequency',
     name: 'Word Frequency Counter',
-    description: 'Count word frequency and find common words',
+    description: 'Use Case: Count word frequency and find common words',
     category: 'text',
     icon: 'BarChart3',
     path: '/tools/word-frequency',
@@ -395,7 +419,7 @@ export const tools: Tool[] = [
   {
     id: 'syllable-counter',
     name: 'Syllable Counter',
-    description: 'Count syllables in words and text',
+    description: 'Use Case: Count syllables in words and text',
     category: 'text',
     icon: 'Mic',
     path: '/tools/syllable-counter',
@@ -403,7 +427,7 @@ export const tools: Tool[] = [
   {
     id: 'readability-score',
     name: 'Readability Score',
-    description: 'Calculate Flesch reading ease score',
+    description: 'Use Case: Calculate Flesch reading ease score',
     category: 'text',
     icon: 'GraduationCap',
     path: '/tools/readability-score',
@@ -411,7 +435,7 @@ export const tools: Tool[] = [
   {
     id: 'find-replace',
     name: 'Find and Replace',
-    description: 'Find and replace text in bulk',
+    description: 'Use Case: Find and replace text in bulk',
     category: 'text',
     icon: 'Replace',
     path: '/tools/find-replace',
@@ -420,7 +444,7 @@ export const tools: Tool[] = [
   {
     id: 'date-calculator',
     name: 'Date Calculator',
-    description: 'Calculate days between dates',
+    description: 'Use Case: Calculate days between dates',
     category: 'calculator',
     icon: 'CalendarDays',
     path: '/tools/date-calculator',
@@ -428,7 +452,7 @@ export const tools: Tool[] = [
   {
     id: 'gpa-calculator',
     name: 'GPA Calculator',
-    description: 'Calculate your Grade Point Average',
+    description: 'Use Case: Calculate your Grade Point Average',
     category: 'calculator',
     icon: 'Award',
     path: '/tools/gpa-calculator',
@@ -436,7 +460,7 @@ export const tools: Tool[] = [
   {
     id: 'fuel-cost',
     name: 'Fuel Cost Calculator',
-    description: 'Calculate fuel consumption and costs',
+    description: 'Use Case: Calculate fuel consumption and costs',
     category: 'calculator',
     icon: 'Fuel',
     path: '/tools/fuel-cost',
@@ -444,7 +468,7 @@ export const tools: Tool[] = [
   {
     id: 'time-calculator',
     name: 'Time Calculator',
-    description: 'Add, subtract hours and minutes',
+    description: 'Use Case: Add, subtract hours and minutes',
     category: 'calculator',
     icon: 'Timer',
     path: '/tools/time-calculator',
@@ -453,7 +477,7 @@ export const tools: Tool[] = [
   {
     id: 'calories-calculator',
     name: 'Calories Calculator',
-    description: 'Calculate daily calorie needs',
+    description: 'Use Case: Calculate daily calorie needs',
     category: 'calculator',
     icon: 'Apple',
     path: '/tools/calories-calculator',
@@ -463,7 +487,7 @@ export const tools: Tool[] = [
   {
     id: 'barcode-generator',
     name: 'Barcode Generator',
-    description: 'Generate various barcode formats',
+    description: 'Use Case: Generate various barcode formats',
     category: 'generator',
     icon: 'ScanBarcode',
     path: '/tools/barcode-generator',
@@ -472,7 +496,7 @@ export const tools: Tool[] = [
   {
     id: 'credit-card-generator',
     name: 'Test Credit Card Generator',
-    description: 'Generate test credit card numbers',
+    description: 'Use Case: Generate test credit card numbers',
     category: 'generator',
     icon: 'CreditCard',
     path: '/tools/credit-card-generator',
@@ -481,7 +505,7 @@ export const tools: Tool[] = [
   {
     id: 'fake-data-generator',
     name: 'Fake Data Generator',
-    description: 'Generate fake names, emails, addresses',
+    description: 'Use Case: Generate fake names, emails, addresses',
     category: 'generator',
     icon: 'UserPlus',
     path: '/tools/fake-data-generator',
@@ -489,7 +513,7 @@ export const tools: Tool[] = [
   {
     id: 'gradient-generator',
     name: 'CSS Gradient Generator',
-    description: 'Create beautiful CSS gradients',
+    description: 'Use Case: Create beautiful CSS gradients',
     category: 'generator',
     icon: 'Droplet',
     path: '/tools/gradient-generator',
@@ -499,7 +523,7 @@ export const tools: Tool[] = [
   {
     id: 'jwt-decoder',
     name: 'JWT Decoder',
-    description: 'Decode and verify JSON Web Tokens',
+    description: 'Use Case: Decode and verify JSON Web Tokens',
     category: 'developer',
     icon: 'ShieldCheck',
     path: '/tools/jwt-decoder',
@@ -508,7 +532,7 @@ export const tools: Tool[] = [
   {
     id: 'xml-formatter',
     name: 'XML Formatter',
-    description: 'Format and beautify XML',
+    description: 'Use Case: Format and beautify XML',
     category: 'developer',
     icon: 'FileCode',
     path: '/tools/xml-formatter',
@@ -517,7 +541,7 @@ export const tools: Tool[] = [
   {
     id: 'sql-formatter',
     name: 'SQL Formatter',
-    description: 'Format SQL queries',
+    description: 'Use Case: Format SQL queries',
     category: 'developer',
     icon: 'Database',
     path: '/tools/sql-formatter',
@@ -526,7 +550,7 @@ export const tools: Tool[] = [
   {
     id: 'htaccess-generator',
     name: '.htaccess Generator',
-    description: 'Generate .htaccess redirect rules',
+    description: 'Use Case: Generate .htaccess redirect rules',
     category: 'developer',
     icon: 'FileCode2',
     path: '/tools/htaccess-generator',
@@ -536,7 +560,7 @@ export const tools: Tool[] = [
   {
     id: 'pdf-to-text',
     name: 'PDF to Text',
-    description: 'Extract text from PDF files',
+    description: 'Use Case: Extract text from PDF files',
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/pdf-to-text',
@@ -545,7 +569,7 @@ export const tools: Tool[] = [
   {
     id: 'pdf-watermark',
     name: 'PDF Watermark',
-    description: 'Add watermark to PDF files',
+    description: 'Use Case: Add watermark to PDF files',
     category: 'pdf',
     icon: 'Droplets',
     path: '/tools/pdf-watermark',
@@ -555,7 +579,7 @@ export const tools: Tool[] = [
   {
     id: 'image-cropper',
     name: 'Image Cropper',
-    description: 'Crop images to custom size',
+    description: 'Use Case: Crop images to custom size',
     category: 'image',
     icon: 'Crop',
     path: '/tools/image-cropper',
@@ -564,7 +588,7 @@ export const tools: Tool[] = [
   {
     id: 'image-rotator',
     name: 'Image Rotator',
-    description: 'Rotate and flip images',
+    description: 'Use Case: Rotate and flip images',
     category: 'image',
     icon: 'RotateCw',
     path: '/tools/image-rotator',
@@ -573,7 +597,7 @@ export const tools: Tool[] = [
   {
     id: 'background-remover',
     name: 'Background Remover',
-    description: 'Remove background from images',
+    description: 'Use Case: Remove background from images',
     category: 'image',
     icon: 'Eraser',
     path: '/tools/background-remover',
@@ -582,7 +606,7 @@ export const tools: Tool[] = [
   {
     id: 'stopwatch',
     name: 'Stopwatch',
-    description: 'Simple online stopwatch',
+    description: 'Use Case: Simple online stopwatch',
     category: 'utility',
     icon: 'Clock',
     path: '/tools/stopwatch',
@@ -590,7 +614,7 @@ export const tools: Tool[] = [
   {
     id: 'timer',
     name: 'Timer',
-    description: 'Countdown timer with alarm',
+    description: 'Use Case: Countdown timer with alarm',
     category: 'utility',
     icon: 'Timer',
     path: '/tools/timer',
@@ -598,7 +622,7 @@ export const tools: Tool[] = [
   {
     id: 'coin-flip',
     name: 'Coin Flip',
-    description: 'Flip a virtual coin',
+    description: 'Use Case: Flip a virtual coin',
     category: 'utility',
     icon: 'CircleDot',
     path: '/tools/coin-flip',
@@ -606,7 +630,7 @@ export const tools: Tool[] = [
   {
     id: 'dice-roller',
     name: 'Dice Roller',
-    description: 'Roll virtual dice',
+    description: 'Use Case: Roll virtual dice',
     category: 'utility',
     icon: 'Dices',
     path: '/tools/dice-roller',
@@ -615,7 +639,7 @@ export const tools: Tool[] = [
   {
     id: 'random-picker',
     name: 'Random Picker',
-    description: 'Pick random items from a list',
+    description: 'Use Case: Pick random items from a list',
     category: 'utility',
     icon: 'Shuffle',
     path: '/tools/random-picker',
@@ -623,7 +647,7 @@ export const tools: Tool[] = [
   {
     id: 'text-to-speech',
     name: 'Text to Speech',
-    description: 'Convert text to speech audio',
+    description: 'Use Case: Convert text to speech audio',
     category: 'utility',
     icon: 'Volume2',
     path: '/tools/text-to-speech',
@@ -631,7 +655,7 @@ export const tools: Tool[] = [
   {
     id: 'color-picker',
     name: 'Color Picker',
-    description: 'Pick colors from images',
+    description: 'Use Case: Pick colors from images',
     category: 'utility',
     icon: 'Pipette',
     path: '/tools/color-picker',
@@ -639,7 +663,7 @@ export const tools: Tool[] = [
   {
     id: 'password-strength',
     name: 'Password Strength Checker',
-    description: 'Check password strength and security',
+    description: 'Use Case: Check password strength and security',
     category: 'utility',
     icon: 'ShieldAlert',
     path: '/tools/password-strength',
@@ -648,7 +672,7 @@ export const tools: Tool[] = [
   {
     id: 'temperature-converter',
     name: 'Temperature Converter',
-    description: 'Convert Celsius, Fahrenheit, Kelvin',
+    description: 'Use Case: Convert Celsius, Fahrenheit, Kelvin',
     category: 'converter',
     icon: 'Thermometer',
     path: '/tools/temperature-converter',
@@ -656,7 +680,7 @@ export const tools: Tool[] = [
   {
     id: 'roman-numeral',
     name: 'Roman Numeral Converter',
-    description: 'Convert numbers to Roman numerals',
+    description: 'Use Case: Convert numbers to Roman numerals',
     category: 'converter',
     icon: 'Clock10',
     path: '/tools/roman-numeral',
@@ -664,7 +688,7 @@ export const tools: Tool[] = [
   {
     id: 'number-base',
     name: 'Number Base Converter',
-    description: 'Convert between number bases (2-36)',
+    description: 'Use Case: Convert between number bases (2-36)',
     category: 'converter',
     icon: 'Binary',
     path: '/tools/number-base',
@@ -673,7 +697,7 @@ export const tools: Tool[] = [
   {
     id: 'letter-counter',
     name: 'Letter Counter',
-    description: 'Count specific letters in text',
+    description: 'Use Case: Count specific letters in text',
     category: 'text',
     icon: 'ALargeSmall',
     path: '/tools/letter-counter',
@@ -681,7 +705,7 @@ export const tools: Tool[] = [
   {
     id: 'reverse-words',
     name: 'Reverse Words',
-    description: 'Reverse word order in sentences',
+    description: 'Use Case: Reverse word order in sentences',
     category: 'text',
     icon: 'ArrowLeftRight',
     path: '/tools/reverse-words',
@@ -689,7 +713,7 @@ export const tools: Tool[] = [
   {
     id: 'invisible-character',
     name: 'Invisible Character',
-    description: 'Generate invisible characters for copying',
+    description: 'Use Case: Generate invisible characters for copying',
     category: 'text',
     icon: 'EyeOff',
     path: '/tools/invisible-character',
@@ -698,7 +722,7 @@ export const tools: Tool[] = [
   {
     id: 'binary-calculator',
     name: 'Binary Calculator',
-    description: 'Calculate with binary numbers',
+    description: 'Use Case: Calculate with binary numbers',
     category: 'calculator',
     icon: 'Binary',
     path: '/tools/binary-calculator',
@@ -706,7 +730,7 @@ export const tools: Tool[] = [
   {
     id: 'hex-calculator',
     name: 'Hexadecimal Calculator',
-    description: 'Calculate with hexadecimal numbers',
+    description: 'Use Case: Calculate with hexadecimal numbers',
     category: 'calculator',
     icon: 'Hash',
     path: '/tools/hex-calculator',
@@ -715,7 +739,7 @@ export const tools: Tool[] = [
   {
     id: 'smart-sentence-splitter',
     name: 'Smart Sentence Splitter',
-    description: 'Split text into sentences intelligently with AI analysis',
+    description: 'Use Case: Split text into sentences intelligently with AI analysis',
     category: 'text',
     icon: 'Split',
     path: '/tools/smart-sentence-splitter',
@@ -723,7 +747,7 @@ export const tools: Tool[] = [
   {
     id: 'contraction-expander',
     name: 'Contraction Expander',
-    description: 'Expand contractions for formal writing',
+    description: 'Use Case: Expand contractions for formal writing',
     category: 'text',
     icon: 'Maximize2',
     path: '/tools/contraction-expander',
@@ -731,7 +755,7 @@ export const tools: Tool[] = [
   {
     id: 'read-aloud-caption-generator',
     name: 'Read Aloud Caption Generator',
-    description: 'Generate captions and subtitles from text',
+    description: 'Use Case: Generate captions and subtitles from text',
     category: 'text',
     icon: 'Captions',
     path: '/tools/read-aloud-caption-generator',
@@ -739,7 +763,7 @@ export const tools: Tool[] = [
   {
     id: 'title-headline-analyzer',
     name: 'Title & Headline Analyzer',
-    description: 'Analyze headlines for engagement and SEO',
+    description: 'Use Case: Analyze headlines for engagement and SEO',
     category: 'text',
     icon: 'TrendingUp',
     path: '/tools/title-headline-analyzer',
@@ -747,7 +771,7 @@ export const tools: Tool[] = [
   {
     id: 'text-randomizer',
     name: 'Text Randomizer',
-    description: 'Shuffle words, lines, or characters randomly',
+    description: 'Use Case: Shuffle words, lines, or characters randomly',
     category: 'text',
     icon: 'Shuffle',
     path: '/tools/text-randomizer',
@@ -756,7 +780,7 @@ export const tools: Tool[] = [
   {
     id: 'csv-column-splitter',
     name: 'CSV Column Splitter',
-    description: 'Extract specific columns from CSV files',
+    description: 'Use Case: Extract specific columns from CSV files',
     category: 'developer',
     icon: 'Columns',
     path: '/tools/csv-column-splitter',
@@ -764,7 +788,7 @@ export const tools: Tool[] = [
   {
     id: 'yaml-json-converter',
     name: 'YAML to JSON Converter',
-    description: 'Convert between YAML and JSON formats',
+    description: 'Use Case: Convert between YAML and JSON formats',
     category: 'developer',
     icon: 'RefreshCw',
     path: '/tools/yaml-json-converter',
@@ -772,7 +796,7 @@ export const tools: Tool[] = [
   {
     id: 'css-tailwind-classifier',
     name: 'CSS to Tailwind Classifier',
-    description: 'Convert CSS styles to Tailwind classes',
+    description: 'Use Case: Convert CSS styles to Tailwind classes',
     category: 'developer',
     icon: 'Palette',
     path: '/tools/css-tailwind-classifier',
@@ -780,7 +804,7 @@ export const tools: Tool[] = [
   {
     id: 'http-status-tester',
     name: 'HTTP Status Code Tester',
-    description: 'Test HTTP status codes and responses',
+    description: 'Use Case: Test HTTP status codes and responses',
     category: 'developer',
     icon: 'Globe',
     path: '/tools/http-status-tester',
@@ -788,7 +812,7 @@ export const tools: Tool[] = [
   {
     id: 'cors-header-checker',
     name: 'CORS Header Checker',
-    description: 'Check CORS headers and configuration',
+    description: 'Use Case: Check CORS headers and configuration',
     category: 'developer',
     icon: 'Network',
     path: '/tools/cors-header-checker',
@@ -797,7 +821,7 @@ export const tools: Tool[] = [
   {
     id: 'power-energy-converter',
     name: 'Power & Energy Converter',
-    description: 'Convert between watts, kilowatts, and BTU',
+    description: 'Use Case: Convert between watts, kilowatts, and BTU',
     category: 'converter',
     icon: 'Zap',
     path: '/tools/power-energy-converter',
@@ -805,7 +829,7 @@ export const tools: Tool[] = [
   {
     id: 'file-encoding-detector',
     name: 'File Encoding Detector',
-    description: 'Detect text file encoding formats',
+    description: 'Use Case: Detect text file encoding formats',
     category: 'developer',
     icon: 'FileSearch',
     path: '/tools/file-encoding-detector',
@@ -813,7 +837,7 @@ export const tools: Tool[] = [
   {
     id: 'image-dpi-calculator',
     name: 'Image DPI Calculator',
-    description: 'Calculate DPI and print sizes for images',
+    description: 'Use Case: Calculate DPI and print sizes for images',
     category: 'calculator',
     icon: 'Ruler',
     path: '/tools/image-dpi-calculator',
@@ -821,7 +845,7 @@ export const tools: Tool[] = [
   {
     id: 'hash-identifier',
     name: 'Hash Identifier',
-    description: 'Identify hash types from strings',
+    description: 'Use Case: Identify hash types from strings',
     category: 'developer',
     icon: 'Fingerprint',
     path: '/tools/hash-identifier',
@@ -829,7 +853,7 @@ export const tools: Tool[] = [
   {
     id: 'permutation-combination-calculator',
     name: 'Permutation & Combination Calculator',
-    description: 'Calculate permutations and combinations',
+    description: 'Use Case: Calculate permutations and combinations',
     category: 'calculator',
     icon: 'Calculator',
     path: '/tools/permutation-combination-calculator',
@@ -838,7 +862,7 @@ export const tools: Tool[] = [
   {
     id: 'color-blindness-simulator',
     name: 'Color Blindness Simulator',
-    description: 'Simulate color blindness for accessibility',
+    description: 'Use Case: Simulate color blindness for accessibility',
     category: 'image',
     icon: 'Eye',
     path: '/tools/color-blindness-simulator',
@@ -846,7 +870,7 @@ export const tools: Tool[] = [
   {
     id: 'business-days-calculator',
     name: 'Business Days Calculator',
-    description: 'Calculate working days between dates',
+    description: 'Use Case: Calculate working days between dates',
     category: 'calculator',
     icon: 'Calendar',
     path: '/tools/business-days-calculator',
@@ -854,7 +878,7 @@ export const tools: Tool[] = [
   {
     id: 'ascii-art-generator',
     name: 'ASCII Art Generator',
-    description: 'Convert text to ASCII art with multiple fonts',
+    description: 'Use Case: Convert text to ASCII art with multiple fonts',
     category: 'generator',
     icon: 'FileText',
     path: '/tools/ascii-art-generator',
@@ -862,7 +886,7 @@ export const tools: Tool[] = [
   {
     id: 'working-hours-timezone-converter',
     name: 'Working Hours Timezone Converter',
-    description: 'Convert working hours across timezones',
+    description: 'Use Case: Convert working hours across timezones',
     category: 'converter',
     icon: 'Clock',
     path: '/tools/working-hours-timezone-converter',
@@ -871,7 +895,7 @@ export const tools: Tool[] = [
   {
     id: 'csv-duplicate-finder',
     name: 'CSV Duplicate Finder',
-    description: 'Find and remove duplicate rows in CSV',
+    description: 'Use Case: Find and remove duplicate rows in CSV',
     category: 'utility',
     icon: 'FileSearch',
     path: '/tools/csv-duplicate-finder',
@@ -879,7 +903,7 @@ export const tools: Tool[] = [
   {
     id: 'regex-bulk-replace',
     name: 'Regex Bulk Replace',
-    description: 'Perform multiple regex replacements in bulk',
+    description: 'Use Case: Perform multiple regex replacements in bulk',
     category: 'utility',
     icon: 'Replace',
     path: '/tools/regex-bulk-replace',
@@ -887,7 +911,7 @@ export const tools: Tool[] = [
   {
     id: 'bulk-url-shortener',
     name: 'Bulk URL Shortener',
-    description: 'Shorten multiple URLs at once',
+    description: 'Use Case: Shorten multiple URLs at once',
     category: 'utility',
     icon: 'Link',
     path: '/tools/bulk-url-shortener',
@@ -895,7 +919,7 @@ export const tools: Tool[] = [
   {
     id: 'clipboard-history',
     name: 'Clipboard History Manager',
-    description: 'Track and manage clipboard history',
+    description: 'Use Case: Track and manage clipboard history',
     category: 'utility',
     icon: 'Clipboard',
     path: '/tools/clipboard-history',
@@ -903,7 +927,7 @@ export const tools: Tool[] = [
   {
     id: 'dataset-sampler',
     name: 'Dataset Sampler',
-    description: 'Extract random samples from CSV datasets',
+    description: 'Use Case: Extract random samples from CSV datasets',
     category: 'utility',
     icon: 'Database',
     path: '/tools/dataset-sampler',
@@ -912,7 +936,7 @@ export const tools: Tool[] = [
   {
     id: 'zip-file-inspector',
     name: 'ZIP File Inspector',
-    description: 'View ZIP contents without extracting',
+    description: 'Use Case: View ZIP contents without extracting',
     category: 'utility',
     icon: 'Archive',
     path: '/tools/zip-file-inspector',
@@ -920,7 +944,7 @@ export const tools: Tool[] = [
   {
     id: 'console-log-formatter',
     name: 'Console Log Formatter',
-    description: 'Format and beautify console debug logs',
+    description: 'Use Case: Format and beautify console debug logs',
     category: 'developer',
     icon: 'Terminal',
     path: '/tools/console-log-formatter',
@@ -929,7 +953,7 @@ export const tools: Tool[] = [
   {
     id: 'svg-optimizer',
     name: 'SVG Optimizer',
-    description: 'Compress and optimize SVG files',
+    description: 'Use Case: Compress and optimize SVG files',
     category: 'image',
     icon: 'Minimize2',
     path: '/tools/svg-optimizer',
@@ -937,7 +961,7 @@ export const tools: Tool[] = [
   {
     id: 'favicon-generator',
     name: 'Favicon Generator',
-    description: 'Create favicons from text or colors',
+    description: 'Use Case: Create favicons from text or colors',
     category: 'image',
     icon: 'Star',
     path: '/tools/favicon-generator',
@@ -945,7 +969,7 @@ export const tools: Tool[] = [
   {
     id: 'color-contrast-checker',
     name: 'Color Contrast Checker',
-    description: 'Check WCAG color contrast ratios',
+    description: 'Use Case: Check WCAG color contrast ratios',
     category: 'image',
     icon: 'Contrast',
     path: '/tools/color-contrast-checker',
@@ -954,7 +978,7 @@ export const tools: Tool[] = [
   {
     id: 'password-strength-analyzer',
     name: 'Password Strength Analyzer',
-    description: 'Analyze password security with feedback',
+    description: 'Use Case: Analyze password security with feedback',
     category: 'security',
     icon: 'Shield',
     path: '/tools/password-strength-analyzer',
@@ -962,7 +986,7 @@ export const tools: Tool[] = [
   {
     id: 'cookie-inspector',
     name: 'Cookie Inspector',
-    description: 'View and manage browser cookies',
+    description: 'Use Case: View and manage browser cookies',
     category: 'security',
     icon: 'Cookie',
     path: '/tools/cookie-inspector',
@@ -970,7 +994,7 @@ export const tools: Tool[] = [
   {
     id: 'meta-robots-tester',
     name: 'Meta Robots Tester',
-    description: 'Validate meta robots tags for SEO',
+    description: 'Use Case: Validate meta robots tags for SEO',
     category: 'security',
     icon: 'Search',
     path: '/tools/meta-robots-tester',
@@ -978,7 +1002,7 @@ export const tools: Tool[] = [
   {
     id: 'structured-data-validator',
     name: 'Structured Data Validator',
-    description: 'Validate JSON-LD and schema markup',
+    description: 'Use Case: Validate JSON-LD and schema markup',
     category: 'security',
     icon: 'Code',
     path: '/tools/structured-data-validator',
@@ -986,7 +1010,7 @@ export const tools: Tool[] = [
   {
     id: 'sitemap-url-extractor',
     name: 'Sitemap URL Extractor',
-    description: 'Extract URLs from XML sitemaps',
+    description: 'Use Case: Extract URLs from XML sitemaps',
     category: 'security',
     icon: 'Map',
     path: '/tools/sitemap-url-extractor',
@@ -995,7 +1019,7 @@ export const tools: Tool[] = [
   {
     id: 'pdf-page-extractor',
     name: 'PDF Page Extractor',
-    description: 'Extract specific pages from PDFs',
+    description: 'Use Case: Extract specific pages from PDFs',
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/pdf-page-extractor',

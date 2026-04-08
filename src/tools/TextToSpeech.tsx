@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Volume2, Pause, Play } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TextToSpeech() {
+  const howItWorks = [
+    { title: 'Enter Your Text', description: 'Type or paste the text you want to hear spoken' },
+    { title: 'Choose Voice', description: 'Select your preferred voice and language' },
+    { title: 'Adjust Settings', description: 'Set speech rate and volume to your preference' },
+    { title: 'Play Audio', description: 'Click play to hear your text spoken aloud' }
+  ];
   const [text, setText] = useState('');
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoice, setSelectedVoice] = useState<number>(0);

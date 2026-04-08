@@ -1,7 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Upload, Download } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ImageResizer() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select the image you want to resize' },
+    { title: 'Set Dimensions', description: 'Enter new width and height in pixels' },
+    { title: 'Resize', description: 'Apply the new dimensions to your image' },
+    { title: 'Download', description: 'Save your resized image' }
+  ];
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState('');
   const [width, setWidth] = useState(800);
@@ -47,6 +55,10 @@ export default function ImageResizer() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Image Resizer</h1>
       <p className="text-gray-600 text-lg mb-6">Resize images to custom dimensions</p>
+
+
+      <HowItWorks steps={howItWorks} />
+
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="mb-6">
@@ -119,3 +131,4 @@ export default function ImageResizer() {
     </div>
   );
 }
+

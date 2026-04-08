@@ -1,7 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Shuffle, Plus, X } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function RandomPicker() {
+  const howItWorks = [
+    { title: 'Add Your Items', description: 'Enter items to choose from, one per line' },
+    { title: 'Click Pick', description: 'Press the pick button to randomly select an item' },
+    { title: 'View Selected Item', description: 'See which item was randomly chosen' },
+    { title: 'Copy or Pick Again', description: 'Save the result or pick another random item' }
+  ];
   const [items, setItems] = useState<string[]>(['']);
   const [result, setResult] = useState('');
 
@@ -29,6 +37,10 @@ export default function RandomPicker() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Random Picker</h1>
       <p className="text-gray-600 text-lg mb-6">Pick a random item from your list</p>
+
+
+      <HowItWorks steps={howItWorks} />
+
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="space-y-3 mb-6">
@@ -73,10 +85,17 @@ export default function RandomPicker() {
         {result && (
           <div className="p-8 bg-gradient-to-br from-green-50 to-blue-50 rounded-xl border-2 border-green-200 text-center animate-pulse">
             <p className="text-sm text-gray-600 mb-2">Selected Item</p>
+
+            <HowItWorks steps={howItWorks} />
+
             <p className="text-4xl font-bold text-gray-900">{result}</p>
+
+          <HowItWorks steps={howItWorks} />
+
           </div>
         )}
       </div>
     </div>
   );
 }
+

@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Copy, Check, Palette } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ColorPicker() {
+  const howItWorks = [
+    { title: 'Click Color Picker', description: 'Open the color picker interface' },
+    { title: 'Select Your Color', description: 'Choose from the color palette or enter a value' },
+    { title: 'View Color', description: 'See your selected color displayed' },
+    { title: 'Copy Code', description: 'Save the color code in HEX, RGB, or HSL format' }
+  ];
   const [color, setColor] = useState('#3B82F6');
   const [copied, setCopied] = useState('');
 
@@ -29,6 +37,8 @@ export default function ColorPicker() {
         <Palette className="h-16 w-16 mx-auto text-pink-500 mb-4" />
         <h1 className="text-4xl font-bold text-gray-900 mb-3">Color Picker</h1>
         <p className="text-gray-600 text-lg">Pick and convert colors</p>
+        
+        <HowItWorks steps={howItWorks} />
       </div>
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">

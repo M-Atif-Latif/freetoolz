@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function QRCodeGenerator() {
+  const howItWorks = [
+    { title: 'Enter Your Text/URL', description: 'Type the text or URL you want to encode' },
+    { title: 'Adjust Options', description: 'Choose QR code size and color preferences' },
+    { title: 'Generate QR Code', description: 'Click generate to create your QR code' },
+    { title: 'Download or Copy', description: 'Save your QR code as an image to use anywhere' }
+  ];
   const [text, setText] = useState('');
   const [qrCodeUrl, setQrCodeUrl] = useState('');
 
@@ -15,6 +23,8 @@ export default function QRCodeGenerator() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">QR Code Generator</h1>
       <p className="text-gray-600 text-lg mb-8">Create QR codes for URLs, text, and more</p>
+      
+      <HowItWorks steps={howItWorks} />
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
         <div className="mb-6">

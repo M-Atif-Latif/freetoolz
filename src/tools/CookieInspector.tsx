@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Cookie, Info } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface CookieInfo {
   name: string;
@@ -13,6 +15,12 @@ interface CookieInfo {
 }
 
 export default function CookieInspector() {
+  const howItWorks = [
+    { title: 'View Cookies', description: 'See all cookies for current website' },
+    { title: 'Inspect Details', description: 'Click on each cookie to see details' },
+    { title: 'Edit Values', description: 'Modify cookie value, expiry, or settings' },
+    { title: 'Delete', description: 'Remove unwanted cookies' }
+  ];
   const [cookies, setCookies] = useState<CookieInfo[]>([]);
 
   const loadCookies = () => {

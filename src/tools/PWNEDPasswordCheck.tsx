@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Shield, CheckCircle, XCircle, Loader, Info } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function PWNEDPasswordCheck() {
+  const howItWorks = [
+    { title: 'Enter Password', description: 'Type a password to check (remains private)' },
+    { title: 'Check Against Breaches', description: 'Query HaveIBeenPwned database safely' },
+    { title: 'View Results', description: 'See if password has been compromised' },
+    { title: 'Get Recommendations', description: 'Change password if it\'s been exposed' }
+  ];
   const [password, setPassword] = useState('');
   const [checking, setChecking] = useState(false);
   const [result, setResult] = useState<{
@@ -84,6 +92,8 @@ export default function PWNEDPasswordCheck() {
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Check if your password has been exposed in data breaches
           </p>
+          
+          <HowItWorks steps={howItWorks} />
         </div>
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8">

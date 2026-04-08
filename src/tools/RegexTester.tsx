@@ -1,6 +1,14 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function RegexTester() {
+  const howItWorks = [
+    { title: 'Enter Regex Pattern', description: 'Type your regular expression pattern' },
+    { title: 'Enter Test String', description: 'Paste the text you want to test against the pattern' },
+    { title: 'Set Flags', description: 'Choose regex flags (global, case-insensitive, multiline, etc.)' },
+    { title: 'View Matches', description: 'See all matches highlighted and use copy button to save results' }
+  ];
   const [pattern, setPattern] = useState('');
   const [flags, setFlags] = useState('g');
   const [testString, setTestString] = useState('');
@@ -20,6 +28,9 @@ export default function RegexTester() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Regex Tester</h1>
       <p className="text-gray-600 text-lg mb-6">Test regular expressions</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div>
@@ -50,3 +61,4 @@ export default function RegexTester() {
     </div>
   );
 }
+

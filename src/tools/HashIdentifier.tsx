@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Hash, Search } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function HashIdentifier() {
+  const howItWorks = [
+    { title: 'Paste Hash', description: 'Enter your hash string' },
+    { title: 'Analyze', description: 'Identify the hash type (MD5, SHA1, SHA256, etc.)' },
+    { title: 'View Results', description: 'See the hash type and characteristics' },
+    { title: 'Copy Info', description: 'Save the hash information' }
+  ];
   const [hash, setHash] = useState('');
   const [results, setResults] = useState<{ type: string; confidence: string; info: string }[]>([]);
 

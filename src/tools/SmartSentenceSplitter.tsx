@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Split, Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function SmartSentenceSplitter() {
+  const howItWorks = [
+    { title: 'Paste Your Text', description: 'Enter any paragraph or document' },
+    { title: 'Split Sentences', description: 'Intelligently separate sentences, handling abbreviations' },
+    { title: 'View Split Text', description: 'Each sentence on a new line' },
+    { title: 'Copy Result', description: 'Save your split text' }
+  ];
   const [text, setText] = useState('');
   const [copied, setCopied] = useState(false);
 

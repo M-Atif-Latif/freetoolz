@@ -1,6 +1,14 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function JSONFormatter() {
+  const howItWorks = [
+    { title: 'Paste JSON Code', description: 'Enter your raw or formatted JSON data' },
+    { title: 'Click Format', description: 'Press format to validate and beautify your JSON' },
+    { title: 'View Formatted Output', description: 'See properly indented and structured JSON code' },
+    { title: 'Copy Formatted JSON', description: 'Use the copy button to grab your formatted code' }
+  ];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
@@ -20,6 +28,10 @@ export default function JSONFormatter() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">JSON Formatter</h1>
       <p className="text-gray-600 text-lg mb-8">Format and validate JSON data</p>
+
+
+      <HowItWorks steps={howItWorks} />
+
 
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
         <div className="bg-white rounded-xl shadow-lg border border-gray-200">
@@ -49,3 +61,4 @@ export default function JSONFormatter() {
     </div>
   );
 }
+

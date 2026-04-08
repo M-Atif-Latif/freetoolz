@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { User, Mail, Phone, MapPin, Calendar, CreditCard, Building, Globe, Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface FakeData {
   firstName: string;

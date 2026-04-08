@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function AgeCalculator() {
+  const howItWorks = [
+    { title: 'Select Your Birth Date', description: 'Pick your date of birth from the calendar picker' },
+    { title: 'Click Calculate', description: 'Press the calculate button to process your age' },
+    { title: 'View Your Age', description: 'See your exact age in years, months, days and more metrics' },
+    { title: 'Check Additional Stats', description: 'Review total days, weeks, months lived and next birthday countdown' }
+  ];
   const [birthDate, setBirthDate] = useState('');
   const [result, setResult] = useState<{
     years: number;
@@ -57,15 +65,16 @@ export default function AgeCalculator() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">Age Calculator</h1>
-        <p className="text-gray-600 text-lg">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Age Calculator</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">
           Calculate your exact age in years, months, days, and more
         </p>
+        <HowItWorks steps={howItWorks} />
       </div>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Date of Birth
           </label>
           <input

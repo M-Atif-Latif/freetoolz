@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { RefreshCw, AlertCircle } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function YAMLJSONConverter() {
+  const howItWorks = [
+    { title: 'Enter Data', description: 'Paste YAML or JSON formatted data' },
+    { title: 'Choose Direction', description: 'Convert from YAML to JSON or vice versa' },
+    { title: 'Convert', description: 'Instant format conversion with validation' },
+    { title: 'Copy Result', description: 'Save your converted data' }
+  ];
   const [input, setInput] = useState('');
   const [mode, setMode] = useState<'yaml-to-json' | 'json-to-yaml'>('yaml-to-json');
   const [error, setError] = useState('');

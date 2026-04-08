@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function RemoveSpaces() {
+  const howItWorks = [
+    { title: 'Paste Your Text', description: 'Enter text with spaces' },
+    { title: 'Choose Mode', description: 'Remove all spaces or just leading/trailing ones' },
+    { title: 'Process', description: 'Spaces are removed instantly' },
+    { title: 'Copy Result', description: 'Save your text without spaces' }
+  ];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [copied, setCopied] = useState(false);

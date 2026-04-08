@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { currencies, formatCurrency, getDefaultCurrency } from '../data/currencies';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function DiscountCalculator() {
+  const howItWorks = [
+    { title: 'Enter Original Price', description: 'Type the original price before discount' },
+    { title: 'Enter Discount %', description: 'Input the discount percentage to apply' },
+    { title: 'Select Currency', description: 'Choose your preferred currency for display' },
+    { title: 'View Savings', description: 'See discounted price and amount saved' }
+  ];
   const [price, setPrice] = useState('');
   const [discount, setDiscount] = useState('');
   const [currency, setCurrency] = useState(getDefaultCurrency());
@@ -12,11 +20,14 @@ export default function DiscountCalculator() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-3">Discount Calculator</h1>
-      <p className="text-gray-600 text-lg mb-6">Calculate discounted prices and savings in any currency</p>
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Discount Calculator</h1>
+      <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">Calculate discounted prices and savings in any currency</p>
+      <div className="mb-6">
+        <HowItWorks steps={howItWorks} />
+      </div>
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Currency</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Currency</label>
           <select
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}

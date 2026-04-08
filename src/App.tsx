@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-
 import Header from './components/Header';
 import Footer from './components/Footer';
 import LoadingSpinner from './components/LoadingSpinner';
+import ScrollManager from './components/ScrollManager';
 import { useSEO, homeSEO, aboutSEO, blogSEO, contactSEO, generateToolSEO } from './utils/useSEO';
 import { tools, toolMasterList } from './data/tools';
 
@@ -145,6 +146,28 @@ const SitemapURLExtractor = lazy(() => import('./tools/SitemapURLExtractor'));
 
 // New tools - PDF & Document Tools
 const PDFPageExtractor = lazy(() => import('./tools/PDFPageExtractor'));
+
+// Newly Implemented Tools
+const TimeCalculator = lazy(() => import('./tools/TimeCalculator'));
+const CaloriesCalculator = lazy(() => import('./tools/CaloriesCalculator'));
+const BarcodeGenerator = lazy(() => import('./tools/BarcodeGenerator'));
+const CreditCardGenerator = lazy(() => import('./tools/CreditCardGenerator'));
+const GradientGenerator = lazy(() => import('./tools/GradientGenerator'));
+const PDFToText = lazy(() => import('./tools/PDFToText'));
+const PDFWatermark = lazy(() => import('./tools/PDFWatermark'));
+const PDFUnlock = lazy(() => import('./tools/PDFUnlock'));
+const ExtractImagesFromPDF = lazy(() => import('./tools/ExtractImagesFromPDF'));
+const ExtractPDFPages = lazy(() => import('./tools/ExtractPDFPages'));
+const PDFMetadataEditor = lazy(() => import('./tools/PDFMetadataEditor'));
+const PDFPageReorder = lazy(() => import('./tools/PDFPageReorder'));
+const JWTDecoder = lazy(() => import('./tools/JWTDecoder'));
+const XMLFormatter = lazy(() => import('./tools/XMLFormatter'));
+const SQLFormatter = lazy(() => import('./tools/SQLFormatter'));
+const HTAccessGenerator = lazy(() => import('./tools/HTAccessGenerator'));
+const ImageCropper = lazy(() => import('./tools/ImageCropper'));
+const ImageRotator = lazy(() => import('./tools/ImageRotator'));
+const DiceRoller = lazy(() => import('./tools/DiceRoller'));
+
 const ToolComingSoon = lazy(() => import('./tools/ToolComingSoon'));
 
 interface RouteConfig {
@@ -464,6 +487,36 @@ function App() {
       description: 'Rotate pages in PDF document.'
     },
     {
+      path: '/tools/pdf-unlock',
+      component: <PDFUnlock />,
+      title: 'PDF Unlock | Free Tools',
+      description: 'Remove password protection from PDF files.'
+    },
+    {
+      path: '/tools/extract-images-from-pdf',
+      component: <ExtractImagesFromPDF />,
+      title: 'Extract Images from PDF | Free Tools',
+      description: 'Extract all images from PDF documents.'
+    },
+    {
+      path: '/tools/extract-pdf-pages',
+      component: <ExtractPDFPages />,
+      title: 'Extract PDF Pages | Free Tools',
+      description: 'Extract specific page ranges from PDF files.'
+    },
+    {
+      path: '/tools/pdf-metadata-editor',
+      component: <PDFMetadataEditor />,
+      title: 'PDF Metadata Editor | Free Tools',
+      description: 'Edit PDF document properties and metadata.'
+    },
+    {
+      path: '/tools/pdf-page-reorder',
+      component: <PDFPageReorder />,
+      title: 'PDF Page Reorder | Free Tools',
+      description: 'Rearrange pages in PDF documents.'
+    },
+    {
       path: '/tools/image-compressor',
       component: <ImageCompressor />,
       title: 'Image Compressor | Free Tools',
@@ -579,87 +632,87 @@ function App() {
     },
     {
       path: '/tools/time-calculator',
-      component: <ToolComingSoon toolName="Time Calculator" summary="Add and subtract hours and minutes quickly for schedules and planning." />,
+      component: <TimeCalculator />,
       title: 'Time Calculator - Add & Subtract Time | Free Tools',
-      description: 'Add and subtract hours and minutes instantly. Time calculator page is coming soon.'
+      description: 'Add and subtract hours and minutes instantly. Time calculator tool.'
     },
     {
       path: '/tools/calories-calculator',
-      component: <ToolComingSoon toolName="Calories Calculator" summary="Estimate daily calorie needs based on personal profile and goals." />,
+      component: <CaloriesCalculator />,
       title: 'Calories Calculator - Daily Calorie Needs | Free Tools',
-      description: 'Estimate daily calorie requirements for maintenance, loss, or gain. Full tool page is coming soon.'
+      description: 'Estimate daily calorie requirements for maintenance, loss, or gain.'
     },
     {
       path: '/tools/barcode-generator',
-      component: <ToolComingSoon toolName="Barcode Generator" summary="Generate barcode images for product IDs and labels." />,
+      component: <BarcodeGenerator />,
       title: 'Barcode Generator - Create Barcode Images | Free Tools',
-      description: 'Create barcodes in popular formats for products and inventory. Full tool page is coming soon.'
+      description: 'Create barcodes in popular formats for products and inventory.'
     },
     {
       path: '/tools/credit-card-generator',
-      component: <ToolComingSoon toolName="Test Credit Card Generator" summary="Generate test card numbers for QA and development workflows." />,
+      component: <CreditCardGenerator />,
       title: 'Test Credit Card Generator | Free Tools',
-      description: 'Generate test-only credit card numbers for development and QA. Full tool page is coming soon.'
+      description: 'Generate test-only credit card numbers for development and QA.'
     },
     {
       path: '/tools/gradient-generator',
-      component: <ToolComingSoon toolName="CSS Gradient Generator" summary="Design linear and radial gradients and copy CSS code quickly." />,
+      component: <GradientGenerator />,
       title: 'CSS Gradient Generator - Gradient Builder | Free Tools',
-      description: 'Create beautiful CSS gradients and export ready-to-use CSS. Full tool page is coming soon.'
+      description: 'Create beautiful CSS gradients and export ready-to-use CSS.'
     },
     {
       path: '/tools/pdf-to-text',
-      component: <ToolComingSoon toolName="PDF to Text" summary="Extract plain text from PDF pages for quick reuse and analysis." />,
+      component: <PDFToText />,
       title: 'PDF to Text Extractor | Free Tools',
-      description: 'Extract text from PDF files quickly in your browser. Full tool page is coming soon.'
+      description: 'Extract text from PDF files quickly in your browser.'
     },
     {
       path: '/tools/pdf-watermark',
-      component: <ToolComingSoon toolName="PDF Watermark" summary="Add text or image watermarks to PDF documents." />,
+      component: <PDFWatermark />,
       title: 'PDF Watermark Tool | Free Tools',
-      description: 'Add custom watermarks to PDF files online. Full tool page is coming soon.'
+      description: 'Add custom watermarks to PDF files online.'
     },
     {
       path: '/tools/jwt-decoder',
-      component: <ToolComingSoon toolName="JWT Decoder" summary="Decode JSON Web Tokens and inspect claims for debugging." />,
+      component: <JWTDecoder />,
       title: 'JWT Decoder - Decode JSON Web Tokens | Free Tools',
-      description: 'Decode JWT tokens and inspect payload claims quickly. Full tool page is coming soon.'
+      description: 'Decode JWT tokens and inspect payload claims quickly.'
     },
     {
       path: '/tools/xml-formatter',
-      component: <ToolComingSoon toolName="XML Formatter" summary="Format and beautify XML for easier reading and debugging." />,
+      component: <XMLFormatter />,
       title: 'XML Formatter & Beautifier | Free Tools',
-      description: 'Format and beautify XML data with clean indentation. Full tool page is coming soon.'
+      description: 'Format and beautify XML data with clean indentation.'
     },
     {
       path: '/tools/sql-formatter',
-      component: <ToolComingSoon toolName="SQL Formatter" summary="Beautify SQL queries and improve readability across teams." />,
+      component: <SQLFormatter />,
       title: 'SQL Formatter - Beautify SQL Queries | Free Tools',
-      description: 'Format SQL queries with consistent style and indentation. Full tool page is coming soon.'
+      description: 'Format SQL queries with consistent style and indentation.'
     },
     {
       path: '/tools/htaccess-generator',
-      component: <ToolComingSoon toolName=".htaccess Generator" summary="Generate redirect and rewrite rules for Apache servers." />,
+      component: <HTAccessGenerator />,
       title: '.htaccess Generator - Apache Rules | Free Tools',
-      description: 'Generate Apache .htaccess rules for redirects and rewrites. Full tool page is coming soon.'
+      description: 'Generate Apache .htaccess rules for redirects and rewrites.'
     },
     {
       path: '/tools/image-cropper',
-      component: <ToolComingSoon toolName="Image Cropper" summary="Crop images to exact sizes and aspect ratios for web and social." />,
+      component: <ImageCropper />,
       title: 'Image Cropper - Crop Images Online | Free Tools',
-      description: 'Crop images to custom dimensions and aspect ratios. Full tool page is coming soon.'
+      description: 'Crop images to custom dimensions and aspect ratios.'
     },
     {
       path: '/tools/image-rotator',
-      component: <ToolComingSoon toolName="Image Rotator" summary="Rotate and flip images quickly with quality-preserving output." />,
+      component: <ImageRotator />,
       title: 'Image Rotator - Rotate & Flip Images | Free Tools',
-      description: 'Rotate and flip images online in seconds. Full tool page is coming soon.'
+      description: 'Rotate and flip images online in seconds.'
     },
     {
       path: '/tools/dice-roller',
-      component: <ToolComingSoon toolName="Dice Roller" summary="Roll one or more virtual dice for games and random choices." />,
+      component: <DiceRoller />,
       title: 'Dice Roller - Virtual Dice Tool | Free Tools',
-      description: 'Roll virtual dice with configurable sides and counts. Full tool page is coming soon.'
+      description: 'Roll virtual dice with configurable sides and counts.'
     },
     {
       path: '/tools/text-to-binary',
@@ -1063,13 +1116,9 @@ function App() {
   // Apply SEO using our custom hook
   useSEO(seoConfig);
 
-  // Smooth scroll to top on route change
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPath]);
-
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">
+      <ScrollManager />
       <Header currentPath={currentPath} onNavigate={navigateTo} />
       <main className="flex-grow">
         <Suspense fallback={<LoadingSpinner />}>

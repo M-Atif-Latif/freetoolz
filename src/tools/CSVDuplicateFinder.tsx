@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Database, Trash2 } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function CSVDuplicateFinder() {
+  const howItWorks = [
+    { title: 'Upload CSV File', description: 'Select or paste your CSV data' },
+    { title: 'Choose Criteria', description: 'Select which columns to check for duplicates' },
+    { title: 'Find Duplicates', description: 'Identify and highlight duplicate rows' },
+    { title: 'Download Result', description: 'Save clean CSV without duplicates' }
+  ];
   const [csvInput, setCsvInput] = useState('');
   const [columnIndex, setColumnIndex] = useState('0');
   const [duplicates, setDuplicates] = useState<string[]>([]);

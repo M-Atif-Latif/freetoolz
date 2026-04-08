@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { FileArchive, Info } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface ZipFileInfo {
   name: string;
@@ -10,6 +12,12 @@ interface ZipFileInfo {
 }
 
 export default function ZIPFileInspector() {
+  const howItWorks = [
+    { title: 'Upload ZIP File', description: 'Select a ZIP file to inspect' },
+    { title: 'View Contents', description: 'See all files and folders inside the archive' },
+    { title: 'Check Info', description: 'View file sizes, compression ratios, and metadata' },
+    { title: 'Extract/Download', description: 'Download individual files from the archive' }
+  ];
   const [files, setFiles] = useState<ZipFileInfo[]>([]);
   const [totalSize, setTotalSize] = useState(0);
   const [totalCompressed, setTotalCompressed] = useState(0);
@@ -58,6 +66,8 @@ export default function ZIPFileInspector() {
             Inspect ZIP archive contents, sizes, and compression ratios
           </p>
         </div>
+
+        <HowItWorks steps={howItWorks} />
 
         {/* Upload */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8">

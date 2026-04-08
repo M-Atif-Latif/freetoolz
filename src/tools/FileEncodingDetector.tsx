@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { FileSearch, Upload } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function FileEncodingDetector() {
+  const howItWorks = [
+    { title: 'Upload File', description: 'Select a file to analyze' },
+    { title: 'Detect Encoding', description: 'Automatically detect file encoding/charset' },
+    { title: 'View Results', description: 'See the detected encoding format' },
+    { title: 'Copy Info', description: 'Save the encoding information' }
+  ];
   const [text, setText] = useState('');
   const [fileName, setFileName] = useState('');
   const [encoding, setEncoding] = useState('');

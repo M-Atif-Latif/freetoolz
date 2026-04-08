@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Globe, Clock } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function WorkingHoursTimezoneConverter() {
+  const howItWorks = [
+    { title: 'Select Your Time', description: 'Pick a time and your timezone' },
+    { title: 'Select Target Timezone', description: 'Choose where you want to see the converted time' },
+    { title: 'Convert', description: 'See what time it is in the target timezone during working' },
+    { title: 'Copy Time', description: 'Save the converted working hours information' }
+  ];
   const [time, setTime] = useState('09:00');
   const [fromTimezone, setFromTimezone] = useState('America/New_York');
   const [results, setResults] = useState<{ timezone: string; time: string; isWorkingHours: boolean }[]>([]);

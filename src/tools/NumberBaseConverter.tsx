@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Hash, ArrowRight, Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function NumberBaseConverter() {
+  const howItWorks = [
+    { title: 'Enter Number', description: 'Type your number in any base (binary, decimal, hex, octal)' },
+    { title: 'Select Bases', description: 'Choose your input base and output base' },
+    { title: 'Convert', description: 'Convert to the target base instantly' },
+    { title: 'Copy Result', description: 'Save your converted number' }
+  ];
   const [inputValue, setInputValue] = useState('');
   const [inputBase, setInputBase] = useState(10);
   const [outputBase, setOutputBase] = useState(16);

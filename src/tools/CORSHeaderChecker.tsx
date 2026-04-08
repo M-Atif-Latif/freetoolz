@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Shield, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface CORSResult {
   url: string;

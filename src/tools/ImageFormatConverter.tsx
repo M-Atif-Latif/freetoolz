@@ -1,7 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Upload, Download } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ImageFormatConverter() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select the image you want to convert' },
+    { title: 'Choose Format', description: 'Pick target format (PNG, JPG, WebP, etc.)' },
+    { title: 'Convert', description: 'Transform your image to the new format' },
+    { title: 'Download', description: 'Save your converted image' }
+  ];
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState('');
   const [format, setFormat] = useState<'png' | 'jpeg' | 'webp'>('png');
@@ -47,6 +55,10 @@ export default function ImageFormatConverter() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Image Format Converter</h1>
       <p className="text-gray-600 text-lg mb-6">Convert images between PNG, JPG, and WEBP formats</p>
+
+
+      <HowItWorks steps={howItWorks} />
+
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="mb-6">
@@ -104,3 +116,4 @@ export default function ImageFormatConverter() {
     </div>
   );
 }
+
