@@ -4,13 +4,13 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- Free Tools Sitemap - Generated 2026-04-05 -->
-<!-- 9 static pages + 105 tool pages = 114 total URLs -->
+<!-- Free Tools Sitemap - Generated 2026-04-08 -->
+<!-- 9 static pages + 127 tool pages = 136 total URLs -->
   <url>
     <loc>https://freetoolz.cloud/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
@@ -18,7 +18,7 @@
     <loc>https://freetoolz.cloud/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/about" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -26,7 +26,7 @@
     <loc>https://freetoolz.cloud/blog</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/blog" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -34,7 +34,7 @@
     <loc>https://freetoolz.cloud/contact</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/contact" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
@@ -42,7 +42,7 @@
     <loc>https://freetoolz.cloud/privacy</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/privacy" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
@@ -50,7 +50,7 @@
     <loc>https://freetoolz.cloud/terms</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/terms" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
@@ -58,7 +58,7 @@
     <loc>https://freetoolz.cloud/disclaimer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/disclaimer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/disclaimer" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
@@ -66,7 +66,7 @@
     <loc>https://freetoolz.cloud/faq</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/faq" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/faq" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -74,7 +74,7 @@
     <loc>https://freetoolz.cloud/sitemap</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/sitemap" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/sitemap" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.50</priority>
   </url>
@@ -82,7 +82,7 @@
     <loc>https://freetoolz.cloud/word-counter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/word-counter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/word-counter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -90,7 +90,7 @@
     <loc>https://freetoolz.cloud/case-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/case-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/case-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -98,7 +98,7 @@
     <loc>https://freetoolz.cloud/text-reverser</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/text-reverser" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/text-reverser" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -106,7 +106,7 @@
     <loc>https://freetoolz.cloud/remove-extra-spaces</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/remove-extra-spaces" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/remove-extra-spaces" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -114,7 +114,7 @@
     <loc>https://freetoolz.cloud/lorem-ipsum-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/lorem-ipsum-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/lorem-ipsum-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -122,7 +122,7 @@
     <loc>https://freetoolz.cloud/age-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/age-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/age-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -130,7 +130,7 @@
     <loc>https://freetoolz.cloud/bmi-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/bmi-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/bmi-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -138,7 +138,7 @@
     <loc>https://freetoolz.cloud/percentage-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/percentage-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/percentage-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -146,7 +146,7 @@
     <loc>https://freetoolz.cloud/password-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/password-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/password-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -154,7 +154,7 @@
     <loc>https://freetoolz.cloud/qr-code-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/qr-code-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/qr-code-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -162,7 +162,7 @@
     <loc>https://freetoolz.cloud/uuid-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/uuid-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/uuid-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -170,7 +170,7 @@
     <loc>https://freetoolz.cloud/random-number-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/random-number-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/random-number-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -178,7 +178,7 @@
     <loc>https://freetoolz.cloud/json-formatter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/json-formatter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/json-formatter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -186,7 +186,7 @@
     <loc>https://freetoolz.cloud/html-entity-encoder</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/html-entity-encoder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/html-entity-encoder" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -194,7 +194,7 @@
     <loc>https://freetoolz.cloud/character-counter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/character-counter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/character-counter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -202,7 +202,7 @@
     <loc>https://freetoolz.cloud/text-to-slug</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/text-to-slug" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/text-to-slug" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -210,7 +210,7 @@
     <loc>https://freetoolz.cloud/markdown-to-html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/markdown-to-html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/markdown-to-html" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -218,7 +218,7 @@
     <loc>https://freetoolz.cloud/duplicate-line-remover</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/duplicate-line-remover" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/duplicate-line-remover" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -226,7 +226,7 @@
     <loc>https://freetoolz.cloud/line-sorter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/line-sorter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/line-sorter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -234,7 +234,7 @@
     <loc>https://freetoolz.cloud/compound-interest-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/compound-interest-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/compound-interest-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -242,7 +242,7 @@
     <loc>https://freetoolz.cloud/loan-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/loan-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/loan-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -250,7 +250,7 @@
     <loc>https://freetoolz.cloud/tip-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/tip-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/tip-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -258,7 +258,7 @@
     <loc>https://freetoolz.cloud/discount-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/discount-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/discount-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -266,7 +266,7 @@
     <loc>https://freetoolz.cloud/css-minifier</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/css-minifier" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/css-minifier" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -274,7 +274,7 @@
     <loc>https://freetoolz.cloud/javascript-minifier</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/javascript-minifier" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/javascript-minifier" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -282,7 +282,7 @@
     <loc>https://freetoolz.cloud/regex-tester</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/regex-tester" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/regex-tester" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -290,7 +290,7 @@
     <loc>https://freetoolz.cloud/unix-timestamp-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/unix-timestamp-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/unix-timestamp-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -298,7 +298,7 @@
     <loc>https://freetoolz.cloud/hash-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/hash-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/hash-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -306,7 +306,7 @@
     <loc>https://freetoolz.cloud/text-diff-checker</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/text-diff-checker" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/text-diff-checker" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -314,7 +314,7 @@
     <loc>https://freetoolz.cloud/merge-pdf</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/merge-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/merge-pdf" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -322,7 +322,7 @@
     <loc>https://freetoolz.cloud/split-pdf</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/split-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/split-pdf" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -330,7 +330,7 @@
     <loc>https://freetoolz.cloud/compress-pdf</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/compress-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/compress-pdf" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -338,7 +338,31 @@
     <loc>https://freetoolz.cloud/rotate-pdf</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/rotate-pdf" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/rotate-pdf" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/pdf-unlock</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/pdf-unlock" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/pdf-unlock" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/extract-images-from-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/extract-images-from-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/extract-images-from-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/extract-pdf-pages</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/extract-pdf-pages" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/extract-pdf-pages" />
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -346,7 +370,7 @@
     <loc>https://freetoolz.cloud/word-frequency-counter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/word-frequency-counter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/word-frequency-counter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -354,7 +378,7 @@
     <loc>https://freetoolz.cloud/syllable-counter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/syllable-counter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/syllable-counter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -362,7 +386,7 @@
     <loc>https://freetoolz.cloud/readability-score</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/readability-score" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/readability-score" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -370,7 +394,7 @@
     <loc>https://freetoolz.cloud/find-and-replace</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/find-and-replace" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/find-and-replace" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -378,7 +402,7 @@
     <loc>https://freetoolz.cloud/date-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/date-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/date-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -386,7 +410,7 @@
     <loc>https://freetoolz.cloud/gpa-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/gpa-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/gpa-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -394,7 +418,7 @@
     <loc>https://freetoolz.cloud/fuel-cost-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/fuel-cost-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/fuel-cost-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -402,7 +426,7 @@
     <loc>https://freetoolz.cloud/fake-data-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/fake-data-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/fake-data-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -410,7 +434,7 @@
     <loc>https://freetoolz.cloud/letter-counter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/letter-counter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/letter-counter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -418,7 +442,7 @@
     <loc>https://freetoolz.cloud/reverse-words</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/reverse-words" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/reverse-words" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -426,7 +450,7 @@
     <loc>https://freetoolz.cloud/invisible-character</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/invisible-character" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/invisible-character" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -434,7 +458,7 @@
     <loc>https://freetoolz.cloud/binary-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/binary-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/binary-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -442,7 +466,7 @@
     <loc>https://freetoolz.cloud/hexadecimal-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/hexadecimal-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/hexadecimal-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -450,7 +474,7 @@
     <loc>https://freetoolz.cloud/smart-sentence-splitter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/smart-sentence-splitter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/smart-sentence-splitter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -458,7 +482,7 @@
     <loc>https://freetoolz.cloud/contraction-expander</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/contraction-expander" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/contraction-expander" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -466,7 +490,7 @@
     <loc>https://freetoolz.cloud/read-aloud-caption-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/read-aloud-caption-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/read-aloud-caption-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -474,7 +498,7 @@
     <loc>https://freetoolz.cloud/title-headline-analyzer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/title-headline-analyzer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/title-headline-analyzer" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -482,7 +506,7 @@
     <loc>https://freetoolz.cloud/text-randomizer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/text-randomizer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/text-randomizer" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -490,7 +514,7 @@
     <loc>https://freetoolz.cloud/csv-column-splitter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/csv-column-splitter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/csv-column-splitter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -498,7 +522,7 @@
     <loc>https://freetoolz.cloud/yaml-to-json</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/yaml-to-json" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/yaml-to-json" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -506,7 +530,7 @@
     <loc>https://freetoolz.cloud/css-to-tailwind</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/css-to-tailwind" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/css-to-tailwind" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -514,7 +538,7 @@
     <loc>https://freetoolz.cloud/http-status-code-tester</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/http-status-code-tester" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/http-status-code-tester" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -522,7 +546,7 @@
     <loc>https://freetoolz.cloud/cors-header-checker</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/cors-header-checker" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/cors-header-checker" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -530,7 +554,7 @@
     <loc>https://freetoolz.cloud/file-encoding-detector</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/file-encoding-detector" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/file-encoding-detector" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -538,7 +562,7 @@
     <loc>https://freetoolz.cloud/image-dpi-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/image-dpi-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/image-dpi-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -546,7 +570,7 @@
     <loc>https://freetoolz.cloud/hash-identifier</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/hash-identifier" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/hash-identifier" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -554,7 +578,7 @@
     <loc>https://freetoolz.cloud/permutation-combination-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/permutation-combination-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/permutation-combination-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -562,7 +586,7 @@
     <loc>https://freetoolz.cloud/business-days-calculator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/business-days-calculator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/business-days-calculator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -570,7 +594,7 @@
     <loc>https://freetoolz.cloud/ascii-art-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/ascii-art-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/ascii-art-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -578,7 +602,7 @@
     <loc>https://freetoolz.cloud/console-log-formatter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/console-log-formatter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/console-log-formatter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -586,7 +610,7 @@
     <loc>https://freetoolz.cloud/password-strength-analyzer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/password-strength-analyzer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/password-strength-analyzer" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -594,7 +618,7 @@
     <loc>https://freetoolz.cloud/cookie-inspector</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/cookie-inspector" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/cookie-inspector" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -602,7 +626,7 @@
     <loc>https://freetoolz.cloud/meta-robots-tester</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/meta-robots-tester" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/meta-robots-tester" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -610,7 +634,7 @@
     <loc>https://freetoolz.cloud/structured-data-validator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/structured-data-validator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/structured-data-validator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -618,7 +642,7 @@
     <loc>https://freetoolz.cloud/sitemap-url-extractor</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/sitemap-url-extractor" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/sitemap-url-extractor" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -626,7 +650,159 @@
     <loc>https://freetoolz.cloud/pdf-page-extractor</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/pdf-page-extractor" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/pdf-page-extractor" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/pdf-to-jpg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/pdf-to-jpg" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/jpg-to-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/jpg-to-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/pdf-add-page-numbers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/pdf-add-page-numbers" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/pdf-add-page-numbers" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/pdf-redact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/pdf-redact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/pdf-redact" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/pdf-to-word</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/pdf-to-word" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/pdf-to-word" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/pdf-to-powerpoint</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/pdf-to-powerpoint" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/pdf-to-powerpoint" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/pdf-to-excel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/pdf-to-excel" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/pdf-to-excel" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/html-to-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/html-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/html-to-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/pdf-to-pdfa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/pdf-to-pdfa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/pdf-to-pdfa" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/edit-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/edit-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/edit-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/sign-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/sign-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/sign-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/protect-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/protect-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/protect-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/ocr-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/ocr-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/ocr-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/compare-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/compare-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/compare-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/repair-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/repair-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/repair-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/organize-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/organize-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/organize-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/word-to-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/word-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/word-to-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/powerpoint-to-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/powerpoint-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/powerpoint-to-pdf" />
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://freetoolz.cloud/excel-to-pdf</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/excel-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/excel-to-pdf" />
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -634,7 +810,7 @@
     <loc>https://freetoolz.cloud/base64-encoder-decoder</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/base64-encoder-decoder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/base64-encoder-decoder" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -642,7 +818,7 @@
     <loc>https://freetoolz.cloud/url-encoder-decoder</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/url-encoder-decoder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/url-encoder-decoder" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -650,7 +826,7 @@
     <loc>https://freetoolz.cloud/color-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/color-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/color-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -658,7 +834,7 @@
     <loc>https://freetoolz.cloud/unit-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/unit-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/unit-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -666,7 +842,7 @@
     <loc>https://freetoolz.cloud/currency-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/currency-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/currency-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -674,7 +850,7 @@
     <loc>https://freetoolz.cloud/time-zone-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/time-zone-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/time-zone-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -682,7 +858,7 @@
     <loc>https://freetoolz.cloud/image-to-base64</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/image-to-base64" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/image-to-base64" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -690,7 +866,7 @@
     <loc>https://freetoolz.cloud/image-compressor</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/image-compressor" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/image-compressor" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -698,7 +874,7 @@
     <loc>https://freetoolz.cloud/image-resizer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/image-resizer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/image-resizer" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -706,7 +882,7 @@
     <loc>https://freetoolz.cloud/image-format-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/image-format-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/image-format-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -714,7 +890,7 @@
     <loc>https://freetoolz.cloud/grayscale-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/grayscale-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/grayscale-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -722,7 +898,7 @@
     <loc>https://freetoolz.cloud/text-to-binary</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/text-to-binary" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/text-to-binary" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -730,7 +906,7 @@
     <loc>https://freetoolz.cloud/morse-code-translator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/morse-code-translator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/morse-code-translator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -738,7 +914,7 @@
     <loc>https://freetoolz.cloud/background-remover</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/background-remover" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/background-remover" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -746,7 +922,7 @@
     <loc>https://freetoolz.cloud/stopwatch</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/stopwatch" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/stopwatch" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -754,7 +930,7 @@
     <loc>https://freetoolz.cloud/timer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/timer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/timer" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -762,7 +938,7 @@
     <loc>https://freetoolz.cloud/coin-flip</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/coin-flip" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/coin-flip" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -770,7 +946,7 @@
     <loc>https://freetoolz.cloud/random-picker</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/random-picker" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/random-picker" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -778,7 +954,7 @@
     <loc>https://freetoolz.cloud/text-to-speech</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/text-to-speech" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/text-to-speech" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -786,7 +962,7 @@
     <loc>https://freetoolz.cloud/color-picker</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/color-picker" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/color-picker" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -794,7 +970,7 @@
     <loc>https://freetoolz.cloud/password-strength-checker</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/password-strength-checker" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/password-strength-checker" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -802,7 +978,7 @@
     <loc>https://freetoolz.cloud/temperature-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/temperature-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/temperature-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -810,7 +986,7 @@
     <loc>https://freetoolz.cloud/roman-numeral-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/roman-numeral-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/roman-numeral-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -818,7 +994,7 @@
     <loc>https://freetoolz.cloud/number-base-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/number-base-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/number-base-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -826,7 +1002,7 @@
     <loc>https://freetoolz.cloud/power-energy-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/power-energy-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/power-energy-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -834,7 +1010,7 @@
     <loc>https://freetoolz.cloud/color-blindness-simulator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/color-blindness-simulator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/color-blindness-simulator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -842,7 +1018,7 @@
     <loc>https://freetoolz.cloud/working-hours-timezone-converter</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/working-hours-timezone-converter" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/working-hours-timezone-converter" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -850,7 +1026,7 @@
     <loc>https://freetoolz.cloud/csv-duplicate-finder</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/csv-duplicate-finder" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/csv-duplicate-finder" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -858,7 +1034,7 @@
     <loc>https://freetoolz.cloud/regex-bulk-replace</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/regex-bulk-replace" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/regex-bulk-replace" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -866,7 +1042,7 @@
     <loc>https://freetoolz.cloud/bulk-url-shortener</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/bulk-url-shortener" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/bulk-url-shortener" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -874,7 +1050,7 @@
     <loc>https://freetoolz.cloud/clipboard-history-manager</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/clipboard-history-manager" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/clipboard-history-manager" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -882,7 +1058,7 @@
     <loc>https://freetoolz.cloud/dataset-sampler</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/dataset-sampler" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/dataset-sampler" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -890,7 +1066,7 @@
     <loc>https://freetoolz.cloud/zip-file-inspector</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/zip-file-inspector" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/zip-file-inspector" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -898,7 +1074,7 @@
     <loc>https://freetoolz.cloud/svg-optimizer</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/svg-optimizer" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/svg-optimizer" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -906,7 +1082,7 @@
     <loc>https://freetoolz.cloud/favicon-generator</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/favicon-generator" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/favicon-generator" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -914,7 +1090,7 @@
     <loc>https://freetoolz.cloud/color-contrast-checker</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freetoolz.cloud/color-contrast-checker" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freetoolz.cloud/color-contrast-checker" />
-    <lastmod>2026-04-05</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>

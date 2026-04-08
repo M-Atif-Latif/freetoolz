@@ -20,6 +20,8 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const publicDir = path.join(projectRoot, 'public');
 const distDir = path.join(projectRoot, 'dist');
+const rootSitemapPath = path.join(projectRoot, 'sitemap.xml');
+const rootRobotsPath = path.join(projectRoot, 'robots.txt');
 
 fs.mkdirSync(publicDir, { recursive: true });
 
@@ -152,6 +154,8 @@ const robotsPublicPath = path.join(publicDir, 'robots.txt');
 
 fs.writeFileSync(sitemapPublicPath, sitemap, 'utf8');
 fs.writeFileSync(robotsPublicPath, robots, 'utf8');
+fs.writeFileSync(rootSitemapPath, sitemap, 'utf8');
+fs.writeFileSync(rootRobotsPath, robots, 'utf8');
 
 if (fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });

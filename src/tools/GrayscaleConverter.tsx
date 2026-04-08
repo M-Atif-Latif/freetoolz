@@ -74,10 +74,8 @@ export default function GrayscaleConverter() {
           <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="w-12 h-12 mb-4 text-gray-400" />
-              <p className="mb-2 text-sm text-gray-500"><span className="font-semibold">Click to upload</span></p>
-
-            <HowItWorks steps={howItWorks} />
-
+              <p className="mb-2 text-sm text-gray-500"><span className="font-semibold">Click to upload</span> or drag and drop</p>
+              <p className="text-xs text-gray-500">PNG, JPG, WEBP</p>
             </div>
             <input type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
           </label>

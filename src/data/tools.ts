@@ -575,6 +575,24 @@ export const tools: Tool[] = [
     path: '/tools/pdf-watermark',
     indexable: false,
   },
+  {
+    id: 'pdf-metadata-editor',
+    name: 'PDF Metadata Editor',
+    description: 'Use Case: Edit PDF document properties and metadata',
+    category: 'pdf',
+    icon: 'FileText',
+    path: '/tools/pdf-metadata-editor',
+    indexable: false,
+  },
+  {
+    id: 'pdf-page-reorder',
+    name: 'PDF Page Reorder',
+    description: 'Use Case: Reorder and rearrange PDF pages',
+    category: 'pdf',
+    icon: 'Shuffle',
+    path: '/tools/pdf-page-reorder',
+    indexable: false,
+  },
   // Additional Image Tools
   {
     id: 'image-cropper',
@@ -1024,6 +1042,159 @@ export const tools: Tool[] = [
     icon: 'FileText',
     path: '/tools/pdf-page-extractor',
   },
+  // New PDF Conversion Tools - Phase 4
+  {
+    id: 'pdf-to-jpg',
+    name: 'PDF to JPG',
+    description: 'Use Case: Convert PDF pages to JPG image files',
+    category: 'pdf',
+    icon: 'Image',
+    path: '/tools/pdf-to-jpg',
+  },
+  {
+    id: 'jpg-to-pdf',
+    name: 'JPG to PDF',
+    description: 'Use Case: Convert JPG and image files to PDF',
+    category: 'pdf',
+    icon: 'FileText',
+    path: '/tools/jpg-to-pdf',
+  },
+  {
+    id: 'pdf-add-page-numbers',
+    name: 'PDF Add Page Numbers',
+    description: 'Use Case: Add page numbers to PDF documents',
+    category: 'pdf',
+    icon: 'Hash',
+    path: '/tools/pdf-add-page-numbers',
+  },
+  {
+    id: 'pdf-redact',
+    name: 'PDF Redact',
+    description: 'Use Case: Redact sensitive text and content from PDFs',
+    category: 'pdf',
+    icon: 'Eraser',
+    path: '/tools/pdf-redact',
+  },
+  {
+    id: 'pdf-to-word',
+    name: 'PDF to Word',
+    description: 'Use Case: Convert PDF documents to Word format',
+    category: 'pdf',
+    icon: 'FileText',
+    path: '/tools/pdf-to-word',
+  },
+  {
+    id: 'pdf-to-powerpoint',
+    name: 'PDF to PowerPoint',
+    description: 'Use Case: Convert PDF pages to PowerPoint slides',
+    category: 'pdf',
+    icon: 'FileText',
+    path: '/tools/pdf-to-powerpoint',
+  },
+  {
+    id: 'pdf-to-excel',
+    name: 'PDF to Excel',
+    description: 'Use Case: Extract tables from PDF to Excel spreadsheets',
+    category: 'pdf',
+    icon: 'FileText',
+    path: '/tools/pdf-to-excel',
+  },
+  {
+    id: 'html-to-pdf',
+    name: 'HTML to PDF',
+    description: 'Use Case: Convert HTML content to PDF documents',
+    category: 'pdf',
+    icon: 'Code',
+    path: '/tools/html-to-pdf',
+  },
+  {
+    id: 'pdf-to-pdfa',
+    name: 'PDF to PDF/A',
+    description: 'Use Case: Convert PDF to PDF/A format for archival',
+    category: 'pdf',
+    icon: 'Archive',
+    path: '/tools/pdf-to-pdfa',
+  },
+  {
+    id: 'edit-pdf',
+    name: 'Edit PDF',
+    description: 'Use Case: Remove, reorder, and delete PDF pages',
+    category: 'pdf',
+    icon: 'Edit',
+    path: '/tools/edit-pdf',
+  },
+  {
+    id: 'sign-pdf',
+    name: 'Sign PDF',
+    description: 'Use Case: Add signatures to PDF documents',
+    category: 'pdf',
+    icon: 'PenTool',
+    path: '/tools/sign-pdf',
+  },
+  {
+    id: 'protect-pdf',
+    name: 'Protect PDF',
+    description: 'Use Case: Add password protection to PDF files',
+    category: 'pdf',
+    icon: 'Lock',
+    path: '/tools/protect-pdf',
+  },
+  {
+    id: 'ocr-pdf',
+    name: 'OCR PDF',
+    description: 'Use Case: Extract text from scanned PDFs',
+    category: 'pdf',
+    icon: 'FileText',
+    path: '/tools/ocr-pdf',
+  },
+  {
+    id: 'compare-pdf',
+    name: 'Compare PDF',
+    description: 'Use Case: Compare two PDF files and identify differences',
+    category: 'pdf',
+    icon: 'BarChart2',
+    path: '/tools/compare-pdf',
+  },
+  {
+    id: 'repair-pdf',
+    name: 'Repair PDF',
+    description: 'Use Case: Fix corrupted or damaged PDF files',
+    category: 'pdf',
+    icon: 'Wrench',
+    path: '/tools/repair-pdf',
+  },
+  {
+    id: 'organize-pdf',
+    name: 'Organize PDF',
+    description: 'Use Case: Merge, reorder, and organize PDF pages',
+    category: 'pdf',
+    icon: 'Shuffle',
+    path: '/tools/organize-pdf',
+  },
+  {
+    id: 'word-to-pdf',
+    name: 'Word to PDF',
+    description: 'Use Case: Convert Word documents to PDF format',
+    category: 'pdf',
+    icon: 'FileText',
+    path: '/tools/word-to-pdf',
+  },
+  {
+    id: 'powerpoint-to-pdf',
+    name: 'PowerPoint to PDF',
+    description: 'Use Case: Convert PowerPoint presentations to PDF',
+    category: 'pdf',
+    icon: 'FileText',
+    path: '/tools/powerpoint-to-pdf',
+  },
+  {
+    id: 'excel-to-pdf',
+    name: 'Excel to PDF',
+    description: 'Use Case: Convert Excel spreadsheets to PDF files',
+    category: 'pdf',
+    icon: 'FileText',
+    path: '/tools/excel-to-pdf',
+  },
 ];
 
 const categoryLabelById: Record<string, string> = Object.fromEntries(
@@ -1061,8 +1232,35 @@ const slugOverrides: Record<string, string> = {
 
 const getCanonicalSlug = (toolId: string): string => slugOverrides[toolId] ?? toolId;
 
-const toDefaultKeyword = (name: string): string =>
-  `${name.toLowerCase()} online free`;
+const cleanDescription = (description: string): string =>
+  description.replace(/^Use Case:\s*/i, '').trim();
+
+const trimMeta = (text: string, maxLength = 158): string =>
+  text.length <= maxLength ? text : `${text.slice(0, maxLength - 1).trimEnd()}...`;
+
+const ensurePeriod = (text: string): string =>
+  /[.!?]$/.test(text) ? text : `${text}.`;
+
+const toMetaTitle = (name: string, categoryLabel: string): string =>
+  trimMeta(`${name} - Free Online ${categoryLabel} | FreeToolz`, 60);
+
+const toMetaDescription = (name: string, description: string): string => {
+  const cleaned = ensurePeriod(cleanDescription(description));
+  return trimMeta(
+    `${cleaned} Use ${name} online for free with instant results, privacy-first browser processing, and no signup required.`,
+    158
+  );
+};
+
+const toDefaultKeyword = (name: string, category: string): string =>
+  [
+    `${name.toLowerCase()} online`,
+    `free ${name.toLowerCase()}`,
+    `${category} tool`,
+    'browser based tool',
+    'no signup tool',
+    'free online tools',
+  ].join(', ');
 
 export const toolMasterList: Tool[] = tools.map((tool) => {
   const categoryLabel = categoryLabelById[tool.category] ?? 'Online Tools';
@@ -1071,9 +1269,9 @@ export const toolMasterList: Tool[] = tools.map((tool) => {
   return {
     ...tool,
     slug,
-    metaTitle: `${tool.name} - ${categoryLabel} | Free Toolz`,
-    metaDescription: tool.description,
-    keyword: toDefaultKeyword(tool.name),
+    metaTitle: toMetaTitle(tool.name, categoryLabel),
+    metaDescription: toMetaDescription(tool.name, tool.description),
+    keyword: toDefaultKeyword(tool.name, tool.category),
   };
 });
 

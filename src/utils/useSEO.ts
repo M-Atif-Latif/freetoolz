@@ -1,5 +1,13 @@
 import { useEffect } from 'react';
-import { generateToolSchema, generateBreadcrumbSchema, getToolFAQSchema, generateOrganizationSchema } from './seoSchemas';
+import {
+  generateToolSchema,
+  generateBreadcrumbSchema,
+  getToolFAQSchema,
+  generateOrganizationSchema,
+  generateWebSiteSchema,
+  generateWebPageSchema,
+  generateDefaultToolFAQSchema,
+} from './seoSchemas';
 
 interface SEOConfig {
   title: string;
@@ -20,12 +28,22 @@ interface SEOConfig {
   toolUrl?: string;
 }
 
+const BASE_URL = 'https://freetoolz.cloud';
+const DEFAULT_SOCIAL_IMAGE = `${BASE_URL}/logo.png`;
+
+const cleanDescription = (description: string): string =>
+  description.replace(/^Use Case:\s*/i, '').trim();
+
 export const useSEO = (config: SEOConfig) => {
   useEffect(() => {
-    // Update title
     document.title = config.title;
 
-    // Update or create meta tags
+    const canonicalUrl = config.canonical || `${window.location.origin}${window.location.pathname}`;
+    const pageName = config.toolName ?? config.title.split('|')[0].trim();
+    const normalizedDescription = cleanDescription(config.description);
+    const ogImage = config.ogImage || DEFAULT_SOCIAL_IMAGE;
+    const twitterImage = config.twitterImage || ogImage;
+
     const updateMetaTag = (name: string, content: string, attribute: 'name' | 'property' = 'name') => {
       let element = document.querySelector(`meta[${attribute}="${name}"]`);
       if (!element) {
@@ -36,8 +54,7 @@ export const useSEO = (config: SEOConfig) => {
       element.setAttribute('content', content);
     };
 
-    // Basic meta tags
-    updateMetaTag('description', config.description);
+    updateMetaTag('description', normalizedDescription);
     if (config.keywords) {
       updateMetaTag('keywords', config.keywords);
     }
@@ -46,89 +63,79 @@ export const useSEO = (config: SEOConfig) => {
     }
     updateMetaTag('robots', config.robots || 'index, follow, max-snippet:-1, max-image-preview:large');
 
-    // Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) {
       canonical = document.createElement('link');
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = config.canonical || window.location.href;
+    canonical.href = canonicalUrl;
 
-    // Open Graph tags
     updateMetaTag('og:type', 'website', 'property');
     updateMetaTag('og:title', config.ogTitle || config.title, 'property');
-    updateMetaTag('og:description', config.ogDescription || config.description, 'property');
-    updateMetaTag('og:url', config.ogUrl || window.location.href, 'property');
+    updateMetaTag('og:description', config.ogDescription || normalizedDescription, 'property');
+    updateMetaTag('og:url', config.ogUrl || canonicalUrl, 'property');
     updateMetaTag('og:site_name', 'Free Tools', 'property');
     updateMetaTag('og:locale', 'en_US', 'property');
-    
-    if (config.ogImage) {
-      updateMetaTag('og:image', config.ogImage, 'property');
-      updateMetaTag('og:image:width', '1200', 'property');
-      updateMetaTag('og:image:height', '630', 'property');
-      updateMetaTag('og:image:alt', config.ogTitle || config.title, 'property');
-    }
+    updateMetaTag('og:image', ogImage, 'property');
+    updateMetaTag('og:image:width', '1200', 'property');
+    updateMetaTag('og:image:height', '630', 'property');
+    updateMetaTag('og:image:alt', config.ogTitle || config.title, 'property');
 
-    // Twitter Card tags
-    updateMetaTag('twitter:card', 'summary_large_image', 'property');
-    updateMetaTag('twitter:title', config.twitterTitle || config.ogTitle || config.title, 'property');
-    updateMetaTag('twitter:description', config.twitterDescription || config.ogDescription || config.description, 'property');
-    updateMetaTag('twitter:url', window.location.href, 'property');
-    
-    if (config.twitterImage || config.ogImage) {
-      updateMetaTag('twitter:image', config.twitterImage || config.ogImage || '', 'property');
-    }
+    updateMetaTag('twitter:card', 'summary_large_image');
+    updateMetaTag('twitter:title', config.twitterTitle || config.ogTitle || config.title);
+    updateMetaTag('twitter:description', config.twitterDescription || config.ogDescription || normalizedDescription);
+    updateMetaTag('twitter:url', canonicalUrl);
+    updateMetaTag('twitter:image', twitterImage);
+    updateMetaTag('twitter:site', '@FreeToolzCloud');
+    updateMetaTag('twitter:image:alt', config.twitterTitle || config.title);
 
-    // Structured Data (JSON-LD)
     const removeOldSchemas = () => {
       const oldSchemas = document.querySelectorAll('script[type="application/ld+json"]');
       oldSchemas.forEach(schema => schema.remove());
     };
 
-    const addSchema = (schemaData: any) => {
+    const addSchema = (schemaData: unknown, schemaKey: string) => {
       const script = document.createElement('script');
       script.type = 'application/ld+json';
+      script.setAttribute('data-seo-schema', 'dynamic');
+      script.setAttribute('data-schema-key', schemaKey);
       script.text = JSON.stringify(schemaData);
       document.head.appendChild(script);
     };
 
     removeOldSchemas();
 
-    // Add Organization Schema (global)
-    addSchema(generateOrganizationSchema());
+    addSchema(generateOrganizationSchema(), 'organization');
+    addSchema(generateWebSiteSchema(), 'website');
+    addSchema(generateWebPageSchema(pageName, canonicalUrl, normalizedDescription), 'webpage');
 
-    // Add Tool-specific Schema
     if (config.toolName && config.toolUrl && config.toolCategory) {
       const toolSchema = generateToolSchema(
         config.toolName,
         config.toolUrl,
-        config.description,
+        normalizedDescription,
         config.toolCategory
       );
-      addSchema(toolSchema);
+      addSchema(toolSchema, 'tool');
 
-      // Add Breadcrumb Schema
       const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: 'Home', url: 'https://freetoolz.cloud' },
-        { name: 'Tools', url: 'https://freetoolz.cloud/#tools' },
+        { name: 'Home', url: BASE_URL },
+        { name: 'Tools', url: `${BASE_URL}/sitemap` },
         { name: config.toolName, url: config.toolUrl }
       ]);
-      addSchema(breadcrumbSchema);
+      addSchema(breadcrumbSchema, 'breadcrumb-tool');
 
-      // Add FAQ Schema if available
-      const toolId = config.toolUrl.split('/').pop() || '';
-      const faqSchema = getToolFAQSchema(toolId);
-      if (faqSchema) {
-        addSchema(faqSchema);
-      }
+      const toolSlug = canonicalUrl.split('/').filter(Boolean).pop() || '';
+      const faqSchema = getToolFAQSchema(toolSlug) ?? generateDefaultToolFAQSchema(config.toolName, config.toolCategory);
+      addSchema(faqSchema, 'faq-tool');
+    } else if (canonicalUrl !== BASE_URL && canonicalUrl !== `${BASE_URL}/`) {
+      const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: BASE_URL },
+        { name: pageName, url: canonicalUrl }
+      ]);
+      addSchema(breadcrumbSchema, 'breadcrumb-page');
     }
-
-    // Cleanup function
-    return () => {
-      // Optional: Remove dynamic schemas on unmount
-      // This prevents accumulation if navigating between tools
-    };
   }, [config]);
 };
 
@@ -140,21 +147,22 @@ export const generateToolSEO = (
   toolPath: string,
   keywords: string[]
 ): SEOConfig => {
-  const baseUrl = 'https://freetoolz.cloud';
+  const baseUrl = BASE_URL;
   const fullUrl = `${baseUrl}${toolPath}`;
+  const normalizedDescription = cleanDescription(toolDescription);
   
   return {
-    title: `${toolName} - Free Online ${toolCategory} Tool | Free Tools`,
-    description: `${toolDescription} Free, secure, no signup required. Use ${toolName} instantly in your browser on Free Tools.`,
+    title: `${toolName} - Free Online ${toolCategory} Tool | FreeToolz`,
+    description: `${normalizedDescription}. Use ${toolName} online for free with privacy-first browser processing and no signup required.`,
     keywords: [...keywords, 'free online tool', 'no signup', 'browser based', 'free tools'].join(', '),
     canonical: fullUrl,
     ogTitle: `${toolName} - Free & Secure Online Tool`,
-    ogDescription: `${toolDescription} Works directly in your browser. 100% free, no ads, no registration.`,
+    ogDescription: `${normalizedDescription}. Works directly in your browser. 100% free and private.`,
     ogUrl: fullUrl,
-    ogImage: `${baseUrl}/og-image-tool.jpg`,
+    ogImage: `${baseUrl}/logo.png`,
     twitterTitle: `${toolName} | Free Tools`,
-    twitterDescription: toolDescription,
-    twitterImage: `${baseUrl}/twitter-card-tool.jpg`,
+    twitterDescription: normalizedDescription,
+    twitterImage: `${baseUrl}/logo.png`,
     author: 'Muhammad Atif Latif',
     robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     toolName,

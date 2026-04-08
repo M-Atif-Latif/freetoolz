@@ -1,15 +1,7 @@
 import { useState } from 'react';
 import { Calendar, Plus, Minus } from 'lucide-react';
-import HowItWorks from '../components/HowItWorks';
-import CopyButton from '../components/CopyButton';
 
 export default function BusinessDaysCalculator() {
-  const howItWorks = [
-    { title: 'Select Start Date', description: 'Choose your first date from the calendar' },
-    { title: 'Select End Date', description: 'Pick your second date' },
-    { title: 'Calculate', description: 'Compute the number of business days between dates' },
-    { title: 'Copy Result', description: 'Save your calculation' }
-  ];
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [daysToAdd, setDaysToAdd] = useState('');

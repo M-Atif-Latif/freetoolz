@@ -1,4 +1,5 @@
 import { FileText, Link as LinkIcon } from 'lucide-react';
+import { categories, toolMasterList } from '../data/tools';
 
 interface SitemapLink {
   title: string;
@@ -6,86 +7,45 @@ interface SitemapLink {
   description: string;
 }
 
+const cleanDescription = (description: string): string =>
+  description.replace(/^Use Case:\s*/i, '').trim();
+
+const mainPageLinks: SitemapLink[] = [
+  { title: 'Home', path: '/', description: 'Browse all free online tools' },
+  { title: 'Blog', path: '/blog', description: 'Articles and guides for tools, SEO, and productivity' },
+  { title: 'FAQ', path: '/faq', description: 'Frequently asked questions and support answers' },
+  { title: 'About Us', path: '/about', description: 'Learn about FreeToolz and our mission' },
+  { title: 'Contact', path: '/contact', description: 'Contact support and send feature requests' },
+  { title: 'Sitemap', path: '/sitemap', description: 'Complete list of all pages and tools' },
+];
+
+const legalPageLinks: SitemapLink[] = [
+  { title: 'Privacy Policy', path: '/privacy', description: 'How we protect your privacy and data' },
+  { title: 'Terms of Service', path: '/terms', description: 'Terms and conditions for using FreeToolz' },
+  { title: 'Disclaimer', path: '/disclaimer', description: 'Important legal notices and disclaimers' },
+];
+
+const dynamicToolSections = categories
+  .map((category) => {
+    const links = toolMasterList
+      .filter((tool) => tool.category === category.id && tool.indexable !== false)
+      .map((tool) => ({
+        title: tool.name,
+        path: `/${tool.slug ?? tool.id}`,
+        description: cleanDescription(tool.metaDescription ?? tool.description),
+      }));
+
+    return {
+      category: category.name,
+      links,
+    };
+  })
+  .filter((section) => section.links.length > 0);
+
 const sitemapLinks: { category: string; links: SitemapLink[] }[] = [
-  {
-    category: 'Main Pages',
-    links: [
-      { title: 'Home', path: '/', description: 'Browse all 80+ free online tools' },
-      { title: 'Blog', path: '/blog', description: 'Articles and guides on productivity and online tools' },
-      { title: 'FAQ', path: '/faq', description: 'Frequently asked questions' },
-      { title: 'About Us', path: '/about', description: 'Learn about Free Tools and the developer' },
-      { title: 'Contact', path: '/contact', description: 'Get in touch with us' },
-    ],
-  },
-  {
-    category: 'Legal Pages',
-    links: [
-      { title: 'Privacy Policy', path: '/privacy', description: 'How we protect your privacy' },
-      { title: 'Terms of Service', path: '/terms', description: 'Terms and conditions of use' },
-      { title: 'Disclaimer', path: '/disclaimer', description: 'Important disclaimers and notices' },
-    ],
-  },
-  {
-    category: 'Text Tools',
-    links: [
-      { title: 'Word Counter', path: '/tools/word-counter', description: 'Count words, characters, and sentences' },
-      { title: 'Case Converter', path: '/tools/case-converter', description: 'Convert text case' },
-      { title: 'Text Reverser', path: '/tools/text-reverser', description: 'Reverse text instantly' },
-      { title: 'Character Counter', path: '/tools/character-counter', description: 'Count characters with/without spaces' },
-      { title: 'Text to Slug', path: '/tools/text-to-slug', description: 'Create URL-friendly slugs' },
-      { title: 'Duplicate Line Remover', path: '/tools/duplicate-line-remover', description: 'Remove duplicate lines' },
-      { title: 'Line Sorter', path: '/tools/line-sorter', description: 'Sort lines alphabetically' },
-      { title: 'Text Diff Checker', path: '/tools/text-diff', description: 'Compare two texts' },
-      { title: 'Remove Spaces', path: '/tools/remove-spaces', description: 'Remove extra whitespace' },
-      { title: 'Lorem Ipsum Generator', path: '/tools/lorem-ipsum', description: 'Generate placeholder text' },
-    ],
-  },
-  {
-    category: 'Calculators',
-    links: [
-      { title: 'BMI Calculator', path: '/tools/bmi-calculator', description: 'Calculate Body Mass Index' },
-      { title: 'Age Calculator', path: '/tools/age-calculator', description: 'Calculate exact age' },
-      { title: 'Percentage Calculator', path: '/tools/percentage-calculator', description: 'Calculate percentages' },
-      { title: 'Tip Calculator', path: '/tools/tip-calculator', description: 'Calculate tips and split bills' },
-      { title: 'Loan Calculator', path: '/tools/loan-calculator', description: 'Calculate loan payments' },
-      { title: 'Discount Calculator', path: '/tools/discount-calculator', description: 'Calculate discounts' },
-      { title: 'Compound Interest', path: '/tools/compound-interest', description: 'Calculate compound interest' },
-    ],
-  },
-  {
-    category: 'Converters',
-    links: [
-      { title: 'Unit Converter', path: '/tools/unit-converter', description: 'Convert units of measurement' },
-      { title: 'Currency Converter', path: '/tools/currency-converter', description: 'Convert currencies' },
-      { title: 'Temperature Converter', path: '/tools/temperature-converter', description: 'Convert temperature units' },
-      { title: 'Color Converter', path: '/tools/color-converter', description: 'Convert HEX, RGB, HSL' },
-      { title: 'Time Zone Converter', path: '/tools/timezone-converter', description: 'Convert time zones' },
-    ],
-  },
-  {
-    category: 'Generators',
-    links: [
-      { title: 'Password Generator', path: '/tools/password-generator', description: 'Generate secure passwords' },
-      { title: 'QR Code Generator', path: '/tools/qr-code-generator', description: 'Create QR codes' },
-      { title: 'UUID Generator', path: '/tools/uuid-generator', description: 'Generate unique IDs' },
-      { title: 'Random Number', path: '/tools/random-number', description: 'Generate random numbers' },
-      { title: 'Random Picker', path: '/tools/random-picker', description: 'Pick random items from list' },
-    ],
-  },
-  {
-    category: 'Developer Tools',
-    links: [
-      { title: 'JSON Formatter', path: '/tools/json-formatter', description: 'Format and validate JSON' },
-      { title: 'Base64 Encoder', path: '/tools/base64-encoder', description: 'Encode/decode Base64' },
-      { title: 'URL Encoder', path: '/tools/url-encoder', description: 'Encode/decode URLs' },
-      { title: 'HTML Encoder', path: '/tools/html-encoder', description: 'Encode HTML entities' },
-      { title: 'CSS Minifier', path: '/tools/css-minifier', description: 'Minify CSS code' },
-      { title: 'JS Minifier', path: '/tools/js-minifier', description: 'Minify JavaScript' },
-      { title: 'Regex Tester', path: '/tools/regex-tester', description: 'Test regular expressions' },
-      { title: 'Hash Generator', path: '/tools/hash-generator', description: 'Generate hashes' },
-      { title: 'Markdown to HTML', path: '/tools/markdown-to-html', description: 'Convert Markdown to HTML' },
-    ],
-  },
+  { category: 'Main Pages', links: mainPageLinks },
+  { category: 'Legal Pages', links: legalPageLinks },
+  ...dynamicToolSections,
 ];
 
 interface SitemapProps {
@@ -94,26 +54,24 @@ interface SitemapProps {
 
 export default function Sitemap({ onNavigate }: SitemapProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
             <FileText className="h-8 w-8 text-blue-600" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Sitemap
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Browse all pages and tools available on Free Tools
           </p>
         </div>
 
-        {/* Sitemap Grid */}
         <div className="space-y-12">
           {sitemapLinks.map((section, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+            <div key={idx} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
                 <LinkIcon className="h-6 w-6 text-blue-600 mr-3" />
                 {section.category}
               </h2>
@@ -122,12 +80,12 @@ export default function Sitemap({ onNavigate }: SitemapProps) {
                   <button
                     key={linkIdx}
                     onClick={() => onNavigate(link.path)}
-                    className="text-left p-4 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all group"
+                    className="text-left p-4 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group"
                   >
-                    <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors mb-1">
+                    <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-1">
                       {link.title}
                     </h3>
-                    <p className="text-sm text-gray-600">{link.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">{link.description}</p>
                   </button>
                 ))}
               </div>

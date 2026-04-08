@@ -67,6 +67,34 @@ interface SchemaBreadcrumb {
   }>;
 }
 
+interface SchemaWebSite {
+  '@context': string;
+  '@type': string;
+  name: string;
+  url: string;
+  inLanguage: string;
+  description: string;
+  publisher: {
+    '@type': string;
+    name: string;
+    url: string;
+  };
+}
+
+interface SchemaWebPage {
+  '@context': string;
+  '@type': string;
+  name: string;
+  url: string;
+  description: string;
+  inLanguage: string;
+  isPartOf: {
+    '@type': string;
+    name: string;
+    url: string;
+  };
+}
+
 export const generateOrganizationSchema = (): SchemaOrganization => {
   return {
     '@context': 'https://schema.org',
@@ -98,25 +126,31 @@ export const generateToolSchema = (
   description: string,
   category: string
 ): SchemaWebApplication => {
+  const schemaCategoryById: Record<string, string> = {
+    text: 'ProductivityApplication',
+    calculator: 'FinanceApplication',
+    generator: 'UtilitiesApplication',
+    converter: 'UtilitiesApplication',
+    developer: 'DeveloperApplication',
+    pdf: 'UtilitiesApplication',
+    image: 'MultimediaApplication',
+    utility: 'UtilitiesApplication',
+    security: 'SecurityApplication',
+  };
+
   return {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: toolName,
     url: toolUrl,
     description: description,
-    applicationCategory: category,
+    applicationCategory: schemaCategoryById[category] ?? 'UtilitiesApplication',
     operatingSystem: 'All',
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD'
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '2580'
-    },
-    screenshot: `${toolUrl}/screenshot.png`,
     softwareVersion: '2.0',
     datePublished: '2024-01-01',
     author: {
@@ -156,6 +190,42 @@ export const generateBreadcrumbSchema = (
   };
 };
 
+export const generateWebSiteSchema = (): SchemaWebSite => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Free Tools',
+    url: 'https://freetoolz.cloud',
+    inLanguage: 'en-US',
+    description: '120+ free online tools for text, PDF, image, developer, calculator, and SEO workflows.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Free Tools',
+      url: 'https://freetoolz.cloud'
+    }
+  };
+};
+
+export const generateWebPageSchema = (
+  name: string,
+  url: string,
+  description: string
+): SchemaWebPage => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name,
+    url,
+    description,
+    inLanguage: 'en-US',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Free Tools',
+      url: 'https://freetoolz.cloud'
+    }
+  };
+};
+
 // Tool-specific FAQ data
 export const toolFAQs: Record<string, Array<{ question: string; answer: string }>> = {
   'word-counter': [
@@ -182,7 +252,7 @@ export const toolFAQs: Record<string, Array<{ question: string; answer: string }
       answer: 'Absolutely! You can set length, include/exclude uppercase, lowercase, numbers, and special characters to meet any password policy.'
     }
   ],
-  'pdf-merger': [
+  'merge-pdf': [
     {
       question: 'Is there a file size limit for PDF merging?',
       answer: 'Processing happens in your browser, so limits depend on your device memory. Most modern devices can handle PDFs up to 50-100MB total.'
@@ -218,6 +288,26 @@ export const toolFAQs: Record<string, Array<{ question: string; answer: string }
 export const getToolFAQSchema = (toolId: string): SchemaFAQ | null => {
   const faqs = toolFAQs[toolId];
   return faqs ? generateFAQSchema(faqs) : null;
+};
+
+export const generateDefaultToolFAQSchema = (
+  toolName: string,
+  toolCategory: string
+): SchemaFAQ => {
+  return generateFAQSchema([
+    {
+      question: `Is ${toolName} free to use?`,
+      answer: `Yes. ${toolName} is completely free and works directly in your browser with no signup required.`
+    },
+    {
+      question: `Is my data safe when using ${toolName}?`,
+      answer: `Yes. ${toolName} processes data locally in your browser whenever possible, so your files and text stay private.`
+    },
+    {
+      question: `Who should use this ${toolCategory} tool?`,
+      answer: `${toolName} is useful for students, professionals, developers, and anyone who needs a fast ${toolCategory} workflow online.`
+    }
+  ]);
 };
 
 // SEO-optimized descriptions for each tool category

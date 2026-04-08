@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { BookOpen } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
-import CopyButton from '../components/CopyButton';
 
 export default function ReadabilityScore() {
   const howItWorks = [
@@ -122,10 +121,6 @@ export default function ReadabilityScore() {
         </div>
 
         <HowItWorks steps={howItWorks} />
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Readability Score</h1>
-            <p className="text-gray-600 dark:text-gray-400">Analyze text readability with Flesch scores</p>
-          </div>
-        </div>
 
         <div className="space-y-6">
           <div>

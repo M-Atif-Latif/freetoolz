@@ -105,13 +105,7 @@ export default function ImageBackgroundRemover() {
           <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
           <div className="text-sm text-blue-800">
             <p className="font-semibold mb-1">Note:</p>
-
-            <HowItWorks steps={howItWorks} />
-
             <p>This tool works best for images with white or light-colored backgrounds. For complex backgrounds, consider using professional tools like remove.bg</p>
-
-          <HowItWorks steps={howItWorks} />
-
           </div>
         </div>
 
@@ -122,13 +116,7 @@ export default function ImageBackgroundRemover() {
               <p className="mb-2 text-sm text-gray-500">
                 <span className="font-semibold">Click to upload</span> or drag and drop
               </p>
-
-              <HowItWorks steps={howItWorks} />
-
               <p className="text-xs text-gray-500">PNG, JPG, WEBP</p>
-
-            <HowItWorks steps={howItWorks} />
-
             </div>
             <input
               type="file"
@@ -188,35 +176,11 @@ export default function ImageBackgroundRemover() {
         )}
       </div>
 
-      {/* How it works section */}
-      <div className="mt-8 bg-white rounded-xl shadow-lg border border-gray-200 p-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">How It Works</h2>
-        <div className="space-y-4 text-gray-600">
-          <p>
-            <strong>1. Upload Image:</strong> Select an image with a white or light-colored background.
-          </p>
-
-          <HowItWorks steps={howItWorks} />
-
-          <p>
-            <strong>2. Remove Background:</strong> Click the button to process the image and remove the background.
-          </p>
-
-          <HowItWorks steps={howItWorks} />
-
-          <p>
-            <strong>3. Download:</strong> Save the image with transparent background as PNG.
-          </p>
-
-          <HowItWorks steps={howItWorks} />
-
-          <p className="text-sm text-gray-500 mt-4">
-            <strong>Note:</strong> This is a basic client-side tool. For professional background removal with AI, we recommend using dedicated services like remove.bg, Photoshop, or GIMP.
-          </p>
-
-        <HowItWorks steps={howItWorks} />
-
-        </div>
+      {/* Privacy Notice */}
+      <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+        <p className="text-sm text-gray-700">
+          <strong>Privacy:</strong> All processing happens in your browser. Images are never uploaded to any server.
+        </p>
       </div>
     </div>
   );

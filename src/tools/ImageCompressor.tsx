@@ -79,13 +79,7 @@ export default function ImageCompressor() {
               <p className="mb-2 text-sm text-gray-500">
                 <span className="font-semibold">Click to upload</span> or drag and drop
               </p>
-
-              <HowItWorks steps={howItWorks} />
-
               <p className="text-xs text-gray-500">PNG, JPG, WEBP</p>
-
-            <HowItWorks steps={howItWorks} />
-
             </div>
             <input
               type="file"
@@ -128,23 +122,11 @@ export default function ImageCompressor() {
                 <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
                   <div>
                     <p className="text-sm text-gray-600">Original</p>
-
-                    <HowItWorks steps={howItWorks} />
-
                     <p className="text-lg font-bold text-gray-900">{(originalSize / 1024).toFixed(2)} KB</p>
-
-                  <HowItWorks steps={howItWorks} />
-
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Compressed</p>
-
-                    <HowItWorks steps={howItWorks} />
-
                     <p className="text-lg font-bold text-green-600">{(compressedSize / 1024).toFixed(2)} KB</p>
-
-                  <HowItWorks steps={howItWorks} />
-
                   </div>
                 </div>
                 <button

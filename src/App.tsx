@@ -146,6 +146,29 @@ const SitemapURLExtractor = lazy(() => import('./tools/SitemapURLExtractor'));
 
 // New tools - PDF & Document Tools
 const PDFPageExtractor = lazy(() => import('./tools/PDFPageExtractor'));
+const PDFMetadataEditor = lazy(() => import('./tools/PDFMetadataEditor'));
+const PDFPageReorder = lazy(() => import('./tools/PDFPageReorder'));
+
+// New PDF Conversion Tools - Phase 4
+const PDFToJPG = lazy(() => import('./tools/PDFToJPG'));
+const JPGToPDF = lazy(() => import('./tools/JPGToPDF'));
+const PDFAddPageNumbers = lazy(() => import('./tools/PDFAddPageNumbers'));
+const PDFRedact = lazy(() => import('./tools/PDFRedact'));
+const PDFToWord = lazy(() => import('./tools/PDFToWord'));
+const PDFToPowerPoint = lazy(() => import('./tools/PDFToPowerPoint'));
+const PDFToExcel = lazy(() => import('./tools/PDFToExcel'));
+const HTMLToPDF = lazy(() => import('./tools/HTMLToPDF'));
+const PDFProtect = lazy(() => import('./tools/PDFProtect'));
+const WordToPDF = lazy(() => import('./tools/WordToPDF'));
+const PowerPointToPDF = lazy(() => import('./tools/PowerPointToPDF'));
+const ExcelToPDF = lazy(() => import('./tools/ExcelToPDF'));
+const PDFToPDFA = lazy(() => import('./tools/PDFToPDFA'));
+const EditPDF = lazy(() => import('./tools/EditPDF'));
+const SignPDF = lazy(() => import('./tools/SignPDF'));
+const OCRPDF = lazy(() => import('./tools/OCRPDF'));
+const ComparePDF = lazy(() => import('./tools/ComparePDF'));
+const RepairPDF = lazy(() => import('./tools/RepairPDF'));
+const OrganizePDF = lazy(() => import('./tools/OrganizePDF'));
 
 // Newly Implemented Tools
 const TimeCalculator = lazy(() => import('./tools/TimeCalculator'));
@@ -158,8 +181,6 @@ const PDFWatermark = lazy(() => import('./tools/PDFWatermark'));
 const PDFUnlock = lazy(() => import('./tools/PDFUnlock'));
 const ExtractImagesFromPDF = lazy(() => import('./tools/ExtractImagesFromPDF'));
 const ExtractPDFPages = lazy(() => import('./tools/ExtractPDFPages'));
-const PDFMetadataEditor = lazy(() => import('./tools/PDFMetadataEditor'));
-const PDFPageReorder = lazy(() => import('./tools/PDFPageReorder'));
 const JWTDecoder = lazy(() => import('./tools/JWTDecoder'));
 const XMLFormatter = lazy(() => import('./tools/XMLFormatter'));
 const SQLFormatter = lazy(() => import('./tools/SQLFormatter'));
@@ -503,18 +524,6 @@ function App() {
       component: <ExtractPDFPages />,
       title: 'Extract PDF Pages | Free Tools',
       description: 'Extract specific page ranges from PDF files.'
-    },
-    {
-      path: '/tools/pdf-metadata-editor',
-      component: <PDFMetadataEditor />,
-      title: 'PDF Metadata Editor | Free Tools',
-      description: 'Edit PDF document properties and metadata.'
-    },
-    {
-      path: '/tools/pdf-page-reorder',
-      component: <PDFPageReorder />,
-      title: 'PDF Page Reorder | Free Tools',
-      description: 'Rearrange pages in PDF documents.'
     },
     {
       path: '/tools/image-compressor',
@@ -1034,6 +1043,154 @@ function App() {
       description: 'Extract specific pages from PDF documents. Select page ranges and create new PDFs.',
       keywords: 'PDF extractor, PDF splitter, page extractor'
     },
+    {
+      path: '/tools/pdf-metadata-editor',
+      component: <PDFMetadataEditor />,
+      title: 'PDF Metadata Editor - Edit Document Properties | Free Tools',
+      description: 'Edit PDF metadata including title, author, subject, and keywords.',
+      keywords: 'PDF metadata, document properties, editor'
+    },
+    {
+      path: '/tools/pdf-page-reorder',
+      component: <PDFPageReorder />,
+      title: 'PDF Page Reorder - Rearrange PDF Pages | Free Tools',
+      description: 'Reorder, rearrange, and reorganize PDF pages with interactive controls.',
+      keywords: 'page reorder, PDF reorganize, page management'
+    },
+    // New PDF Conversion Tools - Phase 4
+    {
+      path: '/tools/pdf-to-jpg',
+      component: <PDFToJPG />,
+      title: 'PDF to JPG - Convert PDF Pages to Images | Free Tools',
+      description: 'Convert PDF pages to JPG image files. Select specific pages and adjust compression quality.',
+      keywords: 'PDF to JPG, PDF to image, PDF converter'
+    },
+    {
+      path: '/tools/jpg-to-pdf',
+      component: <JPGToPDF />,
+      title: 'JPG to PDF - Convert Images to PDF | Free Tools',
+      description: 'Convert JPG and other image files to PDF documents. Support for multiple images.',
+      keywords: 'JPG to PDF, image to PDF, PDF creator'
+    },
+    {
+      path: '/tools/pdf-add-page-numbers',
+      component: <PDFAddPageNumbers />,
+      title: 'PDF Add Page Numbers - Number PDF Pages | Free Tools',
+      description: 'Add page numbers to PDF documents. Choose position and customize font size.',
+      keywords: 'page numbers, PDF numbering, annotation'
+    },
+    {
+      path: '/tools/pdf-redact',
+      component: <PDFRedact />,
+      title: 'PDF Redact - Remove Sensitive Content | Free Tools',
+      description: 'Redact sensitive text and content from PDF documents. Create permanent black boxes.',
+      keywords: 'PDF redact, sensitive data, privacy tool'
+    },
+    {
+      path: '/tools/pdf-to-word',
+      component: <PDFToWord />,
+      title: 'PDF to Word - Convert PDF to DOCX | Free Tools',
+      description: 'Convert PDF documents to editable Word format. Extract text and preserve formatting.',
+      keywords: 'PDF to Word, DOCX converter, document conversion'
+    },
+    {
+      path: '/tools/pdf-to-powerpoint',
+      component: <PDFToPowerPoint />,
+      title: 'PDF to PowerPoint - Convert to PPTX | Free Tools',
+      description: 'Convert PDF pages to PowerPoint presentation slides. Create editable presentations.',
+      keywords: 'PDF to PowerPoint, PPTX converter, slide conversion'
+    },
+    {
+      path: '/tools/pdf-to-excel',
+      component: <PDFToExcel />,
+      title: 'PDF to Excel - Extract Tables to Spreadsheets | Free Tools',
+      description: 'Extract tables and data from PDF to Excel format. Convert structured data easily.',
+      keywords: 'PDF to Excel, table extraction, spreadsheet converter'
+    },
+    {
+      path: '/tools/html-to-pdf',
+      component: <HTMLToPDF />,
+      title: 'HTML to PDF - Convert HTML to PDF | Free Tools',
+      description: 'Convert HTML content to PDF documents. Preserve formatting and styling.',
+      keywords: 'HTML to PDF, web to PDF, document converter'
+    },
+    {
+      path: '/tools/protect-pdf',
+      component: <PDFProtect />,
+      title: 'Protect PDF - Add Password Protection | Free Tools',
+      description: 'Add password protection to PDF files. Set restrictions and encryption.',
+      keywords: 'PDF protection, password protection, security'
+    },
+    {
+      path: '/tools/word-to-pdf',
+      component: <WordToPDF />,
+      title: 'Word to PDF - Convert DOCX to PDF | Free Tools',
+      description: 'Convert Word documents to PDF format. Maintain formatting and layout.',
+      keywords: 'Word to PDF, DOCX to PDF, document conversion'
+    },
+    {
+      path: '/tools/powerpoint-to-pdf',
+      component: <PowerPointToPDF />,
+      title: 'PowerPoint to PDF - Convert PPTX to PDF | Free Tools',
+      description: 'Convert PowerPoint presentations to PDF. Export slides as PDF document.',
+      keywords: 'PowerPoint to PDF, PPTX to PDF, presentation converter'
+    },
+    {
+      path: '/tools/excel-to-pdf',
+      component: <ExcelToPDF />,
+      title: 'Excel to PDF - Convert Spreadsheet to PDF | Free Tools',
+      description: 'Convert Excel spreadsheets to PDF format. Preserve formatting and data.',
+      keywords: 'Excel to PDF, spreadsheet to PDF, format conversion'
+    },
+    {
+      path: '/tools/pdf-to-pdfa',
+      component: <PDFToPDFA />,
+      title: 'PDF to PDF/A - Archive Format Converter | Free Tools',
+      description: 'Convert PDF to PDF/A format for long-term archival and preservation.',
+      keywords: 'PDF/A, archival format, document preservation'
+    },
+    {
+      path: '/tools/edit-pdf',
+      component: <EditPDF />,
+      title: 'Edit PDF - Remove and Reorder Pages | Free Tools',
+      description: 'Edit PDF documents by removing, reordering, or deleting pages easily.',
+      keywords: 'edit PDF, page removal, PDF editor'
+    },
+    {
+      path: '/tools/sign-pdf',
+      component: <SignPDF />,
+      title: 'Sign PDF - Add Signatures to Documents | Free Tools',
+      description: 'Add digital signatures and signature text to PDF documents.',
+      keywords: 'PDF signature, sign document, digital signature'
+    },
+    {
+      path: '/tools/ocr-pdf',
+      component: <OCRPDF />,
+      title: 'OCR PDF - Extract Text from Scanned PDFs | Free Tools',
+      description: 'Use OCR to extract text from scanned PDF documents and images.',
+      keywords: 'OCR, text extraction, scanned documents'
+    },
+    {
+      path: '/tools/compare-pdf',
+      component: <ComparePDF />,
+      title: 'Compare PDF - Identify PDF Differences | Free Tools',
+      description: 'Compare two PDF files and identify differences between documents.',
+      keywords: 'PDF comparison, diff tool, document compare'
+    },
+    {
+      path: '/tools/repair-pdf',
+      component: <RepairPDF />,
+      title: 'Repair PDF - Fix Corrupted PDF Files | Free Tools',
+      description: 'Repair corrupted or damaged PDF files and restore accessibility.',
+      keywords: 'PDF repair, corrupted files, file recovery'
+    },
+    {
+      path: '/tools/organize-pdf',
+      component: <OrganizePDF />,
+      title: 'Organize PDF - Merge and Reorder Pages | Free Tools',
+      description: 'Organize PDF documents by merging, reordering, and managing pages.',
+      keywords: 'PDF organization, merge, page management'
+    },
   ];
 
   const routeComponentByPath = new Map(routes.map((route) => [route.path, route.component]));
@@ -1050,12 +1207,19 @@ function App() {
   let seoConfig = homeSEO;
   
   if (slugTool) {
+    const canonicalUrl = `https://freetoolz.cloud/${slugTool.slug}`;
     seoConfig = {
       title: slugTool.metaTitle ?? `${slugTool.name} | Free Toolz`,
       description: slugTool.metaDescription ?? slugTool.description,
-      canonical: `https://freetoolz.cloud/${slugTool.slug}`,
+      canonical: canonicalUrl,
       keywords: slugTool.keyword ?? `${slugTool.name.toLowerCase()} online free`,
-      author: 'Muhammad Atif Latif'
+      author: 'Muhammad Atif Latif',
+      robots: slugTool.indexable === false
+        ? 'noindex, follow'
+        : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+      toolName: slugTool.name,
+      toolCategory: slugTool.category,
+      toolUrl: canonicalUrl,
     };
   } else if (isNotFound) {
     seoConfig = {

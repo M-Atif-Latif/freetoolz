@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BarChart3, Copy, Download } from 'lucide-react';
+import { BarChart3, Download } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
 
@@ -43,13 +43,6 @@ export default function WordFrequency() {
     setResults(sorted);
   };
 
-  const copyResults = () => {
-    const resultText = results
-      .map(r => `${r.word}: ${r.count} (${r.percentage.toFixed(2)}%)`)
-      .join('\n');
-    navigator.clipboard.writeText(resultText);
-  };
-
   const downloadResults = () => {
     const resultText = results
       .map(r => `${r.word},${r.count},${r.percentage.toFixed(2)}%`)
@@ -65,17 +58,17 @@ export default function WordFrequency() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
-        <ToolNavigation />
-        
         <div className="flex items-center space-x-3 mb-6">
           <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
             <BarChart3 className="h-8 w-8 text-white" />
           </div>
           <div>
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Word Frequency Counter</h1>
-            <p className="text-gray-600 dark:text-gray-400">Analyze word usage and find common words</p>
+            <p className="text-gray-600 dark:text-gray-400">Use Case: Count word frequency and find common words</p>
           </div>
         </div>
+
+        <HowItWorks steps={howItWorks} />
 
         <div className="space-y-6">
           <div>
@@ -119,13 +112,13 @@ export default function WordFrequency() {
                   Results ({results.length} unique words)
                 </h2>
                 <div className="flex gap-2">
-                  <button
-                    onClick={copyResults}
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                  >
-                    <Copy className="h-4 w-4" />
-                    Copy
-                  </button>
+                  <CopyButton
+                    text={results
+                      .map(r => `${r.word}: ${r.count} (${r.percentage.toFixed(2)}%)`)
+                      .join('\n')}
+                    label="Copy"
+                    size="md"
+                  />
                   <button
                     onClick={downloadResults}
                     className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
@@ -169,16 +162,6 @@ export default function WordFrequency() {
               </div>
             </div>
           )}
-        </div>
-
-        <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
-          <h3 className="font-semibold text-gray-900 dark:text-white mb-2">💡 How it works:</h3>
-          <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 list-disc list-inside">
-            <li>Paste or type any text to analyze word frequency</li>
-            <li>Adjust minimum frequency to filter out rare words</li>
-            <li>View results sorted by most frequent words</li>
-            <li>Export results as CSV for further analysis</li>
-          </ul>
         </div>
       </div>
     </div>

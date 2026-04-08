@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Copy, Check, RotateCcw } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
-import CopyButton from '../components/CopyButton';
 
 export default function GradientGenerator() {
   const howItWorks = [

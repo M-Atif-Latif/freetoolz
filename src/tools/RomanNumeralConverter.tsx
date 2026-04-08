@@ -73,13 +73,6 @@ export default function RomanNumeralConverter() {
 
   const output = getOutput();
 
-  const howItWorks = [
-    { title: 'Select Mode', description: 'Choose between Number to Roman or Roman to Number conversion' },
-    { title: 'Enter Value', description: 'Type a number (1-3999) or a Roman numeral' },
-    { title: 'See Result', description: 'Instant conversion appears in the result box' },
-    { title: 'Copy Output', description: 'Use the copy button to save your result' },
-  ];
-
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Roman Numeral Converter</h1>

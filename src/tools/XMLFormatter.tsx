@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Copy, Check, RotateCcw } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
-import CopyButton from '../components/CopyButton';
 
 export default function XMLFormatter() {
   const howItWorks = [
@@ -19,7 +18,7 @@ export default function XMLFormatter() {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlString, 'application/xml');
 
-      if (xmlDoc.parsererror) {
+      if (xmlDoc.querySelector('parsererror')) {
         return 'Error: Invalid XML';
       }
 

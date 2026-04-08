@@ -1,7 +1,7 @@
 ﻿import { useState } from 'react';
+import { PDFDocument } from 'pdf-lib';
 import { Upload, Download } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
-import CopyButton from '../components/CopyButton';
 
 export default function CompressPDF() {
   const howItWorks = [
@@ -148,4 +148,5 @@ export default function CompressPDF() {
       </div>
     </div>
   );
+}
 
