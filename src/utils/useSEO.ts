@@ -38,6 +38,19 @@ export const useSEO = (config: SEOConfig) => {
   useEffect(() => {
     document.title = config.title;
 
+    // ============================================================
+    // CRITICAL FIX FOR GOOGLE SEARCH CONSOLE ISSUE
+    // ============================================================
+    // Problem: Google showed "?ref=steemhunt" as alternate page
+    // Solution: Always use pathname ONLY (strips ?ref=, ?utm_*, #hash)
+    // Result: All parameterized URLs resolve to same canonical
+    // 
+    // This combined with:
+    // - robots.txt Clean-param directives
+    // - Early canonical injection in index.html
+    // - Nginx Link headers
+    // Ensures Google treats all variants as one page
+    // ============================================================
     const canonicalUrl = config.canonical || `${window.location.origin}${window.location.pathname}`;
     const pageName = config.toolName ?? config.title.split('|')[0].trim();
     const normalizedDescription = cleanDescription(config.description);

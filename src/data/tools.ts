@@ -22,6 +22,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'FileText',
     path: '/tools/word-counter',
+    metaTitle: 'Word Counter - Free Online Text Tool | FreeToolz',
+    metaDescription: 'Count words, characters, sentences, and paragraphs instantly. Real-time counter for any text. Perfect for writers and students. Completely free.',
+    keywords: 'word counter, count words, character counter, text counter',
   },
   {
     id: 'case-converter',
@@ -30,6 +33,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Type',
     path: '/tools/case-converter',
+    metaTitle: 'Case Converter - Free Online Text Tool | FreeToolz',
+    metaDescription: 'Convert text to uppercase, lowercase, title case, sentence case. Instant conversion for any text. Free online tool with no signup required.',
+    keywords: 'case converter, uppercase, lowercase, text converter',
   },
   {
     id: 'text-reverser',
@@ -38,6 +44,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Repeat',
     path: '/tools/text-reverser',
+    metaTitle: 'Text Reverser - Flip & Reverse Text Free | FreeToolz',
+    metaDescription: 'Reverse text backwards instantly. Flip words, sentences, or paragraphs. Fun text reverser tool - completely free, no download needed.',
+    keywords: 'text reverser, reverse text, flip text, backwards text',
   },
   {
     id: 'remove-spaces',
@@ -46,6 +55,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'AlignLeft',
     path: '/tools/remove-spaces',
+    metaTitle: 'Remove Extra Spaces - Clean Text Free | FreeToolz',
+    metaDescription: 'Remove extra spaces from text instantly. Clean up formatting and whitespace. Free online tool for text cleanup without signup.',
+    keywords: 'remove spaces, clean text, extra spaces, whitespace',
   },
   {
     id: 'lorem-ipsum',
@@ -54,6 +66,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'FileType',
     path: '/tools/lorem-ipsum',
+    metaTitle: 'Lorem Ipsum Generator - Free Placeholder Text | FreeToolz',
+    metaDescription: 'Generate Lorem Ipsum placeholder text for designs instantly. Customizable paragraphs for mockups and prototypes. Free, no signup needed.',
+    keywords: 'lorem ipsum, placeholder text, dummy text, filler text',
   },
   {
     id: 'age-calculator',
@@ -62,6 +77,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Calendar',
     path: '/tools/age-calculator',
+    metaTitle: 'Age Calculator - Calculate Your Age Free | FreeToolz',
+    metaDescription: 'Calculate your exact age in years, months, and days instantly. Accurate age calculator for any birth date. Free online tool.',
+    keywords: 'age calculator, calculate age, how old am I',
   },
   {
     id: 'bmi-calculator',
@@ -70,6 +88,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Activity',
     path: '/tools/bmi-calculator',
+    metaTitle: 'BMI Calculator - Calculate Body Mass Index Free | FreeToolz',
+    metaDescription: 'Calculate your BMI instantly. Find your body mass index and health category. Free online BMI calculator with accurate results.',
+    keywords: 'bmi calculator, body mass index, BMI',
   },
   {
     id: 'percentage-calculator',
@@ -78,6 +99,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Percent',
     path: '/tools/percentage-calculator',
+    metaTitle: 'Percentage Calculator - Calculate % Free | FreeToolz',
+    metaDescription: 'Calculate percentages, percentage increase and decrease instantly. Simple percentage calculator tool. Free online, no signup.',
+    keywords: 'percentage calculator, calculate percentage, percent increase',
   },
   {
     id: 'password-generator',
@@ -86,6 +110,9 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'Lock',
     path: '/tools/password-generator',
+    metaTitle: 'Password Generator - Generate Strong Passwords Free | FreeToolz',
+    metaDescription: 'Generate strong, random passwords instantly. Customize length and complexity for maximum security. Free password generator tool.',
+    keywords: 'password generator, strong password, secure password',
   },
   {
     id: 'qr-code-generator',
@@ -94,6 +121,9 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'QrCode',
     path: '/tools/qr-code-generator',
+    metaTitle: 'QR Code Generator - Create QR Codes Free | FreeToolz',
+    metaDescription: 'Generate QR codes instantly from URLs, text, and more. Customizable colors and sizes. Free QR code generator with download.',
+    keywords: 'qr code generator, create qr code, qr code maker',
   },
   {
     id: 'uuid-generator',
@@ -102,6 +132,9 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'Hash',
     path: '/tools/uuid-generator',
+    metaTitle: 'UUID Generator - Generate Unique IDs Free | FreeToolz',
+    metaDescription: 'Generate UUIDs and GUIDs instantly. Create unique identifiers for databases, APIs, and applications. Free uuid generator.',
+    keywords: 'uuid generator, guid generator, unique id',
   },
   {
     id: 'random-number',
@@ -110,6 +143,9 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'Dices',
     path: '/tools/random-number',
+    metaTitle: 'Random Number Generator - Generate Numbers Free | FreeToolz',
+    metaDescription: 'Generate random numbers within any range instantly. Perfect for lotteries, games, and randomization. Free number generator.',
+    keywords: 'random number generator, random number, rng',
   },
   {
     id: 'base64-encoder',
@@ -118,6 +154,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Binary',
     path: '/tools/base64-encoder',
+    metaTitle: 'Base64 Encoder/Decoder - Convert Strings Free | FreeToolz',
+    metaDescription: 'Encode and decode Base64 strings instantly. Convert text and data to Base64 format. Free online encoder decoder tool.',
+    keywords: 'base64 encoder, base64 decoder, base64 converter',
   },
   {
     id: 'url-encoder',
@@ -126,6 +165,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Link',
     path: '/tools/url-encoder',
+    metaTitle: 'URL Encoder/Decoder - Encode URLs Free | FreeToolz',
+    metaDescription: 'Encode and decode URLs instantly. Convert special characters for web URLs. Free URL encoder decoder tool online.',
+    keywords: 'url encoder, url decoder, encode url',
   },
   {
     id: 'color-converter',
@@ -134,6 +176,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Palette',
     path: '/tools/color-converter',
+    metaTitle: 'Color Converter - Convert HEX RGB HSL Free | FreeToolz',
+    metaDescription: 'Convert colors between HEX, RGB, and HSL formats instantly. Perfect for designers and developers. Free color converter tool.',
+    keywords: 'color converter, hex to rgb, color codes',
   },
   {
     id: 'json-formatter',
@@ -142,6 +187,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Braces',
     path: '/tools/json-formatter',
+    metaTitle: 'JSON Formatter - Format JSON Online Free | FreeToolz',
+    metaDescription: 'Format and validate JSON instantly. Pretty print JSON with syntax highlighting. Free JSON formatter tool for developers.',
+    keywords: 'json formatter, format json, json validator',
   },
   {
     id: 'html-encoder',
@@ -150,6 +198,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Code2',
     path: '/tools/html-encoder',
+    metaTitle: 'HTML Entity Encoder - Encode HTML Free | FreeToolz',
+    metaDescription: 'Encode and decode HTML entities instantly. Convert special characters to HTML codes. Free HTML encoder decoder tool.',
+    keywords: 'html encoder, html entity, encode html',
   },
   {
     id: 'character-counter',
@@ -158,6 +209,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Hash',
     path: '/tools/character-counter',
+    metaTitle: 'Character Counter - Count Characters Free | FreeToolz',
+    metaDescription: 'Count characters instantly with and without spaces. Real-time counter for text and letters. Free character counter tool.',
+    keywords: 'character counter, count characters, letter counter',
   },
   {
     id: 'text-to-slug',
@@ -166,6 +220,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Link2',
     path: '/tools/text-to-slug',
+    metaTitle: 'Text to Slug Converter - Create URL Slugs Free | FreeToolz',
+    metaDescription: 'Convert text to URL-friendly slugs instantly. Perfect for creating SEO URLs and permalinks. Free slug generator tool.',
+    keywords: 'text to slug, slug generator, url slug',
   },
   {
     id: 'markdown-to-html',
@@ -174,6 +231,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'FileCode',
     path: '/tools/markdown-to-html',
+    metaTitle: 'Markdown to HTML Converter - Convert Free | FreeToolz',
+    metaDescription: 'Convert Markdown to HTML instantly with preview. Real-time markdown converter for developers. Free markdown to HTML tool.',
+    keywords: 'markdown to html, markdown converter, markdown parser',
   },
   {
     id: 'duplicate-line-remover',
@@ -182,6 +242,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'GitCompare',
     path: '/tools/duplicate-line-remover',
+    metaTitle: 'Duplicate Line Remover - Remove Duplicates Online Free',
+    metaDescription: 'Remove duplicate lines instantly with our free online duplicate line remover tool. Organize text efficiently.',
+    keywords: 'duplicate line remover, remove duplicates, text tool, free online',
   },
   {
     id: 'line-sorter',
@@ -190,6 +253,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'ArrowUpDown',
     path: '/tools/line-sorter',
+    metaTitle: 'Line Sorter - Sort Lines Online Free',
+    metaDescription: 'Sort lines alphabetically, numerically, or reverse with our free online line sorter tool today.',
+    keywords: 'line sorter, sort text, alphabetical sort, free online',
   },
   {
     id: 'compound-interest',
@@ -198,6 +264,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'TrendingUp',
     path: '/tools/compound-interest',
+    metaTitle: 'Compound Interest - Calculate Interest Online Free',
+    metaDescription: 'Calculate compound interest instantly with our free online compound interest calculator.',
+    keywords: 'compound interest calculator, interest calculator, financial math, free online',
   },
   {
     id: 'loan-calculator',
@@ -206,6 +275,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'DollarSign',
     path: '/tools/loan-calculator',
+    metaTitle: 'Loan Calculator - Calculate Loan Payments Free',
+    metaDescription: 'Calculate loan payments and amortization with our free online loan calculator tool.',
+    keywords: 'loan calculator, payment calculator, mortgage calculator, financial tool, free',
   },
   {
     id: 'tip-calculator',
@@ -214,6 +286,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Receipt',
     path: '/tools/tip-calculator',
+    metaTitle: 'Tip Calculator - Calculate Tips Online Free',
+    metaDescription: 'Calculate tip amounts instantly with our free online tip calculator and splitter.',
+    keywords: 'tip calculator, tip calculator, restaurant tool, gratuity calculator, free online',
   },
   {
     id: 'discount-calculator',
@@ -222,6 +297,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Tag',
     path: '/tools/discount-calculator',
+    metaTitle: 'Discount Calculator - Calculate Discounts Free',
+    metaDescription: 'Calculate discount amounts and percentages with our free online discount calculator.',
+    keywords: 'discount calculator, percentage off, sale calculator, coupon calculator, free tool',
   },
   {
     id: 'unit-converter',
@@ -230,6 +308,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Ruler',
     path: '/tools/unit-converter',
+    metaTitle: 'Unit Converter - Convert Units Online Free',
+    metaDescription: 'Convert any unit instantly with our free online unit converter calculator.',
+    keywords: 'unit converter, measurement converter, length converter, weight converter, free online',
   },
   {
     id: 'currency-converter',
@@ -238,6 +319,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Banknote',
     path: '/tools/currency-converter',
+    metaTitle: 'Currency Converter - Convert Currency Online Free',
+    metaDescription: 'Convert currencies with live rates using our free online currency converter tool.',
+    keywords: 'currency converter, exchange rate, money converter, travel tool, free online',
   },
   {
     id: 'timezone-converter',
@@ -246,6 +330,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Globe',
     path: '/tools/timezone-converter',
+    metaTitle: 'Timezone Converter - Convert Timezones Online Free',
+    metaDescription: 'Convert between timezones instantly with our free online timezone converter tool.',
+    keywords: 'timezone converter, time zone converter, world clock, international time, free',
   },
   {
     id: 'css-minifier',
@@ -254,6 +341,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'FileCode2',
     path: '/tools/css-minifier',
+    metaTitle: 'CSS Minifier - Minify CSS Online Free',
+    metaDescription: 'Minify CSS code instantly with our free online CSS minifier tool for developers.',
+    keywords: 'CSS minifier, minify CSS, code minifier, web developer tool, free online',
   },
   {
     id: 'js-minifier',
@@ -262,6 +352,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Braces',
     path: '/tools/js-minifier',
+    metaTitle: 'JavaScript Minifier - Minify JS Online Free',
+    metaDescription: 'Minify JavaScript code instantly with our free online JS minifier tool.',
+    keywords: 'JavaScript minifier, minify JS, code minifier, developer tool, free online',
   },
   {
     id: 'regex-tester',
@@ -270,6 +363,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Search',
     path: '/tools/regex-tester',
+    metaTitle: 'Regex Tester - Test Regular Expressions Online Free',
+    metaDescription: 'Test and debug regular expressions with our free online regex tester tool.',
+    keywords: 'regex tester, regular expression tester, pattern tester, developer tool, free',
   },
   {
     id: 'unix-timestamp',
@@ -278,6 +374,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Clock',
     path: '/tools/unix-timestamp',
+    metaTitle: 'Unix Timestamp - Convert Unix Timestamp Online Free',
+    metaDescription: 'Convert Unix timestamps instantly with our free online Unix timestamp converter.',
+    keywords: 'unix timestamp, epoch converter, timestamp converter, developer tool, free',
   },
   {
     id: 'image-base64',
@@ -286,6 +385,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Image',
     path: '/tools/image-base64',
+    metaTitle: 'Image to Base64 - Convert to Base64 Online Free',
+    metaDescription: 'Convert images to base64 encoding with our free online image converter tool.',
+    keywords: 'image to base64, base64 converter, image encoder, code tool, free online',
   },
   {
     id: 'hash-generator',
@@ -294,6 +396,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Key',
     path: '/tools/hash-generator',
+    metaTitle: 'Hash Generator - Generate Hashes Online Free',
+    metaDescription: 'Generate MD5, SHA hashes instantly with our free online hash generator tool.',
+    keywords: 'hash generator, MD5 generator, SHA generator, security tool, free online',
   },
   {
     id: 'text-diff',
@@ -302,6 +407,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'GitCompare',
     path: '/tools/text-diff',
+    metaTitle: 'Text Diff Checker - Compare Text Online Free',
+    metaDescription: 'Compare text and find differences instantly with our free online text diff checker.',
+    keywords: 'text diff, compare text, text comparison, diff checker, free online',
   },
   {
     id: 'merge-pdf',
@@ -310,6 +418,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FilePlus',
     path: '/tools/merge-pdf',
+    metaTitle: 'Merge PDF - Combine PDF Files Online Free',
+    metaDescription: 'Merge multiple PDFs into one instantly with our free online PDF merge tool.',
+    keywords: 'merge PDF, combine PDFs, PDF joiner, PDF tool, free online',
   },
   {
     id: 'split-pdf',
@@ -318,6 +429,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileStack',
     path: '/tools/split-pdf',
+    metaTitle: 'Split PDF - Extract PDF Pages Online Free',
+    metaDescription: 'Split and extract PDF pages instantly with our free online PDF split tool.',
+    keywords: 'split PDF, extract pages, PDF splitter, PDF tool, free online',
   },
   {
     id: 'compress-pdf',
@@ -326,6 +440,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Minimize2',
     path: '/tools/compress-pdf',
+    metaTitle: 'Compress PDF - Reduce PDF Size Online Free',
+    metaDescription: 'Compress PDF size instantly while keeping quality with our free online tool.',
+    keywords: 'compress PDF, reduce PDF size, PDF compressor, PDF tool, free online',
   },
   {
     id: 'rotate-pdf',
@@ -334,6 +451,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'RotateCw',
     path: '/tools/rotate-pdf',
+    metaTitle: 'Rotate PDF - Rotate PDF Pages Online Free',
+    metaDescription: 'Rotate PDF pages instantly with our free online PDF rotation tool.',
+    keywords: 'rotate PDF, PDF rotator, page rotator, PDF tool, free online',
   },
   {
     id: 'pdf-unlock',
@@ -342,6 +462,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Unlock',
     path: '/tools/pdf-unlock',
+    metaTitle: 'PDF Unlock - Unlock Password Protected PDF Free',
+    metaDescription: 'Unlock password protected PDFs instantly with our free online PDF unlock tool.',
+    keywords: 'PDF unlock, remove PDF password, unlock PDF, PDF tool, free online',
   },
   {
     id: 'extract-images-from-pdf',
@@ -350,6 +473,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'ImageExtract',
     path: '/tools/extract-images-from-pdf',
+    metaTitle: 'Extract Images from PDF - Extract PDF Images Free',
+    metaDescription: 'Extract images from PDFs instantly with our free online image extraction tool.',
+    keywords: 'extract images from PDF, image extractor, PDF tool, document converter, free',
   },
   {
     id: 'extract-pdf-pages',
@@ -358,6 +484,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileStack',
     path: '/tools/extract-pdf-pages',
+    metaTitle: 'Extract PDF Pages - Extract PDF Pages Online Free',
+    metaDescription: 'Extract specific PDF pages instantly with our free online PDF extractor tool.',
+    keywords: 'extract PDF pages, page extractor, PDF splitter, PDF tool, free online',
   },
   {
     id: 'image-compressor',
@@ -366,6 +495,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Minimize',
     path: '/tools/image-compressor',
+    metaTitle: 'Image Compressor - Compress Images Online Free',
+    metaDescription: 'Compress images while maintaining quality with our free online image compressor.',
+    keywords: 'image compressor, reduce image size, image optimizer, web tool, free online',
   },
   {
     id: 'image-resizer',
@@ -374,6 +506,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Maximize',
     path: '/tools/image-resizer',
+    metaTitle: 'Image Resizer - Free Online Tool | FreeToolz',
+    metaDescription: 'Edit and enhance images online instantly. Free image resizer for photo editing. No signup required.',
+    keywords: 'image resizer, free online, image resizer, online tool',
   },
   {
     id: 'image-format-converter',
@@ -382,6 +517,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'RefreshCcw',
     path: '/tools/image-format-converter',
+    metaTitle: 'Image Converter - Convert Image Format Online Free',
+    metaDescription: 'Convert images between formats instantly with our free online image converter.',
+    keywords: 'image converter, format converter, JPG to PNG, image tool, free online',
   },
   {
     id: 'grayscale-converter',
@@ -390,6 +528,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Filter',
     path: '/tools/grayscale-converter',
+    metaTitle: 'Grayscale Converter - Convert to Grayscale Online',
+    metaDescription: 'Convert color images to grayscale with our free online grayscale converter.',
+    keywords: 'grayscale converter, black and white, image filter, photo tool, free online',
   },
   // Additional Text Tools
   {
@@ -399,6 +540,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Binary',
     path: '/tools/text-to-binary',
+    metaTitle: 'Text to Binary - Convert Text to Binary Online Free',
+    metaDescription: 'Convert text to binary code instantly with our free online text to binary converter.',
+    keywords: 'text to binary, binary converter, text encoder, programmer tool, free online',
   },
   {
     id: 'morse-code',
@@ -407,6 +551,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Radio',
     path: '/tools/morse-code',
+    metaTitle: 'Morse Code - Encode Morse Code Online Free',
+    metaDescription: 'Encode and decode morse code with our free online morse code converter.',
+    keywords: 'morse code translator, morse code converter, text encoder, communication tool, free',
   },
   {
     id: 'word-frequency',
@@ -415,6 +562,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'BarChart3',
     path: '/tools/word-frequency',
+    metaTitle: 'Word Frequency - Count Words Online Free',
+    metaDescription: 'Analyze word frequency and usage patterns with our free online word frequency counter tool.',
+    keywords: 'word frequency counter, text analysis, keyword frequency, free tool',
   },
   {
     id: 'syllable-counter',
@@ -423,6 +573,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Mic',
     path: '/tools/syllable-counter',
+    metaTitle: 'Syllable Counter - Count Syllables Online Free',
+    metaDescription: 'Count syllables in any text instantly using our free online syllable counter tool accurately.',
+    keywords: 'syllable counter, syllable counter free, text analysis, vowel counter',
   },
   {
     id: 'readability-score',
@@ -431,6 +584,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'GraduationCap',
     path: '/tools/readability-score',
+    metaTitle: 'Readability Score - Analyze Text Online Free',
+    metaDescription: 'Check readability score and grade level of your content with our free online readability analyzer.',
+    keywords: 'readability score, readability checker, text analysis, Flesch reading ease',
   },
   {
     id: 'find-replace',
@@ -439,6 +595,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Replace',
     path: '/tools/find-replace',
+    metaTitle: 'Find & Replace - Text Editor Tool Online Free',
+    metaDescription: 'Find and replace text instantly with our free online find & replace editor and processor.',
+    keywords: 'find replace, text editor, bulk replace, regex replace, free tool',
   },
   // Additional Calculators
   {
@@ -448,6 +607,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'CalendarDays',
     path: '/tools/date-calculator',
+    metaTitle: 'Date Calculator - Calculate Days Between Dates',
+    metaDescription: 'Calculate days between dates instantly with our free online date calculator tool.',
+    keywords: 'date calculator, date difference, day calculator, date calculator online, free',
   },
   {
     id: 'gpa-calculator',
@@ -456,6 +618,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Award',
     path: '/tools/gpa-calculator',
+    metaTitle: 'GPA Calculator - Calculate GPA Online Free',
+    metaDescription: 'Calculate your GPA instantly with our free online GPA calculator for students.',
+    keywords: 'GPA calculator, grade calculator, student tool, academic calculator, free online',
   },
   {
     id: 'fuel-cost',
@@ -464,6 +629,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Fuel',
     path: '/tools/fuel-cost',
+    metaTitle: 'Fuel Cost - Calculate Fuel Cost Online Free',
+    metaDescription: 'Calculate fuel costs and mileage with our free online fuel cost calculator.',
+    keywords: 'fuel cost calculator, gas calculator, mileage calculator, travel calculator, free',
   },
   {
     id: 'time-calculator',
@@ -472,7 +640,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Timer',
     path: '/tools/time-calculator',
-    indexable: false,
+    metaTitle: 'Time Calculator - Free Online Tool | FreeToolz',
+    metaDescription: 'Calculate instantly with our free online time calculator. Accurate results every time.',
+    keywords: 'time calculator, free online, time calculator, online tool',
   },
   {
     id: 'calories-calculator',
@@ -481,7 +651,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Apple',
     path: '/tools/calories-calculator',
-    indexable: false,
+    metaTitle: 'Calories Calculator - Free Online Tool | FreeToolz',
+    metaDescription: 'Calculate instantly with our free online calories calculator. Accurate results every time.',
+    keywords: 'calories calculator, free online, calories calculator, online tool',
   },
   // Additional Generators
   {
@@ -491,7 +663,9 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'ScanBarcode',
     path: '/tools/barcode-generator',
-    indexable: false,
+    metaTitle: 'Barcode Generator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online barcode generator tool. Instant results, no signup needed.',
+    keywords: 'barcode generator, free online, barcode generator, online tool',
   },
   {
     id: 'credit-card-generator',
@@ -500,6 +674,9 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'CreditCard',
     path: '/tools/credit-card-generator',
+    metaTitle: 'Test Credit Card Generator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online test credit card generator tool. Instant results, no signup needed.',
+    keywords: 'credit card generator, free online, test credit card generator, online tool',
     indexable: false,
   },
   {
@@ -509,6 +686,9 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'UserPlus',
     path: '/tools/fake-data-generator',
+    metaTitle: 'Fake Data Generator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online fake data generator tool. Instant results, no signup needed.',
+    keywords: 'fake data generator, free online, fake data generator, online tool',
   },
   {
     id: 'gradient-generator',
@@ -517,7 +697,9 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'Droplet',
     path: '/tools/gradient-generator',
-    indexable: false,
+    metaTitle: 'CSS Gradient Generator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online css gradient generator tool. Instant results, no signup needed.',
+    keywords: 'gradient generator, free online, css gradient generator, online tool',
   },
   // Additional Developer Tools
   {
@@ -527,7 +709,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'ShieldCheck',
     path: '/tools/jwt-decoder',
-    indexable: false,
+    metaTitle: 'JWT Decoder - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online jwt decoder tool. Instant results, no signup needed.',
+    keywords: 'jwt decoder, free online, jwt decoder, online tool',
   },
   {
     id: 'xml-formatter',
@@ -536,7 +720,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'FileCode',
     path: '/tools/xml-formatter',
-    indexable: false,
+    metaTitle: 'XML Formatter - Free Online Tool | FreeToolz',
+    metaDescription: 'Format and convert code instantly. Free online xml formatter for developers.',
+    keywords: 'xml formatter, free online, xml formatter, online tool',
   },
   {
     id: 'sql-formatter',
@@ -545,6 +731,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Database',
     path: '/tools/sql-formatter',
+    metaTitle: 'SQL Formatter - Free Online Tool | FreeToolz',
+    metaDescription: 'Format and convert code instantly. Free online sql formatter for developers.',
+    keywords: 'sql formatter, free online, sql formatter, online tool',
     indexable: false,
   },
   {
@@ -554,6 +743,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'FileCode2',
     path: '/tools/htaccess-generator',
+    metaTitle: '.htaccess Generator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online .htaccess generator tool. Instant results, no signup needed.',
+    keywords: 'htaccess generator, free online, .htaccess generator, online tool',
     indexable: false,
   },
   // Additional PDF Tools
@@ -564,6 +756,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/pdf-to-text',
+    metaTitle: 'PDF to Text - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online pdf to text. No signup required for pdf to text.',
+    keywords: 'pdf to text, free online, pdf to text, online tool',
     indexable: false,
   },
   {
@@ -573,6 +768,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Droplets',
     path: '/tools/pdf-watermark',
+    metaTitle: 'Pdf Watermark - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online pdf watermark. No signup required for pdf watermark.',
+    keywords: 'pdf watermark, free online, pdf watermark, online tool',
     indexable: false,
   },
   {
@@ -582,6 +780,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/pdf-metadata-editor',
+    metaTitle: 'Pdf Metadata Editor - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online pdf metadata editor. No signup required for pdf metadata editor.',
+    keywords: 'pdf metadata editor, free online, pdf metadata editor, online tool',
     indexable: false,
   },
   {
@@ -591,6 +792,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Shuffle',
     path: '/tools/pdf-page-reorder',
+    metaTitle: 'PDF Page Reorder - Rearrange PDF Pages Online Free',
+    metaDescription: 'Reorder and rearrange PDF pages instantly. Reorganize your PDF documents free online. Fast, secure, no signup required.',
+    keywords: 'reorder pdf pages, rearrange pdf, pdf editor, page organizer, free online',
     indexable: false,
   },
   // Additional Image Tools
@@ -601,6 +805,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Crop',
     path: '/tools/image-cropper',
+    metaTitle: 'Image Cropper - Free Online Tool | FreeToolz',
+    metaDescription: 'Edit and enhance images online instantly. Free image cropper for photo editing. No signup required.',
+    keywords: 'image cropper, free online, image cropper, online tool',
     indexable: false,
   },
   {
@@ -610,6 +817,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'RotateCw',
     path: '/tools/image-rotator',
+    metaTitle: 'Image Rotator - Free Online Tool | FreeToolz',
+    metaDescription: 'Edit and enhance images online instantly. Free image rotator for photo editing. No signup required.',
+    keywords: 'image rotator, free online, image rotator, online tool',
     indexable: false,
   },
   {
@@ -619,6 +829,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Eraser',
     path: '/tools/background-remover',
+    metaTitle: 'Background Remover - Remove Image Background Free | FreeToolz',
+    metaDescription: 'Remove background from images online instantly. Free background remover for transparent PNG. No signup required for image editing.',
+    keywords: 'background remover, remove background, image editor, png editor, free online',
   },
   // Utility Tools (New Category)
   {
@@ -628,6 +841,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Clock',
     path: '/tools/stopwatch',
+    metaTitle: 'Stopwatch - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online stopwatch tool. Instant results, no signup needed.',
+    keywords: 'stopwatch, free online, stopwatch, online tool',
   },
   {
     id: 'timer',
@@ -636,6 +852,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Timer',
     path: '/tools/timer',
+    metaTitle: 'Timer - Free Online Countdown Timer | FreeToolz',
+    metaDescription: 'Free online countdown timer with alarm. Perfect for workouts, cooking, studying, and more. Simple timer tool with no signup needed.',
+    keywords: 'timer, countdown timer, online timer, alarm timer, free online',
   },
   {
     id: 'coin-flip',
@@ -644,6 +863,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'CircleDot',
     path: '/tools/coin-flip',
+    metaTitle: 'Coin Flip - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online coin flip tool. Instant results, no signup needed.',
+    keywords: 'coin flip, free online, coin flip, online tool',
   },
   {
     id: 'dice-roller',
@@ -652,6 +874,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Dices',
     path: '/tools/dice-roller',
+    metaTitle: 'Dice Roller - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online dice roller tool. Instant results, no signup needed.',
+    keywords: 'dice roller, free online, dice roller, online tool',
     indexable: false,
   },
   {
@@ -661,6 +886,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Shuffle',
     path: '/tools/random-picker',
+    metaTitle: 'Random Picker - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online random picker tool. Instant results, no signup needed.',
+    keywords: 'random picker, free online, random picker, online tool',
   },
   {
     id: 'text-to-speech',
@@ -669,6 +897,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Volume2',
     path: '/tools/text-to-speech',
+    metaTitle: 'Text to Speech - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online text to speech tool. Instant results, no signup needed.',
+    keywords: 'text to speech, free online, text to speech, online tool',
   },
   {
     id: 'color-picker',
@@ -677,6 +908,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Pipette',
     path: '/tools/color-picker',
+    metaTitle: 'Color Picker - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online color picker tool. Instant results, no signup needed.',
+    keywords: 'color picker, free online, color picker, online tool',
   },
   {
     id: 'password-strength',
@@ -685,6 +919,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'ShieldAlert',
     path: '/tools/password-strength',
+    metaTitle: 'Password Strength Checker - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online password strength checker tool. Instant results, no signup needed.',
+    keywords: 'password strength, free online, password strength checker, online tool',
   },
   // Additional Converters
   {
@@ -694,6 +931,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Thermometer',
     path: '/tools/temperature-converter',
+    metaTitle: 'Temperature Converter - Free Online Tool | FreeToolz',
+    metaDescription: 'Convert instantly with our free online temperature converter. Fast and accurate conversions.',
+    keywords: 'temperature converter, free online, temperature converter, online tool',
   },
   {
     id: 'roman-numeral',
@@ -702,6 +942,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Clock10',
     path: '/tools/roman-numeral',
+    metaTitle: 'Roman Numeral Converter - Free Online Tool | FreeToolz',
+    metaDescription: 'Convert instantly with our free online roman numeral converter. Fast and accurate conversions.',
+    keywords: 'roman numeral, free online, roman numeral converter, online tool',
   },
   {
     id: 'number-base',
@@ -710,6 +953,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Binary',
     path: '/tools/number-base',
+    metaTitle: 'Number Base Converter - Free Online Tool | FreeToolz',
+    metaDescription: 'Convert instantly with our free online number base converter. Fast and accurate conversions.',
+    keywords: 'number base, free online, number base converter, online tool',
   },
   // Additional Text Tools
   {
@@ -719,6 +965,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'ALargeSmall',
     path: '/tools/letter-counter',
+    metaTitle: 'Letter Counter - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online letter counter tool. Instant results, no signup needed.',
+    keywords: 'letter counter, free online, letter counter, online tool',
   },
   {
     id: 'reverse-words',
@@ -727,6 +976,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'ArrowLeftRight',
     path: '/tools/reverse-words',
+    metaTitle: 'Reverse Words - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online reverse words tool. Instant results, no signup needed.',
+    keywords: 'reverse words, free online, reverse words, online tool',
   },
   {
     id: 'invisible-character',
@@ -735,6 +987,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'EyeOff',
     path: '/tools/invisible-character',
+    metaTitle: 'Invisible Character - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online invisible character tool. Instant results, no signup needed.',
+    keywords: 'invisible character, free online, invisible character, online tool',
   },
   // Additional Calculators
   {
@@ -744,6 +999,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Binary',
     path: '/tools/binary-calculator',
+    metaTitle: 'Binary Calculator - Free Online Tool | FreeToolz',
+    metaDescription: 'Calculate instantly with our free online binary calculator. Accurate results every time.',
+    keywords: 'binary calculator, free online, binary calculator, online tool',
   },
   {
     id: 'hex-calculator',
@@ -752,6 +1010,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Hash',
     path: '/tools/hex-calculator',
+    metaTitle: 'Hexadecimal Calculator - Free Online Tool | FreeToolz',
+    metaDescription: 'Calculate instantly with our free online hexadecimal calculator. Accurate results every time.',
+    keywords: 'hex calculator, free online, hexadecimal calculator, online tool',
   },
   // New Tools - Text Tools
   {
@@ -761,6 +1022,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Split',
     path: '/tools/smart-sentence-splitter',
+    metaTitle: 'Smart Sentence Splitter - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online smart sentence splitter tool. Instant results, no signup needed.',
+    keywords: 'smart sentence splitter, free online, smart sentence splitter, online tool',
   },
   {
     id: 'contraction-expander',
@@ -769,6 +1033,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Maximize2',
     path: '/tools/contraction-expander',
+    metaTitle: 'Contraction Expander - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online contraction expander tool. Instant results, no signup needed.',
+    keywords: 'contraction expander, free online, contraction expander, online tool',
   },
   {
     id: 'read-aloud-caption-generator',
@@ -777,6 +1044,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Captions',
     path: '/tools/read-aloud-caption-generator',
+    metaTitle: 'Read Aloud Caption Generator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online read aloud caption generator tool. Instant results, no signup needed.',
+    keywords: 'read aloud caption generator, free online, read aloud caption generator, online tool',
   },
   {
     id: 'title-headline-analyzer',
@@ -785,6 +1055,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'TrendingUp',
     path: '/tools/title-headline-analyzer',
+    metaTitle: 'Title & Headline Analyzer - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online title & headline analyzer tool. Instant results, no signup needed.',
+    keywords: 'title headline analyzer, free online, title & headline analyzer, online tool',
   },
   {
     id: 'text-randomizer',
@@ -793,6 +1066,9 @@ export const tools: Tool[] = [
     category: 'text',
     icon: 'Shuffle',
     path: '/tools/text-randomizer',
+    metaTitle: 'Text Randomizer - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online text randomizer tool. Instant results, no signup needed.',
+    keywords: 'text randomizer, free online, text randomizer, online tool',
   },
   // New Tools - Developer Tools
   {
@@ -802,6 +1078,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Columns',
     path: '/tools/csv-column-splitter',
+    metaTitle: 'CSV Column Splitter - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online csv column splitter tool. Instant results, no signup needed.',
+    keywords: 'csv column splitter, free online, csv column splitter, online tool',
   },
   {
     id: 'yaml-json-converter',
@@ -810,6 +1089,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'RefreshCw',
     path: '/tools/yaml-json-converter',
+    metaTitle: 'YAML to JSON Converter - Free Online Tool | FreeToolz',
+    metaDescription: 'Convert instantly with our free online yaml to json converter. Fast and accurate conversions.',
+    keywords: 'yaml json converter, free online, yaml to json converter, online tool',
   },
   {
     id: 'css-tailwind-classifier',
@@ -818,6 +1100,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Palette',
     path: '/tools/css-tailwind-classifier',
+    metaTitle: 'CSS to Tailwind Classifier - Free Online Tool | FreeToolz',
+    metaDescription: 'Format and convert code instantly. Free online css to tailwind classifier for developers.',
+    keywords: 'css tailwind classifier, free online, css to tailwind classifier, online tool',
   },
   {
     id: 'http-status-tester',
@@ -826,6 +1111,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Globe',
     path: '/tools/http-status-tester',
+    metaTitle: 'HTTP Status Code Tester - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online http status code tester tool. Instant results, no signup needed.',
+    keywords: 'http status tester, free online, http status code tester, online tool',
   },
   {
     id: 'cors-header-checker',
@@ -834,6 +1122,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Network',
     path: '/tools/cors-header-checker',
+    metaTitle: 'CORS Header Checker - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online cors header checker tool. Instant results, no signup needed.',
+    keywords: 'cors header checker, free online, cors header checker, online tool',
   },
   // New Tools - Calculators & Converters
   {
@@ -843,6 +1134,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Zap',
     path: '/tools/power-energy-converter',
+    metaTitle: 'Power & Energy Converter - Free Online Tool | FreeToolz',
+    metaDescription: 'Convert instantly with our free online power & energy converter. Fast and accurate conversions.',
+    keywords: 'power energy converter, free online, power & energy converter, online tool',
   },
   {
     id: 'file-encoding-detector',
@@ -851,6 +1145,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'FileSearch',
     path: '/tools/file-encoding-detector',
+    metaTitle: 'File Encoding Detector - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online file encoding detector tool. Instant results, no signup needed.',
+    keywords: 'file encoding detector, free online, file encoding detector, online tool',
   },
   {
     id: 'image-dpi-calculator',
@@ -859,6 +1156,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Ruler',
     path: '/tools/image-dpi-calculator',
+    metaTitle: 'Image DPI Calculator - Free Online Tool | FreeToolz',
+    metaDescription: 'Edit and enhance images online instantly. Free image dpi calculator for photo editing. No signup required.',
+    keywords: 'image dpi calculator, free online, image dpi calculator, online tool',
   },
   {
     id: 'hash-identifier',
@@ -867,6 +1167,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Fingerprint',
     path: '/tools/hash-identifier',
+    metaTitle: 'Hash Identifier - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online hash identifier tool. Instant results, no signup needed.',
+    keywords: 'hash identifier, free online, hash identifier, online tool',
   },
   {
     id: 'permutation-combination-calculator',
@@ -875,6 +1178,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Calculator',
     path: '/tools/permutation-combination-calculator',
+    metaTitle: 'Permutation & Combination Calculator - Free Online Tool | FreeToolz',
+    metaDescription: 'Calculate instantly with our free online permutation & combination calculator. Accurate results every time.',
+    keywords: 'permutation combination calculator, free online, permutation & combination calculator, online tool',
   },
   // New Tools - Design & Time Tools
   {
@@ -884,6 +1190,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Eye',
     path: '/tools/color-blindness-simulator',
+    metaTitle: 'Color Blindness Simulator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online color blindness simulator tool. Instant results, no signup needed.',
+    keywords: 'color blindness simulator, free online, color blindness simulator, online tool',
   },
   {
     id: 'business-days-calculator',
@@ -892,6 +1201,9 @@ export const tools: Tool[] = [
     category: 'calculator',
     icon: 'Calendar',
     path: '/tools/business-days-calculator',
+    metaTitle: 'Business Days Calculator - Free Online Tool | FreeToolz',
+    metaDescription: 'Calculate instantly with our free online business days calculator. Accurate results every time.',
+    keywords: 'business days calculator, free online, business days calculator, online tool',
   },
   {
     id: 'ascii-art-generator',
@@ -900,6 +1212,9 @@ export const tools: Tool[] = [
     category: 'generator',
     icon: 'FileText',
     path: '/tools/ascii-art-generator',
+    metaTitle: 'ASCII Art Generator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online ascii art generator tool. Instant results, no signup needed.',
+    keywords: 'ascii art generator, free online, ascii art generator, online tool',
   },
   {
     id: 'working-hours-timezone-converter',
@@ -908,6 +1223,9 @@ export const tools: Tool[] = [
     category: 'converter',
     icon: 'Clock',
     path: '/tools/working-hours-timezone-converter',
+    metaTitle: 'Working Hours Timezone Converter - Free Online Tool | FreeToolz',
+    metaDescription: 'Convert instantly with our free online working hours timezone converter. Fast and accurate conversions.',
+    keywords: 'working hours timezone converter, free online, working hours timezone converter, online tool',
   },
   // New Tools - Utilities & Data Tools
   {
@@ -917,6 +1235,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'FileSearch',
     path: '/tools/csv-duplicate-finder',
+    metaTitle: 'CSV Duplicate Finder - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online csv duplicate finder tool. Instant results, no signup needed.',
+    keywords: 'csv duplicate finder, free online, csv duplicate finder, online tool',
   },
   {
     id: 'regex-bulk-replace',
@@ -925,6 +1246,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Replace',
     path: '/tools/regex-bulk-replace',
+    metaTitle: 'Regex Bulk Replace - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online regex bulk replace tool. Instant results, no signup needed.',
+    keywords: 'regex bulk replace, free online, regex bulk replace, online tool',
   },
   {
     id: 'bulk-url-shortener',
@@ -933,6 +1257,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Link',
     path: '/tools/bulk-url-shortener',
+    metaTitle: 'Bulk URL Shortener - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online bulk url shortener tool. Instant results, no signup needed.',
+    keywords: 'bulk url shortener, free online, bulk url shortener, online tool',
   },
   {
     id: 'clipboard-history',
@@ -941,6 +1268,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Clipboard',
     path: '/tools/clipboard-history',
+    metaTitle: 'Clipboard History Manager - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online clipboard history manager tool. Instant results, no signup needed.',
+    keywords: 'clipboard history, free online, clipboard history manager, online tool',
   },
   {
     id: 'dataset-sampler',
@@ -949,6 +1279,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Database',
     path: '/tools/dataset-sampler',
+    metaTitle: 'Dataset Sampler - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online dataset sampler tool. Instant results, no signup needed.',
+    keywords: 'dataset sampler, free online, dataset sampler, online tool',
   },
   // New Tools - File & Debug Tools
   {
@@ -958,6 +1291,9 @@ export const tools: Tool[] = [
     category: 'utility',
     icon: 'Archive',
     path: '/tools/zip-file-inspector',
+    metaTitle: 'ZIP File Inspector - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online zip file inspector tool. Instant results, no signup needed.',
+    keywords: 'zip file inspector, free online, zip file inspector, online tool',
   },
   {
     id: 'console-log-formatter',
@@ -966,6 +1302,9 @@ export const tools: Tool[] = [
     category: 'developer',
     icon: 'Terminal',
     path: '/tools/console-log-formatter',
+    metaTitle: 'Console Log Formatter - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online console log formatter tool. Instant results, no signup needed.',
+    keywords: 'console log formatter, free online, console log formatter, online tool',
   },
   // New Tools - Image & Media Tools
   {
@@ -975,6 +1314,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Minimize2',
     path: '/tools/svg-optimizer',
+    metaTitle: 'SVG Optimizer - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online svg optimizer tool. Instant results, no signup needed.',
+    keywords: 'svg optimizer, free online, svg optimizer, online tool',
   },
   {
     id: 'favicon-generator',
@@ -983,6 +1325,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Star',
     path: '/tools/favicon-generator',
+    metaTitle: 'Favicon Generator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online favicon generator tool. Instant results, no signup needed.',
+    keywords: 'favicon generator, free online, favicon generator, online tool',
   },
   {
     id: 'color-contrast-checker',
@@ -991,6 +1336,9 @@ export const tools: Tool[] = [
     category: 'image',
     icon: 'Contrast',
     path: '/tools/color-contrast-checker',
+    metaTitle: 'Color Contrast Checker - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online color contrast checker tool. Instant results, no signup needed.',
+    keywords: 'color contrast checker, free online, color contrast checker, online tool',
   },
   // New Tools - Security & SEO Tools
   {
@@ -1000,6 +1348,9 @@ export const tools: Tool[] = [
     category: 'security',
     icon: 'Shield',
     path: '/tools/password-strength-analyzer',
+    metaTitle: 'Password Strength Analyzer - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online password strength analyzer tool. Instant results, no signup needed.',
+    keywords: 'password strength analyzer, free online, password strength analyzer, online tool',
   },
   {
     id: 'cookie-inspector',
@@ -1008,6 +1359,9 @@ export const tools: Tool[] = [
     category: 'security',
     icon: 'Cookie',
     path: '/tools/cookie-inspector',
+    metaTitle: 'Cookie Inspector - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online cookie inspector tool. Instant results, no signup needed.',
+    keywords: 'cookie inspector, free online, cookie inspector, online tool',
   },
   {
     id: 'meta-robots-tester',
@@ -1016,6 +1370,9 @@ export const tools: Tool[] = [
     category: 'security',
     icon: 'Search',
     path: '/tools/meta-robots-tester',
+    metaTitle: 'Meta Robots Tester - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online meta robots tester tool. Instant results, no signup needed.',
+    keywords: 'meta robots tester, free online, meta robots tester, online tool',
   },
   {
     id: 'structured-data-validator',
@@ -1024,6 +1381,9 @@ export const tools: Tool[] = [
     category: 'security',
     icon: 'Code',
     path: '/tools/structured-data-validator',
+    metaTitle: 'Structured Data Validator - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online structured data validator tool. Instant results, no signup needed.',
+    keywords: 'structured data validator, free online, structured data validator, online tool',
   },
   {
     id: 'sitemap-url-extractor',
@@ -1032,6 +1392,9 @@ export const tools: Tool[] = [
     category: 'security',
     icon: 'Map',
     path: '/tools/sitemap-url-extractor',
+    metaTitle: 'Sitemap URL Extractor - Free Online Tool | FreeToolz',
+    metaDescription: 'Free online sitemap url extractor tool. Instant results, no signup needed.',
+    keywords: 'sitemap url extractor, free online, sitemap url extractor, online tool',
   },
   // New Tools - PDF & Document Tools
   {
@@ -1041,6 +1404,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/pdf-page-extractor',
+    metaTitle: 'PDF Page Extractor - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online pdf page extractor. No signup required for pdf page extractor.',
+    keywords: 'pdf page extractor, free online, pdf page extractor, online tool',
   },
   // New PDF Conversion Tools - Phase 4
   {
@@ -1050,6 +1416,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Image',
     path: '/tools/pdf-to-jpg',
+    metaTitle: 'PDF to JPG - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online pdf to jpg. No signup required for pdf to jpg.',
+    keywords: 'pdf to jpg, free online, pdf to jpg, online tool',
   },
   {
     id: 'jpg-to-pdf',
@@ -1058,6 +1427,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/jpg-to-pdf',
+    metaTitle: 'JPG to PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online jpg to pdf. No signup required for jpg to pdf.',
+    keywords: 'jpg to pdf, free online, jpg to pdf, online tool',
   },
   {
     id: 'pdf-add-page-numbers',
@@ -1066,6 +1438,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Hash',
     path: '/tools/pdf-add-page-numbers',
+    metaTitle: 'PDF Add Page Numbers - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online pdf add page numbers. No signup required for pdf add page numbers.',
+    keywords: 'pdf add page numbers, free online, pdf add page numbers, online tool',
   },
   {
     id: 'pdf-redact',
@@ -1074,6 +1449,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Eraser',
     path: '/tools/pdf-redact',
+    metaTitle: 'PDF Redact - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online pdf redact. No signup required for pdf redact.',
+    keywords: 'pdf redact, free online, pdf redact, online tool',
   },
   {
     id: 'pdf-to-word',
@@ -1082,6 +1460,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/pdf-to-word',
+    metaTitle: 'PDF to Word Converter - Convert PDF Free | FreeToolz',
+    metaDescription: 'Convert PDF to Word online instantly. Preserves formatting and layout. Fast, secure, free PDF converter. No signup required.',
+    keywords: 'pdf to word, convert pdf to word, pdf converter, pdf to docx',
   },
   {
     id: 'pdf-to-powerpoint',
@@ -1090,6 +1471,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/pdf-to-powerpoint',
+    metaTitle: 'PDF to PowerPoint - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online pdf to powerpoint. No signup required for pdf to powerpoint.',
+    keywords: 'pdf to powerpoint, free online, pdf to powerpoint, online tool',
   },
   {
     id: 'pdf-to-excel',
@@ -1098,6 +1482,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/pdf-to-excel',
+    metaTitle: 'PDF to Excel - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online pdf to excel. No signup required for pdf to excel.',
+    keywords: 'pdf to excel, free online, pdf to excel, online tool',
   },
   {
     id: 'html-to-pdf',
@@ -1106,6 +1493,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Code',
     path: '/tools/html-to-pdf',
+    metaTitle: 'HTML to PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online html to pdf. No signup required for html to pdf.',
+    keywords: 'html to pdf, free online, html to pdf, online tool',
   },
   {
     id: 'pdf-to-pdfa',
@@ -1114,6 +1504,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Archive',
     path: '/tools/pdf-to-pdfa',
+    metaTitle: 'PDF to PDF/A - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online pdf to pdf/a. No signup required for pdf to pdf/a.',
+    keywords: 'pdf to pdfa, free online, pdf to pdf/a, online tool',
   },
   {
     id: 'edit-pdf',
@@ -1122,6 +1515,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Edit',
     path: '/tools/edit-pdf',
+    metaTitle: 'Edit PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online edit pdf. No signup required for edit pdf.',
+    keywords: 'edit pdf, free online, edit pdf, online tool',
   },
   {
     id: 'sign-pdf',
@@ -1130,6 +1526,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'PenTool',
     path: '/tools/sign-pdf',
+    metaTitle: 'Sign PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online sign pdf. No signup required for sign pdf.',
+    keywords: 'sign pdf, free online, sign pdf, online tool',
   },
   {
     id: 'protect-pdf',
@@ -1138,6 +1537,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Lock',
     path: '/tools/protect-pdf',
+    metaTitle: 'Protect PDF - Add Password Protection Free | FreeToolz',
+    metaDescription: 'Protect PDF files with password. Add password protection to PDFs online instantly. Secure your documents free, no signup required.',
+    keywords: 'protect pdf, password protect pdf, pdf security, secure pdf, free online',
   },
   {
     id: 'ocr-pdf',
@@ -1146,6 +1548,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/ocr-pdf',
+    metaTitle: 'OCR PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online ocr pdf. No signup required for ocr pdf.',
+    keywords: 'ocr pdf, free online, ocr pdf, online tool',
   },
   {
     id: 'compare-pdf',
@@ -1154,6 +1559,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'BarChart2',
     path: '/tools/compare-pdf',
+    metaTitle: 'Compare PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online compare pdf. No signup required for compare pdf.',
+    keywords: 'compare pdf, free online, compare pdf, online tool',
   },
   {
     id: 'repair-pdf',
@@ -1162,6 +1570,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Wrench',
     path: '/tools/repair-pdf',
+    metaTitle: 'Repair PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online repair pdf. No signup required for repair pdf.',
+    keywords: 'repair pdf, free online, repair pdf, online tool',
   },
   {
     id: 'organize-pdf',
@@ -1170,6 +1581,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'Shuffle',
     path: '/tools/organize-pdf',
+    metaTitle: 'Organize PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF manipulation online instantly. Fast, secure, free online organize pdf. No signup required for organize pdf.',
+    keywords: 'organize pdf, free online, organize pdf, online tool',
   },
   {
     id: 'word-to-pdf',
@@ -1178,6 +1592,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/word-to-pdf',
+    metaTitle: 'Word to PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online word to pdf. No signup required for word to pdf.',
+    keywords: 'word to pdf, free online, word to pdf, online tool',
   },
   {
     id: 'powerpoint-to-pdf',
@@ -1186,6 +1603,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/powerpoint-to-pdf',
+    metaTitle: 'PowerPoint to PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online powerpoint to pdf. No signup required for powerpoint to pdf.',
+    keywords: 'powerpoint to pdf, free online, powerpoint to pdf, online tool',
   },
   {
     id: 'excel-to-pdf',
@@ -1194,6 +1614,9 @@ export const tools: Tool[] = [
     category: 'pdf',
     icon: 'FileText',
     path: '/tools/excel-to-pdf',
+    metaTitle: 'Excel to PDF - Free Online Tool | FreeToolz',
+    metaDescription: 'PDF conversion online instantly. Fast, secure, free online excel to pdf. No signup required for excel to pdf.',
+    keywords: 'excel to pdf, free online, excel to pdf, online tool',
   },
 ];
 

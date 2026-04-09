@@ -1,10 +1,28 @@
 # Free Tools Robots Configuration
 # Website: https://freetoolz.cloud
 # Generated: 2026-04-08
+# Updated: 2026-04-09 - Google Search Console Parameter Handling
 
 # Allow all crawlers full access
 User-agent: *
 Allow: /
+
+# URL parameter handling for Google - ignore referral tracking parameters
+# This tells Google to treat ?ref=steemhunt and ?utm_* as the same page
+# Fix for GSC: "Alternate page with proper canonical tag" issue
+Clean-param: ref /
+Clean-param: utm_source /
+Clean-param: utm_medium /
+Clean-param: utm_campaign /
+Clean-param: utm_content /
+Clean-param: utm_term /
+Clean-param: fbclid /
+Clean-param: gclid /
+Clean-param: msclkid /
+Clean-param: affiliate /
+
+# Sitemap location
+Sitemap: https://freetoolz.cloud/sitemap.xml
 
 # Specifically allow Google crawlers (helps with indexing)
 User-agent: Googlebot

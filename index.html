@@ -72,7 +72,27 @@
     <meta name="theme-color" content="#2563eb" />
     <meta name="msapplication-TileColor" content="#2563eb" />
     
-    <!-- Canonical URL -->
+    <!-- EARLY CANONICAL INJECTION (loads before React hydrates) -->
+    <!-- FIX: Ensures canonical tag exists immediately, stripping query parameters -->
+    <!-- This solves: "Alternate page with proper canonical tag" GSC warning -->
+    <script type="text/javascript">
+      (function() {
+        var path = window.location.pathname || '/';
+        var origin = window.location.origin || 'https://freetoolz.cloud';
+        var canonicalUrl = origin + path;
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+          var link = document.createElement('link');
+          link.rel = 'canonical';
+          link.href = canonicalUrl;
+          document.head.appendChild(link);
+        } else {
+          canonical.href = canonicalUrl;
+        }
+      })();
+    </script>
+    
+    <!-- Canonical URL (updated by React useSEO hook) -->
     <link rel="canonical" href="https://freetoolz.cloud/" />
     
     <!-- PERFORMANCE: Preconnect to critical origins FIRST for LCP -->

@@ -64,6 +64,49 @@ server {
     gzip_types text/plain text/css text/xml text/javascript application/json application/javascript application/xml+rss application/rss+xml font/truetype font/opentype application/vnd.ms-fontobject image/svg+xml;
     gzip_disable "msie6";
 
+    # ============================================================
+    # SOFT 404 FIX: Part 1 - Trailing Slash Redirects
+    # ============================================================
+    # Removes trailing slashes to fix GSC "Soft 404" errors
+    # /tools/currency-converter/ → 301 redirect → /tools/currency-converter
+    # This prevents Google from seeing duplicate pages with soft 404s
+    location ~ ^(.+)/$ {
+        rewrite ^(.+)/$ $1 permanent;
+    }
+
+    # ============================================================
+    # SOFT 404 FIX: Part 2 - 410 Gone for Removed Tools
+    # ============================================================
+    # These tools no longer exist - return 410 Gone instead of soft 404
+    # This tells Google: "This page was deleted, don't crawl again"
+    # Tools identified from GSC Soft 404 report (Jan 2026):
+    # - code-beautifier: Not in current tool list
+    # - pdf-compress: Renamed to compress-pdf (different URL)
+    # - encryption-tool: Not in current tool list
+    location ~ ^/tools/(code-beautifier|pdf-compress|encryption-tool)/?$ {
+        return 410;
+    }
+
+    # ============================================================
+    # PAGE WITH REDIRECT FIX: /tools/* → /* HTTP 301 Redirects
+    # ============================================================
+    # Convert React client-side redirects to proper HTTP 301 redirects
+    # This prevents GSC "Page with redirect" warnings
+    # 
+    # Examples:
+    #   /tools/loan-calculator      → 301 → /loan-calculator
+    #   /tools/temperature-converter → 301 → /temperature-converter
+    #   /tools/text-to-binary       → 301 → /text-to-binary
+    #
+    # Benefits:
+    # - Google sees proper HTTP redirect (not client-side)
+    # - Better crawl efficiency
+    # - Faster user experience
+    # - Eliminates "Page with redirect" GSC warnings
+    location ~ ^/tools/(.+)$ {
+        return 301 /$1;
+    }
+
     # Static caching rules
     location / {
         try_files $uri $uri/ $uri/index.html /index.html;
@@ -71,6 +114,9 @@ server {
 
     location ~* \.html$ {
         add_header Cache-Control "public, max-age=0, must-revalidate" always;
+        # ADD: Canonical link header for Google crawlers (SPA best practice)
+        # This ensures Google sees canonical even if it doesn't parse the HTML
+        add_header Link "<https://freetoolz.cloud$request_uri>; rel=\"canonical\"" always;
     }
 
     location ~* \.js$ {
