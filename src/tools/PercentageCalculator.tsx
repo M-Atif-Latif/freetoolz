@@ -67,7 +67,7 @@ export default function PercentageCalculator() {
                 value={percentage}
                 onChange={(e) => setPercentage(e.target.value)}
                 placeholder="25"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
               />
             </div>
             <div>
@@ -79,14 +79,14 @@ export default function PercentageCalculator() {
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 placeholder="200"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
               />
             </div>
           </div>
           {percentOf && (
-            <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <div className="p-4 bg-primary-50 rounded-lg border border-primary-200">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">{percentOf}</div>
+                <div className="text-3xl font-bold text-primary-600 mb-1">{percentOf}</div>
                 <div className="text-gray-700">
                   {percentage}% of {value} is {percentOf}
                 </div>
@@ -107,7 +107,7 @@ export default function PercentageCalculator() {
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 placeholder="100"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
               />
             </div>
             <div>
@@ -119,7 +119,7 @@ export default function PercentageCalculator() {
                 value={increase}
                 onChange={(e) => setIncrease(e.target.value)}
                 placeholder="10"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
               />
             </div>
           </div>
@@ -147,7 +147,7 @@ export default function PercentageCalculator() {
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 placeholder="100"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
               />
             </div>
             <div>
@@ -159,7 +159,7 @@ export default function PercentageCalculator() {
                 value={decrease}
                 onChange={(e) => setDecrease(e.target.value)}
                 placeholder="20"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
               />
             </div>
           </div>
@@ -178,3 +178,4 @@ export default function PercentageCalculator() {
     </div>
   );
 }
+

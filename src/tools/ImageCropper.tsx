@@ -59,8 +59,8 @@ export default function ImageCropper() {
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
         <div className="mb-8">
           <label className="block text-sm font-medium text-gray-700 mb-4">Upload Image</label>
-          <label className="block px-6 py-4 bg-blue-50 border-2 border-dashed border-blue-300 rounded-lg text-center cursor-pointer hover:bg-blue-100 transition-colors">
-            <Upload className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+          <label className="block px-6 py-4 bg-primary-50 border-2 border-dashed border-blue-300 rounded-lg text-center cursor-pointer hover:bg-primary-100 transition-colors">
+            <Upload className="h-8 w-8 text-primary-600 mx-auto mb-2" />
             <div className="text-sm font-medium text-gray-700">Click to upload image</div>
             <div className="text-xs text-gray-500">PNG, JPG, GIF (max 10MB)</div>
             <input
@@ -83,7 +83,7 @@ export default function ImageCropper() {
                     onClick={() => updateAspect(ratio)}
                     className={`py-2 px-3 rounded-lg font-semibold text-sm transition-colors ${
                       aspectRatio === ratio
-                        ? 'bg-blue-600 text-white'
+                        ? 'bg-accent-600 text-white'
                         : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }`}
                   >
@@ -100,7 +100,7 @@ export default function ImageCropper() {
                   type="number"
                   value={width}
                   onChange={(e) => setWidth(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
                 />
               </div>
 
@@ -110,7 +110,7 @@ export default function ImageCropper() {
                   type="number"
                   value={height}
                   onChange={(e) => setHeight(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
                 />
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function ImageCropper() {
               </button>
               <button
                 onClick={downloadCropped}
-                className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2"
+                className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold flex items-center justify-center gap-2"
               >
                 <Download className="h-5 w-5" /> Download
               </button>
@@ -146,3 +146,4 @@ export default function ImageCropper() {
     </div>
   );
 }
+

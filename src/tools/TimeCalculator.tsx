@@ -75,7 +75,7 @@ export default function TimeCalculator() {
                   max="23"
                   value={hours}
                   onChange={(e) => setHours(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none text-lg font-mono"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none text-lg font-mono"
                 />
               </div>
               <div>
@@ -86,7 +86,7 @@ export default function TimeCalculator() {
                   max="59"
                   value={minutes}
                   onChange={(e) => setMinutes(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none text-lg font-mono"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none text-lg font-mono"
                 />
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function TimeCalculator() {
           </div>
         </div>
 
-        <div className="mb-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
+        <div className="mb-8 p-6 bg-primary-50 rounded-lg border border-primary-200">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Duration to {opType === 'add' ? 'Add' : 'Subtract'}</h3>
           <div className="grid grid-cols-2 gap-3">
             <div>
@@ -132,7 +132,7 @@ export default function TimeCalculator() {
                 min="0"
                 value={opHours}
                 onChange={(e) => setOpHours(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-blue-300 rounded-lg focus:border-blue-500 outline-none text-lg font-mono"
+                className="w-full px-4 py-3 border-2 border-blue-300 rounded-lg focus:border-primary-500 outline-none text-lg font-mono"
               />
             </div>
             <div>
@@ -143,7 +143,7 @@ export default function TimeCalculator() {
                 max="59"
                 value={opMinutes}
                 onChange={(e) => setOpMinutes(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-blue-300 rounded-lg focus:border-blue-500 outline-none text-lg font-mono"
+                className="w-full px-4 py-3 border-2 border-blue-300 rounded-lg focus:border-primary-500 outline-none text-lg font-mono"
               />
             </div>
           </div>
@@ -167,3 +167,4 @@ export default function TimeCalculator() {
     </div>
   );
 }
+

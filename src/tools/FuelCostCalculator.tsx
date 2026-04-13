@@ -156,7 +156,7 @@ export default function FuelCostCalculator() {
                 </div>
               </div>
 
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-4 border-2 border-blue-200 dark:border-blue-800">
+              <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-4 border-2 border-primary-200 dark:border-primary-800">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-2">💡 Trip Summary:</h3>
                 <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
                   <li>• Distance: {distance} {unit}</li>
@@ -184,3 +184,4 @@ export default function FuelCostCalculator() {
     </div>
   );
 }
+

@@ -115,24 +115,24 @@ export default function RomanNumeralConverter() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={mode === 'toRoman' ? 'e.g., 2024' : 'e.g., MMXXIV'}
-            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-lg"
+            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-lg"
           />
         </div>
 
         {output && (
-          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-8 border-2 border-blue-200 dark:border-blue-800">
+          <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-8 border-2 border-primary-200 dark:border-primary-800">
             <div className="flex justify-between items-start mb-4">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Result</h2>
               <CopyButton text={output} label="Copy" size="md" />
             </div>
-            <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-500">
+            <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-secondary-500">
               {output}
             </div>
           </div>
         )}
       </div>
 
-      <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border-2 border-blue-200 dark:border-blue-800">
+      <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border-2 border-primary-200 dark:border-primary-800">
         <h3 className="font-semibold text-gray-900 dark:text-white mb-3">🏛️ Roman Numeral Rules:</h3>
         <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
@@ -169,7 +169,7 @@ export default function RomanNumeralConverter() {
             onClick={() => {
               setInput(mode === 'toRoman' ? num.toString() : roman);
             }}
-            className="bg-white dark:bg-gray-800 rounded-xl p-4 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+            className="bg-white dark:bg-gray-800 rounded-xl p-4 border-2 border-gray-200 dark:border-gray-700 hover:border-primary-500 dark:hover:border-primary-500 transition-colors"
           >
             <div className="text-lg font-bold text-gray-900 dark:text-white">{num}</div>
             <div className="text-sm text-gray-600 dark:text-gray-400">{roman}</div>
@@ -179,3 +179,5 @@ export default function RomanNumeralConverter() {
     </div>
   );
 }
+
+

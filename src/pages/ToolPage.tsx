@@ -45,11 +45,11 @@ export default function ToolPage({ tool, children }: Props) {
       <nav className="container-responsive pt-5 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2">
           <li>
-            <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</Link>
+            <Link to="/" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home</Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <Link to="/sitemap" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Tools</Link>
+            <Link to="/sitemap" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Tools</Link>
           </li>
           <li aria-hidden="true">/</li>
           <li className="text-gray-800 dark:text-gray-200 font-medium truncate">{tool.name}</li>
@@ -99,7 +99,7 @@ export default function ToolPage({ tool, children }: Props) {
                   <Link
                     key={relatedTool.id}
                     to={`/${relatedTool.slug ?? relatedTool.id}`}
-                    className="rounded-xl border border-gray-200 dark:border-gray-700 p-3 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all"
+                    className="rounded-xl border border-gray-200 dark:border-gray-700 p-3 hover:border-primary-400 dark:hover:border-primary-500 hover:bg-primary-50/50 dark:hover:bg-primary-900/10 transition-all"
                   >
                     <p className="font-semibold text-gray-900 dark:text-white text-sm mb-1">{relatedTool.name}</p>
                     <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">{cleanUseCasePrefix(relatedTool.description)}</p>
@@ -113,3 +113,5 @@ export default function ToolPage({ tool, children }: Props) {
     </>
   );
 }
+
+

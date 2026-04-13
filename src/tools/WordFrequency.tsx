@@ -59,7 +59,7 @@ export default function WordFrequency() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
         <div className="flex items-center space-x-3 mb-6">
-          <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
+          <div className="p-3 bg-gradient-to-br from-secondary-500 to-purple-600 rounded-xl">
             <BarChart3 className="h-8 w-8 text-white" />
           </div>
           <div>
@@ -79,7 +79,7 @@ export default function WordFrequency() {
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Paste or type your text here..."
-              className="w-full h-64 px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
+              className="w-full h-64 px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
             />
           </div>
 
@@ -167,3 +167,4 @@ export default function WordFrequency() {
     </div>
   );
 }
+

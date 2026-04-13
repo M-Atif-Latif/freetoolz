@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Upload, Download, AlertCircle } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
@@ -101,8 +101,8 @@ export default function ImageBackgroundRemover() {
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         {/* Info Banner */}
-        <div className="mb-6 flex items-start space-x-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+        <div className="mb-6 flex items-start space-x-3 p-4 bg-primary-50 border border-primary-200 rounded-lg">
+          <AlertCircle className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
           <div className="text-sm text-blue-800">
             <p className="font-semibold mb-1">Note:</p>
             <p>This tool works best for images with white or light-colored backgrounds. For complex backgrounds, consider using professional tools like remove.bg</p>
@@ -110,7 +110,7 @@ export default function ImageBackgroundRemover() {
         </div>
 
         <div className="mb-6">
-          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
+          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="w-12 h-12 mb-4 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500">
@@ -157,7 +157,7 @@ export default function ImageBackgroundRemover() {
               <button
                 onClick={removeBackground}
                 disabled={loading}
-                className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? 'Processing...' : 'Remove Background'}
               </button>
@@ -177,7 +177,7 @@ export default function ImageBackgroundRemover() {
       </div>
 
       {/* Privacy Notice */}
-      <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+      <div className="mt-6 p-4 bg-primary-50 rounded-lg border border-primary-200">
         <p className="text-sm text-gray-700">
           <strong>Privacy:</strong> All processing happens in your browser. Images are never uploaded to any server.
         </p>
@@ -185,4 +185,5 @@ export default function ImageBackgroundRemover() {
     </div>
   );
 }
+
 

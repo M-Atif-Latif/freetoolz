@@ -50,7 +50,7 @@ export default function RandomNumber() {
               type="number"
               value={min}
               onChange={(e) => setMin(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
 
@@ -62,7 +62,7 @@ export default function RandomNumber() {
               type="number"
               value={max}
               onChange={(e) => setMax(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function RandomNumber() {
 
         <button
           onClick={generateNumbers}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg flex items-center justify-center space-x-2"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg flex items-center justify-center space-x-2"
         >
           <RefreshCw className="h-5 w-5" />
           <span>Generate Random Number{count > 1 ? 's' : ''}</span>
@@ -105,9 +105,9 @@ export default function RandomNumber() {
             {results.map((num, index) => (
               <div
                 key={index}
-                className="p-6 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl border-2 border-blue-200 text-center"
+                className="p-6 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl border-2 border-primary-200 text-center"
               >
-                <div className="text-4xl font-bold text-blue-600">{num}</div>
+                <div className="text-4xl font-bold text-primary-600">{num}</div>
               </div>
             ))}
           </div>
@@ -116,3 +116,4 @@ export default function RandomNumber() {
     </div>
   );
 }
+

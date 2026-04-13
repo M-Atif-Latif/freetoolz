@@ -5,8 +5,8 @@ export default function Terms() {
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 prose max-w-none">
         <p className="text-gray-600 mb-6 font-medium">Last updated: November 6, 2025</p>
         
-        <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded">
-          <p className="text-blue-900 text-sm">
+        <div className="bg-primary-50 border-l-4 border-primary-600 p-4 mb-6 rounded">
+          <p className="text-primary-900 text-sm">
             Please read these terms carefully before using Free Tools. By accessing our website and using our tools, 
             you agree to be bound by these Terms of Service.
           </p>
@@ -93,7 +93,7 @@ export default function Terms() {
         <h2 className="text-2xl font-bold mb-3 mt-8 text-gray-800">📞 Contact Information</h2>
         <p className="mb-4 text-gray-700 leading-relaxed">
           If you have any questions about these Terms of Service, please contact us at:{' '}
-          <a href="mailto:muhammadatiflatif67@gmail.com" className="text-blue-600 hover:text-blue-700 underline">
+          <a href="mailto:muhammadatiflatif67@gmail.com" className="text-primary-600 hover:text-primary-700 underline">
             muhammadatiflatif67@gmail.com
           </a>
         </p>
@@ -107,3 +107,5 @@ export default function Terms() {
     </div>
   );
 }
+
+

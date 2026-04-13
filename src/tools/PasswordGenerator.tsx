@@ -47,7 +47,7 @@ export default function PasswordGenerator() {
             <input type="text" value={password} readOnly placeholder="Click 'Generate Password' to create"
               className="w-full px-4 py-4 pr-32 border-2 border-gray-200 rounded-lg text-lg font-mono bg-gray-50 focus:outline-none" />
             <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex space-x-2">
-              <button onClick={generatePassword} className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              <button onClick={generatePassword} className="p-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors">
                 <RefreshCw className="h-5 w-5" />
               </button>
               <button onClick={copyToClipboard} className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
@@ -66,10 +66,11 @@ export default function PasswordGenerator() {
         </div>
 
         <button onClick={generatePassword}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg">
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg">
           Generate Password
         </button>
       </div>
     </div>
   );
 }
+

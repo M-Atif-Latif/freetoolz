@@ -69,7 +69,7 @@ export default function RepairPDF() {
 
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <div className="mb-6">
-          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all">
+          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="w-12 h-12 mb-4 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
@@ -98,7 +98,7 @@ export default function RepairPDF() {
             <button
               onClick={repairPDF}
               disabled={processing}
-              className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+              className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
             >
               <RotateCcw className="h-5 w-5" />
               <span>{processing ? 'Repairing...' : 'Repair PDF'}</span>
@@ -114,8 +114,8 @@ export default function RepairPDF() {
           </>
         )}
 
-        <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-          <p className="text-sm text-blue-800 dark:text-blue-300">
+        <div className="mt-6 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg border border-primary-200 dark:border-primary-800">
+          <p className="text-sm text-blue-800 dark:text-primary-300">
             <strong>Note:</strong> This tool rebuilds the PDF structure. For severely corrupted files, professional recovery services may be needed.
           </p>
         </div>
@@ -123,3 +123,4 @@ export default function RepairPDF() {
     </div>
   );
 }
+

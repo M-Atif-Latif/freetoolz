@@ -71,7 +71,7 @@ export default function CaloriesCalculator() {
               max="120"
               value={age}
               onChange={(e) => setAge(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             />
           </div>
 
@@ -80,7 +80,7 @@ export default function CaloriesCalculator() {
             <select
               value={gender}
               onChange={(e) => setGender(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             >
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -94,7 +94,7 @@ export default function CaloriesCalculator() {
               min="20"
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             />
           </div>
 
@@ -105,7 +105,7 @@ export default function CaloriesCalculator() {
               min="100"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             />
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function CaloriesCalculator() {
             <select
               value={activity}
               onChange={(e) => setActivity(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             >
               <option value="sedentary">Sedentary (little exercise)</option>
               <option value="light">Light (1-3 days/week)</option>
@@ -131,7 +131,7 @@ export default function CaloriesCalculator() {
             <select
               value={goal}
               onChange={(e) => setGoal(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             >
               <option value="maintenance">Maintenance</option>
               <option value="loss">Weight Loss (-500 cal)</option>
@@ -146,9 +146,9 @@ export default function CaloriesCalculator() {
             <div className="text-3xl font-bold text-yellow-600">{Math.round(bmr)}</div>
             <div className="text-xs text-gray-500 mt-1">kcal/day</div>
           </div>
-          <div className="p-6 bg-blue-50 rounded-lg border border-blue-200 text-center">
+          <div className="p-6 bg-primary-50 rounded-lg border border-primary-200 text-center">
             <div className="text-sm text-gray-600 mb-1">TDEE</div>
-            <div className="text-3xl font-bold text-blue-600">{Math.round(tdee)}</div>
+            <div className="text-3xl font-bold text-primary-600">{Math.round(tdee)}</div>
             <div className="text-xs text-gray-500 mt-1">kcal/day</div>
           </div>
           <div className="p-6 bg-green-50 rounded-lg border border-green-200 text-center">
@@ -171,3 +171,4 @@ export default function CaloriesCalculator() {
     </div>
   );
 }
+

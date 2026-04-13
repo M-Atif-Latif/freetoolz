@@ -30,12 +30,12 @@ export default function QRCodeGenerator() {
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-3">Enter Text or URL</label>
           <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="https://example.com or any text..."
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none resize-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none resize-none"
             rows={4} />
         </div>
 
         <button onClick={generateQRCode} disabled={!text.trim()}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-300">
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-300">
           Generate QR Code
         </button>
       </div>
@@ -51,3 +51,4 @@ export default function QRCodeGenerator() {
     </div>
   );
 }
+

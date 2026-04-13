@@ -115,7 +115,7 @@ export default function YAMLJSONConverter() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
             <RefreshCw className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -176,7 +176,7 @@ export default function YAMLJSONConverter() {
                   ? 'name: John Doe\nage: 30\nemail: john@example.com\nactive: true'
                   : '{\n  "name": "John Doe",\n  "age": 30,\n  "email": "john@example.com",\n  "active": true\n}'
                 }
-                className="w-full h-96 px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all outline-none resize-none font-mono text-sm"
+                className="w-full h-96 px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:focus:ring-primary-900/30 transition-all outline-none resize-none font-mono text-sm"
               />
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function YAMLJSONConverter() {
         </div>
 
         {/* Info */}
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Note</h3>
           <p className="text-gray-700 dark:text-gray-300">
             This converter supports basic YAML and JSON syntax. Complex features like anchors, multi-line strings, 
@@ -207,3 +207,5 @@ export default function YAMLJSONConverter() {
     </div>
   );
 }
+
+

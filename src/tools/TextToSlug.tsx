@@ -41,15 +41,15 @@ export default function TextToSlug() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Hello World 2024!"
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
           />
         </div>
         {slug && (
-          <div className="p-4 bg-blue-50 rounded-lg border border-blue-200 flex items-center justify-between">
-            <code className="text-blue-600 font-mono text-lg">{slug}</code>
+          <div className="p-4 bg-primary-50 rounded-lg border border-primary-200 flex items-center justify-between">
+            <code className="text-primary-600 font-mono text-lg">{slug}</code>
             <button
               onClick={copyToClipboard}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+              className="flex items-center space-x-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               <span>{copied ? 'Copied!' : 'Copy'}</span>
@@ -60,3 +60,4 @@ export default function TextToSlug() {
     </div>
   );
 }
+

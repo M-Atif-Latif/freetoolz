@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Shuffle, Plus, X } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
@@ -51,7 +51,7 @@ export default function RandomPicker() {
                 value={item}
                 onChange={(e) => updateItem(index, e.target.value)}
                 placeholder={`Item ${index + 1}`}
-                className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
               />
               {items.length > 1 && (
                 <button
@@ -98,4 +98,5 @@ export default function RandomPicker() {
     </div>
   );
 }
+
 

@@ -158,7 +158,7 @@ export default function ASCIIArtGenerator() {
         )}
 
         {/* Info */}
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">💡 Tips</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>• Supports A-Z, 0-9, and spaces</li>

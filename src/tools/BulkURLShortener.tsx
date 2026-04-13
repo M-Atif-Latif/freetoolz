@@ -53,7 +53,7 @@ export default function BulkURLShortener() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary-500 to-cyan-600 rounded-2xl mb-4 shadow-lg">
             <Link2 className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -68,7 +68,7 @@ export default function BulkURLShortener() {
 
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-500 to-cyan-600 px-6 py-4">
+            <div className="bg-gradient-to-r from-secondary-500 to-cyan-600 px-6 py-4">
               <h2 className="text-lg font-semibold text-white">Original URLs</h2>
             </div>
             <div className="p-6">
@@ -81,7 +81,7 @@ export default function BulkURLShortener() {
               <button
                 onClick={shortenURLs}
                 disabled={loading || !urls.trim()}
-                className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all disabled:opacity-50 flex items-center justify-center"
+                className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-secondary-500 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all disabled:opacity-50 flex items-center justify-center"
               >
                 {loading ? (
                   <>
@@ -111,7 +111,7 @@ export default function BulkURLShortener() {
                         <div className="text-xs text-gray-500 dark:text-gray-400 mb-1 truncate">
                           {result.original}
                         </div>
-                        <div className="font-mono text-sm text-blue-600 dark:text-blue-400 font-semibold">
+                        <div className="font-mono text-sm text-primary-600 dark:text-primary-400 font-semibold">
                           {result.shortened}
                         </div>
                       </div>
@@ -143,3 +143,5 @@ export default function BulkURLShortener() {
     </div>
   );
 }
+
+

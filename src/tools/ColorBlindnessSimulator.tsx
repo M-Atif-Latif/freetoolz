@@ -229,7 +229,7 @@ export default function ColorBlindnessSimulator() {
         </div>
 
         {/* Info */}
-        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
             About Color Blindness
           </h3>
@@ -245,3 +245,4 @@ export default function ColorBlindnessSimulator() {
     </div>
   );
 }
+

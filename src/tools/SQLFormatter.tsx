@@ -53,13 +53,13 @@ export default function SQLFormatter() {
             value={sql}
             onChange={(e) => setSql(e.target.value)}
             placeholder="Paste your SQL query here..."
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-mono text-sm focus:border-blue-500 outline-none h-32"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-mono text-sm focus:border-primary-500 outline-none h-32"
           />
         </div>
 
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">Formatted Output</label>
-          <div className="w-full px-4 py-3 border-2 border-blue-200 rounded-lg font-mono text-sm bg-blue-50 h-48 overflow-auto whitespace-pre-wrap break-words">
+          <div className="w-full px-4 py-3 border-2 border-primary-200 rounded-lg font-mono text-sm bg-primary-50 h-48 overflow-auto whitespace-pre-wrap break-words">
             {formatted}
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function SQLFormatter() {
           </button>
           <button
             onClick={copyToClipboard}
-            className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2"
+            className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold flex items-center justify-center gap-2"
           >
             {copied ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
             {copied ? 'Copied!' : 'Copy Formatted'}
@@ -83,3 +83,4 @@ export default function SQLFormatter() {
     </div>
   );
 }
+

@@ -99,7 +99,7 @@ export default function ClipboardHistory() {
 
         {/* History List */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-4 flex justify-between items-center">
+          <div className="bg-gradient-to-r from-secondary-500 to-indigo-600 px-6 py-4 flex justify-between items-center">
             <h2 className="text-lg font-semibold text-white">
               History ({history.length} items)
             </h2>
@@ -132,7 +132,7 @@ export default function ClipboardHistory() {
                       <div className="flex space-x-2">
                         <button
                           onClick={() => copyItem(item)}
-                          className="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded text-xs font-semibold transition-all flex items-center"
+                          className="px-3 py-1 bg-primary-500 hover:bg-accent-600 text-white rounded text-xs font-semibold transition-all flex items-center"
                         >
                           {copied === item.id ? (
                             'Copied!'
@@ -162,7 +162,7 @@ export default function ClipboardHistory() {
         </div>
 
         {/* Info */}
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">💡 Features</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>• Stores last 50 clipboard items</li>
@@ -175,3 +175,5 @@ export default function ClipboardHistory() {
     </div>
   );
 }
+
+

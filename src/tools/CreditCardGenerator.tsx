@@ -71,7 +71,7 @@ export default function CreditCardGenerator() {
                 onClick={() => setCardType(type)}
                 className={`py-3 px-4 rounded-lg font-semibold transition-colors text-sm capitalize ${
                   cardType === type
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-accent-600 text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
@@ -105,7 +105,7 @@ export default function CreditCardGenerator() {
             <div className="font-mono text-lg text-gray-900 mb-3 break-all">{current.number}</div>
             <button
               onClick={() => copyToClipboard(current.number)}
-              className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-semibold flex items-center justify-center gap-2"
+              className="w-full px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm font-semibold flex items-center justify-center gap-2"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               {copied ? 'Copied!' : 'Copy'}
@@ -117,7 +117,7 @@ export default function CreditCardGenerator() {
             <div className="font-mono text-lg text-gray-900 mb-3">{current.cvv}</div>
             <button
               onClick={() => copyToClipboard(current.cvv)}
-              className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-semibold flex items-center justify-center gap-2"
+              className="w-full px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm font-semibold flex items-center justify-center gap-2"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               {copied ? 'Copied!' : 'Copy'}
@@ -125,10 +125,11 @@ export default function CreditCardGenerator() {
           </div>
         </div>
 
-        <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm text-gray-700">
+        <div className="p-4 bg-primary-50 border border-primary-200 rounded-lg text-sm text-gray-700">
           <strong>Test Details:</strong> Use any future expiry date and any 3-4 digit CVV for testing payment gateways.
         </div>
       </div>
     </div>
   );
 }
+

@@ -214,7 +214,7 @@ export default function FindAndReplace() {
           </button>
         </div>
 
-        <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+        <div className="mt-8 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-2">💡 Regex Examples:</h3>
           <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 font-mono">
             <li>• <code>\d+</code> - Match any number</li>
@@ -228,3 +228,4 @@ export default function FindAndReplace() {
     </div>
   );
 }
+

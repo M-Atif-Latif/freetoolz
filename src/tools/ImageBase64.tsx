@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
 
@@ -37,7 +37,7 @@ export default function ImageBase64() {
             type="file"
             accept="image/*"
             onChange={handleFileChange}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
           />
         </div>
         {base64 && (
@@ -57,4 +57,5 @@ export default function ImageBase64() {
     </div>
   );
 }
+
 

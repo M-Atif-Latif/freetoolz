@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Upload, Download } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
@@ -62,7 +62,7 @@ export default function ImageFormatConverter() {
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="mb-6">
-          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
+          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="w-12 h-12 mb-4 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500">
@@ -91,7 +91,7 @@ export default function ImageFormatConverter() {
                     key={value}
                     onClick={() => setFormat(value as any)}
                     className={`px-4 py-3 rounded-lg border-2 font-medium ${
-                      format === value ? 'border-blue-600 bg-blue-50 text-blue-600' : 'border-gray-200'
+                      format === value ? 'border-primary-600 bg-primary-50 text-primary-600' : 'border-gray-200'
                     }`}
                   >
                     {label}
@@ -100,7 +100,7 @@ export default function ImageFormatConverter() {
               </div>
             </div>
 
-            <button onClick={convertImage} className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg mb-4">
+            <button onClick={convertImage} className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg mb-4">
               Convert Image
             </button>
 
@@ -116,4 +116,5 @@ export default function ImageFormatConverter() {
     </div>
   );
 }
+
 

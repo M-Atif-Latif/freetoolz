@@ -22,8 +22,8 @@ export default function CharacterCounter() {
         <HowItWorks steps={howItWorks} />
       </div>
       <div className="grid md:grid-cols-3 gap-6 mb-6">
-        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border-2 border-blue-200 dark:border-blue-800">
-          <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">{withSpaces.toLocaleString()}</div>
+        <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border-2 border-primary-200 dark:border-primary-800">
+          <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-1">{withSpaces.toLocaleString()}</div>
           <div className="text-gray-700 dark:text-gray-300 font-medium">With Spaces</div>
         </div>
         <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 border-2 border-green-200 dark:border-green-800">
@@ -44,3 +44,4 @@ export default function CharacterCounter() {
     </div>
   );
 }
+

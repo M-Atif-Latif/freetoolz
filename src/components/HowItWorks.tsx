@@ -9,7 +9,7 @@ interface HowItWorksProps {
 
 export default function HowItWorks({ steps }: HowItWorksProps) {
   return (
-    <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl border-2 border-blue-200 dark:border-blue-800 p-6 my-8">
+    <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl border-2 border-primary-200 dark:border-primary-800 p-6 my-8">
       <div className="flex items-start gap-3 mb-4">
         <span className="text-2xl">💡</span>
         <div>
@@ -17,7 +17,7 @@ export default function HowItWorks({ steps }: HowItWorksProps) {
           <div className="space-y-3">
             {steps.map((step, index) => (
               <div key={index} className="flex gap-3">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-600 text-white flex items-center justify-center text-sm font-bold">
                   {index + 1}
                 </div>
                 <div>
@@ -32,3 +32,4 @@ export default function HowItWorks({ steps }: HowItWorksProps) {
     </div>
   );
 }
+

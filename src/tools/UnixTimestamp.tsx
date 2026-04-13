@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
 
@@ -39,7 +39,7 @@ export default function UnixTimestamp() {
             placeholder="1234567890"
             className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg mb-4"
           />
-          <button onClick={convertToDate} className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold mb-4">Convert</button>
+          <button onClick={convertToDate} className="w-full px-6 py-3 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold mb-4">Convert</button>
           <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
             <div className="text-sm text-gray-600 mb-1">Result</div>
             <div className="font-mono text-gray-900">{new Date(parseInt(timestamp) * 1000).toString()}</div>
@@ -63,4 +63,5 @@ export default function UnixTimestamp() {
     </div>
   );
 }
+
 

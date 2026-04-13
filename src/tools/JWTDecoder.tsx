@@ -61,7 +61,7 @@ export default function JWTDecoder() {
             value={token}
             onChange={(e) => setToken(e.target.value)}
             placeholder="Paste your JWT token here..."
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-mono text-sm focus:border-blue-500 outline-none h-24"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-mono text-sm focus:border-primary-500 outline-none h-24"
           />
         </div>
 
@@ -72,14 +72,14 @@ export default function JWTDecoder() {
         ) : decoded && 'header' in decoded ? (
           <>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="p-6 bg-blue-50 rounded-lg border border-blue-200">
+              <div className="p-6 bg-primary-50 rounded-lg border border-primary-200">
                 <div className="text-sm font-semibold text-gray-700 mb-3">HEADER</div>
                 <pre className="text-xs text-gray-800 break-words font-mono bg-white p-3 rounded border border-gray-200 mb-3 max-h-40 overflow-auto">
                   {JSON.stringify(decoded.header, null, 2)}
                 </pre>
                 <button
                   onClick={() => copyToClipboard(JSON.stringify(decoded.header, null, 2))}
-                  className="w-full px-3 py-2 bg-blue-600 text-white rounded text-sm font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                  className="w-full px-3 py-2 bg-accent-600 text-white rounded text-sm font-semibold hover:bg-accent-700 transition-colors flex items-center justify-center gap-2"
                 >
                   {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                   Copy
@@ -127,3 +127,4 @@ export default function JWTDecoder() {
     </div>
   );
 }
+

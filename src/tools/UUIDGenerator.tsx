@@ -61,7 +61,7 @@ export default function UUIDGenerator() {
 
         <button
           onClick={generateUUIDs}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
         >
           <RefreshCw className="h-5 w-5" />
           <span>Generate UUID{count > 1 ? 's' : ''}</span>
@@ -76,7 +76,7 @@ export default function UUIDGenerator() {
             </h2>
             <button
               onClick={copyToClipboard}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+              className="flex items-center space-x-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               <span>{copied ? 'Copied!' : 'Copy All'}</span>
@@ -94,7 +94,7 @@ export default function UUIDGenerator() {
                     onClick={() => {
                       navigator.clipboard.writeText(uuid);
                     }}
-                    className="text-blue-600 hover:text-blue-700 transition-colors"
+                    className="text-primary-600 hover:text-primary-700 transition-colors"
                   >
                     <Copy className="h-4 w-4" />
                   </button>
@@ -107,3 +107,4 @@ export default function UUIDGenerator() {
     </div>
   );
 }
+

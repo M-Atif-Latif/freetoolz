@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { EyeOff, Copy, Check, Info } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
@@ -70,7 +70,7 @@ export default function InvisibleCharacter() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
             <EyeOff className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -113,7 +113,7 @@ export default function InvisibleCharacter() {
             >
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-4">
                 <h3 className="text-lg font-bold text-white">{char.name}</h3>
-                <p className="text-sm text-blue-100 font-mono">{char.unicode}</p>
+                <p className="text-sm text-primary-100 font-mono">{char.unicode}</p>
 
               <HowItWorks steps={howItWorks} />
 
@@ -139,7 +139,7 @@ export default function InvisibleCharacter() {
                   className={`w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-semibold transition-all ${
                     copied === char.name
                       ? 'bg-green-600 text-white'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-accent-600 text-white hover:bg-accent-700'
                   }`}
                 >
                   {copied === char.name ? (
@@ -162,20 +162,20 @@ export default function InvisibleCharacter() {
         {/* Info Boxes */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Use Cases */}
-          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+          <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
             <div className="flex items-center space-x-2 mb-4">
-              <Info className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <Info className="h-5 w-5 text-primary-600 dark:text-primary-400" />
               <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                 Common Use Cases
               </h3>
             </div>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
-              <li>â€¢ <strong>Discord:</strong> Create invisible nicknames or empty messages</li>
-              <li>â€¢ <strong>WhatsApp:</strong> Send blank messages or create space</li>
-              <li>â€¢ <strong>Social Media:</strong> Create line breaks in bios</li>
-              <li>â€¢ <strong>Gaming:</strong> Create invisible or special names</li>
-              <li>â€¢ <strong>Forms:</strong> Fill required fields invisibly</li>
-              <li>â€¢ <strong>Testing:</strong> Test form validation and character limits</li>
+              <li>• <strong>Discord:</strong> Create invisible nicknames or empty messages</li>
+              <li>• <strong>WhatsApp:</strong> Send blank messages or create space</li>
+              <li>• <strong>Social Media:</strong> Create line breaks in bios</li>
+              <li>• <strong>Gaming:</strong> Create invisible or special names</li>
+              <li>• <strong>Forms:</strong> Fill required fields invisibly</li>
+              <li>• <strong>Testing:</strong> Test form validation and character limits</li>
             </ul>
           </div>
 
@@ -207,18 +207,20 @@ export default function InvisibleCharacter() {
         {/* Warning */}
         <div className="mt-6 bg-orange-50 dark:bg-orange-900/20 rounded-xl p-6 border border-orange-200 dark:border-orange-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center space-x-2">
-            <span>âš ï¸</span>
+            <span>⚠️</span>
             <span>Important Notes</span>
           </h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
-            <li>â€¢ Invisible characters may cause issues in some systems or databases</li>
-            <li>â€¢ Use responsibly - don't abuse on platforms where it's against ToS</li>
-            <li>â€¢ Some text editors may show these characters with special symbols</li>
-            <li>â€¢ Character support varies by font and platform</li>
+            <li>• Invisible characters may cause issues in some systems or databases</li>
+            <li>• Use responsibly - don't abuse on platforms where it's against ToS</li>
+            <li>• Some text editors may show these characters with special symbols</li>
+            <li>• Character support varies by font and platform</li>
           </ul>
         </div>
       </div>
     </div>
   );
 }
+
+
 

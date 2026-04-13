@@ -119,7 +119,7 @@ export default function ZIPFileInspector() {
 
             {/* File List */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-500 to-cyan-600 px-6 py-4">
+              <div className="bg-gradient-to-r from-secondary-500 to-cyan-600 px-6 py-4">
                 <h2 className="text-lg font-semibold text-white">File Contents</h2>
               </div>
               <div className="p-6">
@@ -182,3 +182,4 @@ export default function ZIPFileInspector() {
     </div>
   );
 }
+

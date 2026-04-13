@@ -14,7 +14,7 @@ export default function NotFound({ onNavigate }: NotFoundProps) {
             404
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-full p-6 shadow-2xl animate-bounce">
+            <div className="bg-gradient-to-br from-secondary-500 to-purple-600 rounded-full p-6 shadow-2xl animate-bounce">
               <Search className="h-12 w-12 text-white" />
             </div>
           </div>
@@ -33,7 +33,7 @@ export default function NotFound({ onNavigate }: NotFoundProps) {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => onNavigate('/')}
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="flex items-center justify-center gap-2 px-8 py-4 bg-accent-600 hover:bg-accent-700 text-white rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             <Home className="h-5 w-5" />
             Go to Homepage
@@ -62,7 +62,7 @@ export default function NotFound({ onNavigate }: NotFoundProps) {
               <button
                 key={tool.path}
                 onClick={() => onNavigate(tool.path)}
-                className="px-4 py-2 text-sm bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors"
+                className="px-4 py-2 text-sm bg-gray-100 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-900/30 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-colors"
               >
                 {tool.name}
               </button>
@@ -73,3 +73,5 @@ export default function NotFound({ onNavigate }: NotFoundProps) {
     </div>
   );
 }
+
+

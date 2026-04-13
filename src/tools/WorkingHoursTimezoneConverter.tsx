@@ -119,7 +119,7 @@ export default function WorkingHoursTimezoneConverter() {
         {/* Results */}
         {results.length > 0 && (
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-4">
+            <div className="bg-gradient-to-r from-secondary-500 to-indigo-600 px-6 py-4">
               <h2 className="text-lg font-semibold text-white">Time Across Timezones</h2>
             </div>
             <div className="p-6">
@@ -158,7 +158,7 @@ export default function WorkingHoursTimezoneConverter() {
         )}
 
         {/* Info */}
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">💼 Working Hours</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>• Working hours are considered 9:00 AM - 5:00 PM (09:00 - 17:00)</li>
@@ -172,3 +172,5 @@ export default function WorkingHoursTimezoneConverter() {
     </div>
   );
 }
+
+

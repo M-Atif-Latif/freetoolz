@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { GitCompare, Copy } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
@@ -49,7 +49,7 @@ export default function TextDiff() {
         <textarea value={text1} onChange={(e) => setText1(e.target.value)} placeholder="Original text..." className="w-full p-6 text-gray-800 resize-none focus:outline-none min-h-[300px] bg-white rounded-xl shadow-lg border border-gray-200" />
         <textarea value={text2} onChange={(e) => setText2(e.target.value)} placeholder="Modified text..." className="w-full p-6 text-gray-800 resize-none focus:outline-none min-h-[300px] bg-white rounded-xl shadow-lg border border-gray-200" />
       </div>
-      <button onClick={compareTexts} className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg mb-6">Compare</button>
+      <button onClick={compareTexts} className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg mb-6">Compare</button>
       {diff.length > 0 && (
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
           <h2 className="text-xl font-bold text-gray-900 mb-4">Differences</h2>
@@ -66,4 +66,5 @@ export default function TextDiff() {
     </div>
   );
 }
+
 

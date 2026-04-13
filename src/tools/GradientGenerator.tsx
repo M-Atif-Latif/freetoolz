@@ -59,7 +59,7 @@ export default function GradientGenerator() {
               onClick={() => setType('linear')}
               className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-colors ${
                 type === 'linear'
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-accent-600 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -69,7 +69,7 @@ export default function GradientGenerator() {
               onClick={() => setType('radial')}
               className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-colors ${
                 type === 'radial'
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-accent-600 text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -92,7 +92,7 @@ export default function GradientGenerator() {
                 type="text"
                 value={color1}
                 onChange={(e) => setColor1(e.target.value)}
-                className="flex-1 px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none font-mono"
+                className="flex-1 px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none font-mono"
               />
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function GradientGenerator() {
                 type="text"
                 value={color2}
                 onChange={(e) => setColor2(e.target.value)}
-                className="flex-1 px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none font-mono"
+                className="flex-1 px-4 py-2 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none font-mono"
               />
             </div>
           </div>
@@ -147,7 +147,7 @@ export default function GradientGenerator() {
           </div>
           <button
             onClick={copyCSS}
-            className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2"
+            className="w-full px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold flex items-center justify-center gap-2"
           >
             {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             {copied ? 'Copied to Clipboard!' : 'Copy CSS'}
@@ -164,3 +164,4 @@ export default function GradientGenerator() {
     </div>
   );
 }
+

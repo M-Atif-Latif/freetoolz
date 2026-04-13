@@ -32,8 +32,8 @@ export default function CookieConsent() {
       <div className="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
         <div className="flex flex-col md:flex-row items-center gap-4 p-6">
           <div className="flex items-start gap-3 flex-1">
-            <div className="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-lg flex-shrink-0">
-              <Cookie className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+            <div className="bg-primary-100 dark:bg-primary-900/30 p-2 rounded-lg flex-shrink-0">
+              <Cookie className="h-6 w-6 text-primary-600 dark:text-primary-400" />
             </div>
             <div className="flex-1">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">
@@ -45,7 +45,7 @@ export default function CookieConsent() {
                 We don't track or sell your personal information. 
                 <a 
                   href="/privacy" 
-                  className="text-blue-600 dark:text-blue-400 hover:underline ml-1 font-medium"
+                  className="text-primary-600 dark:text-primary-400 hover:underline ml-1 font-medium"
                   onClick={(e) => {
                     e.preventDefault();
                     window.location.href = '/privacy';
@@ -68,7 +68,7 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={acceptCookies}
-              className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium shadow-lg"
+              className="px-6 py-2.5 bg-accent-600 hover:bg-accent-700 text-white rounded-lg transition-colors font-medium shadow-lg"
               aria-label="Accept cookies"
             >
               Accept All

@@ -140,7 +140,7 @@ export default function GPACalculator() {
           <span>Add Course</span>
         </button>
 
-        <div className="mt-8 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-xl p-8 border-2 border-green-200 dark:border-green-800">
+        <div className="mt-8 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-primary-900/20 rounded-xl p-8 border-2 border-green-200 dark:border-green-800">
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Your GPA</h2>
           <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
             {gpa}
@@ -155,14 +155,14 @@ export default function GPACalculator() {
               </span>
             )}
             {parseFloat(gpa) >= 3.5 && (
-              <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+              <span className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-blue-800 dark:text-primary-300 rounded-full text-sm font-medium">
                 Honors
               </span>
             )}
           </div>
         </div>
 
-        <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+        <div className="mt-8 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-2">📚 GPA Scale:</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm text-gray-700 dark:text-gray-300">
             <div>A (4.0): Excellent</div>
@@ -175,3 +175,5 @@ export default function GPACalculator() {
     </div>
   );
 }
+
+

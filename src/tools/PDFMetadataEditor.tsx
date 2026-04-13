@@ -100,7 +100,7 @@ export default function PDFMetadataEditor() {
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="mb-6">
-          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
+          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="w-12 h-12 mb-4 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500">
@@ -131,7 +131,7 @@ export default function PDFMetadataEditor() {
                   type="text"
                   value={metadata.title}
                   onChange={(e) => handleMetadataChange('title', e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
                   placeholder="Document title"
                 />
               </div>
@@ -142,7 +142,7 @@ export default function PDFMetadataEditor() {
                   type="text"
                   value={metadata.author}
                   onChange={(e) => handleMetadataChange('author', e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
                   placeholder="Document author"
                 />
               </div>
@@ -153,7 +153,7 @@ export default function PDFMetadataEditor() {
                   type="text"
                   value={metadata.subject}
                   onChange={(e) => handleMetadataChange('subject', e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
                   placeholder="Document subject"
                 />
               </div>
@@ -164,7 +164,7 @@ export default function PDFMetadataEditor() {
                   type="text"
                   value={metadata.creator}
                   onChange={(e) => handleMetadataChange('creator', e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
                   placeholder="Application that created the PDF"
                 />
               </div>
@@ -175,7 +175,7 @@ export default function PDFMetadataEditor() {
                   type="text"
                   value={metadata.keywords}
                   onChange={(e) => handleMetadataChange('keywords', e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
                   placeholder="keyword1, keyword2, keyword3"
                 />
                 <p className="text-xs text-gray-500 mt-1">Separate keywords with commas</p>
@@ -185,7 +185,7 @@ export default function PDFMetadataEditor() {
             <button
               onClick={updateMetadata}
               disabled={processing}
-              className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full px-6 py-3 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {processing ? (
                 <>

@@ -86,7 +86,7 @@ export default function XMLFormatter() {
             value={xml}
             onChange={(e) => setXml(e.target.value)}
             placeholder="Paste your XML here..."
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-mono text-sm focus:border-blue-500 outline-none h-48"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg font-mono text-sm focus:border-primary-500 outline-none h-48"
           />
         </div>
 
@@ -106,7 +106,7 @@ export default function XMLFormatter() {
           </button>
           <button
             onClick={copyToClipboard}
-            className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2"
+            className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold flex items-center justify-center gap-2"
           >
             {copied ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
             {copied ? 'Copied!' : 'Copy Formatted'}
@@ -116,3 +116,4 @@ export default function XMLFormatter() {
     </div>
   );
 }
+

@@ -65,7 +65,7 @@ export default function DiceRoller() {
             <select
               value={numDice}
               onChange={(e) => setNumDice(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             >
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
                 <option key={n} value={n}>
@@ -80,7 +80,7 @@ export default function DiceRoller() {
             <select
               value={diceType}
               onChange={(e) => setDiceType(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             >
               <option value="d4">4-sided (d4)</option>
               <option value="d6">6-sided (d6)</option>
@@ -118,9 +118,9 @@ export default function DiceRoller() {
               </div>
 
               <div className="grid grid-cols-3 gap-4 mt-6">
-                <div className="text-center p-4 bg-white rounded-lg border border-blue-200">
+                <div className="text-center p-4 bg-white rounded-lg border border-primary-200">
                   <div className="text-xs text-gray-600">Total</div>
-                  <div className="text-3xl font-bold text-blue-600">{total}</div>
+                  <div className="text-3xl font-bold text-primary-600">{total}</div>
                 </div>
                 <div className="text-center p-4 bg-white rounded-lg border border-green-200">
                   <div className="text-xs text-gray-600">Average</div>
@@ -155,3 +155,4 @@ export default function DiceRoller() {
     </div>
   );
 }
+

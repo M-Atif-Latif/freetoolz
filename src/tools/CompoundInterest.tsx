@@ -28,7 +28,7 @@ export default function CompoundInterest() {
           <select
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
           >
             {currencies.map(c => (
               <option key={c.code} value={c.code}>
@@ -45,7 +45,7 @@ export default function CompoundInterest() {
               value={principal}
               onChange={(e) => setPrincipal(e.target.value)}
               placeholder="10000"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -55,7 +55,7 @@ export default function CompoundInterest() {
               value={rate}
               onChange={(e) => setRate(e.target.value)}
               placeholder="5"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -65,13 +65,13 @@ export default function CompoundInterest() {
               value={time}
               onChange={(e) => setTime(e.target.value)}
               placeholder="10"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
         </div>
         <button
           onClick={calculate}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg mb-6"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg mb-6"
         >
           Calculate
         </button>
@@ -81,9 +81,9 @@ export default function CompoundInterest() {
               <div className="text-sm text-gray-600 mb-1">Final Amount</div>
               <div className="text-3xl font-bold text-green-600">{formatCurrency(result, currency)}</div>
             </div>
-            <div className="p-6 bg-blue-50 rounded-lg border border-blue-200">
+            <div className="p-6 bg-primary-50 rounded-lg border border-primary-200">
               <div className="text-sm text-gray-600 mb-1">Interest Earned</div>
-              <div className="text-3xl font-bold text-blue-600">{formatCurrency(result - parseFloat(principal), currency)}</div>
+              <div className="text-3xl font-bold text-primary-600">{formatCurrency(result - parseFloat(principal), currency)}</div>
             </div>
           </div>
         )}
@@ -91,3 +91,4 @@ export default function CompoundInterest() {
     </div>
   );
 }
+

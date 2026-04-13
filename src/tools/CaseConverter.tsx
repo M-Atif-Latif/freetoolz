@@ -32,7 +32,7 @@ export default function CaseConverter() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-4">
-        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all">
+        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-3">UPPERCASE</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Convert to all caps</p>
           <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg mb-4 min-h-[60px] font-mono text-sm text-gray-800 dark:text-gray-200 break-words">
@@ -41,7 +41,7 @@ export default function CaseConverter() {
           <CopyButton text={uppercase} label="Copy" size="sm" />
         </div>
 
-        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all">
+        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-3">lowercase</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Convert to all lowercase</p>
           <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg mb-4 min-h-[60px] font-mono text-sm text-gray-800 dark:text-gray-200 break-words">
@@ -50,7 +50,7 @@ export default function CaseConverter() {
           <CopyButton text={lowercase} label="Copy" size="sm" />
         </div>
 
-        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all">
+        <div className="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-primary-500 dark:hover:border-primary-500 hover:shadow-lg transition-all">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Title Case</h3>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">Capitalize each word</p>
           <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded-lg mb-4 min-h-[60px] font-mono text-sm text-gray-800 dark:text-gray-200 break-words">
@@ -62,3 +62,4 @@ export default function CaseConverter() {
     </div>
   );
 }
+

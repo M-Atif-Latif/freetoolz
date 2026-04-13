@@ -176,7 +176,7 @@ export default function MorseCodeConverter() {
           </div>
         </div>
 
-        <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+        <div className="mt-6 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-2">💡 About Morse Code:</h3>
           <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 list-disc list-inside">
             <li>Developed in the 1830s by Samuel Morse</li>
@@ -189,3 +189,4 @@ export default function MorseCodeConverter() {
     </div>
   );
 }
+

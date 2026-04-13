@@ -79,7 +79,7 @@ export default function BarcodeGenerator() {
             onChange={(e) => setData(e.target.value.substring(0, 20))}
             maxLength={20}
             placeholder="1234567890128"
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none font-mono text-lg"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none font-mono text-lg"
           />
           <div className="text-xs text-gray-500 mt-1">{data.length}/20 characters</div>
         </div>
@@ -90,7 +90,7 @@ export default function BarcodeGenerator() {
             <select
               value={format}
               onChange={(e) => setFormat(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             >
               <option value="code128">CODE128</option>
               <option value="ean13">EAN-13</option>
@@ -107,7 +107,7 @@ export default function BarcodeGenerator() {
               max="800"
               value={width}
               onChange={(e) => setWidth(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             />
           </div>
 
@@ -119,7 +119,7 @@ export default function BarcodeGenerator() {
               max="400"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             />
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function BarcodeGenerator() {
           </button>
           <button
             onClick={downloadBarcode}
-            className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2"
+            className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold flex items-center justify-center gap-2"
           >
             <Download className="h-5 w-5" /> Download PNG
           </button>
@@ -151,3 +151,4 @@ export default function BarcodeGenerator() {
     </div>
   );
 }
+

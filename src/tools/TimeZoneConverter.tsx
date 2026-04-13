@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
 
@@ -49,7 +49,7 @@ export default function TimeZoneConverter() {
               type="time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -57,7 +57,7 @@ export default function TimeZoneConverter() {
             <select
               value={fromZone}
               onChange={(e) => setFromZone(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             >
               {zones.map(zone => <option key={zone} value={zone}>{zone}</option>)}
             </select>
@@ -67,7 +67,7 @@ export default function TimeZoneConverter() {
             <select
               value={toZone}
               onChange={(e) => setToZone(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             >
               {zones.map(zone => <option key={zone} value={zone}>{zone}</option>)}
             </select>
@@ -75,10 +75,11 @@ export default function TimeZoneConverter() {
         </div>
         <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl">
           <div className="text-sm text-gray-600 mb-2">Converted Time</div>
-          <div className="text-5xl font-bold text-blue-600">{convertTime()}</div>
+          <div className="text-5xl font-bold text-primary-600">{convertTime()}</div>
         </div>
       </div>
     </div>
   );
 }
+
 

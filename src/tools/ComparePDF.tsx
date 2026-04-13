@@ -87,7 +87,7 @@ export default function ComparePDF() {
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <div className="grid grid-cols-2 gap-6 mb-6">
           <div>
-            <label className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all">
+            <label className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all">
               <div className="flex flex-col items-center justify-center pt-5 pb-6">
                 <Upload className="w-8 h-8 mb-2 text-gray-400" />
                 <p className="text-xs text-gray-500 dark:text-gray-400 text-center">Click to upload first PDF</p>
@@ -105,7 +105,7 @@ export default function ComparePDF() {
           </div>
 
           <div>
-            <label className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all">
+            <label className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all">
               <div className="flex flex-col items-center justify-center pt-5 pb-6">
                 <Upload className="w-8 h-8 mb-2 text-gray-400" />
                 <p className="text-xs text-gray-500 dark:text-gray-400 text-center">Click to upload second PDF</p>
@@ -135,7 +135,7 @@ export default function ComparePDF() {
           <button
             onClick={comparePDFs}
             disabled={processing}
-            className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+            className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
           >
             <Eye className="h-5 w-5" />
             <span>{processing ? 'Comparing...' : 'Compare PDFs'}</span>
@@ -143,11 +143,12 @@ export default function ComparePDF() {
         )}
       </div>
 
-      <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-        <p className="text-sm text-blue-800 dark:text-blue-300">
+      <div className="mt-6 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg border border-primary-200 dark:border-primary-800">
+        <p className="text-sm text-blue-800 dark:text-primary-300">
           <strong>For detailed diff:</strong> Use Adobe Acrobat's "Compare Documents" or online diff tools like DiffNow for more advanced comparison.
         </p>
       </div>
     </div>
   );
 }
+

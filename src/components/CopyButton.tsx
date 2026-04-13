@@ -25,7 +25,8 @@ export default function CopyButton({ text, label = 'Copy', size = 'md' }: CopyBu
   return (
     <button
       onClick={handleCopy}
-      className={`inline-flex items-center rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all ${sizeClasses[size]} ${
+      className={`inline-flex items-center rounded-lg bg-accent-600 hover:bg-accent-700 text-white font-medium transition-all ${sizeClasses[size]} ${
+
         copied ? 'bg-green-600' : ''
       }`}
     >

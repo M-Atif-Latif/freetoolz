@@ -119,7 +119,7 @@ export default function PermutationCombinationCalculator() {
           <div className="space-y-6">
             {/* Permutation */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-4">
+              <div className="bg-gradient-to-r from-secondary-500 to-indigo-600 px-6 py-4">
                 <h2 className="text-lg font-semibold text-white">Permutation P(n,r)</h2>
               </div>
               <div className="p-8">
@@ -131,7 +131,7 @@ export default function PermutationCombinationCalculator() {
                     Order matters, no repetition
                   </div>
                 </div>
-                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+                <div className="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-4 border border-primary-200 dark:border-primary-800">
                   <p className="text-sm text-gray-700 dark:text-gray-300 text-center font-mono">
                     P({n},{r}) = {n}! / ({n}-{r})!
                   </p>
@@ -231,3 +231,5 @@ export default function PermutationCombinationCalculator() {
     </div>
   );
 }
+
+

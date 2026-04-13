@@ -73,7 +73,7 @@ export default function LoremIpsum() {
 
         <button
           onClick={generateLorem}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg"
         >
           Generate Lorem Ipsum
         </button>
@@ -85,7 +85,7 @@ export default function LoremIpsum() {
             <h2 className="font-semibold text-gray-900">Generated Text</h2>
             <button
               onClick={copyToClipboard}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+              className="flex items-center space-x-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               <span>{copied ? 'Copied!' : 'Copy'}</span>
@@ -99,3 +99,4 @@ export default function LoremIpsum() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
 
@@ -46,7 +46,7 @@ export default function RegexTester() {
           <label className="block text-sm font-medium text-gray-700 mb-2">Test String</label>
           <textarea value={testString} onChange={(e) => setTestString(e.target.value)} placeholder="Test your regex here" className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg" rows={4} />
         </div>
-        <button onClick={test} className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">Test Regex</button>
+        <button onClick={test} className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold">Test Regex</button>
       </div>
       {matches.length > 0 && (
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
@@ -61,4 +61,5 @@ export default function RegexTester() {
     </div>
   );
 }
+
 

@@ -6,24 +6,24 @@ export default function About() {
       {/* Hero Section */}
       <div className="text-center mb-16 animate-in fade-in duration-700">
         <div className="inline-block mb-4">
-          <span className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/40 dark:to-purple-900/40 text-blue-700 dark:text-blue-300 px-6 py-2 rounded-full text-sm font-semibold shadow-sm border border-blue-200 dark:border-blue-800">
+          <span className="bg-gradient-to-r from-primary-100 to-secondary-100 dark:from-primary-900/40 dark:to-secondary-900/40 text-primary-700 dark:text-primary-300 px-6 py-2 rounded-full text-sm font-semibold shadow-sm border border-primary-200 dark:border-primary-800">
             ✨ Our Mission
           </span>
         </div>
         <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6">
-          About <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400">Free Tools</span>
+          About <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 dark:from-primary-400 dark:via-secondary-400 dark:to-accent-400">Free Tools</span>
         </h1>
       </div>
       
       {/* About Free Tools Section */}
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-10 space-y-8 mb-16 transition-all hover:shadow-2xl">
-        <div className="border-l-4 border-blue-600 dark:border-blue-500 pl-6">
+        <div className="border-l-4 border-primary-600 dark:border-primary-500 pl-6">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-3">
-            <Sparkles className="h-8 w-8 text-blue-600 dark:text-blue-500" />
+            <Sparkles className="h-8 w-8 text-primary-600 dark:text-primary-500" />
             Our Vision
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-xl leading-relaxed">
-            Free Tools is built on a simple yet powerful belief: <strong className="text-blue-600 dark:text-blue-400">essential digital utilities should be accessible to everyone, everywhere, at any time.</strong>
+            Free Tools is built on a simple yet powerful belief: <strong className="text-primary-600 dark:text-primary-400">essential digital utilities should be accessible to everyone, everywhere, at any time.</strong>
           </p>
         </div>
         
@@ -34,13 +34,13 @@ export default function About() {
         </p>
         
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-          <strong className="text-blue-600 dark:text-blue-400">Free Tools changes that.</strong> We provide a comprehensive suite of 120+ professional-grade tools that are 
+          <strong className="text-primary-600 dark:text-primary-400">Free Tools changes that.</strong> We provide a comprehensive suite of 120+ professional-grade tools that are 
           completely free, require no registration, and respect your privacy. All processing happens directly in your browser, 
           ensuring your data never leaves your device.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mt-10">
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl p-6 border-2 border-blue-200 dark:border-blue-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl">
+          <div className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/30 rounded-xl p-6 border-2 border-primary-200 dark:border-primary-700 transform hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl">
             <div className="text-4xl mb-3">🔓</div>
             <h3 className="font-bold text-gray-900 dark:text-white mb-3 text-lg">100% Free</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">No hidden costs, no premium features, no paywalls. Everything is free forever.</p>
@@ -59,7 +59,7 @@ export default function About() {
       </div>
 
       {/* Developer Section */}
-      <div className="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-2xl shadow-2xl p-10 text-white mb-12 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 rounded-2xl shadow-2xl p-10 text-white mb-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative z-10">
           <div className="text-center mb-8">
@@ -76,14 +76,14 @@ export default function About() {
               🚀 Data Scientist & Machine Learning Engineer
             </p>
             
-            <p className="text-center text-blue-50 leading-relaxed mb-6 text-lg">
+            <p className="text-center text-primary-50 leading-relaxed mb-6 text-lg">
               With a deep passion for artificial intelligence and data science, I specialize in transforming complex data 
               into actionable insights and building intelligent systems that address real-world challenges. My expertise 
               spans the entire machine learning lifecycle—from initial data exploration and preprocessing to model development, 
               optimization, and production deployment.
             </p>
 
-            <p className="text-center text-blue-50 leading-relaxed mb-10 text-lg">
+            <p className="text-center text-primary-50 leading-relaxed mb-10 text-lg">
               Free Tools represents my commitment to democratizing technology and making powerful digital tools accessible 
               to everyone. Whether you're a student, professional, developer, or just someone who needs a quick utility, 
               these tools are designed to make your life easier.
@@ -184,10 +184,10 @@ export default function About() {
       </div>
 
       {/* Mission Statement */}
-      <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 rounded-2xl shadow-xl border-2 border-blue-100 dark:border-blue-800 p-10 mb-12">
+      <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 dark:from-primary-900/20 dark:via-secondary-900/20 dark:to-accent-900/20 rounded-2xl shadow-xl border-2 border-primary-100 dark:border-primary-800 p-10 mb-12">
         <h3 className="text-3xl font-extrabold text-gray-800 dark:text-white text-center mb-6">📈 My Mission</h3>
         <p className="text-gray-700 dark:text-gray-300 text-center text-xl leading-relaxed max-w-4xl mx-auto mb-6">
-          <em className="text-blue-600 dark:text-blue-400 font-semibold">
+          <em className="text-primary-600 dark:text-primary-400 font-semibold">
             "Bridging the gap between cutting-edge research and practical applications. 
             Every line of code is a step towards a more intelligent and automated future."
           </em>
@@ -207,7 +207,7 @@ export default function About() {
           open-source initiatives, I'd love to hear from you.
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <span className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-700 dark:text-blue-300 px-6 py-3 rounded-xl font-semibold border-2 border-blue-200 dark:border-blue-700 shadow-md hover:shadow-lg transition-all hover:scale-105">🔬 Research Projects</span>
+          <span className="bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/30 text-primary-700 dark:text-primary-300 px-6 py-3 rounded-xl font-semibold border-2 border-primary-200 dark:border-primary-700 shadow-md hover:shadow-lg transition-all hover:scale-105">🔬 Research Projects</span>
           <span className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 text-green-700 dark:text-green-300 px-6 py-3 rounded-xl font-semibold border-2 border-green-200 dark:border-green-700 shadow-md hover:shadow-lg transition-all hover:scale-105">🏢 Industry Applications</span>
           <span className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 text-purple-700 dark:text-purple-300 px-6 py-3 rounded-xl font-semibold border-2 border-purple-200 dark:border-purple-700 shadow-md hover:shadow-lg transition-all hover:scale-105">🌍 Open Source</span>
           <span className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30 text-orange-700 dark:text-orange-300 px-6 py-3 rounded-xl font-semibold border-2 border-orange-200 dark:border-orange-700 shadow-md hover:shadow-lg transition-all hover:scale-105">📚 Knowledge Sharing</span>
@@ -220,3 +220,5 @@ export default function About() {
     </div>
   );
 }
+
+

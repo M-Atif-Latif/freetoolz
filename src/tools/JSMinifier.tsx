@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Copy, Check, RotateCcw } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
@@ -51,7 +51,7 @@ export default function JSMinifier() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="function hello() { return 'world'; }"
-            className="w-full p-6 text-gray-800 font-mono text-sm resize-none focus:outline-none min-h-[400px] bg-white rounded-xl shadow-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+            className="w-full p-6 text-gray-800 font-mono text-sm resize-none focus:outline-none min-h-[400px] bg-white rounded-xl shadow-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200"
           />
         </div>
         <div>
@@ -67,7 +67,7 @@ export default function JSMinifier() {
       <div className="flex gap-3 mb-6">
         <button
           onClick={minify}
-          className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg"
+          className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg"
         >
           Minify JavaScript
         </button>
@@ -82,7 +82,7 @@ export default function JSMinifier() {
       {output && (
         <div className="p-4 bg-green-50 rounded-lg border border-green-200 mb-6">
           <p className="text-sm text-green-700 mb-2">
-            <strong>Size Reduction:</strong> Original: {input.length} bytes → Minified: {output.length} bytes ({((1 - output.length / input.length) * 100).toFixed(1)}% smaller)
+            <strong>Size Reduction:</strong> Original: {input.length} bytes ? Minified: {output.length} bytes ({((1 - output.length / input.length) * 100).toFixed(1)}% smaller)
           </p>
         </div>
       )}
@@ -99,4 +99,5 @@ export default function JSMinifier() {
     </div>
   );
 }
+
 

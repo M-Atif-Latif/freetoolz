@@ -56,7 +56,7 @@ export default function TextRandomizer() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
             <Shuffle className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -120,7 +120,7 @@ export default function TextRandomizer() {
                     ? 'Hello World'
                     : 'Line 1\nLine 2\nLine 3'
                 }
-                className="w-full h-64 px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all outline-none resize-none text-lg leading-relaxed"
+                className="w-full h-64 px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:focus:ring-primary-900/30 transition-all outline-none resize-none text-lg leading-relaxed"
               />
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function TextRandomizer() {
         </div>
 
         {/* Info */}
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Use Cases</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300">
             <li>• <strong>Words:</strong> Create anagrams, word puzzles, or mix up sentences</li>
@@ -163,3 +163,5 @@ export default function TextRandomizer() {
     </div>
   );
 }
+
+

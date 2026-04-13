@@ -99,7 +99,7 @@ export default function PDFWatermark() {
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="mb-6">
-          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
+          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="w-12 h-12 mb-4 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500">
@@ -131,7 +131,7 @@ export default function PDFWatermark() {
                 onChange={(e) => setWatermarkText(e.target.value)}
                 placeholder="DRAFT"
                 maxLength={30}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
               />
             </div>
 
@@ -198,7 +198,7 @@ export default function PDFWatermark() {
               <button
                 onClick={addWatermark}
                 disabled={processing}
-                className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2 disabled:opacity-50"
+                className="flex-1 px-6 py-3 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {processing ? (
                   <>
@@ -228,3 +228,4 @@ export default function PDFWatermark() {
     </div>
   );
 }
+

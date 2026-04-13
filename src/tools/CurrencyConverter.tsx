@@ -86,7 +86,7 @@ export default function CurrencyConverter() {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="100"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -94,7 +94,7 @@ export default function CurrencyConverter() {
             <select 
               value={from} 
               onChange={(e) => setFrom(e.target.value)} 
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             >
               {currencies.map(c => (
                 <option key={c.code} value={c.code}>
@@ -108,7 +108,7 @@ export default function CurrencyConverter() {
             <select 
               value={to} 
               onChange={(e) => setTo(e.target.value)} 
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             >
               {currencies.map(c => (
                 <option key={c.code} value={c.code}>
@@ -128,3 +128,4 @@ export default function CurrencyConverter() {
     </div>
   );
 }
+

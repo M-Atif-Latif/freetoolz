@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
 
@@ -54,11 +54,12 @@ export default function JSONFormatter() {
 
       <div className="flex justify-center">
         <button onClick={formatJSON}
-          className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg">
+          className="px-8 py-3 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold shadow-lg">
           Format JSON
         </button>
       </div>
     </div>
   );
 }
+
 

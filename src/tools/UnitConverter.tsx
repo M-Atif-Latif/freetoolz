@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
 
@@ -47,7 +47,7 @@ export default function UnitConverter() {
               value={value}
               onChange={(e) => setValue(e.target.value)}
               placeholder="100"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -65,7 +65,7 @@ export default function UnitConverter() {
         </div>
         {value && (
           <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl">
-            <div className="text-5xl font-bold text-blue-600 mb-2">{convert()}</div>
+            <div className="text-5xl font-bold text-primary-600 mb-2">{convert()}</div>
             <div className="text-gray-600">{to}</div>
           </div>
         )}
@@ -73,4 +73,5 @@ export default function UnitConverter() {
     </div>
   );
 }
+
 

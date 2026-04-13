@@ -100,7 +100,7 @@ export default function DatasetSampler() {
               {sampledData && (
                 <button
                   onClick={() => navigator.clipboard.writeText(sampledData)}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-secondary-500 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all"
                 >
                   Copy Sample
                 </button>
@@ -109,7 +109,7 @@ export default function DatasetSampler() {
           </div>
         </div>
 
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">💡 Use Cases</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>• Test code with subset of large datasets</li>
@@ -122,3 +122,5 @@ export default function DatasetSampler() {
     </div>
   );
 }
+
+

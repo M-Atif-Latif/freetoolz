@@ -172,7 +172,7 @@ export default function PDFPageExtractor() {
               ? 'bg-red-50 border-red-200 text-red-700'
               : status.includes('Successfully')
               ? 'bg-green-50 border-green-200 text-green-700'
-              : 'bg-blue-50 border-blue-200 text-blue-700'
+              : 'bg-primary-50 border-primary-200 text-primary-700'
           }`}>
             <p className="text-sm">{status}</p>
           </div>
@@ -181,3 +181,4 @@ export default function PDFPageExtractor() {
     </div>
   );
 }
+

@@ -110,7 +110,7 @@ export default function ConsoleLogFormatter() {
 
         {/* Examples */}
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-500 to-cyan-600 px-6 py-4">
+          <div className="bg-gradient-to-r from-secondary-500 to-cyan-600 px-6 py-4">
             <h2 className="text-lg font-semibold text-white">Example Inputs</h2>
           </div>
           <div className="p-6 grid md:grid-cols-2 gap-4">
@@ -143,7 +143,7 @@ export default function ConsoleLogFormatter() {
         </div>
 
         {/* Info */}
-        <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-6 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">💡 Tips</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>• Paste minified JSON objects for instant formatting</li>
@@ -156,3 +156,5 @@ export default function ConsoleLogFormatter() {
     </div>
   );
 }
+
+

@@ -153,8 +153,8 @@ export default function SitemapURLExtractor() {
               </div>
               <div className="p-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  <div className="bg-primary-50 dark:bg-primary-900/20 p-4 rounded-lg border border-primary-200 dark:border-primary-800">
+                    <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">
                       {stats.total}
                     </div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Total URLs</div>
@@ -206,7 +206,7 @@ export default function SitemapURLExtractor() {
                       key={idx}
                       className="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600"
                     >
-                      <div className="font-mono text-sm text-blue-600 dark:text-blue-400 break-all mb-2">
+                      <div className="font-mono text-sm text-primary-600 dark:text-primary-400 break-all mb-2">
                         {url.loc}
                       </div>
                       <div className="flex flex-wrap gap-2 text-xs text-gray-600 dark:text-gray-400">
@@ -216,7 +216,7 @@ export default function SitemapURLExtractor() {
                           </span>
                         )}
                         {url.changefreq && (
-                          <span className="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded">
+                          <span className="px-2 py-0.5 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 rounded">
                             Frequency: {url.changefreq}
                           </span>
                         )}
@@ -234,8 +234,8 @@ export default function SitemapURLExtractor() {
           </>
         )}
 
-        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800 flex items-start">
-          <Info className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3 flex-shrink-0 mt-0.5" />
+        <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800 flex items-start">
+          <Info className="h-6 w-6 text-primary-600 dark:text-primary-400 mr-3 flex-shrink-0 mt-0.5" />
           <div>
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
               About Sitemaps
@@ -253,3 +253,4 @@ export default function SitemapURLExtractor() {
     </div>
   );
 }
+

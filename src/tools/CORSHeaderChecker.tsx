@@ -113,7 +113,7 @@ export default function CORSHeaderChecker() {
               </button>
             </div>
 
-            <div className="mt-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+            <div className="mt-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg p-4 border border-primary-200 dark:border-primary-800">
               <p className="text-sm text-gray-700 dark:text-gray-300">
                 💡 <strong>Tip:</strong> This tool sends an OPTIONS preflight request to check CORS headers. Some servers may block these requests.
               </p>
@@ -157,7 +157,7 @@ export default function CORSHeaderChecker() {
             {/* Headers Details */}
             {!result.error && (
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-                <div className="bg-gradient-to-r from-blue-500 to-cyan-600 px-6 py-4">
+                <div className="bg-gradient-to-r from-secondary-500 to-cyan-600 px-6 py-4">
                   <h2 className="text-lg font-semibold text-white">CORS Headers</h2>
                 </div>
                 <div className="p-6">
@@ -282,3 +282,5 @@ export default function CORSHeaderChecker() {
     </div>
   );
 }
+
+

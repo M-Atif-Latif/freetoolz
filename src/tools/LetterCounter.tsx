@@ -71,7 +71,7 @@ export default function LetterCounter() {
           {result && result.totalLetters > 0 && (
             <div className="space-y-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 rounded-xl p-6 border-2 border-teal-200 dark:border-teal-800">
+                <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-secondary-900/20 rounded-xl p-6 border-2 border-teal-200 dark:border-teal-800">
                   <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Total Letters</div>
                   <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
                     {result.totalLetters}
@@ -142,3 +142,4 @@ export default function LetterCounter() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Play, Pause, RotateCcw } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
@@ -48,7 +48,7 @@ export default function Stopwatch() {
       <HowItWorks steps={howItWorks} />
 
 
-      <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl shadow-2xl p-12">
+      <div className="bg-gradient-to-br from-secondary-500 to-blue-700 rounded-2xl shadow-2xl p-12">
         <div className="text-center mb-8">
           <div className="text-7xl md:text-8xl font-mono font-bold text-white mb-2">{formatTime(time)}</div>
           <div className="text-blue-200 text-sm font-medium">MM:SS.MS</div>
@@ -79,4 +79,5 @@ export default function Stopwatch() {
     </div>
   );
 }
+
 

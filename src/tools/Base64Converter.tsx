@@ -36,11 +36,11 @@ export default function Base64Converter() {
       <div className="flex justify-center mb-6">
         <div className="inline-flex rounded-lg border-2 border-gray-200 bg-white p-1">
           <button onClick={() => setMode('encode')}
-            className={`px-6 py-2 rounded-md font-medium transition-all ${mode === 'encode' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-700'}`}>
+            className={`px-6 py-2 rounded-md font-medium transition-all ${mode === 'encode' ? 'bg-primary-600 text-white shadow-md' : 'text-gray-700'}`}>
             Encode
           </button>
           <button onClick={() => setMode('decode')}
-            className={`px-6 py-2 rounded-md font-medium transition-all ${mode === 'decode' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-700'}`}>
+            className={`px-6 py-2 rounded-md font-medium transition-all ${mode === 'decode' ? 'bg-primary-600 text-white shadow-md' : 'text-gray-700'}`}>
             Decode
           </button>
         </div>
@@ -66,7 +66,7 @@ export default function Base64Converter() {
 
       <div className="flex justify-center">
         <button onClick={handleConvert}
-          className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg">
+          className="px-8 py-3 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold shadow-lg">
           {mode === 'encode' ? 'Encode to Base64' : 'Decode from Base64'}
         </button>
       </div>

@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { currencies, formatCurrency, getDefaultCurrency } from '../data/currencies';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
@@ -39,7 +39,7 @@ export default function LoanCalculator() {
           <select
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
           >
             {currencies.map(c => (
               <option key={c.code} value={c.code}>
@@ -56,7 +56,7 @@ export default function LoanCalculator() {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="200000"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -66,7 +66,7 @@ export default function LoanCalculator() {
               value={rate}
               onChange={(e) => setRate(e.target.value)}
               placeholder="3.5"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -76,20 +76,20 @@ export default function LoanCalculator() {
               value={years}
               onChange={(e) => setYears(e.target.value)}
               placeholder="30"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
         </div>
         <button
           onClick={calculate}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg mb-6"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg mb-6"
         >
           Calculate Payment
         </button>
         {monthly && (
           <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl">
             <div className="text-sm text-gray-600 mb-2">Monthly Payment</div>
-            <div className="text-5xl font-bold text-blue-600 mb-4">{formatCurrency(monthly, currency)}</div>
+            <div className="text-5xl font-bold text-primary-600 mb-4">{formatCurrency(monthly, currency)}</div>
             <div className="text-gray-600">Total: {formatCurrency(monthly * parseFloat(years) * 12, currency)}</div>
           </div>
         )}
@@ -97,4 +97,5 @@ export default function LoanCalculator() {
     </div>
   );
 }
+
 

@@ -110,7 +110,7 @@ export default function Disclaimer() {
         <h2 className="text-2xl font-bold mb-3 mt-8 text-gray-800">📞 Questions and Concerns</h2>
         <p className="mb-4 text-gray-700 leading-relaxed">
           If you have any questions or concerns about this disclaimer, please contact us at:{' '}
-          <a href="mailto:muhammadatiflatif67@gmail.com" className="text-blue-600 hover:text-blue-700 underline">
+          <a href="mailto:muhammadatiflatif67@gmail.com" className="text-primary-600 hover:text-primary-700 underline">
             muhammadatiflatif67@gmail.com
           </a>
         </p>

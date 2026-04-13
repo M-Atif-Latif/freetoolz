@@ -42,8 +42,8 @@ export default function HTMLEncoder() {
       <HowItWorks steps={howItWorks} />
       <div className="flex justify-center mb-6">
         <div className="inline-flex rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-1">
-          <button onClick={() => setMode('encode')} className={`px-6 py-2 rounded-md font-medium transition-all ${mode === 'encode' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>Encode</button>
-          <button onClick={() => setMode('decode')} className={`px-6 py-2 rounded-md font-medium transition-all ${mode === 'decode' ? 'bg-blue-600 text-white shadow-md' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>Decode</button>
+          <button onClick={() => setMode('encode')} className={`px-6 py-2 rounded-md font-medium transition-all ${mode === 'encode' ? 'bg-accent-600 text-white shadow-md' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>Encode</button>
+          <button onClick={() => setMode('decode')} className={`px-6 py-2 rounded-md font-medium transition-all ${mode === 'decode' ? 'bg-accent-600 text-white shadow-md' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>Decode</button>
         </div>
       </div>
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -61,9 +61,10 @@ export default function HTMLEncoder() {
           <textarea value={output} readOnly placeholder="Output will appear here..." className="w-full p-6 text-gray-800 dark:text-gray-200 font-mono text-sm resize-none focus:outline-none min-h-[400px] bg-gray-50 dark:bg-gray-800" />
         </div>
       </div>
-      <button onClick={convert} className="w-full px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-semibold">
+      <button onClick={convert} className="w-full px-6 py-4 bg-accent-600 hover:bg-accent-700 text-white rounded-lg transition-colors font-semibold">
         {mode === 'encode' ? 'Encode to HTML Entities' : 'Decode from HTML Entities'}
       </button>
     </div>
   );
 }
+

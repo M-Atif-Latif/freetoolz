@@ -59,7 +59,7 @@ export default function ColorPicker() {
             </div>
             <button
               onClick={() => copyToClipboard(color, 'hex')}
-              className="p-3 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors"
+              className="p-3 bg-primary-100 text-primary-600 rounded-lg hover:bg-primary-200 transition-colors"
             >
               {copied === 'hex' ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
             </button>
@@ -90,3 +90,4 @@ export default function ColorPicker() {
     </div>
   );
 }
+

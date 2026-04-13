@@ -111,7 +111,7 @@ export default function ReadabilityScore() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
         <div className="flex items-center space-x-3 mb-6">
-          <div className="p-3 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl">
+          <div className="p-3 bg-gradient-to-br from-secondary-500 to-indigo-600 rounded-xl">
             <BookOpen className="h-8 w-8 text-white" />
           </div>
           <div>
@@ -132,13 +132,13 @@ export default function ReadabilityScore() {
               onChange={(e) => setText(e.target.value)}
               placeholder="Paste or type your text here..."
               rows={10}
-              className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
+              className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
             />
           </div>
 
           {result && (
             <div className="space-y-4">
-              <div className={`bg-gradient-to-br ${getColorClass(result.readingColor).replace('from-', 'from-').replace('to-', 'to-').replace(/600/g, '50')} dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border-2 border-blue-200 dark:border-blue-800`}>
+              <div className={`bg-gradient-to-br ${getColorClass(result.readingColor).replace('from-', 'from-').replace('to-', 'to-').replace(/600/g, '50')} dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border-2 border-primary-200 dark:border-primary-800`}>
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Reading Level</h2>
                 <div className={`text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${getColorClass(result.readingColor)}`}>
                   {result.readingLevel}
@@ -192,7 +192,7 @@ export default function ReadabilityScore() {
           )}
         </div>
 
-        <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+        <div className="mt-8 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-2">📚 Reading Ease Scale:</h3>
           <div className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
             <div>• <strong>90-100:</strong> Very Easy (5th grade)</div>
@@ -208,3 +208,5 @@ export default function ReadabilityScore() {
     </div>
   );
 }
+
+

@@ -64,7 +64,7 @@ export default function PDFToText() {
         <div className="mb-8">
           <label className="block text-sm font-medium text-gray-700 mb-4">Select PDF File</label>
           <div className="flex gap-3">
-            <label className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer flex items-center justify-center gap-2">
+            <label className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold cursor-pointer flex items-center justify-center gap-2">
               <Upload className="h-5 w-5" /> Choose PDF
               <input
                 type="file"
@@ -95,7 +95,7 @@ export default function PDFToText() {
           </button>
           <button
             onClick={copyText}
-            className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2"
+            className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold flex items-center justify-center gap-2"
           >
             {copied ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
             {copied ? 'Copied!' : 'Copy Text'}
@@ -105,3 +105,4 @@ export default function PDFToText() {
     </div>
   );
 }
+

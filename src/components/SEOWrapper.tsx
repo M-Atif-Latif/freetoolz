@@ -293,9 +293,9 @@ export function SEOContent({ toolId }: SEOContentProps) {
                 <a
                   key={relatedToolId}
                   href={`/tools/${relatedToolId}`}
-                  className="block p-3 bg-white dark:bg-gray-700 rounded border border-gray-200 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
+                  className="block p-3 bg-white dark:bg-gray-700 rounded border border-gray-200 dark:border-gray-600 hover:border-primary-500 dark:hover:border-primary-400 transition-colors"
                 >
-                  <span className="font-medium text-blue-600 dark:text-blue-400">
+                  <span className="font-medium text-primary-600 dark:text-primary-400">
                     {relatedSEO.h1.replace('Free Online ', '').replace('Free ', '')}
                   </span>
                 </a>
@@ -306,18 +306,18 @@ export function SEOContent({ toolId }: SEOContentProps) {
       )}
 
       {/* Trust Signals */}
-      <section className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+      <section className="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-lg">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
           <div>
-            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">100%</div>
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">100%</div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Free Forever</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">🔒</div>
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">🔒</div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Secure & Private</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">∞</div>
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">∞</div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Unlimited Usage</div>
           </div>
         </div>
@@ -327,3 +327,5 @@ export function SEOContent({ toolId }: SEOContentProps) {
 }
 
 export default SEOWrapper;
+
+

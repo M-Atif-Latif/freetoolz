@@ -48,7 +48,7 @@ export default function CSVColumnSplitter() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
             <Table className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -68,7 +68,7 @@ export default function CSVColumnSplitter() {
                 onClick={() => setMode('split')}
                 className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-semibold transition-all ${
                   mode === 'split'
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-accent-600 text-white'
                     : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
                 }`}
               >
@@ -79,7 +79,7 @@ export default function CSVColumnSplitter() {
                 onClick={() => setMode('join')}
                 className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-semibold transition-all ${
                   mode === 'join'
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-accent-600 text-white'
                     : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
                 }`}
               >
@@ -94,7 +94,7 @@ export default function CSVColumnSplitter() {
             <select
               value={delimiter}
               onChange={(e) => setDelimiter(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all outline-none"
+              className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:focus:ring-primary-900/30 transition-all outline-none"
             >
               <option value=",">Comma (,)</option>
               <option value=";">Semicolon (;)</option>
@@ -113,7 +113,7 @@ export default function CSVColumnSplitter() {
             value={csvText}
             onChange={(e) => setCsvText(e.target.value)}
             placeholder="Name,Email,Age,City&#10;John,john@email.com,30,NYC&#10;Jane,jane@email.com,25,LA"
-            className="w-full h-48 px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all outline-none resize-none font-mono text-sm"
+            className="w-full h-48 px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:focus:ring-primary-900/30 transition-all outline-none resize-none font-mono text-sm"
           />
         </div>
 
@@ -130,8 +130,8 @@ export default function CSVColumnSplitter() {
                   onClick={() => toggleColumn(index)}
                   className={`p-3 rounded-lg border-2 transition-all font-medium ${
                     selectedColumns.includes(index)
-                      ? 'border-blue-600 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                      : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:border-blue-400'
+                      ? 'border-primary-600 bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
+                      : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary-400'
                   }`}
                 >
                   {header || `Column ${index + 1}`}
@@ -158,3 +158,5 @@ export default function CSVColumnSplitter() {
     </div>
   );
 }
+
+

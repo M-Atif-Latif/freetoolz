@@ -74,7 +74,7 @@ export default function NumberBaseConverter() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
             <Hash className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -104,7 +104,7 @@ export default function NumberBaseConverter() {
                     }}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       inputBase === base.value
-                        ? 'bg-blue-600 text-white shadow-lg'
+                        ? 'bg-accent-600 text-white shadow-lg'
                         : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                     }`}
                   >
@@ -124,7 +124,7 @@ export default function NumberBaseConverter() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder={`Enter number in base ${inputBase}`}
-                className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-blue-500 dark:focus:border-blue-400 focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/30 transition-all outline-none text-lg font-mono"
+                className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:border-primary-500 dark:focus:border-blue-400 focus:ring-4 focus:ring-primary-100 dark:focus:ring-primary-900/30 transition-all outline-none text-lg font-mono"
               />
             </div>
 
@@ -132,7 +132,7 @@ export default function NumberBaseConverter() {
             <div className="flex justify-center mb-6">
               <button
                 onClick={swapBases}
-                className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all"
+                className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition-all"
                 title="Swap bases"
               >
                 <ArrowRight className="h-6 w-6 rotate-90" />
@@ -202,7 +202,7 @@ export default function NumberBaseConverter() {
         </div>
 
         {/* Info Section */}
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
             Supported Number Bases
           </h3>
@@ -219,3 +219,5 @@ export default function NumberBaseConverter() {
     </div>
   );
 }
+
+

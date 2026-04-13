@@ -18,17 +18,17 @@ export default function Contact() {
       </p>
       
       {/* Direct Contact Section */}
-      <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl shadow-lg p-8 mb-8 text-white">
+      <div className="bg-gradient-to-br from-primary-600 to-secondary-600 rounded-xl shadow-lg p-8 mb-8 text-white">
         <h2 className="text-2xl font-bold mb-4 text-center">📧 Direct Contact</h2>
-        <p className="text-center text-blue-50 mb-6 text-sm">
+        <p className="text-center text-primary-50 mb-6 text-sm">
           For the fastest response, feel free to email me directly or connect through social media.
         </p>
         <div className="text-center mb-6">
           <p className="text-lg mb-1 font-semibold">Muhammad Atif Latif</p>
-          <p className="text-blue-100 mb-4 text-sm">Data Scientist & Machine Learning Engineer</p>
+          <p className="text-primary-100 mb-4 text-sm">Data Scientist & Machine Learning Engineer</p>
           <a 
             href="mailto:muhammadatiflatif67@gmail.com"
-            className="inline-flex items-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all hover:scale-105 shadow-lg"
+            className="inline-flex items-center space-x-2 bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-all hover:scale-105 shadow-lg"
           >
             <Mail className="h-5 w-5" />
             <span>muhammadatiflatif67@gmail.com</span>
@@ -37,7 +37,7 @@ export default function Contact() {
 
         {/* Social Links */}
         <div className="border-t border-white/20 pt-6">
-          <p className="text-center text-sm text-blue-100 mb-4 font-medium">Connect on Social Media</p>
+          <p className="text-center text-sm text-primary-100 mb-4 font-medium">Connect on Social Media</p>
           <div className="flex flex-wrap justify-center gap-3">
             <a 
               href="https://www.linkedin.com/company/freetoolz/" 
@@ -120,17 +120,17 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-              <input type="text" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
+              <input type="text" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-              <input type="email" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
+              <input type="email" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-              <textarea required rows={5} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none resize-none" />
+              <textarea required rows={5} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none resize-none" />
             </div>
-            <button type="submit" className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold transition-colors">
+            <button type="submit" className="w-full px-6 py-3 bg-accent-600 text-white rounded-lg hover:bg-accent-700 font-semibold transition-colors">
               Send Message
             </button>
           </form>

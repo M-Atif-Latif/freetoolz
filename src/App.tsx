@@ -1281,7 +1281,7 @@ function App() {
   useSEO(seoConfig);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-primary-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">
       <ScrollManager />
       <Header currentPath={currentPath} onNavigate={navigateTo} />
       <main className="flex-grow">

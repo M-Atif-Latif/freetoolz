@@ -44,8 +44,8 @@ function WordCounterTool() {
         
         {/* Statistics Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border-2 border-blue-200 dark:border-blue-800">
-            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">{words.toLocaleString()}</div>
+          <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border-2 border-primary-200 dark:border-primary-800">
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-1">{words.toLocaleString()}</div>
             <div className="text-gray-700 dark:text-gray-300 font-medium">Words</div>
           </div>
           <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 border-2 border-green-200 dark:border-green-800">
@@ -88,7 +88,7 @@ function WordCounterTool() {
             <h2 className="font-semibold text-gray-900 dark:text-white">Enter Your Text</h2>
             <button 
               onClick={copyToClipboard} 
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors"
               aria-label="Copy text to clipboard"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
@@ -112,3 +112,4 @@ function WordCounterTool() {
 }
 
 export default WordCounterTool;
+

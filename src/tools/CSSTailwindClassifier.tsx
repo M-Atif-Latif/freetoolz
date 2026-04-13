@@ -74,12 +74,12 @@ export default function CSSTailwindClassifier() {
       'color: white': 'text-white',
       'color: black': 'text-black',
       'color: red': 'text-red-500',
-      'color: blue': 'text-blue-500',
+      'color: blue': 'text-primary-500',
       'color: green': 'text-green-500',
       'background-color: white': 'bg-white',
       'background-color: black': 'bg-black',
       'background-color: red': 'bg-red-500',
-      'background-color: blue': 'bg-blue-500',
+      'background-color: blue': 'bg-primary-500',
       'background-color: green': 'bg-green-500',
       
       // Borders
@@ -187,7 +187,7 @@ export default function CSSTailwindClassifier() {
 
           {/* Output */}
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-4 flex justify-between items-center">
+            <div className="bg-gradient-to-r from-secondary-500 to-indigo-600 px-6 py-4 flex justify-between items-center">
               <h2 className="text-lg font-semibold text-white">Tailwind Classes</h2>
               {tailwindOutput && (
                 <button
@@ -230,7 +230,7 @@ export default function CSSTailwindClassifier() {
             </div>
             <div>
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">Colors</h3>
-              <p className="text-gray-600 dark:text-gray-400 font-mono">color: blue → text-blue-500</p>
+              <p className="text-gray-600 dark:text-gray-400 font-mono">color: blue → text-primary-500</p>
               <p className="text-gray-600 dark:text-gray-400 font-mono">background: red → bg-red-500</p>
             </div>
             <div>
@@ -247,7 +247,7 @@ export default function CSSTailwindClassifier() {
         </div>
 
         {/* Info */}
-        <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-6 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">💡 Tips</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>• Paste CSS properties one per line (with or without semicolons)</li>
@@ -260,3 +260,5 @@ export default function CSSTailwindClassifier() {
     </div>
   );
 }
+
+

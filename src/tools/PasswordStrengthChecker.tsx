@@ -27,7 +27,7 @@ export default function PasswordStrengthChecker() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <Shield className="h-16 w-16 mx-auto text-blue-500 mb-4" />
+        <Shield className="h-16 w-16 mx-auto text-primary-500 mb-4" />
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Password Strength Checker</h1>
         <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">Check how strong your password is</p>
         <HowItWorks steps={howItWorks} />
@@ -39,7 +39,7 @@ export default function PasswordStrengthChecker() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Enter password to test..."
-          className="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none text-lg mb-6 font-mono"
+          className="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none text-lg mb-6 font-mono"
         />
 
         {password && (
@@ -119,3 +119,4 @@ export default function PasswordStrengthChecker() {
     </div>
   );
 }
+

@@ -120,7 +120,7 @@ IP Address: ${data.ipAddress}
   const DataField = ({ icon: Icon, label, value, field }: { icon: any; label: string; value: string; field: string }) => (
     <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-all">
       <div className="flex items-center space-x-3 flex-1 min-w-0">
-        <Icon className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+        <Icon className="h-5 w-5 text-primary-600 dark:text-primary-400 flex-shrink-0" />
         <div className="min-w-0 flex-1">
           <p className="text-xs font-semibold text-gray-500 dark:text-gray-400">{label}</p>
           <p className="text-sm font-medium text-gray-900 dark:text-white truncate">{value}</p>
@@ -128,7 +128,7 @@ IP Address: ${data.ipAddress}
       </div>
       <button
         onClick={() => copyToClipboard(value, field)}
-        className="ml-3 p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all flex-shrink-0"
+        className="ml-3 p-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-all flex-shrink-0"
         title="Copy to clipboard"
       >
         {copied === field ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
@@ -141,7 +141,7 @@ IP Address: ${data.ipAddress}
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
             <User className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -198,7 +198,7 @@ IP Address: ${data.ipAddress}
 
         {/* Info Sections */}
         <div className="mt-8 grid md:grid-cols-2 gap-6">
-          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+          <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
               Use Cases
             </h3>
@@ -229,3 +229,5 @@ IP Address: ${data.ipAddress}
     </div>
   );
 }
+
+

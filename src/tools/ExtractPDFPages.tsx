@@ -111,7 +111,7 @@ export default function ExtractPDFPages() {
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
         <div className="mb-6">
-          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
+          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="w-12 h-12 mb-4 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500">
@@ -143,7 +143,7 @@ export default function ExtractPDFPages() {
               value={pageRange}
               onChange={(e) => setPageRange(e.target.value)}
               placeholder="e.g., 1-5, 7, 9-10"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none font-mono"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none font-mono"
             />
             <p className="text-xs text-gray-500 mt-2">Format: Use commas for multiple ranges (e.g., 1-3, 5, 7-9)</p>
           </div>
@@ -165,7 +165,7 @@ export default function ExtractPDFPages() {
           <button
             onClick={extractPages}
             disabled={!file || processing}
-            className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2 disabled:bg-gray-300 disabled:cursor-not-allowed"
+            className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold flex items-center justify-center gap-2 disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
             <Download className="h-5 w-5" />
             {processing ? 'Extracting...' : 'Extract Pages'}
@@ -173,7 +173,7 @@ export default function ExtractPDFPages() {
         </div>
       </div>
 
-      <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+      <div className="mt-6 p-4 bg-primary-50 rounded-lg border border-primary-200">
         <p className="text-sm text-gray-700">
           <strong>Privacy:</strong> All processing happens in your browser. Files are never uploaded to any server.
         </p>
@@ -181,3 +181,4 @@ export default function ExtractPDFPages() {
     </div>
   );
 }
+

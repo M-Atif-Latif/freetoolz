@@ -31,7 +31,7 @@ export default function DiscountCalculator() {
           <select
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
           >
             {currencies.map(c => (
               <option key={c.code} value={c.code}>
@@ -48,7 +48,7 @@ export default function DiscountCalculator() {
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               placeholder="100.00"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -58,7 +58,7 @@ export default function DiscountCalculator() {
               value={discount}
               onChange={(e) => setDiscount(e.target.value)}
               placeholder="20"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
         </div>
@@ -72,9 +72,9 @@ export default function DiscountCalculator() {
               <div className="text-sm text-gray-600 mb-1">Final Price</div>
               <div className="text-3xl font-bold text-green-600">{formatCurrency(finalPrice, currency)}</div>
             </div>
-            <div className="p-6 bg-blue-50 rounded-lg border border-blue-200 text-center">
+            <div className="p-6 bg-primary-50 rounded-lg border border-primary-200 text-center">
               <div className="text-sm text-gray-600 mb-1">Discount</div>
-              <div className="text-3xl font-bold text-blue-600">{discount}%</div>
+              <div className="text-3xl font-bold text-primary-600">{discount}%</div>
             </div>
           </div>
         )}
@@ -82,3 +82,4 @@ export default function DiscountCalculator() {
     </div>
   );
 }
+

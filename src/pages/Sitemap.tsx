@@ -57,8 +57,8 @@ export default function Sitemap({ onNavigate }: SitemapProps) {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
-            <FileText className="h-8 w-8 text-blue-600" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-4">
+            <FileText className="h-8 w-8 text-primary-600" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Sitemap
@@ -72,7 +72,7 @@ export default function Sitemap({ onNavigate }: SitemapProps) {
           {sitemapLinks.map((section, idx) => (
             <div key={idx} className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-                <LinkIcon className="h-6 w-6 text-blue-600 mr-3" />
+                <LinkIcon className="h-6 w-6 text-primary-600 mr-3" />
                 {section.category}
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -80,9 +80,9 @@ export default function Sitemap({ onNavigate }: SitemapProps) {
                   <button
                     key={linkIdx}
                     onClick={() => onNavigate(link.path)}
-                    className="text-left p-4 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group"
+                    className="text-left p-4 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all group"
                   >
-                    <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-1">
+                    <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-1">
                       {link.title}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">{link.description}</p>
@@ -96,3 +96,4 @@ export default function Sitemap({ onNavigate }: SitemapProps) {
     </div>
   );
 }
+

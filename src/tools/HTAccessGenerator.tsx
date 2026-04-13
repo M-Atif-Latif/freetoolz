@@ -71,7 +71,7 @@ RewriteRule ^${source}/?$ /${destination} [L]`;
           <select
             value={ruleType}
             onChange={(e) => setRuleType(e.target.value)}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
           >
             <option value="redirect">Simple Redirect (301/302)</option>
             <option value="https">Force HTTPS</option>
@@ -91,7 +91,7 @@ RewriteRule ^${source}/?$ /${destination} [L]`;
                   value={source}
                   onChange={(e) => setSource(e.target.value)}
                   placeholder="old-page"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
                 />
               </div>
 
@@ -102,7 +102,7 @@ RewriteRule ^${source}/?$ /${destination} [L]`;
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
                   placeholder="new-page"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
                 />
               </div>
             </div>
@@ -113,7 +113,7 @@ RewriteRule ^${source}/?$ /${destination} [L]`;
                 <select
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
                 >
                   <option value="301">301 Moved Permanently</option>
                   <option value="302">302 Found (Temporary)</option>
@@ -140,7 +140,7 @@ RewriteRule ^${source}/?$ /${destination} [L]`;
           </button>
           <button
             onClick={copyToClipboard}
-            className="flex-1 px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center gap-2"
+            className="flex-1 px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold flex items-center justify-center gap-2"
           >
             {copied ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
             {copied ? 'Copied!' : 'Copy Code'}
@@ -150,3 +150,4 @@ RewriteRule ^${source}/?$ /${destination} [L]`;
     </div>
   );
 }
+
