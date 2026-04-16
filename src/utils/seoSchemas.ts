@@ -102,7 +102,7 @@ export const generateOrganizationSchema = (): SchemaOrganization => {
     name: 'Free Tools',
     url: 'https://freetoolz.cloud',
     logo: 'https://freetoolz.cloud/logo.png',
-    description: '120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration required.',
+    description: '140+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration required.',
     sameAs: [
       'https://github.com/M-Atif-Latif',
       'https://www.linkedin.com/company/freetoolz/',
@@ -197,7 +197,7 @@ export const generateWebSiteSchema = (): SchemaWebSite => {
     name: 'Free Tools',
     url: 'https://freetoolz.cloud',
     inLanguage: 'en-US',
-    description: '120+ free online tools for text, PDF, image, developer, calculator, and SEO workflows.',
+    description: '140+ free online tools for text, PDF, image, developer, calculator, and SEO workflows.',
     publisher: {
       '@type': 'Organization',
       name: 'Free Tools',

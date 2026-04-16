@@ -18,4 +18,4 @@ code = code.replace(/description:\s*"([^"]+)"/g, (match, desc) => {
 
 
 fs.writeFileSync('src/data/tools.ts', code);
-console.log('Updated 120+ Tools with Use Cases');
+console.log('Updated 140+ Tools with Use Cases');

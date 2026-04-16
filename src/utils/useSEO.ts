@@ -186,12 +186,12 @@ export const generateToolSEO = (
 
 // Home page SEO
 export const homeSEO: SEOConfig = {
-  title: 'Free Tools - 120+ Free Online Tools | No Signup Required',
-  description: 'Access 120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration, no ads, completely free forever.',
+  title: 'Free Tools - 140+ Free Online Tools | No Signup Required',
+  description: 'Access 140+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration, no ads, completely free forever.',
   keywords: 'free online tools, word counter, password generator, pdf merger, image compressor, json formatter, qr code generator, bmi calculator, currency converter, text tools, developer tools, no signup, free forever',
   canonical: 'https://freetoolz.cloud',
-  ogTitle: 'Free Tools - 120+ Free Professional Online Tools',
-  ogDescription: 'Complete suite of 120+ free online utilities. Text, PDF, image, calculator, converter, and developer tools. All free, secure, and privacy-focused.',
+  ogTitle: 'Free Tools - 140+ Free Professional Online Tools',
+  ogDescription: 'Complete suite of 140+ free online utilities. Text, PDF, image, calculator, converter, and developer tools. All free, secure, and privacy-focused.',
   ogUrl: 'https://freetoolz.cloud',
   ogImage: 'https://freetoolz.cloud/og-image.jpg',
   author: 'Muhammad Atif Latif',
@@ -201,7 +201,7 @@ export const homeSEO: SEOConfig = {
 // About page SEO
 export const aboutSEO: SEOConfig = {
   title: 'About Free Tools - Our Mission & Story',
-  description: 'Learn about Free Tools and our mission to provide 120+ free professional-grade online tools accessible to everyone. Built by Muhammad Atif Latif, Data Scientist & ML Engineer.',
+  description: 'Learn about Free Tools and our mission to provide 140+ free professional-grade online tools accessible to everyone. Built by Muhammad Atif Latif, Data Scientist & ML Engineer.',
   canonical: 'https://freetoolz.cloud/about',
   keywords: 'about freetoolz, free tools mission, muhammad atif latif, online tools platform',
   author: 'Muhammad Atif Latif'
@@ -219,7 +219,7 @@ export const blogSEO: SEOConfig = {
 // Contact page SEO
 export const contactSEO: SEOConfig = {
   title: 'Contact Us - Free Tools Support',
-  description: 'Get in touch with the Free Tools team. We value your feedback, questions, and suggestions for improving our 120+ free online tools.',
+  description: 'Get in touch with the Free Tools team. We value your feedback, questions, and suggestions for improving our 140+ free online tools.',
   canonical: 'https://freetoolz.cloud/contact',
   keywords: 'contact freetoolz, support, feedback, tool requests',
   author: 'Muhammad Atif Latif'

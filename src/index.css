@@ -9,7 +9,7 @@
     box-sizing: border-box;
   }
 
-  /* Fix 5 & 7: Globally force text inputs to be readable across 120+ tools */
+  /* Fix 5 & 7: Globally force text inputs to be readable across 140+ tools */
   input, select, textarea {
     @apply bg-white text-gray-900 border-gray-300 outline-none;
   }
@@ -132,6 +132,15 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
     }
   }
 

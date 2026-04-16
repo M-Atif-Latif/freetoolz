@@ -18,7 +18,7 @@ const BASE_URL = 'https://freetoolz.cloud';
 
 // Static pages configuration
 const staticPages = [
-  { path: '/', title: 'Free Tools - 120+ Free Online Tools | No Sign Up Required', description: 'Access 120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, and more. Completely free, secure, and privacy-focused.' },
+  { path: '/', title: 'Free Tools - 140+ Free Online Tools | No Sign Up Required', description: 'Access 140+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, and more. Completely free, secure, and privacy-focused.' },
   { path: '/about', title: 'About Us - Free Tools', description: 'Learn about Free Tools mission to provide free, professional-grade online tools for everyone. Our story and commitment to free tools.' },
   { path: '/contact', title: 'Contact Us - Free Tools', description: 'Get in touch with Free Tools. We value your feedback, questions, and suggestions.' },
   { path: '/privacy', title: 'Privacy Policy - Free Tools', description: 'Read our privacy policy. We are committed to protecting your data and respecting your privacy.' },
@@ -398,7 +398,7 @@ function generateHTML(page: ToolPageConfig): string {
     
     ${page.path === '/' ? `
     <section>
-      <h2>120+ Free Online Tools - No Signup Required</h2>
+      <h2>140+ Free Online Tools - No Signup Required</h2>
       <p>Free Tools offers a comprehensive suite of free online utilities designed for everyday tasks. From text processing and PDF manipulation to image editing and calculations - all tools work directly in your browser with zero downloads required.</p>
       
       <div class="features">

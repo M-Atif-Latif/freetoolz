@@ -33,12 +33,6 @@
   Link: </assets/index-BbsmTzaG.js>; rel=modulepreload; fetchpriority=high; crossorigin
   Link: </assets/react-core.js>; rel=modulepreload; fetchpriority=high; crossorigin
   Link: </assets/react-dom.js>; rel=modulepreload; fetchpriority=high; crossorigin
-  # DNS prefetch for external resources
-  Link: <https://fonts.googleapis.com>; rel=dns-prefetch
-  Link: <https://fonts.gstatic.com>; rel=dns-prefetch
-  # Preconnect to critical origins
-  Link: <https://fonts.googleapis.com>; rel=preconnect; crossorigin
-  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
   
 # Static assets - Aggressive caching with immutable
 /*.js

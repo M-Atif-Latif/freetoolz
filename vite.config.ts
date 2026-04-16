@@ -6,15 +6,17 @@ export default defineConfig({
     react({
       // Optimize JSX runtime for smaller bundle
       jsxRuntime: 'automatic',
+      // Enable Fast Refresh for better dev experience
+      fastRefresh: true,
     }),
   ],
   // Configure public directory for static assets
   publicDir: 'public',
   optimizeDeps: {
-    // Exclude large packages from pre-bundling
-    exclude: ['lucide-react'],
+    // Exclude packages that have complex CJS/ESM interop
+    exclude: ['lucide-react', 'pako'],
     // Pre-bundle critical dependencies for faster load
-    include: ['react', 'react-dom', 'react/jsx-runtime'], 
+    include: ['react', 'react-dom', 'react-router-dom', 'react/jsx-runtime'], 
     // Enable deeper dependency optimization
     esbuildOptions: {
       treeShaking: true,
@@ -40,6 +42,8 @@ export default defineConfig({
         unused: true,
         toplevel: true,
         side_effects: true,
+        hoist_funs: true,
+        hoist_props: true,
       },
       mangle: {
         safari10: true,
@@ -51,6 +55,7 @@ export default defineConfig({
       },
     },
     rollupOptions: {
+      external: ['pako'],
       output: {
         manualChunks(id) {
           // Critical path optimization - split by priority
@@ -58,6 +63,11 @@ export default defineConfig({
             // Core React - highest priority (preloaded)
             if (id.includes('react') && !id.includes('lucide')) {
               return 'react-vendor';
+            }
+            
+            // Router - critical for nav
+            if (id.includes('react-router-dom')) {
+              return 'router-vendor';
             }
             
             // PDF libraries - lazy loaded
@@ -79,6 +89,21 @@ export default defineConfig({
             const toolName = id.split('/tools/')[1].split('.')[0];
             return `tool-${toolName}`;
           }
+          
+          // Components chunk
+          if (id.includes('/src/components/')) {
+            return 'components';
+          }
+          
+          // Pages chunk
+          if (id.includes('/src/pages/')) {
+            return 'pages';
+          }
+          
+          // Utils chunk
+          if (id.includes('/src/utils/')) {
+            return 'utils';
+          }
         },
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
@@ -91,9 +116,15 @@ export default defineConfig({
     modulePreload: {
       polyfill: true,
     },
-    assetsInlineLimit: 4096,
+    assetsInlineLimit: 8192, // Increased from 4096 for better inline of small assets
     reportCompressedSize: true,
     target: 'es2020',
+    // Additional build optimizations
+    ssr: false,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+      esmExternals: true,
+    },
   },
   server: {
     headers: {

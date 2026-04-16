@@ -214,8 +214,8 @@ function App() {
     {
       path: '/',
       component: <Home onNavigate={navigateTo} />,
-      title: 'Free Tools - 120+ Free Online Tools | No Sign Up Required',
-      description: 'Access 120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, code formatting and more. Completely free, secure, and privacy-focused. No registration required.',
+      title: 'Free Tools - 140+ Free Online Tools | No Sign Up Required',
+      description: 'Access 140+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, code formatting and more. Completely free, secure, and privacy-focused. No registration required.',
       keywords: 'free online tools, text converter, PDF tools, image editor, calculator'
     },
     {
@@ -1224,7 +1224,7 @@ function App() {
   } else if (isNotFound) {
     seoConfig = {
       title: '404 - Page Not Found | Free Tools',
-      description: 'The page you are looking for does not exist. Browse our 120+ free online tools.',
+      description: 'The page you are looking for does not exist. Browse our 140+ free online tools.',
       canonical: 'https://freetoolz.cloud/404',
       keywords: '404, not found, freetoolz',
       author: 'Muhammad Atif Latif'

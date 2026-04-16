@@ -61,31 +61,55 @@ export default function Footer({ onNavigate }: FooterProps) {
               <span className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Free<span className="text-primary-600 dark:text-primary-500"> Tools</span></span>
             </div>
             <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 max-w-md leading-relaxed">
-              Your ultimate collection of 120+ free online tools. No registration required, no API keys needed. Fast, simple, and always free.
+              Your ultimate collection of 140+ free online tools. No registration required, no API keys needed. Fast, simple, and always free.
             </p>
             <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
-              <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">Free Tools</p>
-              <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Connect with Free Tools on social media</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group relative flex items-center gap-3 rounded-2xl border border-white/20 bg-gradient-to-r ${link.gradient} p-3 text-white shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80`}
-                    aria-label={link.name}
-                  >
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-md">
-                      <link.icon className={`h-5 w-5 ${link.accent}`} />
-                    </span>
-                    <div className="flex flex-col">
-                      <span className="text-sm font-semibold leading-tight">{link.name}</span>
-                      <span className="text-[11px] text-white/80">{link.description}</span>
-                    </div>
-                    <div className="absolute inset-0 rounded-2xl border border-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden="true"></div>
-                  </a>
-                ))}
+              <div className="space-y-3 sm:space-y-4">
+                <div>
+                  <p className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white mb-1 uppercase tracking-widest">Connect With Us</p>
+                  <p className="text-2xs sm:text-xs text-gray-500 dark:text-gray-500 font-medium">Join our community and stay updated</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3">
+                  {socialLinks.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group relative overflow-hidden rounded-xl border-2 border-transparent bg-gradient-to-br ${link.gradient} p-0 transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80`}
+                      aria-label={link.name}
+                    >
+                      {/* Premium shimmer effect */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full duration-500" style={{ animation: 'shimmer 0.6s ease-in-out' }}></div>
+                      
+                      {/* Glow effect on hover */}
+                      <div className="absolute -inset-1 rounded-xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10" style={{ background: `linear-gradient(to right, ${link.gradient})` }}></div>
+                      
+                      <div className="relative flex items-start gap-3 p-3.5 sm:p-4 backdrop-blur-sm bg-white/5">
+                        {/* Icon container with premium styling */}
+                        <div className="flex-shrink-0 flex h-12 w-12 sm:h-13 sm:w-13 items-center justify-center rounded-lg bg-white/15 backdrop-blur-md border border-white/20 group-hover:bg-white/25 transition-all duration-300 shadow-lg">
+                          <link.icon className={`h-6 w-6 sm:h-7 sm:w-7 ${link.accent} group-hover:scale-110 transition-transform duration-300`} />
+                        </div>
+                        
+                        {/* Text content */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm sm:text-base font-bold text-white leading-tight">{link.name}</span>
+                            <div className="inline-flex items-center justify-center rounded-full bg-white/10 px-2 py-0.5 group-hover:bg-white/20 transition-colors duration-300">
+                              <svg className="h-3 w-3 text-white/70 group-hover:text-white transition-colors duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3v-6" />
+                              </svg>
+                            </div>
+                          </div>
+                          <p className="text-[11px] sm:text-xs text-white/75 group-hover:text-white/90 transition-colors duration-300 leading-tight mt-0.5 font-medium">{link.description}</p>
+                        </div>
+                      </div>
+                      
+                      {/* Border highlight on hover */}
+                      <div className="absolute inset-0 rounded-xl border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

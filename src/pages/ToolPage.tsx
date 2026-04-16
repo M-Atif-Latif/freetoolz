@@ -1,7 +1,10 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Tool, categories, toolMasterList } from '../data/tools';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
+import ShareButton from '../components/ShareButton';
+import { useRecentTools } from '../hooks/useRecentTools';
+import { useTrending } from '../hooks/useTrending';
 
 interface Props {
   tool: Tool;
@@ -15,6 +18,15 @@ const ensureSentence = (text: string): string =>
   /[.!?]$/.test(text) ? text : `${text}.`;
 
 export default function ToolPage({ tool, children }: Props) {
+  const { addRecent } = useRecentTools();
+  const { trackToolUsage } = useTrending();
+  
+  // Track tool visit in recent tools and trending
+  useEffect(() => {
+    addRecent(tool.id, tool.name);
+    trackToolUsage(tool.id, tool.name);
+  }, [tool.id, tool.name, addRecent, trackToolUsage]);
+
   const canonicalPath = tool.slug ?? tool.id;
   const canonicalUrl = `https://freetoolz.cloud/${canonicalPath}`;
   const title = tool.metaTitle ?? `${tool.name} | Free Toolz`;
@@ -58,16 +70,24 @@ export default function ToolPage({ tool, children }: Props) {
 
       {children ?? (
         <main className="container-responsive py-10">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{tool.name}</h1>
-          <p className="mt-3 text-gray-600 dark:text-gray-300">{description}</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">{tool.name}</h1>
+          <p className="mt-3 text-base sm:text-lg text-gray-600 dark:text-gray-300">{description}</p>
         </main>
       )}
 
       <section className="container-responsive py-8 md:py-10">
         <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/80 backdrop-blur p-6 md:p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-            About {tool.name}
-          </h2>
+          <div className="flex items-start justify-between mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              About {tool.name}
+            </h2>
+            <ShareButton
+              title={`Check out ${tool.name} - Free Tool`}
+              description={description}
+              url={`https://freetoolz.cloud/${canonicalPath}`}
+              toolName={tool.name}
+            />
+          </div>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             {useCaseDescription} This free {categoryLabel.toLowerCase()} utility runs directly in your browser so you can get instant results without account signup.
           </p>

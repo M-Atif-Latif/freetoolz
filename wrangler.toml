@@ -1,0 +1,46 @@
+# Cloudflare Workers Configuration (if using Cloudflare CDN)
+# Place this in wrangler.toml for edge optimization
+
+name = "freetoolz-optimization"
+main = "src/index.ts"
+compatibility_date = "2026-04-14"
+type = "javascript"
+
+# Enable compression on the edge
+[env.production]
+route = "freetoolz.cloud/*"
+zone_id = "YOUR_ZONE_ID"  # Set this from Cloudflare dashboard
+
+# Caching rules
+[[rules]]
+type = "URLPath"
+ZoneName = "freetoolz.cloud"
+Priority = 1
+Description = "Cache HTML (short)"
+URLPath = "/*\.html"
+CacheTtl = 1800
+CacheControlMaxAge = 1800
+
+[[rules]]
+type = "URLPath"
+ZoneName = "freetoolz.cloud"
+Priority = 2
+Description = "Cache versioned assets"
+URLPath = "/assets/*"
+CacheTtl = 31536000
+CacheLevel = "cache_everything"
+
+[[rules]]
+type = "URLPath"
+ZoneName = "freetoolz.cloud"
+Priority = 3
+Description = "Don't cache API/dynamic"
+URLPath = "/api/*"
+CacheTtl = 0
+CacheLevel = "bypass"
+
+# Security and performance settings
+[performance]
+mirage = true  # Optimize images
+rocket_loader = true  # Defer JavaScript
+auto_minify = ["html", "css", "js"]

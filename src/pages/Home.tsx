@@ -1,7 +1,10 @@
 import { useState, useMemo, startTransition } from 'react';
-import { Search, ArrowRight } from 'lucide-react';
+import { Search, ArrowRight, Clock, Star, Flame } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import { toolMasterList, categories } from '../data/tools';
+import { useRecentTools } from '../hooks/useRecentTools';
+import { useFavorites } from '../hooks/useFavorites';
+import { useTrending } from '../hooks/useTrending';
 
 interface HomeProps {
   onNavigate: (path: string) => void;
@@ -10,6 +13,9 @@ interface HomeProps {
 export default function Home({ onNavigate }: HomeProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const { recent, clearRecent } = useRecentTools();
+  const { favorites, toggleFavorite } = useFavorites();
+  const { trending } = useTrending();
 
   // Memoize filtered tools to prevent unnecessary recalculations
   const filteredTools = useMemo(() => {
@@ -20,6 +26,30 @@ export default function Home({ onNavigate }: HomeProps) {
       return matchesSearch && matchesCategory;
     });
   }, [searchQuery, selectedCategory]);
+
+  // Map recent tool IDs to actual tool objects
+  const recentToolsList = useMemo(() => {
+    return recent
+      .map(r => toolMasterList.find(t => t.id === r.id))
+      .filter(Boolean);
+  }, [recent]);
+
+  // Map favorite tool IDs to actual tool objects
+  const favoriteToolsList = useMemo(() => {
+    return Array.from(favorites)
+      .map(id => toolMasterList.find(t => t.id === id))
+      .filter(Boolean);
+  }, [favorites]);
+
+  // Map trending tool data to actual tool objects with usage info
+  const trendingToolsList = useMemo(() => {
+    return trending
+      .map(t => ({
+        ...toolMasterList.find(tool => tool.id === t.id),
+        usageCount: t.usageCount
+      }))
+      .filter(Boolean);
+  }, [trending]);
 
   const getIcon = (iconName: string) => {
     const IconComponent = Icons[iconName as keyof typeof Icons] as React.ElementType;
@@ -53,7 +83,7 @@ export default function Home({ onNavigate }: HomeProps) {
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight px-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 dark:from-primary-400 dark:via-secondary-400 dark:to-accent-400 bg-200 animate-gradient will-change-[background-position]">
-              120+ Free Online Tools
+              140+ Free Online Tools
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed mb-6 sm:mb-8 px-4 sm:px-6">
@@ -82,6 +112,82 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
           </div>
         </div>
+
+        {/* Recently Used Section */}
+        {recentToolsList.length > 0 && (
+          <section className="mb-12 bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-lg">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <Clock className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Recently Used</h2>
+              </div>
+              <button onClick={clearRecent} className="text-sm text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors">
+                Clear History
+              </button>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {recentToolsList.map(tool => (
+                <button
+                  key={tool.id}
+                  onClick={() => onNavigate(`/${tool.slug ?? tool.id}`)}
+                  className="p-4 rounded-lg bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 hover:shadow-lg transition-all border border-primary-200 dark:border-primary-700 hover:border-primary-400 dark:hover:border-primary-500"
+                >
+                  <div className="font-semibold mb-2 text-gray-900 dark:text-white">{tool.name}</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">{tool.description}</div>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Favorites Section */}
+        {favoriteToolsList.length > 0 && (
+          <section className="mb-12 bg-white dark:bg-gray-800 rounded-2xl p-8 border border-amber-200 dark:border-amber-700 shadow-lg">
+            <div className="flex items-center gap-3 mb-6">
+              <Star className="w-6 h-6 text-amber-500 dark:text-amber-400" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Your Favorites</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {favoriteToolsList.map(tool => (
+                <button
+                  key={tool.id}
+                  onClick={() => onNavigate(`/${tool.slug ?? tool.id}`)}
+                  className="p-4 rounded-lg bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20 hover:shadow-lg transition-all border-2 border-amber-200 dark:border-amber-700 hover:border-amber-400 dark:hover:border-amber-500"
+                >
+                  <div className="font-semibold mb-2 text-gray-900 dark:text-white">{tool.name}</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">{tool.description}</div>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Trending Section */}
+        {trendingToolsList.length > 0 && (
+          <section className="mb-12 bg-white dark:bg-gray-800 rounded-2xl p-8 border border-red-200 dark:border-red-700 shadow-lg">
+            <div className="flex items-center gap-3 mb-6">
+              <Flame className="w-6 h-6 text-red-500 dark:text-red-400" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Trending Tools</h2>
+              <span className="text-sm text-gray-600 dark:text-gray-400 ml-auto">Most used this week</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {trendingToolsList.map((tool, index) => (
+                <button
+                  key={tool.id}
+                  onClick={() => onNavigate(`/${tool.slug ?? tool.id}`)}
+                  className="p-4 rounded-lg bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 hover:shadow-lg transition-all border-2 border-red-200 dark:border-red-700 hover:border-red-400 dark:hover:border-red-500 relative"
+                >
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-br from-red-500 to-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-xs font-bold">
+                    #{index + 1}
+                  </div>
+                  <div className="font-semibold mb-2 text-gray-900 dark:text-white text-sm">{tool.name}</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">{tool.description}</div>
+                  <div className="text-xs text-red-600 dark:text-red-400 mt-2 font-medium">{tool.usageCount} uses</div>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Search Bar */}
         <div className="max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 px-4">
@@ -127,6 +233,23 @@ export default function Home({ onNavigate }: HomeProps) {
             <button key={tool.id} onClick={() => onNavigate(`/${tool.slug ?? tool.id}`)}
               className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 group text-left transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/10 dark:to-secondary-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              {/* Favorite Button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleFavorite(tool.id);
+                }}
+                className={`absolute top-3 sm:top-4 right-3 sm:right-4 p-1.5 sm:p-2 rounded-full transition-all z-20 ${
+                  favorites.has(tool.id)
+                    ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 hover:bg-amber-100 dark:hover:bg-amber-900/40 hover:text-amber-500'
+                }`}
+                aria-label={favorites.has(tool.id) ? 'Remove from favorites' : 'Add to favorites'}
+              >
+                <Star className="w-4 h-4 sm:w-5 sm:h-5" fill={favorites.has(tool.id) ? 'currentColor' : 'none'} />
+              </button>
+
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-3 sm:mb-4">
                   <div className="p-2.5 sm:p-3 md:p-3.5 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/30 rounded-lg sm:rounded-xl text-primary-600 dark:text-primary-400 group-hover:from-primary-600 group-hover:to-secondary-600 dark:group-hover:from-primary-500 dark:group-hover:to-secondary-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-sm">
