@@ -1,10 +1,12 @@
 import { Home, Search, ArrowLeft, Lightbulb } from 'lucide-react';
+import { useBackNavigation } from '../hooks/useBackNavigation';
 
 interface NotFoundProps {
   onNavigate: (path: string) => void;
 }
 
 export default function NotFound({ onNavigate }: NotFoundProps) {
+  const { goBack, canGoBack } = useBackNavigation();
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4">
       <div className="text-center max-w-2xl">
@@ -52,8 +54,14 @@ export default function NotFound({ onNavigate }: NotFoundProps) {
             Go to Homepage
           </button>
           <button
-            onClick={() => window.history.back()}
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-semibold transition-all duration-200"
+            onClick={goBack}
+            disabled={!canGoBack}
+            className={`flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-200 ${
+              canGoBack
+                ? 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-1'
+                : 'bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-50'
+            }`}
+            title={canGoBack ? 'Go back to previous page' : 'No history available'}
           >
             <ArrowLeft className="h-5 w-5" />
             Go Back
