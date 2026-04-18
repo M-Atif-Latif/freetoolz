@@ -1,7 +1,6 @@
 import { Wrench, Menu, X, ArrowLeft, Home as HomeIcon, Moon, Sun, Monitor, ChevronDown } from 'lucide-react';
 import { useState, useCallback, memo } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { useBackNavigation } from '../hooks/useBackNavigation';
 import { categories } from '../data/tools';
 
 interface HeaderProps {
@@ -27,8 +26,11 @@ function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { goBack, canGoBack } = useBackNavigation();
   const isToolPage = currentPath.startsWith('/tools/');
+
+  const goBack = useCallback(() => {
+    onNavigate('/');
+  }, [onNavigate]);
 
   const closeMobileMenu = useCallback(() => {
     setMobileMenuOpen(false);
@@ -61,15 +63,9 @@ function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
               <div className="hidden lg:flex items-center space-x-2 ml-4 pl-4 border-l border-gray-200 dark:border-gray-700">
                 <button
                   onClick={goBack}
-                  disabled={!canGoBack}
-                  className={`flex items-center space-x-1 px-3 py-2 rounded-lg transition-all duration-200 group ${
-                    canGoBack
-                      ? 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 cursor-pointer'
-                      : 'text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-50'
-                  }`}
-                  title={canGoBack ? 'Go back to previous page' : 'No history available'}
+                  className="flex items-center space-x-1 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 group"
                 >
-                  <ArrowLeft className={`h-4 w-4 ${canGoBack ? 'group-hover:-translate-x-1' : ''} transition-transform duration-200`} />
+                  <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform duration-200" />
                   <span className="text-sm font-medium">Back</span>
                 </button>
                 <button
@@ -147,16 +143,7 @@ function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
             <nav className="flex flex-col space-y-1">
               {isToolPage && (
                 <>
-                  <button 
-                    onClick={() => { goBack(); setMobileMenuOpen(false); }} 
-                    disabled={!canGoBack}
-                    className={`text-left px-4 py-3 rounded-lg flex items-center space-x-2 transition-all duration-200 font-medium ${
-                      canGoBack
-                        ? 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 cursor-pointer'
-                        : 'text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-50'
-                    }`}
-                    title={canGoBack ? 'Go back to previous page' : 'No history available'}
-                  >
+                  <button onClick={() => { goBack(); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg flex items-center space-x-2">
                     <ArrowLeft className="h-4 w-4" />
                     <span>Go Back</span>
                   </button>
