@@ -1,12 +1,9 @@
-import { Wrench, Menu, X, ArrowLeft, Home as HomeIcon, Moon, Sun, Monitor, ChevronDown } from 'lucide-react';
+import { Wrench, Menu, X, Moon, Sun, Monitor } from 'lucide-react';
 import { useState, useCallback, memo } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { useBackNavigation } from '../hooks/useBackNavigation';
-import { categories } from '../data/tools';
 
 interface HeaderProps {
   onNavigate: (path: string) => void;
-  currentPath?: string;
 }
 
 // Memoized navigation button for better performance
@@ -23,12 +20,9 @@ const NavButton = memo(({ onClick, children, className, ariaLabel }: {
 
 NavButton.displayName = 'NavButton';
 
-function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
+function Header({ onNavigate }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [categoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { goBack, canGoBack } = useBackNavigation();
-  const isToolPage = currentPath.startsWith('/tools/');
 
   const closeMobileMenu = useCallback(() => {
     setMobileMenuOpen(false);
@@ -57,62 +51,12 @@ function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
                 Free<span className="text-primary-600 dark:text-primary-500">Toolz</span>
               </span>
             </button>
-            {isToolPage && (
-              <div className="hidden lg:flex items-center space-x-2 ml-4 pl-4 border-l border-gray-200 dark:border-gray-700">
-                <button
-                  onClick={goBack}
-                  disabled={!canGoBack}
-                  className={`flex items-center space-x-1 px-3 py-2 rounded-lg transition-all duration-200 group ${
-                    canGoBack
-                      ? 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 cursor-pointer'
-                      : 'text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-50'
-                  }`}
-                  title={canGoBack ? 'Go back to previous page' : 'No history available'}
-                >
-                  <ArrowLeft className={`h-4 w-4 ${canGoBack ? 'group-hover:-translate-x-1' : ''} transition-transform duration-200`} />
-                  <span className="text-sm font-medium">Back</span>
-                </button>
-                <button
-                  onClick={() => onNavigate('/')}
-                  className="flex items-center space-x-1 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200"
-                >
-                  <HomeIcon className="h-4 w-4" />
-                  <span className="text-sm font-medium">Home</span>
-                </button>
-              </div>
-            )}
           </div>
           <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
             <nav className="hidden md:flex items-center space-x-1">
               <button onClick={() => onNavigate('/')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">Home</button>
               
-              {/* Categories Dropdown */}
-              <div className="relative group">
-                <button 
-                  onClick={() => setCategoriesDropdownOpen(!categoriesDropdownOpen)}
-                  onBlur={() => setTimeout(() => setCategoriesDropdownOpen(false), 200)}
-                  className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm flex items-center gap-1.5 group-hover:bg-primary-50/50 dark:group-hover:bg-gray-800/50"
-                >
-                  Tools
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${categoriesDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {categoriesDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-0.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-50 min-w-max animate-in fade-in slide-in-from-top-2 duration-200">
-                    {categories.map((cat) => (
-                      <button
-                        key={cat.id}
-                        onClick={() => {
-                          onNavigate('/');
-                          setCategoriesDropdownOpen(false);
-                        }}
-                        className="w-full text-left px-4 py-2.5 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 transition-all duration-150 text-sm font-medium first:rounded-t-lg last:rounded-b-lg"
-                      >
-                        {cat.name}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <button onClick={() => onNavigate('/sitemap')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">Tools</button>
               
               <button onClick={() => onNavigate('/blog')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">Blog</button>
               <button onClick={() => onNavigate('/faq')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">FAQ</button>
@@ -145,29 +89,8 @@ function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
         {mobileMenuOpen && (
           <div className="md:hidden py-3 sm:py-4 border-t dark:border-gray-700 animate-in slide-in-from-top duration-200 safe-bottom">
             <nav className="flex flex-col space-y-1">
-              {isToolPage && (
-                <>
-                  <button 
-                    onClick={() => { goBack(); setMobileMenuOpen(false); }} 
-                    disabled={!canGoBack}
-                    className={`text-left px-4 py-3 rounded-lg flex items-center space-x-2 transition-all duration-200 font-medium ${
-                      canGoBack
-                        ? 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 cursor-pointer'
-                        : 'text-gray-400 dark:text-gray-600 cursor-not-allowed opacity-50'
-                    }`}
-                    title={canGoBack ? 'Go back to previous page' : 'No history available'}
-                  >
-                    <ArrowLeft className="h-4 w-4" />
-                    <span>Go Back</span>
-                  </button>
-                  <button onClick={() => { onNavigate('/'); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg flex items-center space-x-2">
-                    <HomeIcon className="h-4 w-4" />
-                    <span>Home</span>
-                  </button>
-                  <div className="my-2 border-t border-gray-200 dark:border-gray-700"></div>
-                </>
-              )}
               <button onClick={() => { onNavigate('/'); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Home</button>
+              <button onClick={() => handleNavigate('/sitemap')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Tools</button>
 <button onClick={() => handleNavigate('/blog')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Blog</button>
               <button onClick={() => handleNavigate('/faq')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">FAQ</button>
               <button onClick={() => handleNavigate('/about')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">About</button>

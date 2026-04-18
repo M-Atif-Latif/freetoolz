@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "postbuild": "npm run generate:site-files && npm run prerender && npm run analyze:bundle",
-    "analyze:bundle": "tsx scripts/optimizeBuild.mts",
+    "analyze:bundle": "node scripts/optimizeBuild.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",

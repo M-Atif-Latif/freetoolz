@@ -204,9 +204,38 @@ function App() {
   const navigate = useNavigate();
   const currentPath = location.pathname;
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   const navigateTo = (path: string) => {
-    if (path !== currentPath) {
-      navigate(path);
+    navigate(path);
+  };
+
+  // Create route elements with location-based keys to force remounting
+  const createRouteElement = (route: RouteConfig) => {
+    switch (route.path) {
+      case '/':
+        return <Home key={currentPath} onNavigate={navigateTo} />;
+      case '/about':
+        return <About key={currentPath} />;
+      case '/contact':
+        return <Contact key={currentPath} />;
+      case '/blog':
+        return <Blog key={currentPath} />;
+      case '/faq':
+        return <FAQ key={currentPath} />;
+      case '/sitemap':
+        return <Sitemap key={currentPath} onNavigate={navigateTo} />;
+      case '/privacy':
+        return <Privacy key={currentPath} />;
+      case '/terms':
+        return <Terms key={currentPath} />;
+      case '/disclaimer':
+        return <Disclaimer key={currentPath} />;
+      default:
+        return route.component;
     }
   };
 
@@ -1200,8 +1229,8 @@ function App() {
     .map((tool) => ({ from: `/${tool.id}`, to: `/${tool.slug}` }));
 
   const slugTool = toolMasterList.find((tool) => `/${tool.slug}` === currentPath);
-  const routeExists = routes.some((route) => route.path === currentPath) || Boolean(slugTool);
-  const isNotFound = !routeExists;
+  const staticRoute = routes.find((route) => !route.path.startsWith('/tools/') && route.path === currentPath);
+  const isNotFound = !slugTool && !staticRoute;
 
   // Generate dynamic SEO config based on current route
   let seoConfig = homeSEO;
@@ -1235,22 +1264,6 @@ function App() {
     seoConfig = blogSEO;
   } else if (currentPath === '/contact') {
     seoConfig = contactSEO;
-  } else if (currentPath.startsWith('/tools/')) {
-    // Find the tool in our tools data
-    const tool = tools.find(t => t.path === currentPath);
-    if (tool) {
-      const toolSEO = generateToolSEO(
-        tool.name,
-        tool.description,
-        tool.category,
-        tool.path,
-        [tool.name.toLowerCase(), tool.category, 'online tool', 'free', 'no signup']
-      );
-
-      seoConfig = tool.indexable === false
-        ? { ...toolSEO, robots: 'noindex, follow' }
-        : toolSEO;
-    }
   } else if (currentPath === '/privacy') {
     seoConfig = {
       title: 'Privacy Policy - Free Tools',
@@ -1283,19 +1296,15 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 via-white to-primary-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">
       <ScrollManager />
-      <Header currentPath={currentPath} onNavigate={navigateTo} />
+      <Header onNavigate={navigateTo} />
       <main className="flex-grow">
         <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            {routes.map((route) => (
+          <Routes key={currentPath.startsWith('/tools/') || toolMasterList.some(t => `/${t.slug}` === currentPath) ? 'tool' : 'static'}>
+            {routes.filter((route) => !route.path.startsWith('/tools/')).map((route) => (
               <Route
                 key={route.path}
                 path={route.path}
-                element={
-                  route.path.startsWith('/tools/')
-                    ? <Navigate to={`/${canonicalSlugById.get(route.path.replace('/tools/', '')) ?? route.path.replace('/tools/', '')}`} replace />
-                    : route.component
-                }
+                element={createRouteElement(route)}
               />
             ))}
             {toolMasterList.map((tool) => (

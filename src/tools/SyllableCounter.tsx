@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Volume2 } from 'lucide-react';
 import HowItWorks from '../components/HowItWorks';
 import CopyButton from '../components/CopyButton';
+
 export default function SyllableCounter() {
   const howItWorks = [
     { title: 'Enter Text', description: 'Paste your text or write something' },

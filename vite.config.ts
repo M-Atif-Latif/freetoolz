@@ -14,9 +14,9 @@ export default defineConfig({
   publicDir: 'public',
   optimizeDeps: {
     // Exclude packages that have complex CJS/ESM interop
-    exclude: ['lucide-react', 'pako'],
+    exclude: ['lucide-react'],
     // Pre-bundle critical dependencies for faster load
-    include: ['react', 'react-dom', 'react-router-dom', 'react/jsx-runtime'], 
+    include: ['react', 'react-dom', 'react-router-dom', 'react/jsx-runtime', 'pako'], 
     // Enable deeper dependency optimization
     esbuildOptions: {
       treeShaking: true,
@@ -55,7 +55,6 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      external: ['pako'],
       output: {
         manualChunks(id) {
           // Critical path optimization - split by priority

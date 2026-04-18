@@ -230,11 +230,27 @@ export default function Home({ onNavigate }: HomeProps) {
         <h2 className="sr-only">Available Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 px-4">
           {filteredTools.map((tool) => (
-            <button key={tool.id} onClick={() => onNavigate(`/${tool.slug ?? tool.id}`)}
-              className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 group text-left transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/10 dark:to-secondary-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-              {/* Favorite Button */}
+            <div key={tool.id} className="relative">
+              <button
+                onClick={() => onNavigate(`/${tool.slug ?? tool.id}`)}
+                className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 dark:border-gray-700 hover:border-primary-400 dark:hover:border-primary-500 group text-left transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden w-full"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-primary-900/10 dark:to-secondary-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-3 sm:mb-4">
+                    <div className="p-2.5 sm:p-3 md:p-3.5 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/30 rounded-lg sm:rounded-xl text-primary-600 dark:text-primary-400 group-hover:from-primary-600 group-hover:to-secondary-600 dark:group-hover:from-primary-500 dark:group-hover:to-secondary-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-sm">
+                      {getIcon(tool.icon)}
+                    </div>
+                    <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 dark:text-gray-500 group-hover:text-primary-600 dark:group-hover:text-primary-400 group-hover:translate-x-2 transition-all duration-300" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-1">
+                    {tool.name}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-2">{tool.description}</p>
+                </div>
+              </button>
+
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -249,20 +265,7 @@ export default function Home({ onNavigate }: HomeProps) {
               >
                 <Star className="w-4 h-4 sm:w-5 sm:h-5" fill={favorites.has(tool.id) ? 'currentColor' : 'none'} />
               </button>
-
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-3 sm:mb-4">
-                  <div className="p-2.5 sm:p-3 md:p-3.5 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/30 rounded-lg sm:rounded-xl text-primary-600 dark:text-primary-400 group-hover:from-primary-600 group-hover:to-secondary-600 dark:group-hover:from-primary-500 dark:group-hover:to-secondary-500 group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-sm">
-                    {getIcon(tool.icon)}
-                  </div>
-                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 dark:text-gray-500 group-hover:text-primary-600 dark:group-hover:text-primary-400 group-hover:translate-x-2 transition-all duration-300" />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-1">
-                  {tool.name}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-2">{tool.description}</p>
-              </div>
-            </button>
+            </div>
           ))}
         </div>
 

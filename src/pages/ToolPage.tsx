@@ -21,11 +21,12 @@ export default function ToolPage({ tool, children }: Props) {
   const { addRecent } = useRecentTools();
   const { trackToolUsage } = useTrending();
   
-  // Track tool visit in recent tools and trending
+  // Track tool visit in recent tools and trending (only on mount, not on dependency changes)
   useEffect(() => {
     addRecent(tool.id, tool.name);
     trackToolUsage(tool.id, tool.name);
-  }, [tool.id, tool.name, addRecent, trackToolUsage]);
+    // Only depend on tool.id since tool.name could change
+  }, [tool.id]);
 
   const canonicalPath = tool.slug ?? tool.id;
   const canonicalUrl = `https://freetoolz.cloud/${canonicalPath}`;
