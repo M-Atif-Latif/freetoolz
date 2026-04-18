@@ -14,41 +14,44 @@ import { readdir, readFile, writeFile } from 'fs/promises';
 const DIST_DIR = path.resolve('./dist');
 const ANALYSIS_FILE = path.join(DIST_DIR, 'build-analysis.json');
 
-interface BundleAnalysis {
-  timestamp: string;
-  totalSize: number;
-  gzipSize: number;
-  chunks: ChunkInfo[];
-  cssFiles: CSSAnalysis[];
-  recommendations: string[];
-}
+/**
+ * @typedef {Object} BundleAnalysis
+ * @property {string} timestamp
+ * @property {number} totalSize
+ * @property {number} gzipSize
+ * @property {ChunkInfo[]} chunks
+ * @property {CSSAnalysis[]} cssFiles
+ * @property {string[]} recommendations
+ */
 
-interface ChunkInfo {
-  name: string;
-  size: number;
-  gzipSize: number;
-  imports: string[];
-}
+/**
+ * @typedef {Object} ChunkInfo
+ * @property {string} name
+ * @property {number} size
+ * @property {number} gzipSize
+ * @property {string[]} imports
+ */
 
-interface CSSAnalysis {
-  file: string;
-  originalSize: number;
-  unusedPercentage: number;
-  potentialSavings: number;
-}
+/**
+ * @typedef {Object} CSSAnalysis
+ * @property {string} file
+ * @property {number} originalSize
+ * @property {number} unusedPercentage
+ * @property {number} potentialSavings
+ */
 
 /**
  * Calculate gzip size estimation (typically 30-40% of original)
  */
-function estimateGzipSize(size: number): number {
+function estimateGzipSize(size) {
   return Math.ceil(size * 0.35); // Conservative estimate
 }
 
 /**
  * Analyze all JS chunks in dist
  */
-async function analyzeJSChunks(): Promise<ChunkInfo[]> {
-  const chunks: ChunkInfo[] = [];
+async function analyzeJSChunks() {
+  const chunks = [];
   
   try {
     const files = await readdir(path.join(DIST_DIR, 'assets'));
@@ -77,9 +80,9 @@ async function analyzeJSChunks(): Promise<ChunkInfo[]> {
 /**
  * Extract import statements from JS content
  */
-function extractImports(content: string): string[] {
-  const importRegex = /from\s+['"]([@./][^'"]+)['"];/g;
-  const imports = new Set<string>();
+function extractImports(content) {
+  const importRegex = /from\s+['"]([\@./][^'"]+)['"];/g;
+  const imports = new Set();
   
   let match;
   while ((match = importRegex.exec(content)) !== null) {
@@ -92,8 +95,8 @@ function extractImports(content: string): string[] {
 /**
  * Analyze CSS files for potentially unused rules
  */
-async function analyzeCSSFiles(): Promise<CSSAnalysis[]> {
-  const cssAnalysis: CSSAnalysis[] = [];
+async function analyzeCSSFiles() {
+  const cssAnalysis = [];
   
   try {
     const files = await readdir(path.join(DIST_DIR, 'assets'));
@@ -125,7 +128,7 @@ async function analyzeCSSFiles(): Promise<CSSAnalysis[]> {
 /**
  * Rough estimation of unused CSS based on selectors and declarations
  */
-function estimateUnusedCSS(css: string): number {
+function estimateUnusedCSS(css) {
   // Count selectors
   const selectors = (css.match(/[{]/g) || []).length;
   // Estimate based on Tailwind utilities (many unused in typical builds)
@@ -142,11 +145,8 @@ function estimateUnusedCSS(css: string): number {
 /**
  * Generate optimization recommendations
  */
-function generateRecommendations(
-  chunks: ChunkInfo[],
-  cssAnalysis: CSSAnalysis[]
-): string[] {
-  const recommendations: string[] = [];
+function generateRecommendations(chunks, cssAnalysis) {
+  const recommendations = [];
   
   // Check largest chunks
   const largest = chunks[0];
@@ -182,7 +182,7 @@ function generateRecommendations(
 /**
  * Format bytes to human readable
  */
-function formatBytes(bytes: number): string {
+function formatBytes(bytes) {
   if (bytes === 0) return '0 Bytes';
   const k = 1024;
   const sizes = ['Bytes', 'KB', 'MB'];
@@ -193,7 +193,7 @@ function formatBytes(bytes: number): string {
 /**
  * Main analysis function
  */
-async function analyzeBundle(): Promise<BundleAnalysis> {
+async function analyzeBundle() {
   console.log('🚀 Starting bundle analysis...\n');
   
   const jsChunks = await analyzeJSChunks();
@@ -205,7 +205,7 @@ async function analyzeBundle(): Promise<BundleAnalysis> {
   const gzipSize = estimateGzipSize(totalSize);
   const recommendations = generateRecommendations(jsChunks, cssFiles);
   
-  const analysis: BundleAnalysis = {
+  const analysis = {
     timestamp: new Date().toISOString(),
     totalSize,
     gzipSize,
