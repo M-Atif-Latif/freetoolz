@@ -48,11 +48,23 @@ export default function ToolPage({ tool, children }: Props) {
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="keywords" content={tool.keyword ?? tool.name} />
+        <meta name="robots" content={tool.indexable === false ? "noindex, follow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://freetoolz.cloud/logo.png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+        <meta property="og:image:alt" content={title} />
+        <meta property="og:site_name" content="Free Tools" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content="https://freetoolz.cloud/logo.png" />
+        <meta property="twitter:site" content="@FreeToolzCloud" />
       </Helmet>
 
       <nav className="container-responsive pt-5 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">

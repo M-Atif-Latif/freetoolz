@@ -5,12 +5,14 @@ import { toolMasterList, categories } from '../data/tools';
 import { useRecentTools } from '../hooks/useRecentTools';
 import { useFavorites } from '../hooks/useFavorites';
 import { useTrending } from '../hooks/useTrending';
+import { useSEO, homeSEO } from '../utils/useSEO';
 
 interface HomeProps {
   onNavigate: (path: string) => void;
 }
 
 export default function Home({ onNavigate }: HomeProps) {
+  useSEO(homeSEO);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const { recent, clearRecent } = useRecentTools();

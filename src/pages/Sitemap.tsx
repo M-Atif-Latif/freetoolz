@@ -1,5 +1,6 @@
 import { FileText, Link as LinkIcon } from 'lucide-react';
 import { categories, toolMasterList } from '../data/tools';
+import { useSEO, sitemapSEO } from '../utils/useSEO';
 
 interface SitemapLink {
   title: string;
@@ -53,6 +54,7 @@ interface SitemapProps {
 }
 
 export default function Sitemap({ onNavigate }: SitemapProps) {
+  useSEO(sitemapSEO);
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

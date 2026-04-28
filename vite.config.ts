@@ -57,51 +57,81 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // Critical path optimization - split by priority
+          // PERFORMANCE: Aggressive code splitting to reduce main bundle and improve LCP
+          
+          // Node modules - split by category
           if (id.includes('node_modules')) {
-            // Core React - highest priority (preloaded)
-            if (id.includes('react') && !id.includes('lucide')) {
-              return 'react-vendor';
+            // Core React - must be in main or preloaded early
+            if (id.includes('react/jsx-runtime') || (id.includes('react-dom') && !id.includes('client'))) {
+              return 'react';
             }
             
-            // Router - critical for nav
+            // React Router - critical for navigation
             if (id.includes('react-router-dom')) {
-              return 'router-vendor';
+              return 'react-router';
             }
             
-            // PDF libraries - lazy loaded
+            // React Helmet - defer to reduce main bundle
+            if (id.includes('react-helmet')) {
+              return 'helmet';
+            }
+            
+            // PDF libraries - lazy loaded for tools
             if (id.includes('pdf-lib') || id.includes('pdfjs')) {
-              return 'pdf-vendor';
+              return 'pdf-lib';
             }
             
-            // Icons - defer loading
+            // Markdown parser - lazy loaded
+            if (id.includes('react-markdown') || id.includes('remark')) {
+              return 'markdown';
+            }
+            
+            // Icons library - defer loading (heavy)
             if (id.includes('lucide-react')) {
-              return 'icons-vendor';
+              return 'icons';
             }
             
-            // Other vendors
+            // Supabase - only needed for certain features
+            if (id.includes('@supabase')) {
+              return 'supabase';
+            }
+            
+            // Default vendor chunk for other modules
             return 'vendor';
           }
           
-          // Micro-chunks for tools (route-based splitting)
+          // Route-based tools - individual chunks
           if (id.includes('/src/tools/')) {
-            const toolName = id.split('/tools/')[1].split('.')[0];
-            return `tool-${toolName}`;
+            const match = id.match(/\/tools\/([^/]+)\./);
+            if (match) {
+              return `tool-${match[1]}`;
+            }
           }
           
-          // Components chunk
-          if (id.includes('/src/components/')) {
-            return 'components';
-          }
-          
-          // Pages chunk
+          // Pages - individual chunks for lazy routes
           if (id.includes('/src/pages/')) {
-            return 'pages';
+            const match = id.match(/\/pages\/([^/]+)\./);
+            if (match) {
+              return `page-${match[1]}`;
+            }
           }
           
-          // Utils chunk
+          // Components - split into smaller chunks
+          if (id.includes('/src/components/')) {
+            const match = id.match(/\/components\/([^/]+)\./);
+            if (match) {
+              return `comp-${match[1]}`;
+            }
+          }
+          
+          // Utils - keep together but as separate chunk
           if (id.includes('/src/utils/')) {
             return 'utils';
+          }
+          
+          // Data - keep together
+          if (id.includes('/src/data/')) {
+            return 'data';
           }
         },
         chunkFileNames: 'assets/[name]-[hash].js',
@@ -109,16 +139,15 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
-    sourcemap: false, // Disable sourcemaps for production
-    chunkSizeWarningLimit: 500,
+    sourcemap: false,
+    chunkSizeWarningLimit: 400,
     cssCodeSplit: true,
     modulePreload: {
-      polyfill: true,
+      polyfill: false, // Disable polyfill for faster load in modern browsers
     },
-    assetsInlineLimit: 8192, // Increased from 4096 for better inline of small assets
+    assetsInlineLimit: 4096, // Keep SVGs external for better caching
     reportCompressedSize: true,
     target: 'es2020',
-    // Additional build optimizations
     ssr: false,
     commonjsOptions: {
       transformMixedEsModules: true,

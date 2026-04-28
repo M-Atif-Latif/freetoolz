@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/optimizeCSSLoading.mjs",
     "postbuild": "npm run generate:site-files && npm run prerender && npm run analyze:bundle",
     "analyze:bundle": "node scripts/optimizeBuild.mjs",
     "lint": "eslint .",

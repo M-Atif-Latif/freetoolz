@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense, useEffect, useCallback, useMemo } from 'react';
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -204,17 +204,21 @@ function App() {
   const navigate = useNavigate();
   const currentPath = location.pathname;
 
-  // Scroll to top on route change
+  // Scroll to top on route change - defer to next frame
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Use requestAnimationFrame to defer scroll to avoid blocking
+    const frameId = requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+    return () => cancelAnimationFrame(frameId);
   }, [location.pathname]);
 
-  const navigateTo = (path: string) => {
+  const navigateTo = useCallback((path: string) => {
     navigate(path);
-  };
+  }, [navigate]);
 
   // Create route elements with location-based keys to force remounting
-  const createRouteElement = (route: RouteConfig) => {
+  const createRouteElement = useCallback((route: RouteConfig) => {
     switch (route.path) {
       case '/':
         return <Home key={currentPath} onNavigate={navigateTo} />;
@@ -237,7 +241,7 @@ function App() {
       default:
         return route.component;
     }
-  };
+  }, [currentPath, navigateTo]);
 
   const routes: RouteConfig[] = [
     {

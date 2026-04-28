@@ -1,6 +1,8 @@
 import { Github, Linkedin, Facebook, MessageCircle, Mail, ExternalLink, Sparkles, X } from 'lucide-react';
+import { useSEO, aboutSEO } from '../utils/useSEO';
 
 export default function About() {
+  useSEO(aboutSEO);
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
       {/* Hero Section */}

@@ -61,7 +61,7 @@ function Header({ onNavigate }: HeaderProps) {
               <button onClick={() => onNavigate('/blog')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">Blog</button>
               <button onClick={() => onNavigate('/faq')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">FAQ</button>
               <button onClick={() => onNavigate('/about')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">About</button>
-              <button onClick={() => onNavigate('/contact')} className="px-3 lg:px-4 py-2 bg-accent-600 dark:bg-accent-600 text-white hover:bg-accent-700 dark:hover:bg-accent-700 rounded-lg transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md">Contact</button>
+              <button onClick={() => onNavigate('/contact')} className="px-3 lg:px-4 py-2 bg-primary-700 dark:bg-primary-700 text-white hover:bg-primary-800 dark:hover:bg-primary-800 rounded-lg transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md">Contact</button>
             </nav>
             
             {/* Dark Mode Toggle */}
@@ -94,7 +94,7 @@ function Header({ onNavigate }: HeaderProps) {
 <button onClick={() => handleNavigate('/blog')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Blog</button>
               <button onClick={() => handleNavigate('/faq')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">FAQ</button>
               <button onClick={() => handleNavigate('/about')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">About</button>
-              <button onClick={() => handleNavigate('/contact')} className="text-white bg-accent-600 hover:bg-accent-700 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg shadow-sm">Contact</button>
+              <button onClick={() => handleNavigate('/contact')} className="text-white bg-primary-700 hover:bg-primary-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg shadow-sm">Contact</button>
             </nav>
           </div>
         )}

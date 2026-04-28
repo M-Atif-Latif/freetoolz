@@ -3,6 +3,7 @@ import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import type { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { useSEO, blogSEO } from '../utils/useSEO';
 
 interface BlogPost {
   id: string;
@@ -929,6 +930,7 @@ const normalizeMarkdownContent = (content: string) => {
 };
 
 export default function Blog() {
+  useSEO(blogSEO);
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [selectedPost, setSelectedPost] = useState<BlogPost>(blogPosts[0]);
   const articleRef = useRef<HTMLDivElement | null>(null);

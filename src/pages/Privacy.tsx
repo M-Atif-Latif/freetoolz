@@ -1,4 +1,7 @@
+import { useSEO, privacySEO } from '../utils/useSEO';
+
 export default function Privacy() {
+  useSEO(privacySEO);
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>

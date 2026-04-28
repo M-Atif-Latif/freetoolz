@@ -68,7 +68,7 @@ export default function CookieConsent() {
             </button>
             <button
               onClick={acceptCookies}
-              className="px-6 py-2.5 bg-accent-600 hover:bg-accent-700 text-white rounded-lg transition-colors font-medium shadow-lg"
+              className="px-6 py-2.5 bg-primary-700 hover:bg-primary-800 text-white rounded-lg transition-colors font-medium shadow-lg"
               aria-label="Accept cookies"
             >
               Accept All

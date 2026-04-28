@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { StrictMode, startTransition } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -38,21 +38,24 @@ if (import.meta.env.DEV) {
 // Create root with concurrent features enabled (React 18)
 const root = createRoot(rootElement);
 
-// Render immediately for fastest FCP/LCP
-root.render(
-  <StrictMode>
-    <ErrorBoundary>
-      <ThemeProvider>
-        <HelmetProvider>
-          <BrowserRouter>
-            <App />
-            <CookieConsent />
-          </BrowserRouter>
-        </HelmetProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
-  </StrictMode>
-);
+// Use startTransition to break up main thread work and improve TBT
+// This allows React to render in smaller chunks and be more responsive to user input
+startTransition(() => {
+  root.render(
+    <StrictMode>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <HelmetProvider>
+            <BrowserRouter>
+              <App />
+              <CookieConsent />
+            </BrowserRouter>
+          </HelmetProvider>
+        </ThemeProvider>
+      </ErrorBoundary>
+    </StrictMode>
+  );
+});
 
 // Initialize performance monitoring after app renders
 initPerformanceMonitoring();

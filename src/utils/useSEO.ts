@@ -224,3 +224,62 @@ export const contactSEO: SEOConfig = {
   keywords: 'contact freetoolz, support, feedback, tool requests',
   author: 'Muhammad Atif Latif'
 };
+
+// Privacy page SEO
+export const privacySEO: SEOConfig = {
+  title: 'Privacy Policy - Free Tools',
+  description: 'Read our privacy policy to understand how Free Tools protects your data. We are committed to your privacy and never store data on our servers.',
+  canonical: 'https://freetoolz.cloud/privacy',
+  keywords: 'privacy policy, data protection, freetoolz privacy',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large',
+  author: 'Muhammad Atif Latif'
+};
+
+// Terms page SEO
+export const termsSEO: SEOConfig = {
+  title: 'Terms of Service - Free Tools',
+  description: 'Review the terms of service for Free Tools. Understand the conditions and guidelines for using our 140+ free online tools.',
+  canonical: 'https://freetoolz.cloud/terms',
+  keywords: 'terms of service, terms and conditions, freetoolz terms',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large',
+  author: 'Muhammad Atif Latif'
+};
+
+// Disclaimer page SEO
+export const disclaimerSEO: SEOConfig = {
+  title: 'Disclaimer - Free Tools',
+  description: 'Important disclaimer for Free Tools. Please read to understand the limitations and proper usage of our tools.',
+  canonical: 'https://freetoolz.cloud/disclaimer',
+  keywords: 'disclaimer, terms, freetoolz disclaimer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large',
+  author: 'Muhammad Atif Latif'
+};
+
+// FAQ page SEO
+export const faqSEO: SEOConfig = {
+  title: 'FAQ - Free Tools Questions Answered',
+  description: 'Frequently Asked Questions about Free Tools. Find answers to common questions about our tools, privacy, and how to use them.',
+  canonical: 'https://freetoolz.cloud/faq',
+  keywords: 'faq, frequently asked questions, freetoolz help, tool help',
+  author: 'Muhammad Atif Latif'
+};
+
+// Sitemap page SEO
+export const sitemapSEO: SEOConfig = {
+  title: 'Sitemap - Free Tools Directory',
+  description: 'Complete directory of all 140+ free tools available on Free Tools. Browse and discover tools by category.',
+  canonical: 'https://freetoolz.cloud/sitemap',
+  keywords: 'sitemap, tools directory, freetoolz directory, all tools',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large',
+  author: 'Muhammad Atif Latif'
+};
+
+// Not Found page SEO
+export const notFoundSEO: SEOConfig = {
+  title: '404 - Page Not Found | Free Tools',
+  description: 'The page you are looking for could not be found. Please check the URL or navigate to our homepage to find what you are looking for.',
+  canonical: 'https://freetoolz.cloud/404',
+  keywords: '404, page not found, not found',
+  robots: 'noindex, follow',
+  author: 'Muhammad Atif Latif'
+};

@@ -1,10 +1,12 @@
 import { Home, Search, ArrowLeft, Lightbulb } from 'lucide-react';
+import { useSEO, notFoundSEO } from '../utils/useSEO';
 
 interface NotFoundProps {
   onNavigate: (path: string) => void;
 }
 
 export default function NotFound({ onNavigate }: NotFoundProps) {
+  useSEO(notFoundSEO);
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4">
       <div className="text-center max-w-2xl">

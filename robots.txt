@@ -1,6 +1,6 @@
 # Free Tools Robots Configuration
 # Website: https://freetoolz.cloud
-# Generated: 2026-04-18
+# Generated: 2026-04-28
 
 # Allow all crawlers full access
 User-agent: *
@@ -59,8 +59,27 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
+# ============================================================
+# Clean-param Directives (Google-only directive)
+# Tells Google these parameters don't affect page content
+# So all variants consolidate to the canonical URL
+# ============================================================
+
+# Referral tracking parameters (marketing, doesn't affect page)
+Clean-param: ref https://freetoolz.cloud/
+
+# UTM campaign tracking parameters (analytics, doesn't affect page)
+Clean-param: utm_source https://freetoolz.cloud/
+Clean-param: utm_medium https://freetoolz.cloud/
+Clean-param: utm_campaign https://freetoolz.cloud/
+Clean-param: utm_content https://freetoolz.cloud/
+Clean-param: utm_term https://freetoolz.cloud/
+
+# Facebook tracking parameters (social, doesn't affect page)
+Clean-param: fbclid https://freetoolz.cloud/
+
+# Search/query parameters (UI state, doesn't affect indexable content)
+Clean-param: q https://freetoolz.cloud/
+
 # Sitemap location (critical for discovery)
 Sitemap: https://freetoolz.cloud/sitemap.xml
-
-# Host directive for preferred domain
-Host: https://freetoolz.cloud

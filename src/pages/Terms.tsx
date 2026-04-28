@@ -1,4 +1,7 @@
+import { useSEO, termsSEO } from '../utils/useSEO';
+
 export default function Terms() {
+  useSEO(termsSEO);
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>

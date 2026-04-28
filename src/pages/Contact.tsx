@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Mail, Github, Linkedin, Facebook, MessageCircle, ExternalLink, X } from 'lucide-react';
+import { useSEO, contactSEO } from '../utils/useSEO';
 
 export default function Contact() {
+  useSEO(contactSEO);
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

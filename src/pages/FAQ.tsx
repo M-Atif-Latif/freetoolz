@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { useSEO, faqSEO } from '../utils/useSEO';
 
 interface FAQItem {
   question: string;
@@ -108,6 +109,7 @@ const faqs: FAQItem[] = [
 const categories = ['All', 'General', 'Privacy & Security', 'Technical', 'Features', 'Support', 'Usage'];
 
 export default function FAQ() {
+  useSEO(faqSEO);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
 
