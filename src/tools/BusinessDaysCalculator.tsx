@@ -51,7 +51,7 @@ export default function BusinessDaysCalculator() {
       return;
     }
 
-    let current = new Date(start);
+    const current = new Date(start);
     let addedDays = 0;
 
     while (addedDays < Math.abs(days)) {

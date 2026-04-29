@@ -40,14 +40,14 @@ export default defineConfig({
         unsafe_proto: true,
         dead_code: true,
         unused: true,
-        toplevel: true,
+        toplevel: false,
         side_effects: true,
         hoist_funs: true,
         hoist_props: true,
       },
       mangle: {
         safari10: true,
-        toplevel: true,
+        toplevel: false,
       },
       format: {
         comments: false,
@@ -61,9 +61,9 @@ export default defineConfig({
           
           // Node modules - split by category
           if (id.includes('node_modules')) {
-            // Core React - must be in main or preloaded early
-            if (id.includes('react/jsx-runtime') || (id.includes('react-dom') && !id.includes('client'))) {
-              return 'react';
+            // Core React - must be bundled together to prevent __SECRET_INTERNALS errors
+            if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/') || id.includes('node_modules/scheduler/')) {
+              return 'react-vendor';
             }
             
             // React Router - critical for navigation

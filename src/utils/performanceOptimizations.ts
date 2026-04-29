@@ -70,14 +70,15 @@ export function scheduleIdleCallback(callback: () => void, timeout = 2000) {
  */
 export function deferNonCriticalCSS() {
   const links = document.querySelectorAll('link[rel="stylesheet"][data-defer="true"]');
-  links.forEach(link => {
+  links.forEach(node => {
+    const link = node as HTMLLinkElement;
     const href = link.getAttribute('href');
     if (href) {
       link.setAttribute('rel', 'preload');
       link.setAttribute('as', 'style');
       link.onload = function() {
-        this.onload = null;
-        this.rel = 'stylesheet';
+        link.onload = null;
+        link.rel = 'stylesheet';
       };
     }
   });
