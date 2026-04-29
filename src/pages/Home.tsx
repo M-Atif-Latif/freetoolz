@@ -1,4 +1,4 @@
-import { useState, useMemo, startTransition } from 'react';
+import { useState, useMemo, startTransition, useEffect } from 'react';
 import { Search, ArrowRight, Clock, Star, Flame } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import { toolMasterList, categories } from '../data/tools';
@@ -19,6 +19,16 @@ export default function Home({ onNavigate }: HomeProps) {
   const { favorites, toggleFavorite } = useFavorites();
   const { trending } = useTrending();
 
+  // Debug logging
+  useEffect(() => {
+    if (toolMasterList.length === 0) {
+      console.warn('⚠️ WARNING: toolMasterList is empty!');
+    } else {
+      console.log(`✅ toolMasterList loaded: ${toolMasterList.length} tools`);
+      console.log('First tool:', toolMasterList[0]);
+    }
+  }, []);
+
   // Memoize filtered tools to prevent unnecessary recalculations
   const filteredTools = useMemo(() => {
     return toolMasterList.filter(tool => {
@@ -28,6 +38,16 @@ export default function Home({ onNavigate }: HomeProps) {
       return matchesSearch && matchesCategory;
     });
   }, [searchQuery, selectedCategory]);
+
+  // Log whenever filteredTools changes (for search debugging)
+  useEffect(() => {
+    console.log(`🔍 Search filter changed:`, {
+      query: searchQuery || '(empty)',
+      category: selectedCategory,
+      results: filteredTools.length,
+      total: toolMasterList.length
+    });
+  }, [searchQuery, selectedCategory, filteredTools.length]);
 
   // Map recent tool IDs to actual tool objects
   const recentToolsList = useMemo(() => {
@@ -61,6 +81,7 @@ export default function Home({ onNavigate }: HomeProps) {
   // Handle search with transition for better UX
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    console.log(`📝 User typed: "${value}"`);
     startTransition(() => {
       setSearchQuery(value);
     });

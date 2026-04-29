@@ -21,6 +21,7 @@ const FAQ = lazy(() => import('./pages/FAQ'));
 const Sitemap = lazy(() => import('./pages/Sitemap'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const ToolPage = lazy(() => import('./pages/ToolPage'));
+const Debug = lazy(() => import('./pages/Debug'));
 
 // Lazy load tools
 const WordCounter = lazy(() => import('./tools/WordCounter'));
@@ -238,6 +239,8 @@ function App() {
         return <Terms key={currentPath} />;
       case '/disclaimer':
         return <Disclaimer key={currentPath} />;
+      case '/debug':
+        return <Debug key={currentPath} />;
       default:
         return route.component;
     }
@@ -1223,6 +1226,12 @@ function App() {
       title: 'Organize PDF - Merge and Reorder Pages | Free Tools',
       description: 'Organize PDF documents by merging, reordering, and managing pages.',
       keywords: 'PDF organization, merge, page management'
+    },
+    {
+      path: '/debug',
+      component: <Debug />,
+      title: 'Debug - Internal Debug Page',
+      description: 'Internal debug page'
     },
   ];
 
