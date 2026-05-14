@@ -734,7 +734,6 @@ export const tools: Tool[] = [
     metaTitle: 'SQL Formatter - Free Online Tool | FreeToolz',
     metaDescription: 'Format and convert code instantly. Free online sql formatter for developers.',
     keywords: 'sql formatter, free online, sql formatter, online tool',
-    indexable: false,
   },
   {
     id: 'htaccess-generator',
@@ -746,7 +745,6 @@ export const tools: Tool[] = [
     metaTitle: '.htaccess Generator - Free Online Tool | FreeToolz',
     metaDescription: 'Free online .htaccess generator tool. Instant results, no signup needed.',
     keywords: 'htaccess generator, free online, .htaccess generator, online tool',
-    indexable: false,
   },
   // Additional PDF Tools
   {
@@ -759,7 +757,6 @@ export const tools: Tool[] = [
     metaTitle: 'PDF to Text - Free Online Tool | FreeToolz',
     metaDescription: 'PDF conversion online instantly. Fast, secure, free online pdf to text. No signup required for pdf to text.',
     keywords: 'pdf to text, free online, pdf to text, online tool',
-    indexable: false,
   },
   {
     id: 'pdf-watermark',
@@ -771,7 +768,6 @@ export const tools: Tool[] = [
     metaTitle: 'Pdf Watermark - Free Online Tool | FreeToolz',
     metaDescription: 'PDF manipulation online instantly. Fast, secure, free online pdf watermark. No signup required for pdf watermark.',
     keywords: 'pdf watermark, free online, pdf watermark, online tool',
-    indexable: false,
   },
   {
     id: 'pdf-metadata-editor',
@@ -783,7 +779,6 @@ export const tools: Tool[] = [
     metaTitle: 'Pdf Metadata Editor - Free Online Tool | FreeToolz',
     metaDescription: 'PDF manipulation online instantly. Fast, secure, free online pdf metadata editor. No signup required for pdf metadata editor.',
     keywords: 'pdf metadata editor, free online, pdf metadata editor, online tool',
-    indexable: false,
   },
   {
     id: 'pdf-page-reorder',
@@ -795,9 +790,7 @@ export const tools: Tool[] = [
     metaTitle: 'PDF Page Reorder - Rearrange PDF Pages Online Free',
     metaDescription: 'Reorder and rearrange PDF pages instantly. Reorganize your PDF documents free online. Fast, secure, no signup required.',
     keywords: 'reorder pdf pages, rearrange pdf, pdf editor, page organizer, free online',
-    indexable: false,
   },
-  // Additional Image Tools
   {
     id: 'image-cropper',
     name: 'Image Cropper',
@@ -808,7 +801,6 @@ export const tools: Tool[] = [
     metaTitle: 'Image Cropper - Free Online Tool | FreeToolz',
     metaDescription: 'Edit and enhance images online instantly. Free image cropper for photo editing. No signup required.',
     keywords: 'image cropper, free online, image cropper, online tool',
-    indexable: false,
   },
   {
     id: 'image-rotator',
@@ -820,7 +812,6 @@ export const tools: Tool[] = [
     metaTitle: 'Image Rotator - Free Online Tool | FreeToolz',
     metaDescription: 'Edit and enhance images online instantly. Free image rotator for photo editing. No signup required.',
     keywords: 'image rotator, free online, image rotator, online tool',
-    indexable: false,
   },
   {
     id: 'background-remover',
@@ -877,7 +868,6 @@ export const tools: Tool[] = [
     metaTitle: 'Dice Roller - Free Online Tool | FreeToolz',
     metaDescription: 'Free online dice roller tool. Instant results, no signup needed.',
     keywords: 'dice roller, free online, dice roller, online tool',
-    indexable: false,
   },
   {
     id: 'random-picker',

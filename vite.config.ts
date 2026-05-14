@@ -8,6 +8,11 @@ export default defineConfig({
       jsxRuntime: 'automatic',
       // Enable Fast Refresh for better dev experience
       fastRefresh: true,
+      // Disable babel for tools using config file instead
+      babel: {
+        babelrc: false,
+        configFile: false,
+      },
     }),
   ],
   // Configure public directory for static assets
@@ -20,11 +25,11 @@ export default defineConfig({
     // Enable deeper dependency optimization
     esbuildOptions: {
       treeShaking: true,
-      target: 'es2020',
+      target: 'es2022',
     },
   },
   build: {
-    // Use terser for aggressive minification
+    // Use esbuild for faster builds (terser is slower but better compression)
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -32,26 +37,33 @@ export default defineConfig({
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace'],
         passes: 3,
-        ecma: 2020,
+        ecma: 2022,
         unsafe_arrows: true,
         unsafe_methods: true,
         unsafe_comps: true,
         unsafe_math: true,
         unsafe_proto: true,
+        unsafe_regexp: true,
         dead_code: true,
         unused: true,
         toplevel: false,
         side_effects: true,
         hoist_funs: true,
         hoist_props: true,
+        collapse_vars: true,
+        reduce_vars: true,
+        inline: 3,
       },
       mangle: {
         safari10: true,
         toplevel: false,
+        properties: {
+          regex: '^_',
+        },
       },
       format: {
         comments: false,
-        ecma: 2020,
+        ecma: 2022,
       },
     },
     rollupOptions: {
@@ -100,28 +112,19 @@ export default defineConfig({
             return 'vendor';
           }
           
-          // Route-based tools - individual chunks
+          // Route-based tools - individual chunks (lazy loaded)
           if (id.includes('/src/tools/')) {
-            const match = id.match(/\/tools\/([^/]+)\./);
-            if (match) {
-              return `tool-${match[1]}`;
-            }
+            return 'tools-lazy';
           }
           
           // Pages - individual chunks for lazy routes
           if (id.includes('/src/pages/')) {
-            const match = id.match(/\/pages\/([^/]+)\./);
-            if (match) {
-              return `page-${match[1]}`;
-            }
+            return 'pages-lazy';
           }
           
           // Components - split into smaller chunks
           if (id.includes('/src/components/')) {
-            const match = id.match(/\/components\/([^/]+)\./);
-            if (match) {
-              return `comp-${match[1]}`;
-            }
+            return 'components';
           }
           
           // Utils - keep together but as separate chunk
@@ -140,14 +143,15 @@ export default defineConfig({
       },
     },
     sourcemap: false,
-    chunkSizeWarningLimit: 400,
+    chunkSizeWarningLimit: 300,
     cssCodeSplit: true,
+    cssMinify: true,
     modulePreload: {
       polyfill: false, // Disable polyfill for faster load in modern browsers
     },
-    assetsInlineLimit: 4096, // Keep SVGs external for better caching
+    assetsInlineLimit: 2048, // Keep SVGs external for better caching (reduced from 4096)
     reportCompressedSize: true,
-    target: 'es2020',
+    target: 'es2022',
     ssr: false,
     commonjsOptions: {
       transformMixedEsModules: true,
