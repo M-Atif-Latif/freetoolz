@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function UnitConverter() {
+  const howItWorks = [
+    { title: 'Select Unit Type', description: 'Choose what you\'re converting (length, weight, volume, etc.)' },
+    { title: 'Enter Amount', description: 'Type the value in your source unit' },
+    { title: 'Select Units', description: 'Pick your source and target units' },
+    { title: 'View Result', description: 'See instant conversion with precise calculations' }
+  ];
   const [value, setValue] = useState('');
   const [from, setFrom] = useState('meters');
   const [to, setTo] = useState('feet');
@@ -27,6 +35,9 @@ export default function UnitConverter() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Unit Converter</h1>
       <p className="text-gray-600 text-lg mb-6">Convert between different units of measurement</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="grid md:grid-cols-3 gap-6 mb-6">
           <div>
@@ -36,7 +47,7 @@ export default function UnitConverter() {
               value={value}
               onChange={(e) => setValue(e.target.value)}
               placeholder="100"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -54,7 +65,7 @@ export default function UnitConverter() {
         </div>
         {value && (
           <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl">
-            <div className="text-5xl font-bold text-blue-600 mb-2">{convert()}</div>
+            <div className="text-5xl font-bold text-primary-600 mb-2">{convert()}</div>
             <div className="text-gray-600">{to}</div>
           </div>
         )}
@@ -62,3 +73,5 @@ export default function UnitConverter() {
     </div>
   );
 }
+
+

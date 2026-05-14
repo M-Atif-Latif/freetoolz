@@ -1,5 +1,7 @@
-import { StrictMode } from 'react';
+import { StrictMode, startTransition } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
 import { ThemeProvider } from './context/ThemeContext';
@@ -14,20 +16,46 @@ if (!rootElement) {
   throw new Error('Root element not found');
 }
 
+// In development, unregister any old service workers to prevent stale cache issues
+if (import.meta.env.DEV) {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      registrations.forEach((registration) => {
+        registration.unregister();
+      });
+    });
+  }
+  // Also clear caches in dev
+  if ('caches' in window) {
+    caches.keys().then((names) => {
+      names.forEach((name) => {
+        caches.delete(name);
+      });
+    });
+  }
+}
+
 // Create root with concurrent features enabled (React 18)
 const root = createRoot(rootElement);
 
-// Render immediately for fastest FCP/LCP
-root.render(
-  <StrictMode>
-    <ErrorBoundary>
-      <ThemeProvider>
-        <App />
-        <CookieConsent />
-      </ThemeProvider>
-    </ErrorBoundary>
-  </StrictMode>
-);
+// Use startTransition to break up main thread work and improve TBT
+// This allows React to render in smaller chunks and be more responsive to user input
+startTransition(() => {
+  root.render(
+    <StrictMode>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <HelmetProvider>
+            <BrowserRouter>
+              <App />
+              <CookieConsent />
+            </BrowserRouter>
+          </HelmetProvider>
+        </ThemeProvider>
+      </ErrorBoundary>
+    </StrictMode>
+  );
+});
 
 // Initialize performance monitoring after app renders
 initPerformanceMonitoring();
@@ -35,8 +63,33 @@ initPerformanceMonitoring();
 // Register service worker for offline support (production only)
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch((error) => {
-      console.warn('Service Worker registration failed:', error);
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then((registration) => {
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          if (!newWorker) {
+            return;
+          }
+
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              newWorker.postMessage('skipWaiting');
+            }
+          });
+        });
+      })
+      .catch((error) => {
+        console.warn('Service Worker registration failed:', error);
+      });
+
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (refreshing) {
+        return;
+      }
+      refreshing = true;
+      window.location.reload();
     });
   });
 }

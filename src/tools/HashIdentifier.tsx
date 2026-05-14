@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Hash, Search } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function HashIdentifier() {
+  const howItWorks = [
+    { title: 'Paste Hash', description: 'Enter your hash string' },
+    { title: 'Analyze', description: 'Identify the hash type (MD5, SHA1, SHA256, etc.)' },
+    { title: 'View Results', description: 'See the hash type and characteristics' },
+    { title: 'Copy Info', description: 'Save the hash information' }
+  ];
   const [hash, setHash] = useState('');
   const [results, setResults] = useState<{ type: string; confidence: string; info: string }[]>([]);
 
@@ -239,7 +247,7 @@ export default function HashIdentifier() {
 
         {/* Hash Length Reference */}
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-500 to-cyan-600 px-6 py-4">
+          <div className="bg-gradient-to-r from-secondary-500 to-cyan-600 px-6 py-4">
             <h2 className="text-lg font-semibold text-white">Common Hash Lengths</h2>
           </div>
           <div className="p-6">
@@ -286,3 +294,4 @@ export default function HashIdentifier() {
     </div>
   );
 }
+

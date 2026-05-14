@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Upload, Download } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ImageCompressor() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select an image file from your computer' },
+    { title: 'Set Quality', description: 'Choose compression level and quality' },
+    { title: 'Compress', description: 'Reduce image file size while maintaining quality' },
+    { title: 'Download', description: 'Save your compressed image' }
+  ];
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState('');
   const [quality, setQuality] = useState(80);
@@ -59,9 +67,13 @@ export default function ImageCompressor() {
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Image Compressor</h1>
       <p className="text-gray-600 text-lg mb-6">Reduce image file size while maintaining quality</p>
 
+
+      <HowItWorks steps={howItWorks} />
+
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="mb-6">
-          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
+          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="w-12 h-12 mb-4 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500">
@@ -100,7 +112,7 @@ export default function ImageCompressor() {
 
             <button
               onClick={compressImage}
-              className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg mb-4"
+              className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg mb-4"
             >
               Compress Image
             </button>
@@ -132,3 +144,5 @@ export default function ImageCompressor() {
     </div>
   );
 }
+
+

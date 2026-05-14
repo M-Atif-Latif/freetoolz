@@ -1,0 +1,27 @@
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[31m✗[39m Build failed in 3.73s
+[31merror during build:
+[31m[vite:esbuild] Transform failed with 1 error:
+D:/Website/freetoolz/src/data/tools.ts:738:2: ERROR: Expected identifier but found "{"[31m
+file: [36mD:/Website/freetoolz/src/data/tools.ts:738:2[31m
+[33m
+[33mExpected identifier but found "{"[33m
+736 |      keywords: 'sql formatter, free online, sql formatter, online tool',
+737 |      indexable: false,
+738 |    {
+    |    ^
+739 |      id: 'htaccess-generator',
+740 |      name: '.htaccess Generator',
+[31m
+    at failureErrorWithLog (D:\Website\freetoolz\node_modules\esbuild\lib\main.js:1467:15)
+    at D:\Website\freetoolz\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (D:\Website\freetoolz\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (D:\Website\freetoolz\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (D:\Website\freetoolz\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)[39m

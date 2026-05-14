@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function AgeCalculator() {
+  const howItWorks = [
+    { title: 'Select Your Birth Date', description: 'Pick your date of birth from the calendar picker' },
+    { title: 'Click Calculate', description: 'Press the calculate button to process your age' },
+    { title: 'View Your Age', description: 'See your exact age in years, months, days and more metrics' },
+    { title: 'Check Additional Stats', description: 'Review total days, weeks, months lived and next birthday countdown' }
+  ];
   const [birthDate, setBirthDate] = useState('');
   const [result, setResult] = useState<{
     years: number;
@@ -57,15 +65,16 @@ export default function AgeCalculator() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">Age Calculator</h1>
-        <p className="text-gray-600 text-lg">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Age Calculator</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">
           Calculate your exact age in years, months, days, and more
         </p>
+        <HowItWorks steps={howItWorks} />
       </div>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Date of Birth
           </label>
           <input
@@ -73,21 +82,21 @@ export default function AgeCalculator() {
             value={birthDate}
             onChange={(e) => setBirthDate(e.target.value)}
             max={new Date().toISOString().split('T')[0]}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
           />
         </div>
 
         <button
           onClick={calculateAge}
           disabled={!birthDate}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-300 disabled:cursor-not-allowed"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-300 disabled:cursor-not-allowed"
         >
           Calculate Age
         </button>
 
         {result && (
           <div className="mt-8 space-y-6">
-            <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl">
+            <div className="text-center p-6 bg-gradient-to-br from-primary-50 to-gray-100 rounded-xl">
               <div className="text-5xl font-bold text-gray-900 mb-2">
                 {result.years}
               </div>
@@ -97,8 +106,8 @@ export default function AgeCalculator() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <div className="text-2xl font-bold text-blue-600">{result.totalMonths.toLocaleString()}</div>
+              <div className="p-4 bg-primary-50 rounded-lg border border-primary-200">
+                <div className="text-2xl font-bold text-primary-600">{result.totalMonths.toLocaleString()}</div>
                 <div className="text-gray-700">Total Months</div>
               </div>
               <div className="p-4 bg-green-50 rounded-lg border border-green-200">

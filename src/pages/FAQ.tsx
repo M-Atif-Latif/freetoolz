@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { useSEO, faqSEO } from '../utils/useSEO';
 
 interface FAQItem {
   question: string;
@@ -10,13 +11,13 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     category: 'General',
-    question: 'What is FreeToolz?',
-    answer: 'FreeToolz is a comprehensive collection of 54+ free online tools designed to help with text processing, PDF manipulation, image editing, calculations, conversions, and more. All tools work directly in your browser without requiring any downloads, installations, or registrations.'
+    question: 'What is Free Tools?',
+    answer: 'Free Tools is a comprehensive collection of 54+ free online tools designed to help with text processing, PDF manipulation, image editing, calculations, conversions, and more. All tools work directly in your browser without requiring any downloads, installations, or registrations.'
   },
   {
     category: 'General',
-    question: 'Is FreeToolz really free?',
-    answer: 'Yes! All tools on FreeToolz are completely free to use with no hidden costs, subscriptions, or premium features. We believe essential digital utilities should be accessible to everyone.'
+    question: 'Is Free Tools really free?',
+    answer: 'Yes! All tools on Free Tools are completely free to use with no hidden costs, subscriptions, or premium features. We believe essential digital utilities should be accessible to everyone.'
   },
   {
     category: 'General',
@@ -25,7 +26,7 @@ const faqs: FAQItem[] = [
   },
   {
     category: 'Privacy & Security',
-    question: 'Is my data safe when using FreeToolz?',
+    question: 'Is my data safe when using Free Tools?',
     answer: 'Absolutely! All processing happens directly in your browser using client-side JavaScript. Your files and data never leave your device, are not uploaded to any server, and are not stored or transmitted anywhere. This ensures maximum privacy and security.'
   },
   {
@@ -41,7 +42,7 @@ const faqs: FAQItem[] = [
   {
     category: 'Technical',
     question: 'What browsers are supported?',
-    answer: 'FreeToolz works on all modern browsers including Chrome, Firefox, Safari, Edge, and Opera. For the best experience, we recommend using the latest version of your preferred browser.'
+    answer: 'Free Tools works on all modern browsers including Chrome, Firefox, Safari, Edge, and Opera. For the best experience, we recommend using the latest version of your preferred browser.'
   },
   {
     category: 'Technical',
@@ -101,13 +102,14 @@ const faqs: FAQItem[] = [
   {
     category: 'Usage',
     question: 'Are the tools mobile-friendly?',
-    answer: 'Yes! All our tools are fully responsive and work seamlessly on smartphones and tablets. You can access FreeToolz from any device with a web browser.'
+    answer: 'Yes! All our tools are fully responsive and work seamlessly on smartphones and tablets. You can access Free Tools from any device with a web browser.'
   }
 ];
 
 const categories = ['All', 'General', 'Privacy & Security', 'Technical', 'Features', 'Support', 'Usage'];
 
 export default function FAQ() {
+  useSEO(faqSEO);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -116,18 +118,18 @@ export default function FAQ() {
     : faqs.filter(faq => faq.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-            <HelpCircle className="h-8 w-8 text-blue-600" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
+            <HelpCircle className="h-8 w-8 text-primary-600" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Find answers to common questions about FreeToolz, our tools, privacy, and more.
+            Find answers to common questions about Free Tools, our tools, privacy, and more.
           </p>
         </div>
 
@@ -139,7 +141,7 @@ export default function FAQ() {
               onClick={() => setSelectedCategory(category)}
               className={`px-5 py-2 rounded-full font-medium transition-all transform hover:scale-105 ${
                 selectedCategory === category
-                  ? 'bg-blue-600 text-white shadow-lg'
+                  ? 'bg-primary-600 text-white shadow-lg'
                   : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 shadow-sm'
               }`}
             >
@@ -161,7 +163,7 @@ export default function FAQ() {
               >
                 <div className="flex-1 pr-4">
                   <div className="flex items-start space-x-3">
-                    <span className="inline-block bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold mt-1">
+                    <span className="inline-block bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-xs font-semibold mt-1">
                       {faq.category}
                     </span>
                     <h3 className="font-semibold text-gray-900 text-lg leading-relaxed">
@@ -187,15 +189,15 @@ export default function FAQ() {
         </div>
 
         {/* Still Have Questions */}
-        <div className="mt-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl shadow-xl p-8 text-center text-white">
+        <div className="mt-16 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-xl shadow-xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-3">Still Have Questions?</h2>
-          <p className="text-blue-50 mb-6 max-w-2xl mx-auto">
+          <p className="text-primary-50 mb-6 max-w-2xl mx-auto">
             Can't find the answer you're looking for? We're here to help! 
             Reach out to us and we'll get back to you as soon as possible.
           </p>
           <a
             href="mailto:muhammadatiflatif67@gmail.com"
-            className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all hover:scale-105 shadow-lg"
+            className="inline-block bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-all hover:scale-105 shadow-lg"
           >
             Contact Us
           </a>

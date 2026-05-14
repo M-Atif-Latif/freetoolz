@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function RegexTester() {
+  const howItWorks = [
+    { title: 'Enter Regex Pattern', description: 'Type your regular expression pattern' },
+    { title: 'Enter Test String', description: 'Paste the text you want to test against the pattern' },
+    { title: 'Set Flags', description: 'Choose regex flags (global, case-insensitive, multiline, etc.)' },
+    { title: 'View Matches', description: 'See all matches highlighted and use copy button to save results' }
+  ];
   const [pattern, setPattern] = useState('');
   const [flags, setFlags] = useState('g');
   const [testString, setTestString] = useState('');
@@ -20,6 +28,9 @@ export default function RegexTester() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Regex Tester</h1>
       <p className="text-gray-600 text-lg mb-6">Test regular expressions</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div>
@@ -35,7 +46,7 @@ export default function RegexTester() {
           <label className="block text-sm font-medium text-gray-700 mb-2">Test String</label>
           <textarea value={testString} onChange={(e) => setTestString(e.target.value)} placeholder="Test your regex here" className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg" rows={4} />
         </div>
-        <button onClick={test} className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">Test Regex</button>
+        <button onClick={test} className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold">Test Regex</button>
       </div>
       {matches.length > 0 && (
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
@@ -50,3 +61,5 @@ export default function RegexTester() {
     </div>
   );
 }
+
+

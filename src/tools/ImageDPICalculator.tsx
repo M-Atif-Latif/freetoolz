@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Image as ImageIcon, Ruler } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
 
 export default function ImageDPICalculator() {
+  const howItWorks = [
+    { title: 'Enter Image Specs', description: 'Input dimensions in pixels and print size' },
+    { title: 'Calculate DPI', description: 'Get precise DPI and megapixel information' },
+    { title: 'Review Results', description: 'See image resolution and quality metrics' },
+    { title: 'Use Values', description: 'Apply specs to your image projects' }
+  ];
+
   const [widthPx, setWidthPx] = useState('');
   const [heightPx, setHeightPx] = useState('');
   const [widthInch, setWidthInch] = useState('');
@@ -52,6 +60,8 @@ export default function ImageDPICalculator() {
             Calculate DPI (Dots Per Inch) and PPI (Pixels Per Inch) for images
           </p>
         </div>
+
+        <HowItWorks steps={howItWorks} />
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-6">
           <div className="bg-gradient-to-r from-pink-500 to-rose-600 px-6 py-4">
@@ -179,7 +189,7 @@ export default function ImageDPICalculator() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl p-6 border-2 border-blue-200 dark:border-blue-800">
+                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-secondary-900/20 rounded-xl p-6 border-2 border-primary-200 dark:border-primary-800">
                   <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Megapixels:</div>
                   <div className="text-4xl font-bold text-gray-900 dark:text-white">
                     {megapixels} MP
@@ -220,7 +230,7 @@ export default function ImageDPICalculator() {
               </div>
             </div>
             
-            <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+            <div className="mt-6 bg-primary-50 dark:bg-primary-900/20 rounded-lg p-4 border border-primary-200 dark:border-primary-800">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2">💡 Tips</h3>
               <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
                 <li>• Higher DPI = Better print quality but larger file size</li>
@@ -235,3 +245,5 @@ export default function ImageDPICalculator() {
     </div>
   );
 }
+
+

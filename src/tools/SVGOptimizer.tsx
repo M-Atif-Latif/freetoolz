@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Image, Download } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function SVGOptimizer() {
+  const howItWorks = [
+    { title: 'Paste SVG', description: 'Enter your SVG code' },
+    { title: 'Optimize', description: 'Remove unnecessary attributes, clean up code' },
+    { title: 'View Size Savings', description: 'See how much smaller your SVG is now' },
+    { title: 'Copy Optimized', description: 'Save your optimized SVG' }
+  ];
   const [svgInput, setSvgInput] = useState('');
   const [optimized, setOptimized] = useState('');
   const [stats, setStats] = useState({ original: 0, optimized: 0, saved: 0 });
@@ -129,7 +137,7 @@ export default function SVGOptimizer() {
                 <div className="grid grid-cols-2 gap-4 mt-4">
                   <button
                     onClick={() => navigator.clipboard.writeText(optimized)}
-                    className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all"
+                    className="px-6 py-3 bg-gradient-to-r from-secondary-500 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all"
                   >
                     Copy
                   </button>
@@ -146,7 +154,7 @@ export default function SVGOptimizer() {
           </div>
         </div>
 
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Optimizations Applied</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>• Remove XML declarations and comments</li>
@@ -160,3 +168,5 @@ export default function SVGOptimizer() {
     </div>
   );
 }
+
+

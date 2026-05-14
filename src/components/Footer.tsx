@@ -7,7 +7,7 @@ const socialLinks = [
     icon: Linkedin,
     description: 'Career announcements & feature drops',
     gradient: 'from-blue-600 via-blue-500 to-sky-400',
-    accent: 'text-blue-100',
+    accent: 'text-primary-100',
   },
   {
     name: 'Facebook',
@@ -55,17 +55,17 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div className="col-span-1 sm:col-span-2 space-y-3 sm:space-y-4">
             <div className="flex items-center space-x-2">
               <div className="relative">
-                <Wrench className="h-7 w-7 sm:h-8 sm:w-8 text-blue-600 dark:text-blue-500" />
-                <div className="absolute inset-0 bg-blue-600 dark:bg-blue-500 rounded-full blur-md opacity-30"></div>
+                <Wrench className="h-7 w-7 sm:h-8 sm:w-8 text-primary-600 dark:text-primary-500" />
+                <div className="absolute inset-0 bg-accent-600 dark:bg-primary-500 rounded-full blur-md opacity-30"></div>
               </div>
-              <span className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Free<span className="text-blue-600 dark:text-blue-500">Toolz</span></span>
+              <span className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Free<span className="text-primary-600 dark:text-primary-500"> Tools</span></span>
             </div>
             <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 max-w-md leading-relaxed">
-              Your ultimate collection of 120+ free online tools. No registration required, no API keys needed. Fast, simple, and always free.
+              Your ultimate collection of 140+ free online tools. No registration required, no API keys needed. Fast, simple, and always free.
             </p>
             <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-800">
-              <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">FreeToolz Cloud</p>
-              <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Connect with FreeToolz on social media</p>
+              <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">Free Tools</p>
+              <p className="text-2xs sm:text-xs text-gray-600 dark:text-gray-400 mb-2 sm:mb-3">Connect with Free Tools on social media</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {socialLinks.map((link) => (
                   <a
@@ -92,27 +92,27 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h3 className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 uppercase tracking-wider">Quick Links</h3>
             <ul className="space-y-2 sm:space-y-2.5">
-              <li><button onClick={() => onNavigate('/')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Home</button></li>
-              <li><button onClick={() => onNavigate('/blog')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Blog</button></li>
-              <li><button onClick={() => onNavigate('/faq')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">FAQ</button></li>
-              <li><button onClick={() => onNavigate('/about')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">About Us</button></li>
-              <li><button onClick={() => onNavigate('/contact')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Contact</button></li>
+              <li><button onClick={() => onNavigate('/')} className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Home</button></li>
+              <li><button onClick={() => onNavigate('/blog')} className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Blog</button></li>
+              <li><button onClick={() => onNavigate('/faq')} className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">FAQ</button></li>
+              <li><button onClick={() => onNavigate('/about')} className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">About Us</button></li>
+              <li><button onClick={() => onNavigate('/contact')} className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Contact</button></li>
             </ul>
           </div>
           <div>
             <h3 className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 uppercase tracking-wider">Legal</h3>
             <ul className="space-y-2 sm:space-y-2.5">
-              <li><button onClick={() => onNavigate('/privacy')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Privacy Policy</button></li>
-              <li><button onClick={() => onNavigate('/terms')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Terms of Service</button></li>
-              <li><button onClick={() => onNavigate('/disclaimer')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Disclaimer</button></li>
-              <li><button onClick={() => onNavigate('/sitemap')} className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Sitemap</button></li>
+              <li><button onClick={() => onNavigate('/privacy')} className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Privacy Policy</button></li>
+              <li><button onClick={() => onNavigate('/terms')} className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Terms of Service</button></li>
+              <li><button onClick={() => onNavigate('/disclaimer')} className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Disclaimer</button></li>
+              <li><button onClick={() => onNavigate('/sitemap')} className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-all duration-200 text-xs sm:text-sm hover:translate-x-1 inline-block">Sitemap</button></li>
             </ul>
           </div>
         </div>
         <div className="border-t border-gray-200 dark:border-gray-800 pt-6 sm:pt-8 mt-6 sm:mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 sm:space-y-4 md:space-y-0 gap-2">
             <p className="text-center md:text-left text-gray-600 dark:text-gray-400 text-2xs sm:text-xs md:text-sm">
-              &copy; {new Date().getFullYear()} FreeToolz. All rights reserved.
+              &copy; {new Date().getFullYear()} Free Tools. All rights reserved.
             </p>
             <p className="text-center md:text-right text-gray-600 dark:text-gray-400 text-2xs sm:text-xs md:text-sm">
               Crafted with <span className="text-red-500 animate-pulse inline-block">♥</span> by{' '}
@@ -120,7 +120,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 href="https://www.linkedin.com/in/muhammadatiflatif/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-500 hover:underline font-semibold hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200"
+                className="text-primary-600 dark:text-primary-500 hover:underline font-semibold hover:text-primary-700 dark:hover:text-primary-400 transition-colors duration-200"
               >
                 Muhammad Atif Latif
               </a>

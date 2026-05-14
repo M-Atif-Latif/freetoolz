@@ -1,0 +1,152 @@
+# Netlify Configuration for freetoolz.cloud
+# Optimized for: Fast response times (<200ms), Efficient crawl budget, Top 1% performance
+
+# Build settings
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = "dist"
+
+# Context-specific build overrides
+[build.environment]
+  NODE_ENV = "production"
+  NODE_VERSION = "20.0.0"
+
+# Post-processing
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+# Image optimization
+[[build.processing.images]]
+  query_string = ":image_optimization:"
+
+# Redirects for SPA routing and old URL migrations
+# Order matters - more specific redirects first!
+
+# Tool URL migrations (if old names are causing 404s/redirects)
+[[redirects]]
+  from = "/tools/*"
+  to = "/tools/:splat"
+  status = 200
+
+# Main SPA rewrite - catch all for router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  conditions = { Language = ["en"] }
+
+# API endpoints (if any exist)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = false
+
+# Security redirects - upgrade http to https
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+# Redirect www to non-www
+[[redirects]]
+  from = "https://www.freetoolz.cloud/*"
+  to = "https://freetoolz.cloud/:splat"
+  status = 301
+
+# Old domain migrations (if applicable)
+# [[redirects]]
+#   from = "https://old-domain.com/*"
+#   to = "https://freetoolz.cloud/:splat"
+#   status = 301
+
+# Headers configuration
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Compression headers
+    Content-Encoding = "gzip, br"
+    
+    # CORS headers
+    Access-Control-Allow-Origin = "https://freetoolz.cloud"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Accept"
+    
+    # Performance hints
+    Server-Timing = "Server" 
+    X-Content-Type-Options = "nosniff"
+
+# Cache configuration for different asset types
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    # Preload critical bundles
+    Link = "</assets/react-vendor.js>; rel=modulepreload; as=script; crossorigin"
+    Link = "</assets/components.js>; rel=preload; as=script; crossorigin"
+
+# Immutable assets (versioned filenames)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# JSON files (moderate cache)
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    Content-Type = "application/json; charset=utf-8"
+
+# Sitemap and robots (frequently crawled)
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+    Content-Type = "text/plain"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+    Content-Type = "application/xml; charset=utf-8"
+
+# Performance settings
+[functions]
+  node_bundler = "esbuild"
+  
+[functions."api"]
+  node_bundler = "esbuild"
+
+# Analytics
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  [plugins.inputs]
+    audits = ["performance", "accessibility", "best-practices", "seo", "pwa"]
+
+# Environment variables for optimization
+[context.production.environment]
+  NEXT_PUBLIC_ANALYTICS_ID = "G-B72QYM0QKJ"
+
+# Preload critical resources to reduce response time
+[[edge_functions]]
+  path = "/*"
+  function = "optimize-performance"
+
+# Monitor performance metrics
+[plugins.@netlify/plugin-bundle-stats]
+  buildEvents = ["onPostBuild"]

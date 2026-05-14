@@ -1,18 +1,21 @@
+import { useSEO, privacySEO } from '../utils/useSEO';
+
 export default function Privacy() {
+  useSEO(privacySEO);
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 prose max-w-none">
         <p className="text-gray-600 mb-6 font-medium">Last updated: November 6, 2025</p>
         
-        <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded">
-          <p className="text-blue-900 font-semibold">Your Privacy is Our Priority</p>
-          <p className="text-blue-800 text-sm mt-1">FreeToolz is committed to protecting your privacy and ensuring your data security.</p>
+        <div className="bg-primary-50 border-l-4 border-primary-600 p-4 mb-6 rounded">
+          <p className="text-primary-900 font-semibold">Your Privacy is Our Priority</p>
+          <p className="text-blue-800 text-sm mt-1">Free Tools is committed to protecting your privacy and ensuring your data security.</p>
         </div>
 
         <h2 className="text-2xl font-bold mb-3 text-gray-800">🔒 Your Privacy Matters</h2>
         <p className="mb-4 text-gray-700 leading-relaxed">
-          At FreeToolz, we take your privacy seriously. All our tools are designed with privacy-first principles. 
+          At Free Tools, we take your privacy seriously. All our tools are designed with privacy-first principles. 
           Your data is processed entirely in your browser and never leaves your device. We do not have servers 
           that store, collect, or transmit your personal information.
         </p>
@@ -74,17 +77,19 @@ export default function Privacy() {
         <h2 className="text-2xl font-bold mb-3 mt-8 text-gray-800">📞 Contact Us</h2>
         <p className="mb-4 text-gray-700 leading-relaxed">
           If you have any questions about this Privacy Policy, please contact us at:{' '}
-          <a href="mailto:muhammadatiflatif67@gmail.com" className="text-blue-600 hover:text-blue-700 underline">
+          <a href="mailto:muhammadatiflatif67@gmail.com" className="text-primary-600 hover:text-primary-700 underline">
             muhammadatiflatif67@gmail.com
           </a>
         </p>
 
         <div className="bg-gray-50 border border-gray-200 p-4 mt-8 rounded-lg">
           <p className="text-sm text-gray-600 text-center">
-            By using FreeToolz, you acknowledge that you have read and understood this Privacy Policy.
+            By using Free Tools, you acknowledge that you have read and understood this Privacy Policy.
           </p>
         </div>
       </div>
     </div>
   );
 }
+
+

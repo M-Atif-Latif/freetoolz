@@ -1,6 +1,15 @@
 import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ImageBase64() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select an image file to encode' },
+    { title: 'Encode', description: 'Convert image to Base64 text format' },
+    { title: 'View Code', description: 'See your Base64 encoded image string' },
+    { title: 'Copy', description: 'Use the copy button to save your code' }
+  ];
+
   const [base64, setBase64] = useState('');
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +27,9 @@ export default function ImageBase64() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Image to Base64</h1>
       <p className="text-gray-600 text-lg mb-6">Convert images to Base64 encoded strings</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">Select Image</label>
@@ -25,7 +37,7 @@ export default function ImageBase64() {
             type="file"
             accept="image/*"
             onChange={handleFileChange}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
           />
         </div>
         {base64 && (
@@ -45,3 +57,5 @@ export default function ImageBase64() {
     </div>
   );
 }
+
+

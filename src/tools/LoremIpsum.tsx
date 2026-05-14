@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function LoremIpsum() {
+  const howItWorks = [
+    { title: 'Choose Content Type', description: 'Select words, sentences, or paragraphs' },
+    { title: 'Set Quantity', description: 'Enter how many words, sentences, or paragraphs you need' },
+    { title: 'Generate Text', description: 'Click generate to create realistic Lorem Ipsum text' },
+    { title: 'Copy Text', description: 'Use the copy button to save your generated content' }
+  ];
   const [paragraphs, setParagraphs] = useState(3);
   const [output, setOutput] = useState('');
   const [copied, setCopied] = useState(false);
@@ -38,6 +46,8 @@ export default function LoremIpsum() {
         <p className="text-gray-600 text-lg">
           Generate placeholder text for your designs and mockups
         </p>
+        
+        <HowItWorks steps={howItWorks} />
       </div>
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
@@ -63,7 +73,7 @@ export default function LoremIpsum() {
 
         <button
           onClick={generateLorem}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg"
         >
           Generate Lorem Ipsum
         </button>
@@ -75,7 +85,7 @@ export default function LoremIpsum() {
             <h2 className="font-semibold text-gray-900">Generated Text</h2>
             <button
               onClick={copyToClipboard}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+              className="flex items-center space-x-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               <span>{copied ? 'Copied!' : 'Copy'}</span>
@@ -89,3 +99,4 @@ export default function LoremIpsum() {
     </div>
   );
 }
+

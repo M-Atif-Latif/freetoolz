@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { CalendarDays } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function DateCalculator() {
+  const howItWorks = [
+    { title: 'Select Start Date', description: 'Pick your first date from the calendar' },
+    { title: 'Select End Date', description: 'Choose your second date to calculate the difference' },
+    { title: 'View Duration', description: 'See days, weeks, months, or years between dates' },
+    { title: 'Copy Result', description: 'Use the copy button to save your date calculation' }
+  ];
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [result, setResult] = useState<{
@@ -69,10 +76,8 @@ export default function DateCalculator() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
-        <ToolNavigation />
-        
         <div className="flex items-center space-x-3 mb-6">
-          <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
+          <div className="p-3 bg-gradient-to-br from-secondary-500 to-purple-600 rounded-xl">
             <CalendarDays className="h-8 w-8 text-white" />
           </div>
           <div>
@@ -91,7 +96,7 @@ export default function DateCalculator() {
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="flex-1 px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                className="flex-1 px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
               <button
                 onClick={() => setToday('start')}
@@ -111,7 +116,7 @@ export default function DateCalculator() {
                 type="date"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="flex-1 px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                className="flex-1 px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
               <button
                 onClick={() => setToday('end')}
@@ -132,7 +137,7 @@ export default function DateCalculator() {
 
           {result && (
             <div className="mt-8 space-y-4">
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6 border-2 border-blue-200 dark:border-blue-800">
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6 border-2 border-primary-200 dark:border-primary-800">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Difference</h2>
                 <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                   {result.years} years, {result.months} months, {result.days} days
@@ -165,7 +170,7 @@ export default function DateCalculator() {
           )}
         </div>
 
-        <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+        <div className="mt-8 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-2">💡 Use Cases:</h3>
           <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 list-disc list-inside">
             <li>Calculate age or time elapsed</li>
@@ -178,3 +183,5 @@ export default function DateCalculator() {
     </div>
   );
 }
+
+

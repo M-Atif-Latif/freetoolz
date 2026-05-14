@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { AlignLeft } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function LetterCounter() {
+  const howItWorks = [
+    { title: 'Enter Your Text', description: 'Type or paste the text you want to analyze' },
+    { title: 'View Letter Frequency', description: 'See which letters appear most in your text' },
+    { title: 'Check Statistics', description: 'Find total letters, unique letters, vowels, and consonants' },
+    { title: 'Copy Results', description: 'Use the copy button to save your analysis' }
+  ];
   const [text, setText] = useState('');
 
   const analyzeLetters = () => {
@@ -35,8 +42,6 @@ export default function LetterCounter() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
-        <ToolNavigation />
-        
         <div className="flex items-center space-x-3 mb-6">
           <div className="p-3 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl">
             <AlignLeft className="h-8 w-8 text-white" />
@@ -64,7 +69,7 @@ export default function LetterCounter() {
           {result && result.totalLetters > 0 && (
             <div className="space-y-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 rounded-xl p-6 border-2 border-teal-200 dark:border-teal-800">
+                <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-secondary-900/20 rounded-xl p-6 border-2 border-teal-200 dark:border-teal-800">
                   <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Total Letters</div>
                   <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
                     {result.totalLetters}
@@ -135,3 +140,4 @@ export default function LetterCounter() {
     </div>
   );
 }
+

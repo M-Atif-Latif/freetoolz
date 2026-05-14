@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Globe, Loader2, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface StatusResult {
   url: string;
@@ -11,6 +13,12 @@ interface StatusResult {
 }
 
 export default function HTTPStatusTester() {
+  const howItWorks = [
+    { title: 'Enter URL', description: 'Type the website URL to test' },
+    { title: 'Send Request', description: 'Check the HTTP status code' },
+    { title: 'View Response', description: 'See status, headers, and response time' },
+    { title: 'Copy Results', description: 'Save the test results' }
+  ];
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<StatusResult | null>(null);

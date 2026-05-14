@@ -1,0 +1,7 @@
+
+> freetoolz@2.0.0 build
+> vite build
+
+[36mvite v7.2.2 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 48 modules transformed.

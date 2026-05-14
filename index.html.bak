@@ -14,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     
     <!-- Primary Meta Tags - Optimized for SEO -->
-    <title>FreeToolz - 120+ Free Online Tools | Text, Image, PDF, Calculators & More</title>
-    <meta name="title" content="FreeToolz - 120+ Free Online Tools | Text, Image, PDF, Calculators & More" />
-    <meta name="description" content="Access 120+ free online tools instantly! Word counter, password generator, image compressor, JSON formatter, QR code generator, BMI calculator, YAML converter, SEO tools and more. No signup required. 100% free, secure, and privacy-focused." />
+    <title>FreeToolz - 140+ Free Online Tools | Text, Image, PDF, Calculators & More</title>
+    <meta name="title" content="FreeToolz - 140+ Free Online Tools | Text, Image, PDF, Calculators & More" />
+    <meta name="description" content="Access 140+ free online tools instantly! Word counter, password generator, image compressor, JSON formatter, QR code generator, BMI calculator, YAML converter, SEO tools and more. No signup required. 100% free, secure, and privacy-focused." />
     <meta name="keywords" content="free online tools, word counter, password generator, image compressor, qr code generator, json formatter, bmi calculator, base64 encoder, url encoder, pdf tools, text tools, developer tools, calculators, converters, yaml json converter, seo tools, security tools, no signup, free forever" />
     <meta name="author" content="FreeToolz" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -33,8 +33,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://freetoolz.com/" />
-    <meta property="og:title" content="FreeToolz - 120+ Free Online Tools | No Signup Required" />
-    <meta property="og:description" content="Access 120+ free online tools for text processing, PDF manipulation, image editing, data analysis, SEO testing and more. Completely free, secure, and no registration required." />
+    <meta property="og:title" content="FreeToolz - 140+ Free Online Tools | No Signup Required" />
+    <meta property="og:description" content="Access 140+ free online tools for text processing, PDF manipulation, image editing, data analysis, SEO testing and more. Completely free, secure, and no registration required." />
     <meta property="og:image" content="https://freetoolz.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -45,7 +45,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://freetoolz.com/" />
-    <meta property="twitter:title" content="FreeToolz - 120+ Free Online Tools" />
+    <meta property="twitter:title" content="FreeToolz - 140+ Free Online Tools" />
     <meta property="twitter:description" content="Free online tools for text, images, PDFs, calculations, SEO, security and more. No signup required!" />
     <meta property="twitter:image" content="https://freetoolz.com/twitter-image.jpg" />
     <meta property="twitter:image:alt" content="FreeToolz - Free Online Tools" />

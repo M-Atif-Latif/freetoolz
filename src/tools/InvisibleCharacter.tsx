@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { EyeOff, Copy, Check, Info } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function InvisibleCharacter() {
+  const howItWorks = [
+    { title: 'Generate Character', description: 'Create an invisible/zero-width character' },
+    { title: 'Copy to Clipboard', description: 'Get the invisible character ready to paste' },
+    { title: 'Paste Elsewhere', description: 'Use it in documents or messages' },
+    { title: 'Detect', description: 'Paste text to detect invisible characters' }
+  ];
   const [copied, setCopied] = useState('');
   const [count, setCount] = useState(1);
 
@@ -62,7 +70,7 @@ export default function InvisibleCharacter() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-secondary-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
             <EyeOff className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -71,6 +79,9 @@ export default function InvisibleCharacter() {
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Generate and copy invisible Unicode characters for various purposes. Perfect for Discord, WhatsApp, or any text field.
           </p>
+
+        <HowItWorks steps={howItWorks} />
+
         </div>
 
         {/* Count Selector */}
@@ -102,14 +113,23 @@ export default function InvisibleCharacter() {
             >
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-4">
                 <h3 className="text-lg font-bold text-white">{char.name}</h3>
-                <p className="text-sm text-blue-100 font-mono">{char.unicode}</p>
+                <p className="text-sm text-primary-100 font-mono">{char.unicode}</p>
+
+              <HowItWorks steps={howItWorks} />
+
               </div>
               <div className="p-5">
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                   {char.description}
                 </p>
+
+                <HowItWorks steps={howItWorks} />
+
                 <div className="mb-4">
                   <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1">HTML Entity:</p>
+
+                  <HowItWorks steps={howItWorks} />
+
                   <code className="text-sm text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-900 px-2 py-1 rounded">
                     {char.hex}
                   </code>
@@ -119,7 +139,7 @@ export default function InvisibleCharacter() {
                   className={`w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-semibold transition-all ${
                     copied === char.name
                       ? 'bg-green-600 text-white'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-accent-600 text-white hover:bg-accent-700'
                   }`}
                 >
                   {copied === char.name ? (
@@ -142,9 +162,9 @@ export default function InvisibleCharacter() {
         {/* Info Boxes */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Use Cases */}
-          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+          <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
             <div className="flex items-center space-x-2 mb-4">
-              <Info className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <Info className="h-5 w-5 text-primary-600 dark:text-primary-400" />
               <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                 Common Use Cases
               </h3>
@@ -177,6 +197,9 @@ export default function InvisibleCharacter() {
               <p className="text-xs text-yellow-800 dark:text-yellow-200">
                 <strong>Note:</strong> Some platforms may filter or remove certain invisible characters for security reasons.
               </p>
+
+            <HowItWorks steps={howItWorks} />
+
             </div>
           </div>
         </div>
@@ -198,3 +221,6 @@ export default function InvisibleCharacter() {
     </div>
   );
 }
+
+
+

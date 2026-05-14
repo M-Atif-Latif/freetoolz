@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Thermometer } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TemperatureConverter() {
+  const howItWorks = [
+    { title: 'Enter Temperature', description: 'Type the temperature value in your source unit' },
+    { title: 'Select Source Unit', description: 'Choose from Celsius, Fahrenheit, or Kelvin' },
+    { title: 'Select Target Unit', description: 'Pick the unit you want to convert to' },
+    { title: 'View Result', description: 'See instant conversion with precise calculations' }
+  ];
   const [celsius, setCelsius] = useState('');
   const [fahrenheit, setFahrenheit] = useState('');
   const [kelvin, setKelvin] = useState('');
@@ -52,14 +60,14 @@ export default function TemperatureConverter() {
 
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="space-y-6">
-          <div className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-200">
-            <label className="block text-sm font-bold text-blue-900 mb-3">Celsius (°C)</label>
+          <div className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-primary-200">
+            <label className="block text-sm font-bold text-primary-900 mb-3">Celsius (°C)</label>
             <input
               type="number"
               value={celsius}
               onChange={(e) => handleCelsiusChange(e.target.value)}
               placeholder="0"
-              className="w-full px-4 py-4 border-2 border-blue-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none text-2xl font-bold"
+              className="w-full px-4 py-4 border-2 border-primary-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none text-2xl font-bold"
             />
           </div>
 
@@ -98,3 +106,5 @@ export default function TemperatureConverter() {
     </div>
   );
 }
+
+

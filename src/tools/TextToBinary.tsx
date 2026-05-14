@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Binary } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
 
 export default function TextToBinary() {
   const [input, setInput] = useState('');
@@ -33,8 +32,6 @@ export default function TextToBinary() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
-        <ToolNavigation />
-        
         <div className="flex items-center space-x-3 mb-6">
           <div className="p-3 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl">
             <Binary className="h-8 w-8 text-white" />

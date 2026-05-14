@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Search, AlertCircle } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function RegexBulkReplace() {
+  const howItWorks = [
+    { title: 'Enter Text', description: 'Paste your text in the input field' },
+    { title: 'Enter Regex Pattern', description: 'Type your regular expression pattern' },
+    { title: 'Enter Replacement', description: 'Specify what to replace matches with' },
+    { title: 'Copy Result', description: 'Save your processed text' }
+  ];
   const [text, setText] = useState('');
   const [pattern, setPattern] = useState('');
   const [replacement, setReplacement] = useState('');
@@ -132,7 +140,7 @@ export default function RegexBulkReplace() {
         {/* Input & Output */}
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-500 to-cyan-600 px-6 py-4">
+            <div className="bg-gradient-to-r from-secondary-500 to-cyan-600 px-6 py-4">
               <h2 className="text-lg font-semibold text-white">Original Text</h2>
             </div>
             <div className="p-6">
@@ -203,3 +211,4 @@ export default function RegexBulkReplace() {
     </div>
   );
 }
+

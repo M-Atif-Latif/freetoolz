@@ -143,7 +143,7 @@ export const generateToolStructuredData = (toolData: {
     },
     author: toolData.author || {
       '@type': 'Organization',
-      name: 'FreeToolz',
+      name: 'Free Tools',
       url: 'https://freetoolz.cloud',
     },
     ...(toolData.aggregateRating && {

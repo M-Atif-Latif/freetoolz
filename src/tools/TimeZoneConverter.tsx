@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TimeZoneConverter() {
+  const howItWorks = [
+    { title: 'Enter Your Time', description: 'Type your time and date' },
+    { title: 'Select Source Timezone', description: 'Choose the timezone of your current time' },
+    { title: 'Select Target Timezone', description: 'Pick the timezone you want to convert to' },
+    { title: 'View Result', description: 'See the equivalent time in your target timezone' }
+  ];
   const [time, setTime] = useState('12:00');
   const [fromZone, setFromZone] = useState('UTC');
   const [toZone, setToZone] = useState('America/New_York');
@@ -30,6 +38,9 @@ export default function TimeZoneConverter() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Time Zone Converter</h1>
       <p className="text-gray-600 text-lg mb-6">Convert times between time zones</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           <div>
@@ -38,7 +49,7 @@ export default function TimeZoneConverter() {
               type="time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
           <div>
@@ -46,7 +57,7 @@ export default function TimeZoneConverter() {
             <select
               value={fromZone}
               onChange={(e) => setFromZone(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             >
               {zones.map(zone => <option key={zone} value={zone}>{zone}</option>)}
             </select>
@@ -56,7 +67,7 @@ export default function TimeZoneConverter() {
             <select
               value={toZone}
               onChange={(e) => setToZone(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             >
               {zones.map(zone => <option key={zone} value={zone}>{zone}</option>)}
             </select>
@@ -64,9 +75,11 @@ export default function TimeZoneConverter() {
         </div>
         <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl">
           <div className="text-sm text-gray-600 mb-2">Converted Time</div>
-          <div className="text-5xl font-bold text-blue-600">{convertTime()}</div>
+          <div className="text-5xl font-bold text-primary-600">{convertTime()}</div>
         </div>
       </div>
     </div>
   );
 }
+
+

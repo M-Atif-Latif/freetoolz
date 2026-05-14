@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Copy, Check, RefreshCw } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function UUIDGenerator() {
+  const howItWorks = [
+    { title: 'Choose Quantity', description: 'Use the slider to select how many UUIDs to generate (1-50)' },
+    { title: 'Click Generate', description: 'Press the generate button to create unique identifiers' },
+    { title: 'View Generated UUIDs', description: 'See your unique UUID v4 identifiers listed' },
+    { title: 'Copy UUIDs', description: 'Use the copy button to save all UUIDs to clipboard' }
+  ];
   const [uuids, setUuids] = useState<string[]>([]);
   const [count, setCount] = useState(1);
   const [copied, setCopied] = useState(false);
@@ -23,13 +31,14 @@ export default function UUIDGenerator() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">UUID Generator</h1>
-        <p className="text-gray-600 text-lg">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">UUID Generator</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">
           Generate unique identifiers (UUID v4) for your applications
         </p>
+        <HowItWorks steps={howItWorks} />
       </div>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 mb-6">
         <div className="mb-6">
           <div className="flex justify-between items-center mb-3">
             <label className="text-sm font-medium text-gray-700">
@@ -52,7 +61,7 @@ export default function UUIDGenerator() {
 
         <button
           onClick={generateUUIDs}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
         >
           <RefreshCw className="h-5 w-5" />
           <span>Generate UUID{count > 1 ? 's' : ''}</span>
@@ -67,7 +76,7 @@ export default function UUIDGenerator() {
             </h2>
             <button
               onClick={copyToClipboard}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+              className="flex items-center space-x-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               <span>{copied ? 'Copied!' : 'Copy All'}</span>
@@ -85,7 +94,7 @@ export default function UUIDGenerator() {
                     onClick={() => {
                       navigator.clipboard.writeText(uuid);
                     }}
-                    className="text-blue-600 hover:text-blue-700 transition-colors"
+                    className="text-primary-600 hover:text-primary-700 transition-colors"
                   >
                     <Copy className="h-4 w-4" />
                   </button>
@@ -98,3 +107,4 @@ export default function UUIDGenerator() {
     </div>
   );
 }
+

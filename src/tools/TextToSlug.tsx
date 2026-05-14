@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TextToSlug() {
+  const howItWorks = [
+    { title: 'Enter Your Text', description: 'Type or paste the text you want to convert' },
+    { title: 'Slug Generation', description: 'See your text automatically converted to a URL-friendly slug' },
+    { title: 'View Slug Format', description: 'Lowercase letters and hyphens replace spaces and special characters' },
+    { title: 'Copy Slug', description: 'Use the copy button to grab your slug for use in URLs' }
+  ];
   const [text, setText] = useState('');
   const [copied, setCopied] = useState(false);
 
@@ -20,9 +28,12 @@ export default function TextToSlug() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-3">Text to Slug Converter</h1>
-      <p className="text-gray-600 text-lg mb-6">Convert text to URL-friendly slugs</p>
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Text to Slug Converter</h1>
+      <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">Convert text to URL-friendly slugs</p>
+      <div className="mb-6">
+        <HowItWorks steps={howItWorks} />
+      </div>
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8">
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">Input Text</label>
           <input
@@ -30,15 +41,15 @@ export default function TextToSlug() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Hello World 2024!"
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
           />
         </div>
         {slug && (
-          <div className="p-4 bg-blue-50 rounded-lg border border-blue-200 flex items-center justify-between">
-            <code className="text-blue-600 font-mono text-lg">{slug}</code>
+          <div className="p-4 bg-primary-50 rounded-lg border border-primary-200 flex items-center justify-between">
+            <code className="text-primary-600 font-mono text-lg">{slug}</code>
             <button
               onClick={copyToClipboard}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+              className="flex items-center space-x-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               <span>{copied ? 'Copied!' : 'Copy'}</span>
@@ -49,3 +60,4 @@ export default function TextToSlug() {
     </div>
   );
 }
+

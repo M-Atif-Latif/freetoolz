@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { Eye } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 type ColorBlindnessType = 'normal' | 'protanopia' | 'deuteranopia' | 'tritanopia' | 'achromatopsia';
 
 export default function ColorBlindnessSimulator() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select an image to simulate color blindness on' },
+    { title: 'Choose Type', description: 'Select the type: Red-blind, Green-blind, or Blue-blind' },
+    { title: 'View Simulation', description: 'See how your image appears to colorblind individuals' },
+    { title: 'Download Result', description: 'Save the simulated image' }
+  ];
   const [color, setColor] = useState('#3B82F6');
   const [activeView, setActiveView] = useState<ColorBlindnessType>('normal');
 
@@ -221,7 +229,7 @@ export default function ColorBlindnessSimulator() {
         </div>
 
         {/* Info */}
-        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
             About Color Blindness
           </h3>
@@ -237,3 +245,4 @@ export default function ColorBlindnessSimulator() {
     </div>
   );
 }
+

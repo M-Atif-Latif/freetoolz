@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Code, CheckCircle, XCircle, AlertCircle, Copy, Info } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 interface ValidationResult {
   type: 'JSON-LD' | 'Microdata' | 'RDFa';
@@ -266,8 +268,8 @@ export default function StructuredDataValidator() {
           </div>
         )}
 
-        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800 flex items-start">
-          <Info className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3 flex-shrink-0 mt-0.5" />
+        <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800 flex items-start">
+          <Info className="h-6 w-6 text-primary-600 dark:text-primary-400 mr-3 flex-shrink-0 mt-0.5" />
           <div>
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
               Structured Data Formats
@@ -285,3 +287,4 @@ export default function StructuredDataValidator() {
     </div>
   );
 }
+

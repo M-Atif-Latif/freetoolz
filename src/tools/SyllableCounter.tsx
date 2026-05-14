@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { Volume2 } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function SyllableCounter() {
+  const howItWorks = [
+    { title: 'Enter Text', description: 'Paste your text or write something' },
+    { title: 'Count Syllables', description: 'Tools analyzes syllables in each word' },
+    { title: 'View Breakdown', description: 'See syllable count per word' },
+    { title: 'Copy Results', description: 'Save the syllable analysis' }
+  ];
   const [text, setText] = useState('');
 
   const countSyllables = (word: string): number => {
@@ -49,8 +56,6 @@ export default function SyllableCounter() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
-        <ToolNavigation />
-        
         <div className="flex items-center space-x-3 mb-6">
           <div className="p-3 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl">
             <Volume2 className="h-8 w-8 text-white" />

@@ -1,8 +1,16 @@
 import { useState } from 'react';
 import { PDFDocument, degrees } from 'pdf-lib';
 import { Upload, Download, RotateCw } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
 
 export default function RotatePDF() {
+  const howItWorks = [
+    { title: 'Upload PDF', description: 'Select the PDF file you want to rotate' },
+    { title: 'Choose Angle', description: 'Select rotation angle: 90°, 180°, or 270°' },
+    { title: 'Rotate', description: 'Apply rotation to all pages in the PDF' },
+    { title: 'Download', description: 'Save your rotated PDF to your device' }
+  ];
+
   const [file, setFile] = useState<File | null>(null);
   const [rotation, setRotation] = useState(90);
   const [processing, setProcessing] = useState(false);
@@ -44,11 +52,13 @@ export default function RotatePDF() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Rotate PDF</h1>
-      <p className="text-gray-600 text-lg mb-6">Rotate all pages in your PDF document</p>
+      <p className="text-gray-600 text-lg mb-8">Rotate all pages in your PDF document</p>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+      <HowItWorks steps={howItWorks} />
+
+      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
         <div className="mb-6">
-          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all">
+          <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 hover:bg-primary-50 transition-all">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <Upload className="w-12 h-12 mb-4 text-gray-400" />
               <p className="mb-2 text-sm text-gray-500">
@@ -80,7 +90,7 @@ export default function RotatePDF() {
                 onClick={() => setRotation(angle)}
                 className={`px-4 py-3 rounded-lg border-2 font-medium transition-all ${
                   rotation === angle
-                    ? 'border-blue-600 bg-blue-50 text-blue-600'
+                    ? 'border-primary-600 bg-primary-50 text-primary-600'
                     : 'border-gray-200 hover:border-blue-300'
                 }`}
               >
@@ -94,14 +104,14 @@ export default function RotatePDF() {
         <button
           onClick={rotatePDF}
           disabled={!file || processing}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
         >
           <Download className="h-5 w-5" />
           <span>{processing ? 'Rotating...' : 'Rotate PDF'}</span>
         </button>
       </div>
 
-      <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+      <div className="mt-6 p-4 bg-primary-50 rounded-lg border border-primary-200">
         <p className="text-sm text-gray-700">
           <strong>Privacy:</strong> All processing happens in your browser. Files are never uploaded to any server.
         </p>
@@ -109,3 +119,4 @@ export default function RotatePDF() {
     </div>
   );
 }
+

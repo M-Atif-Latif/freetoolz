@@ -11,7 +11,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { tools } from '../src/data/tools.ts';
+import { toolMasterList } from '../src/data/tools.ts';
 
 const baseUrl = 'https://freetoolz.cloud';
 const today = new Date().toISOString().split('T')[0];
@@ -20,11 +20,13 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const publicDir = path.join(projectRoot, 'public');
 const distDir = path.join(projectRoot, 'dist');
+const rootSitemapPath = path.join(projectRoot, 'sitemap.xml');
+const rootRobotsPath = path.join(projectRoot, 'robots.txt');
 
 fs.mkdirSync(publicDir, { recursive: true });
 
 // Priority tools that should be indexed first (most valuable)
-const highPriorityCategories = ['text', 'calculator', 'generator', 'pdf'];
+const highPriorityCategories = ['text', 'calculator', 'generator', 'pdf', 'developer', 'security'];
 
 const staticPages = [
   { loc: `${baseUrl}/`, changefreq: 'daily', priority: 1.0 },
@@ -38,10 +40,10 @@ const staticPages = [
   { loc: `${baseUrl}/sitemap`, changefreq: 'weekly', priority: 0.5 }
 ];
 
-// Sort tools by category priority and create entries
-const toolEntries = tools
+const toolEntries = toolMasterList
+  .filter(tool => tool.indexable !== false)
   .map(tool => ({
-    loc: `${baseUrl}${tool.path}`,
+    loc: `${baseUrl}/${tool.slug ?? tool.id}`,
     changefreq: 'weekly' as const,
     // High priority tools get better sitemap priority
     priority: highPriorityCategories.includes(tool.category) ? 0.9 : 0.8,
@@ -55,6 +57,8 @@ const urlEntries = [...staticPages, ...toolEntries]
     // Enhanced sitemap entry with more metadata
     return `  <url>
     <loc>${entry.loc}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="${entry.loc}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${entry.loc}" />
     <lastmod>${today}</lastmod>
     <changefreq>${entry.changefreq}</changefreq>
     <priority>${entry.priority.toFixed(2)}</priority>
@@ -65,10 +69,11 @@ const urlEntries = [...staticPages, ...toolEntries]
 // Enhanced sitemap with XML namespaces for better SEO
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- FreeToolz Cloud Sitemap - Generated ${today} -->
+<!-- Free Tools Sitemap - Generated ${today} -->
 <!-- ${staticPages.length} static pages + ${toolEntries.length} tool pages = ${staticPages.length + toolEntries.length} total URLs -->
 ${urlEntries}
 </urlset>
@@ -76,7 +81,7 @@ ${urlEntries}
 
 // Optimized robots.txt for better crawling
 // REMOVED Crawl-delay as it can significantly slow down indexing
-const robots = `# FreeToolz Cloud Robots Configuration
+const robots = `# Free Tools Robots Configuration
 # Website: ${baseUrl}
 # Generated: ${today}
 
@@ -149,6 +154,8 @@ const robotsPublicPath = path.join(publicDir, 'robots.txt');
 
 fs.writeFileSync(sitemapPublicPath, sitemap, 'utf8');
 fs.writeFileSync(robotsPublicPath, robots, 'utf8');
+fs.writeFileSync(rootSitemapPath, sitemap, 'utf8');
+fs.writeFileSync(rootRobotsPath, robots, 'utf8');
 
 if (fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });

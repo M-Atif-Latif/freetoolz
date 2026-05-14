@@ -1,0 +1,499 @@
+{
+  "tools_metadata": {
+    "merge-pdf": {
+      "metaTitle": "Merge PDF - Combine PDF Files Online Free",
+      "metaDescription": "Merge multiple PDFs into one instantly with our free online PDF merge tool.",
+      "keywords": "merge PDF, combine PDFs, PDF joiner, PDF tool, free online"
+    },
+    "split-pdf": {
+      "metaTitle": "Split PDF - Extract PDF Pages Online Free",
+      "metaDescription": "Split and extract PDF pages instantly with our free online PDF split tool.",
+      "keywords": "split PDF, extract pages, PDF splitter, PDF tool, free online"
+    },
+    "compress-pdf": {
+      "metaTitle": "Compress PDF - Reduce PDF Size Online Free",
+      "metaDescription": "Compress PDF size instantly while keeping quality with our free online tool.",
+      "keywords": "compress PDF, reduce PDF size, PDF compressor, PDF tool, free online"
+    },
+    "rotate-pdf": {
+      "metaTitle": "Rotate PDF - Rotate PDF Pages Online Free",
+      "metaDescription": "Rotate PDF pages instantly with our free online PDF rotation tool.",
+      "keywords": "rotate PDF, PDF rotator, page rotator, PDF tool, free online"
+    },
+    "pdf-unlock": {
+      "metaTitle": "PDF Unlock - Unlock Password Protected PDF Free",
+      "metaDescription": "Unlock password protected PDFs instantly with our free online PDF unlock tool.",
+      "keywords": "PDF unlock, remove PDF password, unlock PDF, PDF tool, free online"
+    },
+    "extract-images-from-pdf": {
+      "metaTitle": "Extract Images from PDF - Extract PDF Images Free",
+      "metaDescription": "Extract images from PDFs instantly with our free online image extraction tool.",
+      "keywords": "extract images from PDF, image extractor, PDF tool, document converter, free"
+    },
+    "extract-pdf-pages": {
+      "metaTitle": "Extract PDF Pages - Extract PDF Pages Online Free",
+      "metaDescription": "Extract specific PDF pages instantly with our free online PDF extractor tool.",
+      "keywords": "extract PDF pages, page extractor, PDF splitter, PDF tool, free online"
+    },
+    "image-compressor": {
+      "metaTitle": "Image Compressor - Compress Images Online Free",
+      "metaDescription": "Compress images while maintaining quality with our free online image compressor.",
+      "keywords": "image compressor, reduce image size, image optimizer, web tool, free online"
+    },
+    "image-format-converter": {
+      "metaTitle": "Image Converter - Convert Image Format Online Free",
+      "metaDescription": "Convert images between formats instantly with our free online image converter.",
+      "keywords": "image converter, format converter, JPG to PNG, image tool, free online"
+    },
+    "grayscale-converter": {
+      "metaTitle": "Grayscale Converter - Convert to Grayscale Online",
+      "metaDescription": "Convert color images to grayscale with our free online grayscale converter.",
+      "keywords": "grayscale converter, black and white, image filter, photo tool, free online"
+    },
+    "text-to-binary": {
+      "metaTitle": "Text to Binary - Convert Text to Binary Online Free",
+      "metaDescription": "Convert text to binary code instantly with our free online text to binary converter.",
+      "keywords": "text to binary, binary converter, text encoder, programmer tool, free online"
+    },
+    "morse-code": {
+      "metaTitle": "Morse Code - Encode Morse Code Online Free",
+      "metaDescription": "Encode and decode morse code with our free online morse code converter.",
+      "keywords": "morse code translator, morse code converter, text encoder, communication tool, free"
+    },
+    "word-frequency": {
+      "metaTitle": "Word Frequency - Count Words Online Free",
+      "metaDescription": "Analyze word frequency and usage patterns with our free online word frequency counter tool.",
+      "keywords": "word frequency counter, text analysis, keyword frequency, free tool"
+    },
+    "syllable-counter": {
+      "metaTitle": "Syllable Counter - Count Syllables Online Free",
+      "metaDescription": "Count syllables in any text instantly using our free online syllable counter tool accurately.",
+      "keywords": "syllable counter, syllable counter free, text analysis, vowel counter"
+    },
+    "readability-score": {
+      "metaTitle": "Readability Score - Analyze Text Online Free",
+      "metaDescription": "Check readability score and grade level of your content with our free online readability analyzer.",
+      "keywords": "readability score, readability checker, text analysis, Flesch reading ease"
+    },
+    "find-replace": {
+      "metaTitle": "Find & Replace - Text Editor Tool Online Free",
+      "metaDescription": "Find and replace text instantly with our free online find & replace editor and processor.",
+      "keywords": "find replace, text editor, bulk replace, regex replace, free tool"
+    },
+    "letter-counter": {
+      "metaTitle": "Letter Counter - Count Characters Online Free",
+      "metaDescription": "Count letters, characters, and spaces in text with our free online letter counter tool.",
+      "keywords": "letter counter, character counter, text analyzer, word counter"
+    },
+    "reverse-words": {
+      "metaTitle": "Reverse Words - Reverse Text Online Free",
+      "metaDescription": "Reverse words or sentences instantly with our free online reverse text tool and generator.",
+      "keywords": "reverse words, reverse text, text reverser, word reversal, free tool"
+    },
+    "invisible-character": {
+      "metaTitle": "Invisible Character Remover - Remove Spaces Free",
+      "metaDescription": "Remove invisible characters and extra spaces from text with our free online tool now.",
+      "keywords": "invisible character, zero width, remove spaces, text cleaner, free tool"
+    },
+    "smart-sentence-splitter": {
+      "metaTitle": "Sentence Splitter - Split Sentences Online Free",
+      "metaDescription": "Split sentences intelligently with our free online smart sentence splitter tool.",
+      "keywords": "sentence splitter, text splitter, sentence separator, NLP tool, free resource"
+    },
+    "contraction-expander": {
+      "metaTitle": "Contraction Expander - Expand Contractions Free",
+      "metaDescription": "Expand contractions automatically with our free online contraction expander tool quickly.",
+      "keywords": "contraction expander, expand contractions, text tool, grammar helper, free online"
+    },
+    "read-aloud-caption-generator": {
+      "metaTitle": "Caption Generator - Generate Captions Free Online",
+      "metaDescription": "Generate captions for audio automatically with our free online caption generator tool.",
+      "keywords": "caption generator, auto captions, speech to text, video captions, free tool"
+    },
+    "title-headline-analyzer": {
+      "metaTitle": "Headline Analyzer - Analyze Headlines Free Online",
+      "metaDescription": "Analyze headline effectiveness and SEO scores with our free online headline analyzer tool.",
+      "keywords": "headline analyzer, title analyzer, SEO headline, copywriting tool, free resource"
+    },
+    "text-randomizer": {
+      "metaTitle": "Text Randomizer - Randomize Text Online Free",
+      "metaDescription": "Randomize text lines and words with our free online text randomizer and shuffler.",
+      "keywords": "text randomizer, shuffle text, randomize words, text tool, free online"
+    },
+    "date-calculator": {
+      "metaTitle": "Date Calculator - Calculate Days Between Dates",
+      "metaDescription": "Calculate days between dates instantly with our free online date calculator tool.",
+      "keywords": "date calculator, date difference, day calculator, date calculator online, free"
+    },
+    "gpa-calculator": {
+      "metaTitle": "GPA Calculator - Calculate GPA Online Free",
+      "metaDescription": "Calculate your GPA instantly with our free online GPA calculator for students.",
+      "keywords": "GPA calculator, grade calculator, student tool, academic calculator, free online"
+    },
+    "fuel-cost": {
+      "metaTitle": "Fuel Cost - Calculate Fuel Cost Online Free",
+      "metaDescription": "Calculate fuel costs and mileage with our free online fuel cost calculator.",
+      "keywords": "fuel cost calculator, gas calculator, mileage calculator, travel calculator, free"
+    },
+    "time-calculator": {
+      "metaTitle": "Time Calculator - Calculate Time Online Free",
+      "metaDescription": "Calculate time differences and conversions with our free online time calculator.",
+      "keywords": "time calculator, hour calculator, time converter, duration calculator, free tool"
+    },
+    "calories-calculator": {
+      "metaTitle": "Calorie Calculator - Calculate Calories Online Free",
+      "metaDescription": "Calculate daily calorie needs and track with our free online calorie calculator.",
+      "keywords": "calorie calculator, nutrition calculator, diet calculator, fitness tool, free online"
+    },
+    "binary-calculator": {
+      "metaTitle": "Binary Calculator - Calculate Binary Numbers Free",
+      "metaDescription": "Perform binary calculations and conversions with our free online binary calculator.",
+      "keywords": "binary calculator, binary converter, number converter, programmer tool, free"
+    },
+    "hex-calculator": {
+      "metaTitle": "Hex Calculator - Calculate Hexadecimal Numbers Free",
+      "metaDescription": "Perform hexadecimal calculations with our free online hex calculator for developers.",
+      "keywords": "hex calculator, hexadecimal calculator, programmer tool, code calculator, free"
+    },
+    "image-dpi-calculator": {
+      "metaTitle": "DPI Calculator - Calculate Image DPI Online Free",
+      "metaDescription": "Calculate image DPI and resolution with our free online DPI calculator tool.",
+      "keywords": "DPI calculator, PPI calculator, image resolution, print tool, free online"
+    },
+    "permutation-combination-calculator": {
+      "metaTitle": "Combination Calculator - Calculate Combinations Free",
+      "metaDescription": "Calculate permutations and combinations with our free online math calculator.",
+      "keywords": "combination calculator, permutation calculator, math tool, statistics calculator, free"
+    },
+    "business-days-calculator": {
+      "metaTitle": "Business Days Calculator - Calculate Business Days Free",
+      "metaDescription": "Calculate business days excluding weekends with our free online calculator.",
+      "keywords": "business days calculator, workdays calculator, date calculator, business tool, free"
+    },
+    "temperature-converter": {
+      "metaTitle": "Temperature Converter - Convert Temperature Free",
+      "metaDescription": "Convert temperature units instantly with our free online temperature converter tool.",
+      "keywords": "temperature converter, celsius to fahrenheit, temp converter, calculation tool, free"
+    },
+    "roman-numeral": {
+      "metaTitle": "Roman Numeral - Convert Roman Numerals Online Free",
+      "metaDescription": "Convert between numbers and roman numerals with our free online converter.",
+      "keywords": "roman numeral converter, roman numeral, number converter, text tool, free online"
+    },
+    "number-base": {
+      "metaTitle": "Number Base - Convert Number Bases Online Free",
+      "metaDescription": "Convert numbers between bases with our free online number base converter.",
+      "keywords": "number base converter, base converter, binary converter, programmer tool, free"
+    },
+    "power-energy-converter": {
+      "metaTitle": "Energy Converter - Convert Energy Units Online Free",
+      "metaDescription": "Convert energy and power units with our free online energy converter tool.",
+      "keywords": "energy converter, power converter, unit converter, calculator tool, free online"
+    },
+    "working-hours-timezone-converter": {
+      "metaTitle": "Working Hours Converter - Convert Working Hours Free",
+      "metaDescription": "Convert working hours across timezones with our free online converter tool.",
+      "keywords": "working hours calculator, timezone converter, time zone tool, business calculator, free"
+    },
+    "jwt-decoder": {
+      "metaTitle": "JWT Decoder - Decode JWT Online Free",
+      "metaDescription": "Decode and verify JWT tokens with our free online JWT decoder tool.",
+      "keywords": "JWT decoder, JWT encoder, token decoder, developer tool, free online"
+    },
+    "htaccess-generator": {
+      "metaTitle": "Htaccess Generator - Generate Htaccess Online Free",
+      "metaDescription": "Generate htaccess files instantly with our free online htaccess generator.",
+      "keywords": "htaccess generator, Apache config, SEO redirects, server tool, free online"
+    },
+    "yaml-json-converter": {
+      "metaTitle": "YAML to JSON - Convert YAML to JSON Online Free",
+      "metaDescription": "Convert YAML to JSON and vice versa with our free online converter tool.",
+      "keywords": "YAML converter, JSON converter, data format converter, developer tool, free"
+    },
+    "css-tailwind-classifier": {
+      "metaTitle": "Tailwind Classifier - Classify CSS Classes Online",
+      "metaDescription": "Classify Tailwind CSS classes with our free online Tailwind classifier tool.",
+      "keywords": "tailwind classifier, CSS classifier, tailwind tool, code analyzer, free online"
+    },
+    "http-status-tester": {
+      "metaTitle": "HTTP Status Tester - Test HTTP Status Online Free",
+      "metaDescription": "Test HTTP status codes instantly with our free online HTTP status tester.",
+      "keywords": "HTTP status tester, status code checker, web testing tool, developer tool, free"
+    },
+    "cors-header-checker": {
+      "metaTitle": "CORS Checker - Check CORS Headers Online Free",
+      "metaDescription": "Check CORS headers and policies with our free online CORS checker tool.",
+      "keywords": "CORS checker, CORS header, web security, developer tool, free online"
+    },
+    "file-encoding-detector": {
+      "metaTitle": "File Encoding Detector - Detect Encoding Online Free",
+      "metaDescription": "Detect file encoding instantly with our free online file encoding detector.",
+      "keywords": "encoding detector, character encoding, file analyzer, developer tool, free"
+    },
+    "hash-identifier": {
+      "metaTitle": "Hash Identifier - Identify Hash Types Online Free",
+      "metaDescription": "Identify hash types instantly with our free online hash identifier tool.",
+      "keywords": "hash identifier, hash type detector, security tool, cryptography tool, free"
+    },
+    "console-log-formatter": {
+      "metaTitle": "Console Formatter - Format Logs Online Free",
+      "metaDescription": "Format console logs and code output with our free online console formatter.",
+      "keywords": "console formatter, log formatter, code formatter, developer tool, free online"
+    },
+    "barcode-generator": {
+      "metaTitle": "Barcode Generator - Generate Barcodes Online Free",
+      "metaDescription": "Generate barcodes instantly with our free online barcode generator tool.",
+      "keywords": "barcode generator, QR code generator, product code, business tool, free"
+    },
+    "credit-card-generator": {
+      "metaTitle": "Credit Card Generator - Test Card Numbers Online",
+      "metaDescription": "Generate test credit card numbers with our free online card number generator.",
+      "keywords": "credit card generator, test cards, card numbers, testing tool, free online"
+    },
+    "fake-data-generator": {
+      "metaTitle": "Fake Data Generator - Generate Fake Data Online Free",
+      "metaDescription": "Generate realistic fake data instantly with our free online fake data generator.",
+      "keywords": "fake data generator, random data, test data, developer tool, free online"
+    },
+    "gradient-generator": {
+      "metaTitle": "Gradient Generator - Create Gradients Online Free",
+      "metaDescription": "Create beautiful gradients instantly with our free online gradient generator.",
+      "keywords": "gradient generator, color gradient, CSS gradient, web design tool, free online"
+    },
+    "ascii-art-generator": {
+      "metaTitle": "ASCII Art Generator - Create ASCII Art Online Free",
+      "metaDescription": "Create ASCII art from text instantly with our free online ASCII art generator.",
+      "keywords": "ASCII art generator, text art, ASCII generator, creative tool, free online"
+    },
+    "stopwatch": {
+      "metaTitle": "Stopwatch - Online Stopwatch Timer Free",
+      "metaDescription": "Use our free online stopwatch for accurate time tracking and measurement.",
+      "keywords": "stopwatch, timer, time tracker, utility tool, free online"
+    },
+    "timer": {
+      "metaTitle": "Timer - Online Timer and Stopwatch Free",
+      "metaDescription": "Set timers and use our free online timer for workouts and cooking.",
+      "keywords": "timer, online timer, countdown timer, utility tool, free online"
+    },
+    "coin-flip": {
+      "metaTitle": "Coin Flip - Flip a Coin Online Free",
+      "metaDescription": "Flip a coin randomly online with our free coin flip simulator tool.",
+      "keywords": "coin flip, coin toss, random generator, utility tool, free online"
+    },
+    "dice-roller": {
+      "metaTitle": "Dice Roller - Roll Dice Online Free",
+      "metaDescription": "Roll virtual dice with our free online dice roller simulator tool.",
+      "keywords": "dice roller, random roller, game tool, probability tool, free online"
+    },
+    "random-picker": {
+      "metaTitle": "Random Picker - Pick Random Items Online Free",
+      "metaDescription": "Pick random items from lists with our free online random picker tool.",
+      "keywords": "random picker, random selector, random generator, utility tool, free"
+    },
+    "text-to-speech": {
+      "metaTitle": "Text to Speech - Convert Text to Speech Free Online",
+      "metaDescription": "Convert text to speech instantly with our free online text to speech tool.",
+      "keywords": "text to speech, voice generator, audio converter, accessibility tool, free"
+    },
+    "color-picker": {
+      "metaTitle": "Color Picker - Pick Colors Online Free",
+      "metaDescription": "Pick and extract colors with our free online color picker tool.",
+      "keywords": "color picker, color extractor, hex color, web design tool, free online"
+    },
+    "password-strength": {
+      "metaTitle": "Password Checker - Check Password Strength Free",
+      "metaDescription": "Check password strength instantly with our free online password strength checker.",
+      "keywords": "password checker, password strength, security tool, password generator, free"
+    },
+    "csv-column-splitter": {
+      "metaTitle": "CSV Splitter - Split CSV Columns Online Free",
+      "metaDescription": "Split CSV columns instantly with our free online CSV column splitter tool.",
+      "keywords": "CSV splitter, column splitter, data tool, spreadsheet tool, free online"
+    },
+    "csv-duplicate-finder": {
+      "metaTitle": "Duplicate Finder - Find CSV Duplicates Online Free",
+      "metaDescription": "Find duplicate rows in CSV files with our free online duplicate finder.",
+      "keywords": "duplicate finder, CSV tool, data tool, spreadsheet tool, free online"
+    },
+    "regex-bulk-replace": {
+      "metaTitle": "Bulk Replace - Regex Replace Online Free",
+      "metaDescription": "Perform bulk regex replacements with our free online bulk replace tool.",
+      "keywords": "bulk replace, regex replace, text tool, find replace, free online"
+    },
+    "bulk-url-shortener": {
+      "metaTitle": "URL Shortener - Shorten URLs Online Free Bulk",
+      "metaDescription": "Shorten URLs in bulk with our free online bulk URL shortener tool.",
+      "keywords": "URL shortener, link shortener, bulk shortener, marketing tool, free online"
+    },
+    "clipboard-history": {
+      "metaTitle": "Clipboard History - View Clipboard Online Free",
+      "metaDescription": "View and manage your clipboard history with our free online clipboard tool.",
+      "keywords": "clipboard history, clipboard manager, text tool, utility tool, free online"
+    },
+    "dataset-sampler": {
+      "metaTitle": "Dataset Sampler - Sample Data Online Free",
+      "metaDescription": "Sample random rows from datasets with our free online dataset sampler.",
+      "keywords": "dataset sampler, data sampler, random sampler, data tool, free online"
+    },
+    "zip-file-inspector": {
+      "metaTitle": "ZIP Inspector - View ZIP Files Online Free",
+      "metaDescription": "View and inspect ZIP file contents with our free online ZIP inspector tool.",
+      "keywords": "ZIP inspector, archive viewer, file tool, compression tool, free online"
+    },
+    "password-strength-analyzer": {
+      "metaTitle": "Password Analyzer - Analyze Passwords Online Free",
+      "metaDescription": "Analyze password strength and security with our free online password analyzer.",
+      "keywords": "password analyzer, password strength, security tool, password tester, free"
+    },
+    "cookie-inspector": {
+      "metaTitle": "Cookie Inspector - View Cookies Online Free",
+      "metaDescription": "Inspect browser cookies with our free online cookie inspector tool.",
+      "keywords": "cookie inspector, browser tool, web development, security tool, free online"
+    },
+    "meta-robots-tester": {
+      "metaTitle": "Meta Robots Tester - Test Robots Meta Tag Free",
+      "metaDescription": "Test meta robots tags with our free online robots meta tag tester.",
+      "keywords": "robots tester, SEO tool, meta tag tester, web developer tool, free online"
+    },
+    "structured-data-validator": {
+      "metaTitle": "JSON-LD Validator - Validate Structured Data Free",
+      "metaDescription": "Validate structured data and JSON-LD with our free online validator tool.",
+      "keywords": "JSON-LD validator, schema validator, SEO tool, structured data, free online"
+    },
+    "sitemap-url-extractor": {
+      "metaTitle": "Sitemap Parser - Extract URLs from Sitemap Free",
+      "metaDescription": "Extract URLs from XML sitemaps with our free online sitemap URL extractor.",
+      "keywords": "sitemap parser, URL extractor, SEO tool, web crawler, free online"
+    },
+    "pdf-to-text": {
+      "metaTitle": "PDF to Text - Extract Text from PDF Free",
+      "metaDescription": "Extract text from PDF files instantly with our free online PDF to text converter.",
+      "keywords": "PDF to text, text extractor, PDF converter, document converter, free online"
+    },
+    "pdf-watermark": {
+      "metaTitle": "PDF Watermark - Add Watermark to PDF Free",
+      "metaDescription": "Add watermarks to PDFs instantly with our free online PDF watermark tool.",
+      "keywords": "PDF watermark, add watermark, protect PDF, PDF tool, free online"
+    },
+    "pdf-metadata-editor": {
+      "metaTitle": "PDF Metadata Editor - Edit PDF Metadata Free",
+      "metaDescription": "Edit PDF metadata instantly with our free online PDF metadata editor tool.",
+      "keywords": "PDF metadata, edit metadata, PDF editor, document tool, free online"
+    },
+    "pdf-page-extractor": {
+      "metaTitle": "PDF Page Extractor - Extract Pages Online Free",
+      "metaDescription": "Extract and save PDF pages instantly with our free online page extractor.",
+      "keywords": "page extractor, PDF extractor, extract pages, PDF tool, free online"
+    },
+    "pdf-to-jpg": {
+      "metaTitle": "PDF to JPG - Convert PDF to Images Free",
+      "metaDescription": "Convert PDF pages to JPG images instantly with our free online conversion tool.",
+      "keywords": "PDF to JPG, PDF to image, image converter, PDF tool, free online"
+    },
+    "jpg-to-pdf": {
+      "metaTitle": "JPG to PDF - Convert Images to PDF Free",
+      "metaDescription": "Convert JPG images to PDF instantly with our free online image to PDF tool.",
+      "keywords": "JPG to PDF, image to PDF, image converter, PDF tool, free online"
+    },
+    "pdf-add-page-numbers": {
+      "metaTitle": "PDF Page Numbers - Add Numbering Free",
+      "metaDescription": "Add page numbers to PDFs instantly with our free online PDF numbering tool.",
+      "keywords": "PDF page numbers, add page numbers, number pages, PDF tool, free online"
+    },
+    "pdf-redact": {
+      "metaTitle": "PDF Redact - Redact Content Online Free",
+      "metaDescription": "Redact sensitive PDF content instantly with our free online PDF redact tool.",
+      "keywords": "PDF redact, redact text, hide content, PDF tool, confidential, free online"
+    },
+    "pdf-to-powerpoint": {
+      "metaTitle": "PDF to PowerPoint - Convert to PPT Free",
+      "metaDescription": "Convert PDF to PowerPoint instantly with our free online PDF to PPT converter.",
+      "keywords": "PDF to PowerPoint, PDF to PPT, document converter, presentation tool, free"
+    },
+    "pdf-to-excel": {
+      "metaTitle": "PDF to Excel - Convert Tables to Excel Free",
+      "metaDescription": "Convert PDF tables to Excel instantly with our free online PDF to Excel tool.",
+      "keywords": "PDF to Excel, table extractor, data converter, spreadsheet tool, free online"
+    },
+    "html-to-pdf": {
+      "metaTitle": "HTML to PDF - Convert HTML to PDF Free",
+      "metaDescription": "Convert HTML to PDF instantly with our free online HTML to PDF converter tool.",
+      "keywords": "HTML to PDF, HTML converter, document converter, web tool, free online"
+    },
+    "pdf-to-pdfa": {
+      "metaTitle": "PDF to PDF/A - Convert Archival Format Free",
+      "metaDescription": "Convert PDF to PDF/A archival format with our free online conversion tool.",
+      "keywords": "PDF to PDF/A, PDF/A converter, archival format, document tool, free online"
+    },
+    "edit-pdf": {
+      "metaTitle": "PDF Editor - Edit PDF Online Free",
+      "metaDescription": "Edit PDF text and content instantly with our free online PDF editing tool.",
+      "keywords": "PDF editor, edit PDF, PDF tool, document editor, free online"
+    },
+    "sign-pdf": {
+      "metaTitle": "Sign PDF - Digital Signatures Free",
+      "metaDescription": "Add digital signatures to PDFs instantly with our free online PDF signing tool.",
+      "keywords": "sign PDF, digital signature, PDF signature, security tool, free online"
+    },
+    "protect-pdf": {
+      "metaTitle": "Protect PDF - Encrypt With Password Free",
+      "metaDescription": "Encrypt and protect PDFs with passwords using our free online PDF protection tool.",
+      "keywords": "protect PDF, encrypt PDF, PDF security, password protect, free online"
+    },
+    "ocr-pdf": {
+      "metaTitle": "OCR - Extract Text from Scanned PDF Free",
+      "metaDescription": "Extract text from scanned PDFs with OCR using our free online OCR tool.",
+      "keywords": "OCR, extract text, PDF text extraction, document tool, free online"
+    },
+    "compare-pdf": {
+      "metaTitle": "Compare PDF - Highlight Differences Free",
+      "metaDescription": "Compare two PDFs and find differences with our free online PDF comparison tool.",
+      "keywords": "compare PDF, PDF comparison, find differences, PDF tool, free online"
+    },
+    "repair-pdf": {
+      "metaTitle": "Repair PDF - Fix Corrupted PDF Free",
+      "metaDescription": "Repair corrupted PDF files instantly with our free online PDF repair tool.",
+      "keywords": "repair PDF, fix PDF, corrupted PDF, PDF tool, free online"
+    },
+    "organize-pdf": {
+      "metaTitle": "Organize PDF - Rearrange Pages Free",
+      "metaDescription": "Organize and rearrange PDF pages instantly with our free online PDF organizer.",
+      "keywords": "organize PDF, rearrange pages, PDF organizer, PDF tool, free online"
+    },
+    "word-to-pdf": {
+      "metaTitle": "Word to PDF - Convert DOC to PDF Free",
+      "metaDescription": "Convert Word documents to PDF instantly with our free online Word to PDF tool.",
+      "keywords": "Word to PDF, DOC converter, document converter, PDF tool, free online"
+    },
+    "powerpoint-to-pdf": {
+      "metaTitle": "PowerPoint to PDF - Convert PPT Free",
+      "metaDescription": "Convert PowerPoint presentations to PDF with our free online conversion tool.",
+      "keywords": "PowerPoint to PDF, PPT converter, document converter, PDF tool, free online"
+    },
+    "excel-to-pdf": {
+      "metaTitle": "Excel to PDF - Convert Spreadsheet Free",
+      "metaDescription": "Convert Excel spreadsheets to PDF instantly with our free online Excel converter.",
+      "keywords": "Excel to PDF, spreadsheet converter, document converter, PDF tool, free online"
+    },
+    "color-blindness-simulator": {
+      "metaTitle": "Color Blindness Simulator - Test Vision Free",
+      "metaDescription": "Simulate color blindness with our free online color blindness simulator tool.",
+      "keywords": "color blindness simulator, accessibility tool, color vision, web tool, free"
+    },
+    "svg-optimizer": {
+      "metaTitle": "SVG Optimizer - Optimize SVG Files Free",
+      "metaDescription": "Optimize SVG files instantly with our free online SVG optimizer tool.",
+      "keywords": "SVG optimizer, SVG compressor, code optimizer, developer tool, free online"
+    },
+    "favicon-generator": {
+      "metaTitle": "Favicon Generator - Create Favicons Free",
+      "metaDescription": "Generate favicon files instantly with our free online favicon generator tool.",
+      "keywords": "favicon generator, ICO generator, website icon, web tool, free online"
+    },
+    "color-contrast-checker": {
+      "metaTitle": "Contrast Checker - Check Color Contrast Free",
+      "metaDescription": "Check color contrast ratios for accessibility with our free online tool.",
+      "keywords": "contrast checker, accessibility checker, WCAG tool, color tool, free online"
+    }
+  }
+}

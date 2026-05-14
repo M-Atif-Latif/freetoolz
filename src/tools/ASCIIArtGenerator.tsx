@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Type, Sparkles } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function ASCIIArtGenerator() {
+  const howItWorks = [
+    { title: 'Enter Your Text', description: 'Type any text you want to transform' },
+    { title: 'Choose Font', description: 'Select your preferred ASCII art font style' },
+    { title: 'Generate', description: 'Convert your text into ASCII art' },
+    { title: 'Copy Art', description: 'Use the copy button to save your ASCII artwork' }
+  ];
   const [text, setText] = useState('HELLO');
   const [style, setStyle] = useState<'standard' | 'banner' | 'block' | 'digital'>('standard');
   const [asciiArt, setAsciiArt] = useState('');
@@ -77,6 +85,8 @@ export default function ASCIIArtGenerator() {
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Convert text to ASCII art with multiple font styles
           </p>
+          
+          <HowItWorks steps={howItWorks} />
         </div>
 
         {/* Input */}
@@ -148,7 +158,7 @@ export default function ASCIIArtGenerator() {
         )}
 
         {/* Info */}
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">💡 Tips</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>• Supports A-Z, 0-9, and spaces</li>

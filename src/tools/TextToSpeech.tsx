@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Volume2, Pause, Play } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TextToSpeech() {
+  const howItWorks = [
+    { title: 'Enter Your Text', description: 'Type or paste the text you want to hear spoken' },
+    { title: 'Choose Voice', description: 'Select your preferred voice and language' },
+    { title: 'Adjust Settings', description: 'Set speech rate and volume to your preference' },
+    { title: 'Play Audio', description: 'Click play to hear your text spoken aloud' }
+  ];
   const [text, setText] = useState('');
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoice, setSelectedVoice] = useState<number>(0);
@@ -39,7 +47,7 @@ export default function TextToSpeech() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <Volume2 className="h-16 w-16 mx-auto text-blue-500 mb-4" />
+        <Volume2 className="h-16 w-16 mx-auto text-primary-500 mb-4" />
         <h1 className="text-4xl font-bold text-gray-900 mb-3">Text to Speech</h1>
         <p className="text-gray-600 text-lg">Convert text to speech using browser API</p>
       </div>
@@ -49,7 +57,7 @@ export default function TextToSpeech() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Enter text to speak..."
-          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none mb-6"
+          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none mb-6"
           rows={6}
         />
 
@@ -59,7 +67,7 @@ export default function TextToSpeech() {
             <select
               value={selectedVoice}
               onChange={(e) => setSelectedVoice(parseInt(e.target.value))}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 outline-none"
             >
               {voices.map((voice, index) => (
                 <option key={index} value={index}>
@@ -108,3 +116,4 @@ export default function TextToSpeech() {
     </div>
   );
 }
+

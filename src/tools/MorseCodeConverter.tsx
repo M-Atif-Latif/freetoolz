@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Radio } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
 
 const morseCodeMap: { [key: string]: string } = {
   'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
@@ -81,8 +80,6 @@ export default function MorseCodeConverter() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
-        <ToolNavigation />
-        
         <div className="flex items-center space-x-3 mb-6">
           <div className="p-3 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl">
             <Radio className="h-8 w-8 text-white" />
@@ -176,7 +173,7 @@ export default function MorseCodeConverter() {
           </div>
         </div>
 
-        <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+        <div className="mt-6 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-2">💡 About Morse Code:</h3>
           <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 list-disc list-inside">
             <li>Developed in the 1830s by Samuel Morse</li>
@@ -189,3 +186,4 @@ export default function MorseCodeConverter() {
     </div>
   );
 }
+

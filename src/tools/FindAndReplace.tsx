@@ -1,8 +1,15 @@
 import { useState } from 'react';
 import { Search, Replace } from 'lucide-react';
-import ToolNavigation from '../components/ToolNavigation';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function FindAndReplace() {
+  const howItWorks = [
+    { title: 'Enter Text', description: 'Paste your original text' },
+    { title: 'Find & Replace', description: 'Enter search terms and replacement text' },
+    { title: 'Replace', description: 'Click to replace all occurrences' },
+    { title: 'Copy Result', description: 'Save your updated text' }
+  ];
   const [text, setText] = useState('');
   const [findText, setFindText] = useState('');
   const [replaceText, setReplaceText] = useState('');
@@ -86,8 +93,6 @@ export default function FindAndReplace() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-gray-100 dark:border-gray-700 p-8">
-        <ToolNavigation />
-        
         <div className="flex items-center space-x-3 mb-6">
           <div className="p-3 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl">
             <Search className="h-8 w-8 text-white" />
@@ -207,7 +212,7 @@ export default function FindAndReplace() {
           </button>
         </div>
 
-        <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+        <div className="mt-8 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-2">💡 Regex Examples:</h3>
           <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1 font-mono">
             <li>• <code>\d+</code> - Match any number</li>
@@ -221,3 +226,4 @@ export default function FindAndReplace() {
     </div>
   );
 }
+

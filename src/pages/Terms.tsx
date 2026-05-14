@@ -1,46 +1,49 @@
+import { useSEO, termsSEO } from '../utils/useSEO';
+
 export default function Terms() {
+  useSEO(termsSEO);
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 prose max-w-none">
         <p className="text-gray-600 mb-6 font-medium">Last updated: November 6, 2025</p>
         
-        <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded">
-          <p className="text-blue-900 text-sm">
-            Please read these terms carefully before using FreeToolz. By accessing our website and using our tools, 
+        <div className="bg-primary-50 border-l-4 border-primary-600 p-4 mb-6 rounded">
+          <p className="text-primary-900 text-sm">
+            Please read these terms carefully before using Free Tools. By accessing our website and using our tools, 
             you agree to be bound by these Terms of Service.
           </p>
         </div>
 
         <h2 className="text-2xl font-bold mb-3 text-gray-800">📜 Acceptance of Terms</h2>
         <p className="mb-4 text-gray-700 leading-relaxed">
-          By accessing and using FreeToolz (the "Service"), you accept and agree to be bound by these Terms of Service. 
+          By accessing and using Free Tools (the "Service"), you accept and agree to be bound by these Terms of Service. 
           If you do not agree to these terms, please do not use our services. These terms apply to all visitors, 
           users, and others who access or use the Service.
         </p>
 
         <h2 className="text-2xl font-bold mb-3 mt-8 text-gray-800">✅ Use License</h2>
         <p className="mb-3 text-gray-700 leading-relaxed">
-          Permission is granted to use FreeToolz for both personal and commercial purposes, subject to the following conditions:
+          Permission is granted to use Free Tools for both personal and commercial purposes, subject to the following conditions:
         </p>
         <ul className="list-disc list-inside mb-4 text-gray-700 space-y-2 ml-4">
           <li>You may use all tools freely for any lawful purpose</li>
           <li>You may not attempt to reverse engineer or copy our source code</li>
           <li>You may not use the service to transmit harmful or illegal content</li>
           <li>You may not attempt to overload or disrupt our servers</li>
-          <li>You may not misrepresent your affiliation with FreeToolz</li>
+          <li>You may not misrepresent your affiliation with Free Tools</li>
         </ul>
 
         <h2 className="text-2xl font-bold mb-3 mt-8 text-gray-800">🎯 Service Description</h2>
         <p className="mb-4 text-gray-700 leading-relaxed">
-          FreeToolz provides a collection of free online tools including text utilities, calculators, converters, 
+          Free Tools provides a collection of free online tools including text utilities, calculators, converters, 
           generators, PDF tools, image processors, and more. All tools are provided free of charge and run 
           directly in your browser without requiring registration or login.
         </p>
 
         <h2 className="text-2xl font-bold mb-3 mt-8 text-gray-800">🔒 User Responsibilities</h2>
         <p className="mb-3 text-gray-700 leading-relaxed">
-          As a user of FreeToolz, you agree to:
+          As a user of Free Tools, you agree to:
         </p>
         <ul className="list-disc list-inside mb-4 text-gray-700 space-y-2 ml-4">
           <li>Use the tools responsibly and ethically</li>
@@ -59,7 +62,7 @@ export default function Terms() {
 
         <h2 className="text-2xl font-bold mb-3 mt-8 text-gray-800">🚫 Limitation of Liability</h2>
         <p className="mb-4 text-gray-700 leading-relaxed">
-          FreeToolz, its developers, and contributors shall not be liable for any indirect, incidental, special, 
+          Free Tools, its developers, and contributors shall not be liable for any indirect, incidental, special, 
           consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or 
           indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:
         </p>
@@ -81,7 +84,7 @@ export default function Terms() {
         <p className="mb-4 text-gray-700 leading-relaxed">
           The website design, layout, graphics, and original content are protected by copyright and other 
           intellectual property laws. The tools themselves are provided free for use, but the underlying code 
-          and implementation remain the property of FreeToolz.
+          and implementation remain the property of Free Tools.
         </p>
 
         <h2 className="text-2xl font-bold mb-3 mt-8 text-gray-800">🌍 Governing Law</h2>
@@ -93,17 +96,19 @@ export default function Terms() {
         <h2 className="text-2xl font-bold mb-3 mt-8 text-gray-800">📞 Contact Information</h2>
         <p className="mb-4 text-gray-700 leading-relaxed">
           If you have any questions about these Terms of Service, please contact us at:{' '}
-          <a href="mailto:muhammadatiflatif67@gmail.com" className="text-blue-600 hover:text-blue-700 underline">
+          <a href="mailto:muhammadatiflatif67@gmail.com" className="text-primary-600 hover:text-primary-700 underline">
             muhammadatiflatif67@gmail.com
           </a>
         </p>
 
         <div className="bg-gray-50 border border-gray-200 p-4 mt-8 rounded-lg">
           <p className="text-sm text-gray-600 text-center font-medium">
-            By using FreeToolz, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+            By using Free Tools, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
           </p>
         </div>
       </div>
     </div>
   );
 }
+
+

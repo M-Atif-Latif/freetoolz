@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Shield, CheckCircle, XCircle, Loader, Info } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function PWNEDPasswordCheck() {
+  const howItWorks = [
+    { title: 'Enter Password', description: 'Type a password to check (remains private)' },
+    { title: 'Check Against Breaches', description: 'Query HaveIBeenPwned database safely' },
+    { title: 'View Results', description: 'See if password has been compromised' },
+    { title: 'Get Recommendations', description: 'Change password if it\'s been exposed' }
+  ];
   const [password, setPassword] = useState('');
   const [checking, setChecking] = useState(false);
   const [result, setResult] = useState<{
@@ -84,6 +92,8 @@ export default function PWNEDPasswordCheck() {
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Check if your password has been exposed in data breaches
           </p>
+          
+          <HowItWorks steps={howItWorks} />
         </div>
 
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8">
@@ -182,8 +192,8 @@ export default function PWNEDPasswordCheck() {
           </div>
         )}
 
-        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800 flex items-start mb-8">
-          <Info className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3 flex-shrink-0 mt-0.5" />
+        <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800 flex items-start mb-8">
+          <Info className="h-6 w-6 text-primary-600 dark:text-primary-400 mr-3 flex-shrink-0 mt-0.5" />
           <div>
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
               How This Works
@@ -195,7 +205,7 @@ export default function PWNEDPasswordCheck() {
                   href="https://haveibeenpwned.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                  className="text-primary-600 dark:text-primary-400 hover:underline"
                 >
                   Have I Been Pwned
                 </a>{' '}
@@ -228,3 +238,4 @@ export default function PWNEDPasswordCheck() {
     </div>
   );
 }
+

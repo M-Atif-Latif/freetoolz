@@ -1,10 +1,9 @@
-import { Wrench, Menu, X, ArrowLeft, Home as HomeIcon, Moon, Sun, Monitor } from 'lucide-react';
+import { Wrench, Menu, X, Moon, Sun, Monitor } from 'lucide-react';
 import { useState, useCallback, memo } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 interface HeaderProps {
   onNavigate: (path: string) => void;
-  currentPath?: string;
 }
 
 // Memoized navigation button for better performance
@@ -21,14 +20,9 @@ const NavButton = memo(({ onClick, children, className, ariaLabel }: {
 
 NavButton.displayName = 'NavButton';
 
-function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
+function Header({ onNavigate }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const isToolPage = currentPath.startsWith('/tools/');
-
-  const goBack = useCallback(() => {
-    onNavigate('/');
-  }, [onNavigate]);
 
   const closeMobileMenu = useCallback(() => {
     setMobileMenuOpen(false);
@@ -50,39 +44,24 @@ function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
           <div className="flex items-center space-x-2 sm:space-x-4 min-w-0 flex-1">
             <button onClick={() => onNavigate('/')} className="flex items-center space-x-1.5 sm:space-x-2 group transition-all duration-300 min-w-0">
               <div className="relative flex-shrink-0">
-                <Wrench className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 dark:text-blue-500 group-hover:rotate-12 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-blue-600 dark:bg-blue-500 rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                <Wrench className="h-6 w-6 sm:h-8 sm:w-8 text-primary-600 dark:text-primary-500 group-hover:rotate-12 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-primary-600 dark:bg-primary-500 rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
               </div>
               <span className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white truncate">
-                Free<span className="text-blue-600 dark:text-blue-500">Toolz</span>
+                Free<span className="text-primary-600 dark:text-primary-500">Toolz</span>
               </span>
             </button>
-            {isToolPage && (
-              <div className="hidden lg:flex items-center space-x-2 ml-4 pl-4 border-l border-gray-200 dark:border-gray-700">
-                <button
-                  onClick={goBack}
-                  className="flex items-center space-x-1 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 group"
-                >
-                  <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform duration-200" />
-                  <span className="text-sm font-medium">Back</span>
-                </button>
-                <button
-                  onClick={() => onNavigate('/')}
-                  className="flex items-center space-x-1 px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200"
-                >
-                  <HomeIcon className="h-4 w-4" />
-                  <span className="text-sm font-medium">Home</span>
-                </button>
-              </div>
-            )}
           </div>
           <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
             <nav className="hidden md:flex items-center space-x-1">
-              <button onClick={() => onNavigate('/')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">Home</button>
-              <button onClick={() => onNavigate('/blog')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">Blog</button>
-              <button onClick={() => onNavigate('/faq')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">FAQ</button>
-              <button onClick={() => onNavigate('/about')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">About</button>
-              <button onClick={() => onNavigate('/contact')} className="px-3 lg:px-4 py-2 bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700 dark:hover:bg-blue-600 rounded-lg transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md">Contact</button>
+              <button onClick={() => onNavigate('/')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">Home</button>
+              
+              <button onClick={() => onNavigate('/sitemap')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">Tools</button>
+              
+              <button onClick={() => onNavigate('/blog')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">Blog</button>
+              <button onClick={() => onNavigate('/faq')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">FAQ</button>
+              <button onClick={() => onNavigate('/about')} className="px-3 lg:px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200 font-medium text-sm">About</button>
+              <button onClick={() => onNavigate('/contact')} className="px-3 lg:px-4 py-2 bg-primary-700 dark:bg-primary-700 text-white hover:bg-primary-800 dark:hover:bg-primary-800 rounded-lg transition-all duration-200 font-medium text-sm shadow-sm hover:shadow-md">Contact</button>
             </nav>
             
             {/* Dark Mode Toggle */}
@@ -110,24 +89,12 @@ function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
         {mobileMenuOpen && (
           <div className="md:hidden py-3 sm:py-4 border-t dark:border-gray-700 animate-in slide-in-from-top duration-200 safe-bottom">
             <nav className="flex flex-col space-y-1">
-              {isToolPage && (
-                <>
-                  <button onClick={() => { goBack(); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg flex items-center space-x-2">
-                    <ArrowLeft className="h-4 w-4" />
-                    <span>Go Back</span>
-                  </button>
-                  <button onClick={() => { onNavigate('/'); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg flex items-center space-x-2">
-                    <HomeIcon className="h-4 w-4" />
-                    <span>Home</span>
-                  </button>
-                  <div className="my-2 border-t border-gray-200 dark:border-gray-700"></div>
-                </>
-              )}
-              <button onClick={() => { onNavigate('/'); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Home</button>
-<button onClick={() => handleNavigate('/blog')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Blog</button>
-              <button onClick={() => handleNavigate('/faq')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">FAQ</button>
-              <button onClick={() => handleNavigate('/about')} className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">About</button>
-              <button onClick={() => handleNavigate('/contact')} className="text-white bg-blue-600 hover:bg-blue-700 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg shadow-sm">Contact</button>
+              <button onClick={() => { onNavigate('/'); setMobileMenuOpen(false); }} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Home</button>
+              <button onClick={() => handleNavigate('/sitemap')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Tools</button>
+<button onClick={() => handleNavigate('/blog')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">Blog</button>
+              <button onClick={() => handleNavigate('/faq')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">FAQ</button>
+              <button onClick={() => handleNavigate('/about')} className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg">About</button>
+              <button onClick={() => handleNavigate('/contact')} className="text-white bg-primary-700 hover:bg-primary-800 transition-all duration-200 font-medium text-left px-4 py-3 rounded-lg shadow-sm">Contact</button>
             </nav>
           </div>
         )}
@@ -137,3 +104,4 @@ function Header({ onNavigate, currentPath = '/' }: HeaderProps) {
 }
 
 export default memo(Header);
+

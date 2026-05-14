@@ -1,6 +1,15 @@
 import { useState } from 'react';
+import { GitCompare, Copy } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function TextDiff() {
+  const howItWorks = [
+    { title: 'Paste Two Texts', description: 'Enter original and edited versions' },
+    { title: 'Compare', description: 'Analyze differences between texts' },
+    { title: 'View Diff', description: 'See highlighted added, removed, and unchanged lines' },
+    { title: 'Copy Report', description: 'Save the comparison results' }
+  ];
   const [text1, setText1] = useState('');
   const [text2, setText2] = useState('');
   const [diff, setDiff] = useState<{ type: string; value: string }[]>([]);
@@ -33,11 +42,14 @@ export default function TextDiff() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-3">Text Diff Checker</h1>
       <p className="text-gray-600 text-lg mb-6">Compare two texts and see differences</p>
+
+      <HowItWorks steps={howItWorks} />
+
       <div className="grid lg:grid-cols-2 gap-6 mb-6">
         <textarea value={text1} onChange={(e) => setText1(e.target.value)} placeholder="Original text..." className="w-full p-6 text-gray-800 resize-none focus:outline-none min-h-[300px] bg-white rounded-xl shadow-lg border border-gray-200" />
         <textarea value={text2} onChange={(e) => setText2(e.target.value)} placeholder="Modified text..." className="w-full p-6 text-gray-800 resize-none focus:outline-none min-h-[300px] bg-white rounded-xl shadow-lg border border-gray-200" />
       </div>
-      <button onClick={compareTexts} className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg mb-6">Compare</button>
+      <button onClick={compareTexts} className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg mb-6">Compare</button>
       {diff.length > 0 && (
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
           <h2 className="text-xl font-bold text-gray-900 mb-4">Differences</h2>
@@ -54,3 +66,5 @@ export default function TextDiff() {
     </div>
   );
 }
+
+

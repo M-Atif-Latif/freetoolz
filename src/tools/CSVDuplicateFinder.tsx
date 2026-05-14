@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Database, Trash2 } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function CSVDuplicateFinder() {
+  const howItWorks = [
+    { title: 'Upload CSV File', description: 'Select or paste your CSV data' },
+    { title: 'Choose Criteria', description: 'Select which columns to check for duplicates' },
+    { title: 'Find Duplicates', description: 'Identify and highlight duplicate rows' },
+    { title: 'Download Result', description: 'Save clean CSV without duplicates' }
+  ];
   const [csvInput, setCsvInput] = useState('');
   const [columnIndex, setColumnIndex] = useState('0');
   const [duplicates, setDuplicates] = useState<string[]>([]);
@@ -158,7 +166,7 @@ export default function CSVDuplicateFinder() {
         )}
 
         {/* Info */}
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">💡 How It Works</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>• Paste your CSV data with comma-separated values</li>
@@ -171,3 +179,4 @@ export default function CSVDuplicateFinder() {
     </div>
   );
 }
+

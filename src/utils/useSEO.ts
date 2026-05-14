@@ -1,5 +1,13 @@
 import { useEffect } from 'react';
-import { generateToolSchema, generateBreadcrumbSchema, getToolFAQSchema, generateOrganizationSchema } from './seoSchemas';
+import {
+  generateToolSchema,
+  generateBreadcrumbSchema,
+  getToolFAQSchema,
+  generateOrganizationSchema,
+  generateWebSiteSchema,
+  generateWebPageSchema,
+  generateDefaultToolFAQSchema,
+} from './seoSchemas';
 
 interface SEOConfig {
   title: string;
@@ -20,12 +28,35 @@ interface SEOConfig {
   toolUrl?: string;
 }
 
+const BASE_URL = 'https://freetoolz.cloud';
+const DEFAULT_SOCIAL_IMAGE = `${BASE_URL}/logo.png`;
+
+const cleanDescription = (description: string): string =>
+  description.replace(/^Use Case:\s*/i, '').trim();
+
 export const useSEO = (config: SEOConfig) => {
   useEffect(() => {
-    // Update title
     document.title = config.title;
 
-    // Update or create meta tags
+    // ============================================================
+    // CRITICAL FIX FOR GOOGLE SEARCH CONSOLE ISSUE
+    // ============================================================
+    // Problem: Google showed "?ref=steemhunt" as alternate page
+    // Solution: Always use pathname ONLY (strips ?ref=, ?utm_*, #hash)
+    // Result: All parameterized URLs resolve to same canonical
+    // 
+    // This combined with:
+    // - robots.txt Clean-param directives
+    // - Early canonical injection in index.html
+    // - Nginx Link headers
+    // Ensures Google treats all variants as one page
+    // ============================================================
+    const canonicalUrl = config.canonical || `${window.location.origin}${window.location.pathname}`;
+    const pageName = config.toolName ?? config.title.split('|')[0].trim();
+    const normalizedDescription = cleanDescription(config.description);
+    const ogImage = config.ogImage || DEFAULT_SOCIAL_IMAGE;
+    const twitterImage = config.twitterImage || ogImage;
+
     const updateMetaTag = (name: string, content: string, attribute: 'name' | 'property' = 'name') => {
       let element = document.querySelector(`meta[${attribute}="${name}"]`);
       if (!element) {
@@ -36,8 +67,7 @@ export const useSEO = (config: SEOConfig) => {
       element.setAttribute('content', content);
     };
 
-    // Basic meta tags
-    updateMetaTag('description', config.description);
+    updateMetaTag('description', normalizedDescription);
     if (config.keywords) {
       updateMetaTag('keywords', config.keywords);
     }
@@ -46,89 +76,79 @@ export const useSEO = (config: SEOConfig) => {
     }
     updateMetaTag('robots', config.robots || 'index, follow, max-snippet:-1, max-image-preview:large');
 
-    // Canonical URL
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) {
       canonical = document.createElement('link');
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = config.canonical || window.location.href;
+    canonical.href = canonicalUrl;
 
-    // Open Graph tags
     updateMetaTag('og:type', 'website', 'property');
     updateMetaTag('og:title', config.ogTitle || config.title, 'property');
-    updateMetaTag('og:description', config.ogDescription || config.description, 'property');
-    updateMetaTag('og:url', config.ogUrl || window.location.href, 'property');
-    updateMetaTag('og:site_name', 'FreeToolz Cloud', 'property');
+    updateMetaTag('og:description', config.ogDescription || normalizedDescription, 'property');
+    updateMetaTag('og:url', config.ogUrl || canonicalUrl, 'property');
+    updateMetaTag('og:site_name', 'Free Tools', 'property');
     updateMetaTag('og:locale', 'en_US', 'property');
-    
-    if (config.ogImage) {
-      updateMetaTag('og:image', config.ogImage, 'property');
-      updateMetaTag('og:image:width', '1200', 'property');
-      updateMetaTag('og:image:height', '630', 'property');
-      updateMetaTag('og:image:alt', config.ogTitle || config.title, 'property');
-    }
+    updateMetaTag('og:image', ogImage, 'property');
+    updateMetaTag('og:image:width', '1200', 'property');
+    updateMetaTag('og:image:height', '630', 'property');
+    updateMetaTag('og:image:alt', config.ogTitle || config.title, 'property');
 
-    // Twitter Card tags
-    updateMetaTag('twitter:card', 'summary_large_image', 'property');
-    updateMetaTag('twitter:title', config.twitterTitle || config.ogTitle || config.title, 'property');
-    updateMetaTag('twitter:description', config.twitterDescription || config.ogDescription || config.description, 'property');
-    updateMetaTag('twitter:url', window.location.href, 'property');
-    
-    if (config.twitterImage || config.ogImage) {
-      updateMetaTag('twitter:image', config.twitterImage || config.ogImage || '', 'property');
-    }
+    updateMetaTag('twitter:card', 'summary_large_image');
+    updateMetaTag('twitter:title', config.twitterTitle || config.ogTitle || config.title);
+    updateMetaTag('twitter:description', config.twitterDescription || config.ogDescription || normalizedDescription);
+    updateMetaTag('twitter:url', canonicalUrl);
+    updateMetaTag('twitter:image', twitterImage);
+    updateMetaTag('twitter:site', '@FreeToolzCloud');
+    updateMetaTag('twitter:image:alt', config.twitterTitle || config.title);
 
-    // Structured Data (JSON-LD)
     const removeOldSchemas = () => {
       const oldSchemas = document.querySelectorAll('script[type="application/ld+json"]');
       oldSchemas.forEach(schema => schema.remove());
     };
 
-    const addSchema = (schemaData: any) => {
+    const addSchema = (schemaData: unknown, schemaKey: string) => {
       const script = document.createElement('script');
       script.type = 'application/ld+json';
+      script.setAttribute('data-seo-schema', 'dynamic');
+      script.setAttribute('data-schema-key', schemaKey);
       script.text = JSON.stringify(schemaData);
       document.head.appendChild(script);
     };
 
     removeOldSchemas();
 
-    // Add Organization Schema (global)
-    addSchema(generateOrganizationSchema());
+    addSchema(generateOrganizationSchema(), 'organization');
+    addSchema(generateWebSiteSchema(), 'website');
+    addSchema(generateWebPageSchema(pageName, canonicalUrl, normalizedDescription), 'webpage');
 
-    // Add Tool-specific Schema
     if (config.toolName && config.toolUrl && config.toolCategory) {
       const toolSchema = generateToolSchema(
         config.toolName,
         config.toolUrl,
-        config.description,
+        normalizedDescription,
         config.toolCategory
       );
-      addSchema(toolSchema);
+      addSchema(toolSchema, 'tool');
 
-      // Add Breadcrumb Schema
       const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: 'Home', url: 'https://freetoolz.cloud' },
-        { name: 'Tools', url: 'https://freetoolz.cloud/#tools' },
+        { name: 'Home', url: BASE_URL },
+        { name: 'Tools', url: `${BASE_URL}/sitemap` },
         { name: config.toolName, url: config.toolUrl }
       ]);
-      addSchema(breadcrumbSchema);
+      addSchema(breadcrumbSchema, 'breadcrumb-tool');
 
-      // Add FAQ Schema if available
-      const toolId = config.toolUrl.split('/').pop() || '';
-      const faqSchema = getToolFAQSchema(toolId);
-      if (faqSchema) {
-        addSchema(faqSchema);
-      }
+      const toolSlug = canonicalUrl.split('/').filter(Boolean).pop() || '';
+      const faqSchema = getToolFAQSchema(toolSlug) ?? generateDefaultToolFAQSchema(config.toolName, config.toolCategory);
+      addSchema(faqSchema, 'faq-tool');
+    } else if (canonicalUrl !== BASE_URL && canonicalUrl !== `${BASE_URL}/`) {
+      const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: BASE_URL },
+        { name: pageName, url: canonicalUrl }
+      ]);
+      addSchema(breadcrumbSchema, 'breadcrumb-page');
     }
-
-    // Cleanup function
-    return () => {
-      // Optional: Remove dynamic schemas on unmount
-      // This prevents accumulation if navigating between tools
-    };
   }, [config]);
 };
 
@@ -140,21 +160,22 @@ export const generateToolSEO = (
   toolPath: string,
   keywords: string[]
 ): SEOConfig => {
-  const baseUrl = 'https://freetoolz.cloud';
+  const baseUrl = BASE_URL;
   const fullUrl = `${baseUrl}${toolPath}`;
+  const normalizedDescription = cleanDescription(toolDescription);
   
   return {
-    title: `${toolName} | Free Online Tool - FreeToolz Cloud`,
-    description: `${toolDescription} Free, secure, and no registration required. ${toolName} tool by FreeToolz Cloud.`,
-    keywords: [...keywords, 'free online tool', 'no signup', 'browser based', 'freetoolz cloud'].join(', '),
+    title: `${toolName} - Free Online ${toolCategory} Tool | FreeToolz`,
+    description: `${normalizedDescription}. Use ${toolName} online for free with privacy-first browser processing and no signup required.`,
+    keywords: [...keywords, 'free online tool', 'no signup', 'browser based', 'free tools'].join(', '),
     canonical: fullUrl,
     ogTitle: `${toolName} - Free & Secure Online Tool`,
-    ogDescription: `${toolDescription} Works directly in your browser. 100% free, no ads, no registration.`,
+    ogDescription: `${normalizedDescription}. Works directly in your browser. 100% free and private.`,
     ogUrl: fullUrl,
-    ogImage: `${baseUrl}/og-image-tool.jpg`,
-    twitterTitle: `${toolName} | FreeToolz Cloud`,
-    twitterDescription: toolDescription,
-    twitterImage: `${baseUrl}/twitter-card-tool.jpg`,
+    ogImage: `${baseUrl}/logo.png`,
+    twitterTitle: `${toolName} | Free Tools`,
+    twitterDescription: normalizedDescription,
+    twitterImage: `${baseUrl}/logo.png`,
     author: 'Muhammad Atif Latif',
     robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     toolName,
@@ -165,12 +186,12 @@ export const generateToolSEO = (
 
 // Home page SEO
 export const homeSEO: SEOConfig = {
-  title: 'FreeToolz Cloud - 120+ Free Online Tools | No Signup Required',
-  description: 'Access 120+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration, no ads, completely free forever.',
+  title: 'Free Tools - 140+ Free Online Tools | No Signup Required',
+  description: 'Access 140+ free online tools for text processing, PDF manipulation, image editing, calculations, conversions, SEO testing, and security analysis. No registration, no ads, completely free forever.',
   keywords: 'free online tools, word counter, password generator, pdf merger, image compressor, json formatter, qr code generator, bmi calculator, currency converter, text tools, developer tools, no signup, free forever',
   canonical: 'https://freetoolz.cloud',
-  ogTitle: 'FreeToolz Cloud - 120+ Free Professional Online Tools',
-  ogDescription: 'Complete suite of 120+ free online utilities. Text, PDF, image, calculator, converter, and developer tools. All free, secure, and privacy-focused.',
+  ogTitle: 'Free Tools - 140+ Free Professional Online Tools',
+  ogDescription: 'Complete suite of 140+ free online utilities. Text, PDF, image, calculator, converter, and developer tools. All free, secure, and privacy-focused.',
   ogUrl: 'https://freetoolz.cloud',
   ogImage: 'https://freetoolz.cloud/og-image.jpg',
   author: 'Muhammad Atif Latif',
@@ -179,8 +200,8 @@ export const homeSEO: SEOConfig = {
 
 // About page SEO
 export const aboutSEO: SEOConfig = {
-  title: 'About FreeToolz Cloud - Our Mission & Story',
-  description: 'Learn about FreeToolz Cloud and our mission to provide 120+ free professional-grade online tools accessible to everyone. Built by Muhammad Atif Latif, Data Scientist & ML Engineer.',
+  title: 'About Free Tools - Our Mission & Story',
+  description: 'Learn about Free Tools and our mission to provide 140+ free professional-grade online tools accessible to everyone. Built by Muhammad Atif Latif, Data Scientist & ML Engineer.',
   canonical: 'https://freetoolz.cloud/about',
   keywords: 'about freetoolz, free tools mission, muhammad atif latif, online tools platform',
   author: 'Muhammad Atif Latif'
@@ -188,8 +209,8 @@ export const aboutSEO: SEOConfig = {
 
 // Blog page SEO
 export const blogSEO: SEOConfig = {
-  title: 'FreeToolz Cloud Blog - Tips, Guides & Tool Tutorials',
-  description: 'Discover tips, guides, and tutorials on using free online tools effectively. Learn productivity hacks, best practices, and expert advice from FreeToolz Cloud.',
+  title: 'Free Tools Blog - Tips, Guides & Tool Tutorials',
+  description: 'Discover tips, guides, and tutorials on using free online tools effectively. Learn productivity hacks, best practices, and expert advice from Free Tools.',
   canonical: 'https://freetoolz.cloud/blog',
   keywords: 'online tools blog, productivity tips, tool tutorials, free software guides',
   author: 'Muhammad Atif Latif'
@@ -197,9 +218,68 @@ export const blogSEO: SEOConfig = {
 
 // Contact page SEO
 export const contactSEO: SEOConfig = {
-  title: 'Contact Us - FreeToolz Cloud Support',
-  description: 'Get in touch with the FreeToolz Cloud team. We value your feedback, questions, and suggestions for improving our 120+ free online tools.',
+  title: 'Contact Us - Free Tools Support',
+  description: 'Get in touch with the Free Tools team. We value your feedback, questions, and suggestions for improving our 140+ free online tools.',
   canonical: 'https://freetoolz.cloud/contact',
   keywords: 'contact freetoolz, support, feedback, tool requests',
+  author: 'Muhammad Atif Latif'
+};
+
+// Privacy page SEO
+export const privacySEO: SEOConfig = {
+  title: 'Privacy Policy - Free Tools',
+  description: 'Read our privacy policy to understand how Free Tools protects your data. We are committed to your privacy and never store data on our servers.',
+  canonical: 'https://freetoolz.cloud/privacy',
+  keywords: 'privacy policy, data protection, freetoolz privacy',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large',
+  author: 'Muhammad Atif Latif'
+};
+
+// Terms page SEO
+export const termsSEO: SEOConfig = {
+  title: 'Terms of Service - Free Tools',
+  description: 'Review the terms of service for Free Tools. Understand the conditions and guidelines for using our 140+ free online tools.',
+  canonical: 'https://freetoolz.cloud/terms',
+  keywords: 'terms of service, terms and conditions, freetoolz terms',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large',
+  author: 'Muhammad Atif Latif'
+};
+
+// Disclaimer page SEO
+export const disclaimerSEO: SEOConfig = {
+  title: 'Disclaimer - Free Tools',
+  description: 'Important disclaimer for Free Tools. Please read to understand the limitations and proper usage of our tools.',
+  canonical: 'https://freetoolz.cloud/disclaimer',
+  keywords: 'disclaimer, terms, freetoolz disclaimer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large',
+  author: 'Muhammad Atif Latif'
+};
+
+// FAQ page SEO
+export const faqSEO: SEOConfig = {
+  title: 'FAQ - Free Tools Questions Answered',
+  description: 'Frequently Asked Questions about Free Tools. Find answers to common questions about our tools, privacy, and how to use them.',
+  canonical: 'https://freetoolz.cloud/faq',
+  keywords: 'faq, frequently asked questions, freetoolz help, tool help',
+  author: 'Muhammad Atif Latif'
+};
+
+// Sitemap page SEO
+export const sitemapSEO: SEOConfig = {
+  title: 'Sitemap - Free Tools Directory',
+  description: 'Complete directory of all 140+ free tools available on Free Tools. Browse and discover tools by category.',
+  canonical: 'https://freetoolz.cloud/sitemap',
+  keywords: 'sitemap, tools directory, freetoolz directory, all tools',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large',
+  author: 'Muhammad Atif Latif'
+};
+
+// Not Found page SEO
+export const notFoundSEO: SEOConfig = {
+  title: '404 - Page Not Found | Free Tools',
+  description: 'The page you are looking for could not be found. Please check the URL or navigate to our homepage to find what you are looking for.',
+  canonical: 'https://freetoolz.cloud/404',
+  keywords: '404, page not found, not found',
+  robots: 'noindex, follow',
   author: 'Muhammad Atif Latif'
 };

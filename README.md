@@ -1,4 +1,4 @@
-# 🚀 FreeToolz - 120+ Free Online Tools
+# 🚀 Free Tools - 120+ Free Online Tools
 
 [![Live Site](https://img.shields.io/badge/🌐-Live%20Site-success?style=for-the-badge)](https://freetoolz.cloud)
 [![Tools](https://img.shields.io/badge/Tools-120+-blue?style=for-the-badge)](https://freetoolz.cloud)
@@ -10,7 +10,7 @@
 
 ## 🌟 Overview
 
-FreeToolz is a comprehensive collection of 120+ professional-grade online tools, completely free to use. All tools work directly in your browser, ensuring maximum privacy and speed. No registration, no downloads, no hidden costs.
+Free Tools is a comprehensive collection of 120+ professional-grade online tools, completely free to use. All tools work directly in your browser, ensuring maximum privacy and speed. No registration, no downloads, no hidden costs.
 
 **Visit the live site:** [https://freetoolz.cloud](https://freetoolz.cloud)
 
@@ -165,7 +165,7 @@ Or use the quick deploy script:
 - **Home** - Browse all tools by category
 - **Blog** - Articles and guides on productivity and online tools
 - **FAQ** - Frequently asked questions
-- **About** - Learn about FreeToolz and the developer
+- **About** - Learn about Free Tools and the developer
 - **Contact** - Get in touch
 
 ### Legal Pages
@@ -186,7 +186,7 @@ Your privacy and security are our top priorities.
 
 ## 📱 Browser Support
 
-FreeToolz works on all modern browsers:
+Free Tools works on all modern browsers:
 - Chrome (recommended)
 - Firefox
 - Safari
@@ -222,7 +222,7 @@ This project is open source and available for free use.
 
 ## 🙏 Acknowledgments
 
-Special thanks to all users who provide feedback and help improve FreeToolz!
+Special thanks to all users who provide feedback and help improve Free Tools!
 
 ---
 

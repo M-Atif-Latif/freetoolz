@@ -9,6 +9,17 @@
     box-sizing: border-box;
   }
 
+  /* Fix 5 & 7: Globally force text inputs to be readable across 140+ tools */
+  input, select, textarea {
+    @apply bg-white text-gray-900 border-gray-300 outline-none;
+  }
+  
+  /* Native dark mode readability & Date Picker dd/mm/yyyy fix */
+  .dark input, .dark select, .dark textarea {
+    @apply bg-gray-800 text-gray-100 border-gray-700;
+    color-scheme: dark;
+  }
+
   html {
     scroll-behavior: smooth;
     /* Optimize font rendering for better performance */
@@ -29,7 +40,7 @@
 
   /* Improved focus styles for accessibility */
   :focus-visible {
-    outline: 2px solid #2563eb;
+    outline: 2px solid #5b7aff;
     outline-offset: 2px;
   }
 

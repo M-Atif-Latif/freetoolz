@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { RefreshCw } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function RandomNumber() {
+  const howItWorks = [
+    { title: 'Set Min and Max', description: 'Enter the minimum and maximum values for your range' },
+    { title: 'Choose Quantity', description: 'Pick how many random numbers you want to generate' },
+    { title: 'Click Generate', description: 'Press the generate button to create random numbers' },
+    { title: 'Copy Results', description: 'Use the copy button to save your generated numbers' }
+  ];
   const [min, setMin] = useState('1');
   const [max, setMax] = useState('100');
   const [count, setCount] = useState(1);
@@ -25,13 +33,14 @@ export default function RandomNumber() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">Random Number Generator</h1>
-        <p className="text-gray-600 text-lg">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">Random Number Generator</h1>
+        <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">
           Generate random numbers within a specified range
         </p>
+        <HowItWorks steps={howItWorks} />
       </div>
 
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 mb-6">
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -41,7 +50,7 @@ export default function RandomNumber() {
               type="number"
               value={min}
               onChange={(e) => setMin(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
 
@@ -53,7 +62,7 @@ export default function RandomNumber() {
               type="number"
               value={max}
               onChange={(e) => setMax(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring focus:ring-blue-200 transition-all outline-none"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring focus:ring-primary-200 transition-all outline-none"
             />
           </div>
         </div>
@@ -80,7 +89,7 @@ export default function RandomNumber() {
 
         <button
           onClick={generateNumbers}
-          className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg flex items-center justify-center space-x-2"
+          className="w-full px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold text-lg shadow-lg flex items-center justify-center space-x-2"
         >
           <RefreshCw className="h-5 w-5" />
           <span>Generate Random Number{count > 1 ? 's' : ''}</span>
@@ -96,9 +105,9 @@ export default function RandomNumber() {
             {results.map((num, index) => (
               <div
                 key={index}
-                className="p-6 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl border-2 border-blue-200 text-center"
+                className="p-6 bg-gradient-to-br from-blue-50 to-gray-100 rounded-xl border-2 border-primary-200 text-center"
               >
-                <div className="text-4xl font-bold text-blue-600">{num}</div>
+                <div className="text-4xl font-bold text-primary-600">{num}</div>
               </div>
             ))}
           </div>
@@ -107,3 +116,4 @@ export default function RandomNumber() {
     </div>
   );
 }
+

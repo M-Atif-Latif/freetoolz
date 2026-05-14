@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function RemoveSpaces() {
+  const howItWorks = [
+    { title: 'Paste Your Text', description: 'Enter text with spaces' },
+    { title: 'Choose Mode', description: 'Remove all spaces or just leading/trailing ones' },
+    { title: 'Process', description: 'Spaces are removed instantly' },
+    { title: 'Copy Result', description: 'Save your text without spaces' }
+  ];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [copied, setCopied] = useState(false);
@@ -52,7 +60,7 @@ export default function RemoveSpaces() {
             {output && (
               <button
                 onClick={copyToClipboard}
-                className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                className="flex items-center space-x-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors text-sm"
               >
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                 <span>{copied ? 'Copied!' : 'Copy'}</span>
@@ -71,7 +79,7 @@ export default function RemoveSpaces() {
       <div className="grid md:grid-cols-3 gap-4">
         <button
           onClick={removeExtraSpaces}
-          className="px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg"
+          className="px-6 py-4 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-colors font-semibold shadow-lg"
         >
           Remove Extra Spaces
         </button>
@@ -91,3 +99,4 @@ export default function RemoveSpaces() {
     </div>
   );
 }
+

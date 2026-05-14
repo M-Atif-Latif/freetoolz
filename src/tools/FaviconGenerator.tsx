@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import { Image as ImageIcon, Sparkles } from 'lucide-react';
+import HowItWorks from '../components/HowItWorks';
+import CopyButton from '../components/CopyButton';
 
 export default function FaviconGenerator() {
+  const howItWorks = [
+    { title: 'Upload Image', description: 'Select an image to use as favicon' },
+    { title: 'Preview', description: 'See how it will look as a favicon' },
+    { title: 'Generate', description: 'Create favicon in all required sizes' },
+    { title: 'Download Files', description: 'Get favicon files for your website' }
+  ];
   const [text, setText] = useState('F');
   const [bgColor, setBgColor] = useState('#4F46E5');
   const [textColor, setTextColor] = useState('#FFFFFF');
@@ -142,7 +150,7 @@ export default function FaviconGenerator() {
           </div>
         </div>
 
-        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+        <div className="mt-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-6 border border-primary-200 dark:border-primary-800">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">📝 How to Use</h3>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
             <li>1. Enter a single letter or character</li>
@@ -155,3 +163,4 @@ export default function FaviconGenerator() {
     </div>
   );
 }
+
